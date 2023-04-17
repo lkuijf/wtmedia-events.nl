@@ -35,118 +35,118 @@ $websiteOptions[] = array('office_assoc', 'footer_office_2', 'Footer office 2');
 $websiteOptions[] = array('media_gallery', 'working_with', 'Partner logo\'s');
 $carbonFieldsArgs['websiteOptions'] = $websiteOptions;
 
-add_action( 'init', 'create_posttype_news' );
-add_action( 'init', 'create_posttype_offices' );
-add_action( 'init', 'create_posttype_professionals' );
-add_action( 'init', 'create_posttype_vessels' );
-add_action( 'init', 'register_taxonomy_vessel_type' );
+// add_action( 'init', 'create_posttype_news' );
+// add_action( 'init', 'create_posttype_offices' );
+// add_action( 'init', 'create_posttype_professionals' );
+// add_action( 'init', 'create_posttype_vessels' );
+// add_action( 'init', 'register_taxonomy_vessel_type' );
 
 // Our custom post type function
-function create_posttype_news() {
-    register_post_type( 'news',
-        array(
-            'labels' => array(
-                'name' => __( 'News' ),
-                'singular_name' => __( 'News' ),
-                'add_new_item' => __( 'Add New News-item' ),
-                'add_new' => __( 'Add New News-item' ),
-                'edit_item' => __( 'Edit News-item' ),
-                'update_item' => __( 'Update News-item' ),
-            ),
-            'public' => true,
-            // 'has_archive' => true,
-            // 'rewrite' => array('slug' => 'movies'),
-            'show_in_rest' => true,
-            // 'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
-            'supports'            => array( 'title'),
-            )
-    );
-}
-function create_posttype_offices() {
-    register_post_type( 'office',
-        array(
-            'labels' => array(
-                'name' => __( 'Offices' ),
-                'singular_name' => __( 'Office' ),
-                'add_new_item' => __( 'Add New Office' ),
-                'add_new' => __( 'Add New Office' ),
-                'edit_item' => __( 'Edit Office' ),
-                'update_item' => __( 'Update Office' ),
-            ),
-            'public' => true,
-            // 'has_archive' => true,
-            // 'rewrite' => array('slug' => 'movies'),
-            'show_in_rest' => true,
-            // 'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
-            'supports'            => array( 'title'),
-            )
-    );
-}
-function create_posttype_professionals() {
-    register_post_type( 'professional',
-        array(
-            'labels' => array(
-                'name' => __( 'Professionals' ),
-                'singular_name' => __( 'Professional' ),
-                'add_new_item' => __( 'Add New Professional' ),
-                'add_new' => __( 'Add New Professional' ),
-                'edit_item' => __( 'Edit Professional' ),
-                'update_item' => __( 'Update Professional' ),
-            ),
-            'public' => true,
-            // 'has_archive' => true,
-            // 'rewrite' => array('slug' => 'movies'),
-            'show_in_rest' => true,
-            // 'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
-            'supports'            => array( 'title'),
-            )
-    );
-}
-function create_posttype_vessels() {
-    register_post_type( 'vessel',
-        array(
-            'labels' => array(
-                'name' => __( 'Vessels' ),
-                'singular_name' => __( 'Vessel' ),
-                'add_new_item' => __( 'Add New Vessel' ),
-                'add_new' => __( 'Add New Vessel' ),
-                'edit_item' => __( 'Edit Vessel' ),
-                'update_item' => __( 'Update Vessel' ),
-            ),
-            'public' => true,
-            // 'has_archive' => true,
-            // 'rewrite' => array('slug' => 'movies'),
-            'show_in_rest' => true,
-            // 'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
-            'supports'            => array( 'title'),
-            )
-    );
-}
-function register_taxonomy_vessel_type() {
-    $labels = array(
-        'name'              => _x( 'Types', 'taxonomy general name' ),
-        'singular_name'     => _x( 'Type', 'taxonomy singular name' ),
-        'search_items'      => __( 'Search Types' ),
-        'all_items'         => __( 'All Types' ),
-        'parent_item'       => __( 'Parent Type' ),
-        'parent_item_colon' => __( 'Parent Type:' ),
-        'edit_item'         => __( 'Edit Type' ),
-        'update_item'       => __( 'Update Type' ),
-        'add_new_item'      => __( 'Add New Type' ),
-        'new_item_name'     => __( 'New Type Name' ),
-        'menu_name'         => __( 'Type' ),
-    );
-    $args   = array(
-        'hierarchical'      => true, // make it hierarchical (like categories)
-        'labels'            => $labels,
-        'show_ui'           => true,
-        'show_admin_column' => true,
-        'show_in_rest'      => true,
-        'query_var'         => true,
-        'rewrite'           => [ 'slug' => 'vessel_type' ],
-    );
-    register_taxonomy( 'vessel_type', [ 'vessel' ], $args );
-}
+// function create_posttype_news() {
+//     register_post_type( 'news',
+//         array(
+//             'labels' => array(
+//                 'name' => __( 'News' ),
+//                 'singular_name' => __( 'News' ),
+//                 'add_new_item' => __( 'Add New News-item' ),
+//                 'add_new' => __( 'Add New News-item' ),
+//                 'edit_item' => __( 'Edit News-item' ),
+//                 'update_item' => __( 'Update News-item' ),
+//             ),
+//             'public' => true,
+//             // 'has_archive' => true,
+//             // 'rewrite' => array('slug' => 'movies'),
+//             'show_in_rest' => true,
+//             // 'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
+//             'supports'            => array( 'title'),
+//             )
+//     );
+// }
+// function create_posttype_offices() {
+//     register_post_type( 'office',
+//         array(
+//             'labels' => array(
+//                 'name' => __( 'Offices' ),
+//                 'singular_name' => __( 'Office' ),
+//                 'add_new_item' => __( 'Add New Office' ),
+//                 'add_new' => __( 'Add New Office' ),
+//                 'edit_item' => __( 'Edit Office' ),
+//                 'update_item' => __( 'Update Office' ),
+//             ),
+//             'public' => true,
+//             // 'has_archive' => true,
+//             // 'rewrite' => array('slug' => 'movies'),
+//             'show_in_rest' => true,
+//             // 'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
+//             'supports'            => array( 'title'),
+//             )
+//     );
+// }
+// function create_posttype_professionals() {
+//     register_post_type( 'professional',
+//         array(
+//             'labels' => array(
+//                 'name' => __( 'Professionals' ),
+//                 'singular_name' => __( 'Professional' ),
+//                 'add_new_item' => __( 'Add New Professional' ),
+//                 'add_new' => __( 'Add New Professional' ),
+//                 'edit_item' => __( 'Edit Professional' ),
+//                 'update_item' => __( 'Update Professional' ),
+//             ),
+//             'public' => true,
+//             // 'has_archive' => true,
+//             // 'rewrite' => array('slug' => 'movies'),
+//             'show_in_rest' => true,
+//             // 'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
+//             'supports'            => array( 'title'),
+//             )
+//     );
+// }
+// function create_posttype_vessels() {
+//     register_post_type( 'vessel',
+//         array(
+//             'labels' => array(
+//                 'name' => __( 'Vessels' ),
+//                 'singular_name' => __( 'Vessel' ),
+//                 'add_new_item' => __( 'Add New Vessel' ),
+//                 'add_new' => __( 'Add New Vessel' ),
+//                 'edit_item' => __( 'Edit Vessel' ),
+//                 'update_item' => __( 'Update Vessel' ),
+//             ),
+//             'public' => true,
+//             // 'has_archive' => true,
+//             // 'rewrite' => array('slug' => 'movies'),
+//             'show_in_rest' => true,
+//             // 'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
+//             'supports'            => array( 'title'),
+//             )
+//     );
+// }
+// function register_taxonomy_vessel_type() {
+//     $labels = array(
+//         'name'              => _x( 'Types', 'taxonomy general name' ),
+//         'singular_name'     => _x( 'Type', 'taxonomy singular name' ),
+//         'search_items'      => __( 'Search Types' ),
+//         'all_items'         => __( 'All Types' ),
+//         'parent_item'       => __( 'Parent Type' ),
+//         'parent_item_colon' => __( 'Parent Type:' ),
+//         'edit_item'         => __( 'Edit Type' ),
+//         'update_item'       => __( 'Update Type' ),
+//         'add_new_item'      => __( 'Add New Type' ),
+//         'new_item_name'     => __( 'New Type Name' ),
+//         'menu_name'         => __( 'Type' ),
+//     );
+//     $args   = array(
+//         'hierarchical'      => true, // make it hierarchical (like categories)
+//         'labels'            => $labels,
+//         'show_ui'           => true,
+//         'show_admin_column' => true,
+//         'show_in_rest'      => true,
+//         'query_var'         => true,
+//         'rewrite'           => [ 'slug' => 'vessel_type' ],
+//     );
+//     register_taxonomy( 'vessel_type', [ 'vessel' ], $args );
+// }
 
 $editor = get_role('editor');
 $capabilities_pages = array(
