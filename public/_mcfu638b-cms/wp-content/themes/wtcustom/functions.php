@@ -248,25 +248,25 @@ function crbRegisterFields($args) {
         ->add_tab( __('Page content'), array(
             Field::make( 'complex', 'crb_sections', 'Sections' )->set_visible_in_rest_api($visible = true)
                 ->set_layout( 'tabbed-vertical' )
-                ->add_fields( 'hero', 'Hero (big header)', array(
-                    Field::make( 'separator', 'separator1', __( 'Hero (big header)' ) ),
-                    Field::make( 'media_gallery', 'crb_media_gallery', __( 'Media Gallery' ) )
-                        ->set_type( array( 'image' ) )->set_duplicates_allowed( false ),
-                    Field::make( 'text', 'big_header', __( 'Big header text (can use html-tags)' ) ),
-                    Field::make( 'text', 'small_header', __( 'Small header text (can use html-tags)' ) ),
-                    Field::make( 'textarea', 'text', __( 'Text' ) ),
-                    Field::make( 'checkbox', 'show_logo', __('Show Glomar Offshore logo') ),
+                // ->add_fields( 'hero', 'Hero (big header)', array(
+                //     Field::make( 'separator', 'separator1', __( 'Hero (big header)' ) ),
+                //     Field::make( 'media_gallery', 'crb_media_gallery', __( 'Media Gallery' ) )
+                //         ->set_type( array( 'image' ) )->set_duplicates_allowed( false ),
+                //     Field::make( 'text', 'big_header', __( 'Big header text (can use html-tags)' ) ),
+                //     Field::make( 'text', 'small_header', __( 'Small header text (can use html-tags)' ) ),
+                //     Field::make( 'textarea', 'text', __( 'Text' ) ),
+                //     Field::make( 'checkbox', 'show_logo', __('Show Glomar Offshore logo') ),
 
-                    // Field::make( 'image', 'image', 'Afbeelding' )->set_value_type( 'url' ),
-                    // Field::make( 'select', 'color', __( 'Choose block letters color' ) )
-                    // ->set_options( array(
-                        // 'white' => __( 'White' ),
-                        // 'black' => __( 'Black' ),
-                    // ) ),
-                    // Field::make( 'checkbox', 'show_reserve_button', __( 'Show reserve button' ) ),
-                    // Field::make( 'image', 'image', 'Afbeelding' ),
-                    // Field::make( 'rich_text', 'text', 'Tekst' ),
-                ) )
+                //     // Field::make( 'image', 'image', 'Afbeelding' )->set_value_type( 'url' ),
+                //     // Field::make( 'select', 'color', __( 'Choose block letters color' ) )
+                //     // ->set_options( array(
+                //         // 'white' => __( 'White' ),
+                //         // 'black' => __( 'Black' ),
+                //     // ) ),
+                //     // Field::make( 'checkbox', 'show_reserve_button', __( 'Show reserve button' ) ),
+                //     // Field::make( 'image', 'image', 'Afbeelding' ),
+                //     // Field::make( 'rich_text', 'text', 'Tekst' ),
+                // ) )
                 ->add_fields( 'text', 'Tekst', array(
                     Field::make( 'separator', 'separator1', __( 'Text section 1' ) ),
 
