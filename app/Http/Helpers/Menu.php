@@ -28,8 +28,8 @@ class Menu {
                 $href = $pageUrl;
                 if(isset($page->alt_url) && $page->alt_url) $href = $page->alt_url; // mironmarine.nl
                 if($page->title == 'Home') $href = '/';
-                $this->html .= '<a itemprop="url" href="' . $href . '">';
-                // $this->html .= '<a itemprop="url" href="#' . substr($href, 1) . '">'; // rotterdamsehorecawandeling.nl (onepager)
+                // $this->html .= '<a itemprop="url" href="' . $href . '">';
+                $this->html .= '<a itemprop="url" href="#' . substr($href, 1) . '">'; // rotterdamsehorecawandeling.nl (onepager)
             // }
             $this->html .= $page->title;
             $this->html .= '</a>';

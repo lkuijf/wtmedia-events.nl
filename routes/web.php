@@ -30,15 +30,21 @@ Route::get('/', function () {
 
 
 /* Check for a page request */
-Route::get('/{section}', [PagesController::class, 'showPage'])->defaults('page', false)->defaults('subpage', false)->where([
+Route::get('/{section}', [PagesController::class, 'showOnePager'])->where([
     'section' => '[a-z0-9_-]+',
 ]);
-Route::get('/{section}/{page}', [PagesController::class, 'showPage'])->defaults('subpage', false)->where([
-    'section' => '[a-z0-9_-]+',
-    'page' => '[a-z0-9_-]+',
-]);
-Route::get('/{section}/{page}/{subpage}', [PagesController::class, 'showPage'])->where([
-    'section' => '[a-z0-9_-]+',
-    'page' => '[a-z0-9_-]+',
-    'subpage' => '[a-z0-9_-]+',
-]);
+
+
+
+// Route::get('/{section}', [PagesController::class, 'showPage'])->defaults('page', false)->defaults('subpage', false)->where([
+//     'section' => '[a-z0-9_-]+',
+// ]);
+// Route::get('/{section}/{page}', [PagesController::class, 'showPage'])->defaults('subpage', false)->where([
+//     'section' => '[a-z0-9_-]+',
+//     'page' => '[a-z0-9_-]+',
+// ]);
+// Route::get('/{section}/{page}/{subpage}', [PagesController::class, 'showPage'])->where([
+//     'section' => '[a-z0-9_-]+',
+//     'page' => '[a-z0-9_-]+',
+//     'subpage' => '[a-z0-9_-]+',
+// ]);

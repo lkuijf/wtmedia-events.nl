@@ -270,127 +270,127 @@ function crbRegisterFields($args) {
                 ->add_fields( 'text', 'Tekst', array(
                     Field::make( 'separator', 'separator1', __( 'Text section 1' ) ),
 
-                    Field::make( 'text', 'header', __( 'Header (can use html-tags)' ) ),
+                    // Field::make( 'text', 'header', __( 'Header (can use html-tags)' ) ),
                     Field::make( 'rich_text', 'text', __( 'Text' ) ),
-                    Field::make( 'image', 'image', __( 'Image' ) ),
-                    Field::make( 'complex', 'cta_button', __( 'Add Button' ) )
-                        ->add_fields( array(
-                            Field::make( 'select', 'color', __( 'Color' ) )
-                            ->set_options( array(
-                                'full_orange' => __( 'Full orange' ),
-                                'orange_border' => __( 'White with orange border' ),
-                                'transparent' => __( 'Transparent' ),
-                            ) ),
-                            Field::make( 'select', 'icon', __( 'Icon' ) )
-                            ->set_options( array(
-                                'no_icon' => __( 'No icon' ),
-                                'icon_phone' => __( 'Phone' ),
-                                'icon_external_link' => __( 'External link' ),
-                            ) ),
-                            Field::make( 'text', 'text', __( 'Button Text (can use html-tags)' ) ),
-                            Field::make( 'text', 'url', __( 'Button URL' ) ),
-                            Field::make( 'select', 'target', __( 'Target' ) )
-                            ->set_options( array(
-                                'same_tab' => __( 'Same tab' ),
-                                'new_tab' => __( 'New tab' ),
-                            ) ),
-                    ) ),
+                    // Field::make( 'image', 'image', __( 'Image' ) ),
+                    // Field::make( 'complex', 'cta_button', __( 'Add Button' ) )
+                    //     ->add_fields( array(
+                    //         Field::make( 'select', 'color', __( 'Color' ) )
+                    //         ->set_options( array(
+                    //             'full_orange' => __( 'Full orange' ),
+                    //             'orange_border' => __( 'White with orange border' ),
+                    //             'transparent' => __( 'Transparent' ),
+                    //         ) ),
+                    //         Field::make( 'select', 'icon', __( 'Icon' ) )
+                    //         ->set_options( array(
+                    //             'no_icon' => __( 'No icon' ),
+                    //             'icon_phone' => __( 'Phone' ),
+                    //             'icon_external_link' => __( 'External link' ),
+                    //         ) ),
+                    //         Field::make( 'text', 'text', __( 'Button Text (can use html-tags)' ) ),
+                    //         Field::make( 'text', 'url', __( 'Button URL' ) ),
+                    //         Field::make( 'select', 'target', __( 'Target' ) )
+                    //         ->set_options( array(
+                    //             'same_tab' => __( 'Same tab' ),
+                    //             'new_tab' => __( 'New tab' ),
+                    //         ) ),
+                    // ) ),
 
-                    Field::make( 'separator', 'separator2', __( 'Text Section 2 (optional)' ) ),
+                    // Field::make( 'separator', 'separator2', __( 'Text Section 2 (optional)' ) ),
 
-                    Field::make( 'text', 'header_2', __( 'Header (can use html-tags)' ) ),
-                    Field::make( 'rich_text', 'text_2', __( 'Text' ) ),
-                    Field::make( 'image', 'image_2', __( 'Image' ) ),
-                    Field::make( 'complex', 'cta_button_2', __( 'Add Button' ) )
-                        ->add_fields( array(
-                            Field::make( 'select', 'color', __( 'Color' ) )
-                            ->set_options( array(
-                                'full_orange' => __( 'Full orange' ),
-                                'orange_border' => __( 'White with orange border' ),
-                                'transparent' => __( 'Transparent' ),
-                            ) ),
-                            Field::make( 'select', 'icon', __( 'Icon' ) )
-                            ->set_options( array(
-                                'no_icon' => __( 'No icon' ),
-                                'icon_phone' => __( 'Phone' ),
-                                'icon_external_link' => __( 'External link' ),
-                            ) ),
-                            Field::make( 'text', 'text', __( 'Button Text (can use html-tags)' ) ),
-                            Field::make( 'text', 'url', __( 'Button URL' ) ),
-                            Field::make( 'select', 'target', __( 'Target' ) )
-                            ->set_options( array(
-                                'same_tab' => __( 'Same tab' ),
-                                'new_tab' => __( 'New tab' ),
-                            ) ),
-                    ) ),
+                    // Field::make( 'text', 'header_2', __( 'Header (can use html-tags)' ) ),
+                    // Field::make( 'rich_text', 'text_2', __( 'Text' ) ),
+                    // Field::make( 'image', 'image_2', __( 'Image' ) ),
+                    // Field::make( 'complex', 'cta_button_2', __( 'Add Button' ) )
+                    //     ->add_fields( array(
+                    //         Field::make( 'select', 'color', __( 'Color' ) )
+                    //         ->set_options( array(
+                    //             'full_orange' => __( 'Full orange' ),
+                    //             'orange_border' => __( 'White with orange border' ),
+                    //             'transparent' => __( 'Transparent' ),
+                    //         ) ),
+                    //         Field::make( 'select', 'icon', __( 'Icon' ) )
+                    //         ->set_options( array(
+                    //             'no_icon' => __( 'No icon' ),
+                    //             'icon_phone' => __( 'Phone' ),
+                    //             'icon_external_link' => __( 'External link' ),
+                    //         ) ),
+                    //         Field::make( 'text', 'text', __( 'Button Text (can use html-tags)' ) ),
+                    //         Field::make( 'text', 'url', __( 'Button URL' ) ),
+                    //         Field::make( 'select', 'target', __( 'Target' ) )
+                    //         ->set_options( array(
+                    //             'same_tab' => __( 'Same tab' ),
+                    //             'new_tab' => __( 'New tab' ),
+                    //         ) ),
+                    // ) ),
                 ) )
-                ->add_fields( 'office_boxes', 'Offices', array(
-                    Field::make( 'separator', 'separator1', __( 'Offices' ) ),
-                    Field::make( 'association', 'office_associations', __( 'Select offices' ))
-                    ->set_types( array(
-                        array(
-                            'type' => 'post',
-                            'post_type' => 'office',
-                        ),
-                    ) )
-                ) )
-                ->add_fields( 'professional_boxes', 'Professionals', array(
-                    Field::make( 'separator', 'separator1', __( 'Professionals' ) ),
-                    Field::make( 'association', 'professional_associations', __( 'Select professionals' ))
-                    ->set_types( array(
-                        array(
-                            'type' => 'post',
-                            'post_type' => 'professional',
-                        ),
-                    ) )
-                ) )
-                ->add_fields( 'news_boxes', 'News', array(
-                    Field::make( 'separator', 'separator1', __( 'News' ) ),
-                    Field::make( 'association', 'news_associations', __( 'Select news (max 3)' ))
-                    ->set_types( array(
-                        array(
-                            'type' => 'post',
-                            'post_type' => 'news',
-                        ),
-                    ) )
-                ) )
-                ->add_fields( 'vessel_boxes', 'Vessels', array(
-                    Field::make( 'separator', 'separator1', __( 'Vessels' ) ),
-                    Field::make( 'association', 'vessels_associations', __( 'Select vessels' ))
-                    ->set_types( array(
-                        array(
-                            'type' => 'post',
-                            'post_type' => 'vessel',
-                        ),
-                    ) )
-                ) )
-                ->add_fields( 'working_with', 'Working with', array(
-                    Field::make( 'separator', 'separator1', __( 'Working with' ) ),
-                    Field::make( 'checkbox', 'show_working_with', __( 'Show "Working with" section' ) ),
-                ) )
-                ->add_fields( 'get_in_touch', 'Get in touch', array(
-                    Field::make( 'separator', 'separator1', __( 'Get in touch' ) ),
-                    Field::make( 'checkbox', 'show_get_in_touch', __( 'Show "Get in touch" section' ) ),
-                ) )
-                ->add_fields( 'statistics', 'Statistics', array(
-                    Field::make( 'separator', 'separator1', __( 'Statistics' ) ),
-                    Field::make( 'complex', 'stats', __( 'Add statistic' ) )
-                        ->add_fields( array(
-                            Field::make( 'select', 'icon', __( 'Icon' ) )
-                            ->set_options( array(
-                                'icon_world' => __( 'World' ),
-                                'icon_crew' => __( 'Crew' ),
-                                'icon_calendar' => __( 'Calendar' ),
-                                'icon_thumb' => __( 'Thumb' ),
-                                'icon_recycle' => __( 'Recycle' ),
-                                'icon_wind' => __( 'Wind' ),
-                                'icon_building' => __( 'Building' ),
-                            ) ),
-                            Field::make( 'text', 'number', __( 'Number' ) ),
-                            Field::make( 'text', 'headline', __( 'Headline' ) ),
-                            Field::make( 'text', 'subline', __( 'Subline' ) ),
-                    ) )
-                ) )
+                // ->add_fields( 'office_boxes', 'Offices', array(
+                //     Field::make( 'separator', 'separator1', __( 'Offices' ) ),
+                //     Field::make( 'association', 'office_associations', __( 'Select offices' ))
+                //     ->set_types( array(
+                //         array(
+                //             'type' => 'post',
+                //             'post_type' => 'office',
+                //         ),
+                //     ) )
+                // ) )
+                // ->add_fields( 'professional_boxes', 'Professionals', array(
+                //     Field::make( 'separator', 'separator1', __( 'Professionals' ) ),
+                //     Field::make( 'association', 'professional_associations', __( 'Select professionals' ))
+                //     ->set_types( array(
+                //         array(
+                //             'type' => 'post',
+                //             'post_type' => 'professional',
+                //         ),
+                //     ) )
+                // ) )
+                // ->add_fields( 'news_boxes', 'News', array(
+                //     Field::make( 'separator', 'separator1', __( 'News' ) ),
+                //     Field::make( 'association', 'news_associations', __( 'Select news (max 3)' ))
+                //     ->set_types( array(
+                //         array(
+                //             'type' => 'post',
+                //             'post_type' => 'news',
+                //         ),
+                //     ) )
+                // ) )
+                // ->add_fields( 'vessel_boxes', 'Vessels', array(
+                //     Field::make( 'separator', 'separator1', __( 'Vessels' ) ),
+                //     Field::make( 'association', 'vessels_associations', __( 'Select vessels' ))
+                //     ->set_types( array(
+                //         array(
+                //             'type' => 'post',
+                //             'post_type' => 'vessel',
+                //         ),
+                //     ) )
+                // ) )
+                // ->add_fields( 'working_with', 'Working with', array(
+                //     Field::make( 'separator', 'separator1', __( 'Working with' ) ),
+                //     Field::make( 'checkbox', 'show_working_with', __( 'Show "Working with" section' ) ),
+                // ) )
+                // ->add_fields( 'get_in_touch', 'Get in touch', array(
+                //     Field::make( 'separator', 'separator1', __( 'Get in touch' ) ),
+                //     Field::make( 'checkbox', 'show_get_in_touch', __( 'Show "Get in touch" section' ) ),
+                // ) )
+                // ->add_fields( 'statistics', 'Statistics', array(
+                //     Field::make( 'separator', 'separator1', __( 'Statistics' ) ),
+                //     Field::make( 'complex', 'stats', __( 'Add statistic' ) )
+                //         ->add_fields( array(
+                //             Field::make( 'select', 'icon', __( 'Icon' ) )
+                //             ->set_options( array(
+                //                 'icon_world' => __( 'World' ),
+                //                 'icon_crew' => __( 'Crew' ),
+                //                 'icon_calendar' => __( 'Calendar' ),
+                //                 'icon_thumb' => __( 'Thumb' ),
+                //                 'icon_recycle' => __( 'Recycle' ),
+                //                 'icon_wind' => __( 'Wind' ),
+                //                 'icon_building' => __( 'Building' ),
+                //             ) ),
+                //             Field::make( 'text', 'number', __( 'Number' ) ),
+                //             Field::make( 'text', 'headline', __( 'Headline' ) ),
+                //             Field::make( 'text', 'subline', __( 'Subline' ) ),
+                //     ) )
+                // ) )
 
                 // ->add_fields( '1column', 'Content', array(
                 //     Field::make( 'complex', 'fullwidth', 'Content' )

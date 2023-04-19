@@ -140,7 +140,8 @@ class PagesController extends Controller
         } else if($section == 'afspraak-maken') {
             return view('bookly-page')->with('data', $data);
         } else
-        return view('standard-page')->with('data', $data);
+        // return view('standard-page')->with('data', $data);
+        return view('onepager')->with('data', $data);
     }
     public function showVacature($slug, $apply) {
         $simplePages = new SimplePagesApi();
@@ -465,11 +466,13 @@ class PagesController extends Controller
             $allCrbSections = array_merge($allCrbSections, $crbSecs);
         }
         $data= [
+            'head_title' => 'title test',
+            'meta_description' => 'meta test',
             'html_menu' => $htmlMenu->html,
             'website_options' => $options,
             'content_sections' => $allCrbSections,
         ];
-        return view('page')->with('data', $data);
+        return view('onepager')->with('data', $data);
     }
     public function getPageCrbSections($id) {
         $reqPage = new PageApi($id);
