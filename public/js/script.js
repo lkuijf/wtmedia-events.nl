@@ -3,12 +3,25 @@
 const toTopBtn = document.querySelector('#toTop');
 const headerWrap = document.querySelector('.headerInnerWrap');
 const mainLogo = document.querySelector('.mainLogoWrap img');
+// const body = document.querySelector('body');
 const mainLogoInitialHeight = mainLogo.style.height;
+const anchors = document.querySelectorAll('.anchorPoint');
+const bodyRect = document.body.getBoundingClientRect();
+const buttons = document.querySelectorAll('.mainNav ul li a');
+let anchorPositions = [];
+
+buttons[0].classList.add("activeButton");
 
 // const heroSlideshowImages = document.querySelectorAll('.heroImages img');
 
 // setArticlesClickable();
 // upCountNumbers();
+
+anchors.forEach(el => {
+    var rect = el.getBoundingClientRect();
+    offset = rect.top - bodyRect.top;
+    anchorPositions.push(offset);
+});
 
 /***** To Top Button *************************/
 toTopBtn.addEventListener('click', (e) => {
@@ -18,21 +31,48 @@ toTopBtn.addEventListener('click', (e) => {
 if(window.scrollY > 800) {
     toTopBtn.classList.add('show');
 }
-window.addEventListener('scroll', (e) => {
-    let fromTop = window.scrollY + 400; // +400 so it is more user friendly
-    if(fromTop > 800) {
+
+
+window.addEventListener("scroll",debounce(function(e){
+    // let fromTop = window.scrollY + 400; // +400 so it is more user friendly
+    let fromTop = window.scrollY; // +400 so it is more user friendly
+    let activeButton = 0;
+    // if(fromTop > 800) {
+    if(fromTop > 400) {
         toTopBtn.classList.add('show');
     } else {
         toTopBtn.classList.remove('show');
     }
-    if(fromTop > 600) {
+    // if(fromTop > 600) {
+    if(fromTop > 200) {
         mainLogo.classList.add('afterScroll');
         headerWrap.classList.add('afterScroll');
    } else {
         mainLogo.classList.remove('afterScroll');
         headerWrap.classList.remove('afterScroll');
     }
-});
+    anchorPositions.forEach((val, i) => {
+        if(fromTop+1 >= val) activeButton = i;
+    });
+// console.log(activeButton);
+    buttons.forEach((btnEl, i) => {
+        if(i == activeButton) {
+            btnEl.classList.add("activeButton");
+        } else {
+            btnEl.classList.remove("activeButton");
+        }
+    });
+}));
+
+function debounce(func){
+    var timer;
+    return function(event){
+        if(timer) clearTimeout(timer);
+        timer = setTimeout(func,50,event);
+    };
+}
+
+
 /*********************************************/
 /***** Hero slideshow ************************/
 // let curIndex = 0;

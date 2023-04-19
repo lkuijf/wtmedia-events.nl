@@ -130,6 +130,10 @@ form .error span {
 #toTop.show {
   bottom: 40px;
 }
+#toTop:hover:before {
+  color: #19b4b6;
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -175,6 +179,7 @@ nav ul {
 .headerOuter {
   position: fixed;
   width: 100%;
+  top: 0;
 }
 .headerOuter .headerInnerWrap {
   height: 200px;
@@ -253,6 +258,37 @@ nav ul {
   .headerOuter .headerInnerWrap .mainNav #burger-check:checked ~ ul {
     width: 90%;
   }
+  .headerOuter .headerInnerWrap .mainNav #burger-check ~ ul {
+    background-color: #EFEFEF;
+    padding: 20px 0;
+    z-index: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .headerOuter .headerInnerWrap .mainNav #burger-check ~ ul li a {
+    font-family: "Karla", sans-serif;
+    color: #333;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    text-decoration: none;
+  }
+  .headerOuter .headerInnerWrap .mainNav #burger-check ~ ul li a:hover {
+    color: #AAA;
+  }
+  .headerOuter .headerInnerWrap .mainNav #burger-check ~ ul li a.activeButton {
+    background-color: #19b4b6;
+    color: #FFF;
+    border-radius: 20px;
+    padding: 8px 16px;
+  }
+  .headerOuter .headerInnerWrap .mainNav #burger-check ~ ul li a.activeButton:hover {
+    color: #EEE;
+  }
+  .headerOuter .headerInnerWrap .mainNav #burger-check:checked ~ ul {
+    width: 60%;
+  }
 }
 @media (min-width: 769px) {
   .headerOuter .headerInnerWrap .mainNav {
@@ -265,12 +301,30 @@ nav ul {
     gap: 40px;
   }
   .headerOuter .headerInnerWrap .mainNav ul li a {
+    font-family: "Karla", sans-serif;
     color: #333;
     text-transform: uppercase;
     font-size: 1.5em;
     text-decoration: none;
   }
   .headerOuter .headerInnerWrap .mainNav ul li a:hover {
-    text-decoration: underline;
+    color: #AAA;
   }
+  .headerOuter .headerInnerWrap .mainNav ul li a.activeButton {
+    background-color: #19b4b6;
+    color: #FFF;
+    border-radius: 20px;
+    padding: 8px 16px;
+  }
+  .headerOuter .headerInnerWrap .mainNav ul li a.activeButton:hover {
+    color: #EEE;
+  }
+}
+
+.textContent {
+  margin-bottom: 500px;
+  padding-top: 160px;
+}
+.textContent:first-of-type {
+  padding-top: 240px;
 }/*# sourceMappingURL=styles.css.map */

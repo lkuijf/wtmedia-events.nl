@@ -465,6 +465,7 @@ class PagesController extends Controller
             $crbSecs = $this->getPageCrbSections($sPage->id);
             $allCrbSections = array_merge($allCrbSections, $crbSecs);
         }
+// dd($allCrbSections);
         $data= [
             'head_title' => 'title test',
             'meta_description' => 'meta test',
