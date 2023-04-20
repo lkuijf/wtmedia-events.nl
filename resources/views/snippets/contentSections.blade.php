@@ -70,21 +70,25 @@
         @include('sections.news', ['news' => $section->news_associations])
     @endif --}}
 
-        {{-- @if ($section['type'] == '1column')
-            @foreach ($section['1column'] as $secData)
+        @if ($section->_type == '1column')
+        <div class="fullw">
+            @foreach ($section->fullwidth as $secData)
 
                 @if ($secData->_type == 'tekst')
-                    @include('sections.fullwidth_text', [
+                    {{-- @include('sections.fullwidth_text', [
                     'text' => $secData->text,
-                    ])
+                    ]) --}}
+                    @include('sections.fullwidth_text', [
+                        'text' => str_replace('---', '<hr>', $secData->text),
+                        ])
                 @endif
                 @if ($secData->_type == 'afbeelding')
                     @include('sections.fullwidth_afbeelding', [
-                    'imgUrl' => $secData->img,
-                    'imgAlt' => $secData->alt,
+                    'imgUrl' => $secData->image[0]['url'],
+                    'imgAlt' => $secData->image[0]['alt'],
                     ])
                 @endif
-                @if ($secData->_type == 'bestand')
+                {{-- @if ($secData->_type == 'bestand')
                     @include('sections.fullwidth_bestand', [
                     'file' => $secData->file,
                     'title' => $secData->title,
@@ -100,27 +104,28 @@
                         'image' => $newsItem->image,
                         ])
                     @endforeach
-                @endif
+                @endif --}}
 
             @endforeach
+        </div>
         @endif
 
-        @if ($section['type'] == '2column')
+        @if ($section->_type == '2column')
             <div class="inner">
             <div class="columns">
                 <div>
-                    @foreach ($section['2column']['left'] as $secData)
+                    @foreach ($section->left as $secData)
                         @include('snippets.contentSection_2columns')
                     @endforeach
                 </div>
                 <div>
-                    @foreach ($section['2column']['right'] as $secData)
+                    @foreach ($section->right as $secData)
                         @include('snippets.contentSection_2columns')
                     @endforeach
                 </div>
             </div>
             </div>
-        @endif --}}
+        @endif
 
 
 

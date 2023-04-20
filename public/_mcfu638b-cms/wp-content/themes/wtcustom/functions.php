@@ -397,9 +397,11 @@ function crbRegisterFields($args) {
                 ->add_fields( '1column', 'Content', array(
                     Field::make( 'complex', 'fullwidth', 'Content' )
                         ->add_fields('tekst', array(
+                            Field::make( 'separator', 'separator1', __( 'Text' ) ),
                             Field::make( 'rich_text', 'text', 'Tekst' ),
                         ) )
                         ->add_fields('afbeelding', array(
+                            Field::make( 'separator', 'separator1', __( 'Image' ) ),
                             Field::make( 'image', 'image', 'Afbeelding' ),
                         ) ),
                         // ->add_fields('bestand', array(

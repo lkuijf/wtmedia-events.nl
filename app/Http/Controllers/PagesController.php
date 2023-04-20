@@ -508,6 +508,31 @@ class PagesController extends Controller
             if($sec->_type == 'hero') {
                 $sec->crb_media_gallery = $this->getMediaGallery($sec->crb_media_gallery, '2048x2048');
             }
+            if($sec->_type == '1column') {
+                if(count($sec->fullwidth)) {
+                    foreach($sec->fullwidth as &$v) {
+                        if($v->_type == 'afbeelding') {
+                            $v->image = $this->getMediaGallery(array($v->image), 'medium_large');
+                        }
+                    }
+                }
+            }
+            if($sec->_type == '2column') {
+                if(count($sec->left)) {
+                    foreach($sec->left as &$v) {
+                        if($v->_type == 'afbeelding') {
+                            $v->image = $this->getMediaGallery(array($v->image), 'medium_large');
+                        }
+                    }
+                }
+                if(count($sec->right)) {
+                    foreach($sec->right as &$v) {
+                        if($v->_type == 'afbeelding') {
+                            $v->image = $this->getMediaGallery(array($v->image), 'medium_large');
+                        }
+                    }
+                }
+            }
             $secs[] = $sec;
         }
         return $secs;

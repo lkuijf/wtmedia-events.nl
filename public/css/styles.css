@@ -327,6 +327,9 @@ nav ul {
   width: 70px;
   transform: translateY(5px);
 }
+.contentWrapper .fullw img, .contentWrapper .columns img {
+  width: 100%;
+}
 
 @font-face {
   font-family: "wt_media_events";
@@ -511,8 +514,40 @@ nav ul {
   }
 }
 
-.textContent {
-  margin-bottom: 500px;
+.columns {
+  display: flex;
+  gap: 60px;
+}
+@media (max-width: 1200px) {
+  .columns {
+    gap: 50px;
+  }
+}
+@media (max-width: 1024px) {
+  .columns {
+    gap: 40px;
+  }
+}
+@media (max-width: 768px) {
+  .columns {
+    gap: 30px;
+  }
+}
+@media (max-width: 480px) {
+  .columns {
+    gap: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .columns {
+    flex-direction: column;
+  }
+}
+.columns > div {
+  flex: 1 1 50%;
+}
+.columns > div > :first-child {
+  margin-top: 0;
 }
 
 .anchorPoint {
