@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Karla:wght@200&display=swap" rel="stylesheet">
+    <script src="{{ asset('js/swiper-bundle.min.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('css/swiper-bundle.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 </head>
 <body>
@@ -34,22 +36,17 @@
     <div class="contentWrapper">
         @yield('content')
 
-        {{-- <div class="inner">
-            <div class="pricing3Column">
-                @for ($x=0;$x<3;$x++)  
-                <article>
-                    <div>
-                        <h3>Package</h3>
-                        <p>Placerat vestibulum lectus mauris ultrices eros. Tincidunt eget nullam non nisi est sit amet facilisis. Nulla porttitor massa id neque aliquam vestibulum. Nam libero justo laoreet sit. Convallis convallis tellus id interdum velit laoreet id donec ultrices. Amet tellus cras adipiscing enim eu turpis. Aliquam purus sit amet luctus venenatis. Purus semper eget duis at tellus at urna condimentum mattis. Eget velit aliquet sagittis id consectetur purus ut faucibus pulvinar. Velit egestas dui id ornare arcu odio. Lacus sed viverra tellus in hac habitasse platea dictumst.</p>
-                        <div>
-                            <p></p>
-                            <p><span><strong>Per maand</strong><br>&euro;399,-</span></p>
-                        </div>
-                    </div>
-                </article>
-                @endfor
-            </div>
-        </div> --}}
+
+        <div class="eventsGrid">
+            <img src="{{ asset('statics/wt-media-events-logo.png') }}" alt="WT Media & Events">
+            <img src="{{ asset('statics/wt-media-events-logo.png') }}" alt="WT Media & Events">
+            <img src="{{ asset('statics/wt-media-events-logo.png') }}" alt="WT Media & Events">
+            <img src="{{ asset('statics/wt-media-events-logo.png') }}" alt="WT Media & Events">
+            <img src="{{ asset('statics/wt-media-events-logo.png') }}" alt="WT Media & Events">
+            <img src="{{ asset('statics/wt-media-events-logo.png') }}" alt="WT Media & Events">
+            <img src="{{ asset('statics/wt-media-events-logo.png') }}" alt="WT Media & Events">
+            <img src="{{ asset('statics/wt-media-events-logo.png') }}" alt="WT Media & Events">
+        </div>
 
     </div>
     

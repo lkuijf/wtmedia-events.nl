@@ -72,7 +72,7 @@
         @if($section->_type == 'packages' && $section->show_packages)
             @include('sections.packages')
         @endif
-        @if($section->_type == 'working_with' && $section->working_with)
+        @if($section->_type == 'working_with' && $section->show_working_with)
             @include('sections.working_with')
         @endif
         @if ($section->_type == '1column')

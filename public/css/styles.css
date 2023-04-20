@@ -637,4 +637,29 @@ nav ul {
 .pricing3Column article:hover > div {
   background-color: #0c5a5b;
   border-bottom: 10px solid #1BFCFF;
+}
+
+.workingWithContent {
+  text-align: center;
+}
+.workingWithContent .outerSwiperBox {
+  position: relative;
+}
+.workingWithContent .outerSwiperBox .partnerSwiper {
+  padding: 20px;
+}
+.workingWithContent .outerSwiperBox .partnerSwiper img {
+  height: 150px;
+  width: 150px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.workingWithContent .outerSwiperBox .swiper-pagination {
+  bottom: -10px !important;
+}
+
+.eventsGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 5px;
 }/*# sourceMappingURL=styles.css.map */

@@ -449,11 +449,11 @@ class PagesController extends Controller
         $htmlMenu->generateUlMenu();
         $options = $this->getWebsiteOptions();
 
-        if(isset($options->working_with)) $options->working_with = $this->getMediaGallery($options->working_with, 'medium');
-
         $simpleMedia = new SimpleMediaApi();
         $simpleMedia->get();
         $this->allMediaById = $simpleMedia->makeListById();
+
+        if(isset($options->working_with)) $options->working_with = $this->getMediaGallery($options->working_with, 'medium');
 
         $allCrbSections = array();
         foreach($spages[0] as $sPage) {

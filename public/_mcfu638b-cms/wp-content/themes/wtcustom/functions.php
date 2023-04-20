@@ -42,6 +42,7 @@ $websiteOptions[] = array('text', 'package3_price', 'Pakket 3 prijs');
 // $websiteOptions[] = array('file', 'wt_algemene_voorwaarden', 'Algemene voorwaarden');
 // $websiteOptions[] = array('image', 'header_image', 'Header afbeelding');
 $websiteOptions[] = array('media_gallery', 'working_with', 'Partner logo\'s');
+$websiteOptions[] = array('media_gallery', 'events', 'Events');
 $carbonFieldsArgs['websiteOptions'] = $websiteOptions;
 
 // add_action( 'init', 'create_posttype_news' );
@@ -380,8 +381,12 @@ function crbRegisterFields($args) {
                     Field::make( 'checkbox', 'show_packages', __( 'Show Pricing Packages' ) ),
                 ) )
                 ->add_fields( 'working_with', 'Clients', array(
-                    Field::make( 'separator', 'separator1', __( 'Working with' ) ),
+                    Field::make( 'separator', 'separator1', __( 'Clients' ) ),
                     Field::make( 'checkbox', 'show_working_with', __( 'Show "Clients" section' ) ),
+                ) )
+                ->add_fields( 'events', 'Events', array(
+                    Field::make( 'separator', 'separator1', __( 'Events' ) ),
+                    Field::make( 'checkbox', 'show_events', __( 'Show "Events" section' ) ),
                 ) )
                 // ->add_fields( 'get_in_touch', 'Get in touch', array(
                 //     Field::make( 'separator', 'separator1', __( 'Get in touch' ) ),
