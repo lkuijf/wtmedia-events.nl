@@ -16,10 +16,11 @@ $headerHeightAfterScroll: 120px;
 $colorBlack: #333; // text
 $colorWhite: #FFF;
 $colorWTM: #19b4b6; // logo color
+$colorWTMdark: #128788;
 // $colorBackground: #E1E1E1;
 // $colorOrange: #FF5303; // button-active, from original
 
-$fontFamily: 'Anek Malayalam', sans-serif;
+$fontFamily: 'Inter', sans-serif;
 $fontFamilyButton: 'Karla', sans-serif;
 $fontSize: 16px;
 // $fontFamilyHeaders: 'Playfair Display', serif;
@@ -27,6 +28,7 @@ $fontSize: 16px;
 @import 'inc/burger-menu.adapter';
 @import 'inc/contact-form';
 @import 'inc/totop-btn';
+@import 'inc/hero';
 
 @mixin mainNavButtonActive {
     font-family: $fontFamilyButton;
@@ -84,8 +86,16 @@ nav ul {
     list-style-type: none;
 }
 .contentWrapper {
-    // padding-top: $headerHeight;
     min-height: 5000px;
+    h1 {
+        font-weight: normal;
+        font-size: 2.5em;
+        hr {
+            display: inline-block;
+            width: 70px;
+            transform: translateY(5px);
+        }
+    }
 }
 
 @font-face {
@@ -105,12 +115,12 @@ nav ul {
     // max-width: $contentWidth;
     // margin-left: auto;
     // margin-right: auto;
-    // padding-left: 60px;
-    // padding-right: 60px;
-    // @media (max-width: $sbp1_desktop) {padding-left:50px;padding-right:50px;}
-    // @media (max-width: $sbp2_laptop) {padding-left:40px;padding-right:40px;}
-    // @media (max-width: $sbp3_tablet) {padding-left:30px;padding-right:30px;}
-    // @media (max-width: $sbp4_mobile) {padding-left:20px;padding-right:20px;}
+    padding-left: 60px;
+    padding-right: 60px;
+    @media (max-width: $sbp1_desktop) {padding-left:50px;padding-right:50px;}
+    @media (max-width: $sbp2_laptop) {padding-left:40px;padding-right:40px;}
+    @media (max-width: $sbp3_tablet) {padding-left:30px;padding-right:30px;}
+    @media (max-width: $sbp4_mobile) {padding-left:20px;padding-right:20px;}
     // > :first-child {
     //     margin-top: 0;
     // }
@@ -120,6 +130,7 @@ nav ul {
     position: fixed;
     width: 100%;
     top: 0;
+    z-index: 99;
     
     .headerInnerWrap {
         height: $headerHeight;
@@ -189,8 +200,11 @@ nav ul {
 
 .textContent {
     margin-bottom: 500px;
-    padding-top: $headerHeightAfterScroll + 40;
+}
+.anchorPoint {
+    display: block;
+    padding-top: $headerHeightAfterScroll;
     &:first-of-type {
-        padding-top: $headerHeight + 40;
+        padding-top: $headerHeight;
     }
 }

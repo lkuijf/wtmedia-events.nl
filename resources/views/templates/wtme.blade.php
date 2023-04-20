@@ -8,14 +8,14 @@
     <meta name="description" content="{{ $data['meta_description'] }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Karla:wght@200&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 </head>
 <body>
     @yield('after_body_tag')
 
     <header class="headerOuter">
-        <div class="inner">
+        {{-- <div class="inner"> --}}
             <div class="headerInnerWrap">
                 <div class="mainLogoWrap"><img src="{{ asset('statics/wt-media-events-logo.png') }}" alt="WT Media & Events"></div>
                 <nav class="mainNav">
@@ -28,7 +28,7 @@
                     {!! $data['html_menu'] !!}
                 </nav>
             </div>
-        </div>
+        {{-- </div> --}}
     </header>
 
     <div class="contentWrapper">

@@ -12,7 +12,7 @@ let anchorPositions = [];
 
 buttons[0].classList.add("activeButton");
 
-// const heroSlideshowImages = document.querySelectorAll('.heroImages img');
+const heroSlideshowImages = document.querySelectorAll('.heroImages img');
 
 // setArticlesClickable();
 // upCountNumbers();
@@ -68,28 +68,28 @@ function debounce(func){
     var timer;
     return function(event){
         if(timer) clearTimeout(timer);
-        timer = setTimeout(func,50,event);
+        timer = setTimeout(func,10,event);
     };
 }
 
 
 /*********************************************/
 /***** Hero slideshow ************************/
-// let curIndex = 0;
-// let imgDuration = 4000;
+let curIndex = 0;
+let imgDuration = 6000;
 
-// function slideShow() {
-//     curIndex++;
-//     if (curIndex == heroSlideshowImages.length) {
-//         curIndex = 0;
-//         heroSlideshowImages.forEach((element,i) => {
-//             if(i != 0) element.style.opacity = 0;
-//         });
-//     }
-//     heroSlideshowImages[curIndex].style.opacity = 1;
-//     setTimeout(slideShow, imgDuration);
-// }
-// if(heroSlideshowImages && heroSlideshowImages.length > 1) setTimeout(slideShow, imgDuration);
+function slideShow() {
+    curIndex++;
+    if (curIndex == heroSlideshowImages.length) {
+        curIndex = 0;
+        heroSlideshowImages.forEach((element,i) => {
+            if(i != 0) element.style.opacity = 0;
+        });
+    }
+    heroSlideshowImages[curIndex].style.opacity = 1;
+    setTimeout(slideShow, imgDuration);
+}
+if(heroSlideshowImages && heroSlideshowImages.length > 1) setTimeout(slideShow, imgDuration);
 /*********************************************/
 /***** Fade in elements when in viewport *****/
 // Beware of user has disabled JS; do not hide elements using CSS

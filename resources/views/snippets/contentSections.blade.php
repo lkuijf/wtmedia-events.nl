@@ -1,27 +1,27 @@
 @foreach ($data['content_sections'] as $section)
-    @if ($section['type'] == '_anchor')
-        <a id="{{ $section['value'] }}" class="anchorPoint"></a>
+    @if ($section->_type == '_anchor')
+        <a id="{{ $section->value }}" class="anchorPoint"></a>
     @endif
-    {{-- @if($section->_type == 'hero')
-        @php
+    @if($section->_type == 'hero')
+        {{-- @php
             if(!isset($section->show_logo)) $section->show_logo = false;
-        @endphp
+        @endphp --}}
         @include('sections.hero', [
             'images' => $section->crb_media_gallery,
-            'bigHeader' => $section->big_header,
-            'smallHeader' => $section->small_header,
+            'title' => $section->hero_title,
             'text' => $section->text,
-            'display_logo' => $section->show_logo,
+            'email' => $section->btn_email,
+            'phone' => $section->btn_phone,
             ])
-    @endif --}}
-    @if($section['type'] == 'text')
+    @endif
+    @if($section->_type == 'text')
         {{-- @php
             if(!isset($section->cta_button)) $section->cta_button = [];
             if(!isset($section->cta_button_2)) $section->cta_button_2 = [];
         @endphp --}}
         @include('sections.text', [
             // 'header' => $section->header,
-            'text' => $section['text'],
+            'text' => str_replace('---', '<hr>', $section->text),
             // 'imageUrl' => $section->image[0]['url'],
             // 'imageAlt' => $section->image[0]['alt'],
             // 'buttons' => $section->cta_button,

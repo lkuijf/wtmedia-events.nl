@@ -394,71 +394,71 @@ function crbRegisterFields($args) {
                 //     ) )
                 // ) )
 
-                // ->add_fields( '1column', 'Content', array(
-                //     Field::make( 'complex', 'fullwidth', 'Content' )
-                //         ->add_fields('tekst', array(
-                //             Field::make( 'rich_text', 'text', 'Tekst' ),
-                //         ) )
-                //         ->add_fields('afbeelding', array(
-                //             Field::make( 'image', 'image', 'Afbeelding' ),
-                //         ) )
-                //         ->add_fields('bestand', array(
-                //             Field::make( 'file', 'file', 'Bestand' ),
-                //             Field::make( 'text', 'title', 'Titel' ),
-                //         ) )
-                //         ->add_fields('nieuws-items', array(
-                //             Field::make( 'association', 'news_associations', __( 'Select news items' ))
-                //             ->set_types( array(
-                //                 array(
-                //                     'type' => 'post',
-                //                     'post_type' => 'news',
-                //                 ),
-                //             ) )
-                //         ) ),
-                // ) )
+                ->add_fields( '1column', 'Content', array(
+                    Field::make( 'complex', 'fullwidth', 'Content' )
+                        ->add_fields('tekst', array(
+                            Field::make( 'rich_text', 'text', 'Tekst' ),
+                        ) )
+                        ->add_fields('afbeelding', array(
+                            Field::make( 'image', 'image', 'Afbeelding' ),
+                        ) ),
+                        // ->add_fields('bestand', array(
+                        //     Field::make( 'file', 'file', 'Bestand' ),
+                        //     Field::make( 'text', 'title', 'Titel' ),
+                        // ) )
+                        // ->add_fields('nieuws-items', array(
+                        //     Field::make( 'association', 'news_associations', __( 'Select news items' ))
+                        //     ->set_types( array(
+                        //         array(
+                        //             'type' => 'post',
+                        //             'post_type' => 'news',
+                        //         ),
+                        //     ) )
+                        // ) ),
+                ) )
 
-                // ->add_fields( '2column', 'Content (2 kolommen)', array(
-                //     Field::make( 'complex', 'left', 'Linker kolom' )
-                //         ->add_fields('tekst', array(
-                //             Field::make( 'rich_text', 'text', 'Tekst' ),
-                //         ) )
-                //         ->add_fields('afbeelding', array(
-                //             Field::make( 'image', 'image', 'Afbeelding' ),
-                //         ) )
-                //         ->add_fields('bestand', array(
-                //             Field::make( 'file', 'file', 'Bestand' ),
-                //             Field::make( 'text', 'title', 'Titel' ),
-                //         ) )
-                //         ->add_fields('nieuws-items', array(
-                //             Field::make( 'association', 'news_associations', __( 'Select news items' ))
-                //             ->set_types( array(
-                //                 array(
-                //                     'type' => 'post',
-                //                     'post_type' => 'news',
-                //                 ),
-                //             ) )
-                //         ) ),
-                //     Field::make( 'complex', 'right', 'Rechter kolom' )
-                //         ->add_fields('tekst', array(
-                //             Field::make( 'rich_text', 'text', 'Tekst' ),
-                //         ) )
-                //         ->add_fields('afbeelding', array(
-                //             Field::make( 'image', 'image', 'Afbeelding' ),
-                //         ) )
-                //         ->add_fields('bestand', array(
-                //             Field::make( 'file', 'file', 'Bestand' ),
-                //             Field::make( 'text', 'title', 'Titel' ),
-                //         ) )
-                //         ->add_fields('nieuws-items', array(
-                //             Field::make( 'association', 'news_associations', __( 'Select news items' ))
-                //             ->set_types( array(
-                //                 array(
-                //                     'type' => 'post',
-                //                     'post_type' => 'news',
-                //                 ),
-                //             ) )
-                //         ) )
-                // ) )
+                ->add_fields( '2column', 'Content (2 kolommen)', array(
+                    Field::make( 'complex', 'left', 'Linker kolom' )
+                        ->add_fields('tekst', array(
+                            Field::make( 'rich_text', 'text', 'Tekst' ),
+                        ) )
+                        ->add_fields('afbeelding', array(
+                            Field::make( 'image', 'image', 'Afbeelding' ),
+                        ) ),
+                        // ->add_fields('bestand', array(
+                        //     Field::make( 'file', 'file', 'Bestand' ),
+                        //     Field::make( 'text', 'title', 'Titel' ),
+                        // ) )
+                        // ->add_fields('nieuws-items', array(
+                        //     Field::make( 'association', 'news_associations', __( 'Select news items' ))
+                        //     ->set_types( array(
+                        //         array(
+                        //             'type' => 'post',
+                        //             'post_type' => 'news',
+                        //         ),
+                        //     ) )
+                        // ) ),
+                    Field::make( 'complex', 'right', 'Rechter kolom' )
+                        ->add_fields('tekst', array(
+                            Field::make( 'rich_text', 'text', 'Tekst' ),
+                        ) )
+                        ->add_fields('afbeelding', array(
+                            Field::make( 'image', 'image', 'Afbeelding' ),
+                        ) ),
+                        // ->add_fields('bestand', array(
+                        //     Field::make( 'file', 'file', 'Bestand' ),
+                        //     Field::make( 'text', 'title', 'Titel' ),
+                        // ) )
+                        // ->add_fields('nieuws-items', array(
+                        //     Field::make( 'association', 'news_associations', __( 'Select news items' ))
+                        //     ->set_types( array(
+                        //         array(
+                        //             'type' => 'post',
+                        //             'post_type' => 'news',
+                        //         ),
+                        //     ) )
+                        // ) )
+                ) )
 
         ))
         ->add_tab( __('Page information'), array(

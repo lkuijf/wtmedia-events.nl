@@ -455,9 +455,9 @@ class PagesController extends Controller
 
         $allCrbSections = array();
         foreach($spages[0] as $sPage) {
-            $pageA = [];
-            $pageA['type'] = '_anchor';
-            $pageA['value'] = $sPage->slug;
+            $pageA = new \stdClass;
+            $pageA->_type = '_anchor';
+            $pageA->value = $sPage->slug;
             $allCrbSections[] = $pageA;
 
             /* check rotterdamsehorecawandeling.nl for details */
@@ -488,22 +488,27 @@ class PagesController extends Controller
     public function handleCrbSections($pCrbSecs) {
         $secs = [];
         foreach($pCrbSecs as $sec) {
-            $s = [];
-            $s['type'] = $sec->_type;
-            if($sec->_type == 'text') {
-                $s['text'] = $sec->text;
+            // $s = [];
+            // $s['type'] = $sec->_type;
+            // if($sec->_type == 'text') {
+            //     $s['text'] = $sec->text;
+            // }
+            // if($sec->_type == 'reserve_form') {
+            //     $s['checked'] = $sec->show_reserve_form;
+            // }
+            // if($sec->_type == 'order_form') {
+            //     $s['checked'] = $sec->crb_show_order_form;
+            // }
+            // if($sec->_type == 'banner') {
+            //     $img = $this->getMediaGallery(array($sec->image));
+            //     $s['image'] = $img;
+            // }
+            // $secs[] = $s;
+
+            if($sec->_type == 'hero') {
+                $sec->crb_media_gallery = $this->getMediaGallery($sec->crb_media_gallery, '2048x2048');
             }
-            if($sec->_type == 'reserve_form') {
-                $s['checked'] = $sec->show_reserve_form;
-            }
-            if($sec->_type == 'order_form') {
-                $s['checked'] = $sec->crb_show_order_form;
-            }
-            if($sec->_type == 'banner') {
-                $img = $this->getMediaGallery(array($sec->image));
-                $s['image'] = $img;
-            }
-            $secs[] = $s;
+            $secs[] = $sec;
         }
         return $secs;
     }
