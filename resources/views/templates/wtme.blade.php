@@ -33,6 +33,24 @@
 
     <div class="contentWrapper">
         @yield('content')
+
+        <div class="inner">
+            <div class="pricing3Column">
+                @for ($x=0;$x<3;$x++)  
+                <article>
+                    <div>
+                        <h3>Package</h3>
+                        <p>Placerat vestibulum lectus mauris ultrices eros. Tincidunt eget nullam non nisi est sit amet facilisis. Nulla porttitor massa id neque aliquam vestibulum. Nam libero justo laoreet sit. Convallis convallis tellus id interdum velit laoreet id donec ultrices. Amet tellus cras adipiscing enim eu turpis. Aliquam purus sit amet luctus venenatis. Purus semper eget duis at tellus at urna condimentum mattis. Eget velit aliquet sagittis id consectetur purus ut faucibus pulvinar. Velit egestas dui id ornare arcu odio. Lacus sed viverra tellus in hac habitasse platea dictumst.</p>
+                        <div>
+                            <p></p>
+                            <p><span><strong>Per maand</strong><br>&euro;399,-</span></p>
+                        </div>
+                    </div>
+                </article>
+                @endfor
+            </div>
+            </div>
+
     </div>
     
     <footer>

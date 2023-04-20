@@ -54,7 +54,7 @@
   cursor: pointer;
   padding: 10px 40px;
   background-color: #FFF;
-  color: #333;
+  color: #222;
   font-weight: bold;
   box-shadow: 1px 1px 0px 0px #AAA, 2px 2px 0px 0px #AAA;
 }
@@ -114,7 +114,7 @@ form .error span {
   bottom: -80px;
   z-index: 1;
   cursor: default;
-  background-color: #333;
+  background-color: #222;
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -234,11 +234,11 @@ form .error span {
   }
 }
 .hero .heroOverlay .makeContact a.email:hover {
-  background-color: #128788;
+  background-color: #0c5a5b;
 }
 .hero .heroOverlay .makeContact a.phone {
   background-color: #FFF;
-  color: #333;
+  color: #222;
   width: 50px;
 }
 .hero .heroOverlay .makeContact a.phone:before {
@@ -246,7 +246,7 @@ form .error span {
   font-size: 30px;
   content: "\e801";
   display: block;
-  width: 100%;
+  width: 50px;
 }
 .hero .heroOverlay .makeContact a.phone:hover:before {
   color: #19b4b6;
@@ -261,7 +261,7 @@ form .error span {
   overflow: hidden;
   position: absolute;
   top: 0;
-  background-color: #333;
+  background-color: #222;
 }
 .hero .heroImages > div img {
   position: absolute;
@@ -294,7 +294,7 @@ html {
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
   font-size: 16px;
-  color: #333;
+  color: #222;
   background-color: #FFF;
   scroll-behavior: smooth;
   background-image: url("../statics/bg.jpg");
@@ -329,6 +329,18 @@ nav ul {
 }
 .contentWrapper .fullw img, .contentWrapper .columns img {
   width: 100%;
+}
+.contentWrapper .ctaBtn {
+  background-color: #006878;
+  color: #FFF;
+  text-decoration: none;
+  padding: 25px 100px;
+  display: inline-block;
+  box-shadow: #e1e1e1 10px 10px 0px -2px, #006878 10px 10px;
+}
+.contentWrapper .ctaBtn:active {
+  transform: translate(5px, 5px);
+  box-shadow: #e1e1e1 5px 5px 0px -2px, #006878 5px 5px;
 }
 
 @font-face {
@@ -415,8 +427,8 @@ nav ul {
     margin: 0;
     margin-bottom: 7px;
     height: 5px;
-    background: #333;
-    border: 1px solid #333;
+    background: #222;
+    border: 1px solid #222;
     border-radius: 3px;
     position: relative;
     display: block;
@@ -462,7 +474,7 @@ nav ul {
   }
   .headerOuter .headerInnerWrap .mainNav #burger-check ~ ul li a {
     font-family: "Karla", sans-serif;
-    color: #333;
+    color: #222;
     text-transform: uppercase;
     font-size: 1.5em;
     text-decoration: none;
@@ -495,7 +507,7 @@ nav ul {
   }
   .headerOuter .headerInnerWrap .mainNav ul li a {
     font-family: "Karla", sans-serif;
-    color: #333;
+    color: #222;
     text-transform: uppercase;
     font-size: 1.5em;
     text-decoration: none;
@@ -556,4 +568,70 @@ nav ul {
 }
 .anchorPoint:first-of-type {
   padding-top: 200px;
+}
+
+.pricing3Column {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+@media (max-width: 1024px) {
+  .pricing3Column {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.pricing3Column article {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  width: 350px;
+  border: 1px solid transparent;
+  padding: 10px;
+}
+@media (max-width: 480px) {
+  .pricing3Column article {
+    width: 100%;
+  }
+}
+.pricing3Column article > div {
+  background-color: #19b4b6;
+  color: #FFF;
+  padding: 10px;
+}
+.pricing3Column article > div h3 {
+  font-size: 2em;
+}
+.pricing3Column article > div *:first-child {
+  margin-top: 0;
+}
+.pricing3Column article > div > div {
+  display: flex;
+  justify-content: space-between;
+  text-align: right;
+}
+.pricing3Column article > div > div p {
+  margin: 0;
+  font-size: 1.5em;
+}
+.pricing3Column article > div > div p:first-of-type {
+  border: 1px solid #FFF;
+  display: inline-block;
+  width: 50px;
+}
+.pricing3Column article > div > div p:first-of-type:before {
+  font-family: "wt_media_events";
+  display: block;
+  width: 50px;
+  font-size: 30px;
+  content: "\e802";
+  text-align: center;
+  padding-top: 9px;
+}
+.pricing3Column article:hover {
+  transform: scale(1.03);
+  border: 1px solid #0c5a5b;
+}
+.pricing3Column article:hover > div {
+  background-color: #0c5a5b;
+  border-bottom: 10px solid #1BFCFF;
 }/*# sourceMappingURL=styles.css.map */

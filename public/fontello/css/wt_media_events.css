@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'wt_media_events';
-  src: url('../font/wt_media_events.eot?80346971');
-  src: url('../font/wt_media_events.eot?80346971#iefix') format('embedded-opentype'),
-       url('../font/wt_media_events.woff2?80346971') format('woff2'),
-       url('../font/wt_media_events.woff?80346971') format('woff'),
-       url('../font/wt_media_events.ttf?80346971') format('truetype'),
-       url('../font/wt_media_events.svg?80346971#wt_media_events') format('svg');
+  src: url('../font/wt_media_events.eot?56258309');
+  src: url('../font/wt_media_events.eot?56258309#iefix') format('embedded-opentype'),
+       url('../font/wt_media_events.woff2?56258309') format('woff2'),
+       url('../font/wt_media_events.woff?56258309') format('woff'),
+       url('../font/wt_media_events.ttf?56258309') format('truetype'),
+       url('../font/wt_media_events.svg?56258309#wt_media_events') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -15,7 +15,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'wt_media_events';
-    src: url('../font/wt_media_events.svg?80346971#wt_media_events') format('svg');
+    src: url('../font/wt_media_events.svg?56258309#wt_media_events') format('svg');
   }
 }
 */
@@ -56,3 +56,4 @@
 
 .icon-up-open:before { content: '\e800'; } /* '' */
 .icon-phone:before { content: '\e801'; } /* '' */
+.icon-bag:before { content: '\e802'; } /* '' */

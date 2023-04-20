@@ -14,20 +14,29 @@ $editorCanAddAndRemovePosts = true; // !!! may take 2 reloads for changes to tak
 $carbonFieldsArgs = array();
 $websiteOptions = array();
 // $websiteOptions[] = array('text', 'header_big', 'Website kop tekst GROOT');
+$websiteOptions[] = array('text', 'package1_title', 'Pakket 1 titel');
+$websiteOptions[] = array('textarea', 'package1_text', 'Pakket 1 tekst');
+$websiteOptions[] = array('text', 'package1_price', 'Pakket 1 prijs');
+$websiteOptions[] = array('text', 'package2_title', 'Pakket 2 titel');
+$websiteOptions[] = array('textarea', 'package2_text', 'Pakket 2 tekst');
+$websiteOptions[] = array('text', 'package2_price', 'Pakket 2 prijs');
+$websiteOptions[] = array('text', 'package3_title', 'Pakket 3 titel');
+$websiteOptions[] = array('textarea', 'package3_text', 'Pakket 3 tekst');
+$websiteOptions[] = array('text', 'package3_price', 'Pakket 3 prijs');
 // $websiteOptions[] = array('text', 'facebook', 'Facebook link');
-$websiteOptions[] = array('text', 'linkedin', 'LinkedIn link');
-$websiteOptions[] = array('text', 'twitter', 'Twitter link');
+// $websiteOptions[] = array('text', 'linkedin', 'LinkedIn link');
+// $websiteOptions[] = array('text', 'twitter', 'Twitter link');
 // $websiteOptions[] = array('text', 'instagram', 'Instagram link');
-$websiteOptions[] = array('text', 'form_success', 'Contact formulier succes melding');
-$websiteOptions[] = array('text', 'form_subscription_success', 'Nieuwsbrief aanmeld formulier succes melding');
-$websiteOptions[] = array('text', 'form_error', 'Formulier error melding');
+// $websiteOptions[] = array('text', 'form_success', 'Contact formulier succes melding');
+// $websiteOptions[] = array('text', 'form_subscription_success', 'Nieuwsbrief aanmeld formulier succes melding');
+// $websiteOptions[] = array('text', 'form_error', 'Formulier error melding');
 // $websiteOptions[] = array('text', 'apply_success', 'Sollicitatie succes melding');
 // $websiteOptions[] = array('text', 'apply_error', 'Sollicitatie error melding');
-$websiteOptions[] = array('text', 'phone_number', 'Telefoonnummer (algemeen, o.a. gebruikt in "Call us"-box en header)');
-$websiteOptions[] = array('text', 'email_address', 'E-mail adres (algemeen, o.a. gebruikt in contact formulier en header)');
+// $websiteOptions[] = array('text', 'phone_number', 'Telefoonnummer (algemeen, o.a. gebruikt in "Call us"-box en header)');
+// $websiteOptions[] = array('text', 'email_address', 'E-mail adres (algemeen, o.a. gebruikt in contact formulier en header)');
 // $websiteOptions[] = array('textarea', 'wt_website_textarea1', 'Website textarea 1');
-$websiteOptions[] = array('office_assoc', 'footer_office_1', 'Footer office 1');
-$websiteOptions[] = array('office_assoc', 'footer_office_2', 'Footer office 2');
+// $websiteOptions[] = array('office_assoc', 'footer_office_1', 'Footer office 1');
+// $websiteOptions[] = array('office_assoc', 'footer_office_2', 'Footer office 2');
 // $websiteOptions[] = array('rich_text', 'footer_tekst_3', 'Footer blok 3 tekst');
 // $websiteOptions[] = array('rich_text', 'footer_tekst_2', 'Footer tekst rechts');
 // $websiteOptions[] = array('file', 'wt_algemene_voorwaarden', 'Algemene voorwaarden');
@@ -366,10 +375,10 @@ function crbRegisterFields($args) {
                 //         ),
                 //     ) )
                 // ) )
-                // ->add_fields( 'working_with', 'Working with', array(
-                //     Field::make( 'separator', 'separator1', __( 'Working with' ) ),
-                //     Field::make( 'checkbox', 'show_working_with', __( 'Show "Working with" section' ) ),
-                // ) )
+                ->add_fields( 'packages', 'Packages', array(
+                    Field::make( 'separator', 'separator1', __( 'Pakketten' ) ),
+                    Field::make( 'checkbox', 'show_packages', __( 'Show Pricing Packages' ) ),
+                ) )
                 // ->add_fields( 'get_in_touch', 'Get in touch', array(
                 //     Field::make( 'separator', 'separator1', __( 'Get in touch' ) ),
                 //     Field::make( 'checkbox', 'show_get_in_touch', __( 'Show "Get in touch" section' ) ),

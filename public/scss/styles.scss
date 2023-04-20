@@ -13,10 +13,11 @@ $headerHeightAfterScroll: 120px;
 // $colorGreyDark: #3A3E43; // topbar, from original
 // $colorGreyLight: #CCC; // topbar text
 // $colorGreyLighter: #F2F2F2; // background working with
-$colorBlack: #333; // text
+$colorBlack: #222; // text
 $colorWhite: #FFF;
 $colorWTM: #19b4b6; // logo color
-$colorWTMdark: #128788;
+$colorWTMdark: #0c5a5b;
+$colorCtaBtn: #006878;
 // $colorBackground: #E1E1E1;
 // $colorOrange: #FF5303; // button-active, from original
 
@@ -99,6 +100,18 @@ nav ul {
     .fullw, .columns {
         img {
             width: 100%;
+        }
+    }
+    .ctaBtn {
+        background-color: $colorCtaBtn;
+        color: $colorWhite;
+        text-decoration: none;
+        padding: 25px 100px;
+        display: inline-block;
+        box-shadow: #e1e1e1 10px 10px 0px -2px, $colorCtaBtn 10px 10px;
+        &:active {
+            transform: translate(5px, 5px);
+            box-shadow: #e1e1e1 5px 5px 0px -2px, $colorCtaBtn 5px 5px;
         }
     }
 }
@@ -231,5 +244,65 @@ nav ul {
     padding-top: $headerHeightAfterScroll;
     &:first-of-type {
         padding-top: $headerHeight;
+    }
+}
+
+.pricing3Column {
+    display: flex;
+    @media (max-width: $sbp2_laptop) {
+        flex-direction: column;
+        align-items: center;
+    }
+    justify-content: space-around;
+    gap: 20px;
+    article {
+        cursor: pointer;
+        transition: transform 0.2s ease;
+        width: 350px;
+        @media (max-width: $sbp4_mobile) {width:100%}
+        border: 1px solid transparent;
+        padding: 10px;
+        > div {
+            background-color: $colorWTM;
+            color: $colorWhite;
+            padding: 10px;
+            h3 {
+                font-size: 2em;
+            }
+            *:first-child {
+                margin-top: 0;
+            }
+            > div {
+                display: flex;
+                justify-content: space-between;
+                text-align: right;
+                p {
+                    margin: 0;
+                    font-size: 1.5em;
+                    &:first-of-type {
+                        border: 1px solid $colorWhite;
+                        display: inline-block;
+                        width: 50px;
+                        &:before {
+                            font-family: "wt_media_events";
+                            display: block;
+                            width: 50px;
+                            font-size: 30px;
+                            content: '\e802';
+                            text-align: center;
+                            padding-top: 9px;
+                        }
+                    }
+                }
+            }
+        }
+        &:hover {
+            transform: scale(1.03);
+            border: 1px solid $colorWTMdark;
+            > div {
+                background-color: $colorWTMdark;
+                border-bottom: 10px solid #1BFCFF;
+            }
+        }
     }
 }

@@ -1,0 +1,1 @@
+<p><a href="{{ $url }}" class="ctaBtn">{{ $title }}</a></p>

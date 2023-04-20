@@ -9,6 +9,9 @@
     'imgAlt' => $secData->image[0]['alt'],
     ])
 @endif
+@if ($secData->_type == 'button')
+    @include('sections.2column_button', ['url' => $secData->url, 'title' => $secData->title])
+@endif
 {{-- @if ($secData->_type == 'bestand')
     @include('sections.2column_bestand', [
     'file' => $secData->file,
