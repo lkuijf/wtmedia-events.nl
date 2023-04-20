@@ -14,11 +14,11 @@
             'phone' => $section->btn_phone,
             ])
     @endif
-    @if($section->_type == 'text')
-        {{-- @php
+    {{-- @if($section->_type == 'text')
+        @php
             if(!isset($section->cta_button)) $section->cta_button = [];
             if(!isset($section->cta_button_2)) $section->cta_button_2 = [];
-        @endphp --}}
+        @endphp
         @include('sections.text', [
             // 'header' => $section->header,
             'text' => str_replace('---', '<hr>', $section->text),
@@ -31,7 +31,7 @@
             // 'imageAlt_2' => $section->image_2[0]['alt'],
             // 'buttons_2' => $section->cta_button_2,
             ])
-    @endif
+    @endif --}}
     {{-- @if($section->_type == 'office_boxes')
     <div class="introTextContent gridBoxes">
         <h2>GLOMAR <strong>OFFICES</strong></h2>

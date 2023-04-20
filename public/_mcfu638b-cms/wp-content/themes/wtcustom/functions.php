@@ -269,63 +269,63 @@ function crbRegisterFields($args) {
                     // Field::make( 'image', 'image', 'Afbeelding' ),
                     // Field::make( 'rich_text', 'text', 'Tekst' ),
                 ) )
-                ->add_fields( 'text', 'Tekst', array(
-                    Field::make( 'separator', 'separator1', __( 'Text section' ) ),
+                // ->add_fields( 'text', 'Tekst', array(
+                //     Field::make( 'separator', 'separator1', __( 'Text section' ) ),
 
-                    // Field::make( 'text', 'header', __( 'Header (can use html-tags)' ) ),
-                    Field::make( 'rich_text', 'text', __( 'Text' ) ),
-                    // Field::make( 'image', 'image', __( 'Image' ) ),
-                    // Field::make( 'complex', 'cta_button', __( 'Add Button' ) )
-                    //     ->add_fields( array(
-                    //         Field::make( 'select', 'color', __( 'Color' ) )
-                    //         ->set_options( array(
-                    //             'full_orange' => __( 'Full orange' ),
-                    //             'orange_border' => __( 'White with orange border' ),
-                    //             'transparent' => __( 'Transparent' ),
-                    //         ) ),
-                    //         Field::make( 'select', 'icon', __( 'Icon' ) )
-                    //         ->set_options( array(
-                    //             'no_icon' => __( 'No icon' ),
-                    //             'icon_phone' => __( 'Phone' ),
-                    //             'icon_external_link' => __( 'External link' ),
-                    //         ) ),
-                    //         Field::make( 'text', 'text', __( 'Button Text (can use html-tags)' ) ),
-                    //         Field::make( 'text', 'url', __( 'Button URL' ) ),
-                    //         Field::make( 'select', 'target', __( 'Target' ) )
-                    //         ->set_options( array(
-                    //             'same_tab' => __( 'Same tab' ),
-                    //             'new_tab' => __( 'New tab' ),
-                    //         ) ),
-                    // ) ),
+                //     // Field::make( 'text', 'header', __( 'Header (can use html-tags)' ) ),
+                //     Field::make( 'rich_text', 'text', __( 'Text' ) ),
+                //     // Field::make( 'image', 'image', __( 'Image' ) ),
+                //     // Field::make( 'complex', 'cta_button', __( 'Add Button' ) )
+                //     //     ->add_fields( array(
+                //     //         Field::make( 'select', 'color', __( 'Color' ) )
+                //     //         ->set_options( array(
+                //     //             'full_orange' => __( 'Full orange' ),
+                //     //             'orange_border' => __( 'White with orange border' ),
+                //     //             'transparent' => __( 'Transparent' ),
+                //     //         ) ),
+                //     //         Field::make( 'select', 'icon', __( 'Icon' ) )
+                //     //         ->set_options( array(
+                //     //             'no_icon' => __( 'No icon' ),
+                //     //             'icon_phone' => __( 'Phone' ),
+                //     //             'icon_external_link' => __( 'External link' ),
+                //     //         ) ),
+                //     //         Field::make( 'text', 'text', __( 'Button Text (can use html-tags)' ) ),
+                //     //         Field::make( 'text', 'url', __( 'Button URL' ) ),
+                //     //         Field::make( 'select', 'target', __( 'Target' ) )
+                //     //         ->set_options( array(
+                //     //             'same_tab' => __( 'Same tab' ),
+                //     //             'new_tab' => __( 'New tab' ),
+                //     //         ) ),
+                //     // ) ),
 
-                    // Field::make( 'separator', 'separator2', __( 'Text Section 2 (optional)' ) ),
+                //     // Field::make( 'separator', 'separator2', __( 'Text Section 2 (optional)' ) ),
 
-                    // Field::make( 'text', 'header_2', __( 'Header (can use html-tags)' ) ),
-                    // Field::make( 'rich_text', 'text_2', __( 'Text' ) ),
-                    // Field::make( 'image', 'image_2', __( 'Image' ) ),
-                    // Field::make( 'complex', 'cta_button_2', __( 'Add Button' ) )
-                    //     ->add_fields( array(
-                    //         Field::make( 'select', 'color', __( 'Color' ) )
-                    //         ->set_options( array(
-                    //             'full_orange' => __( 'Full orange' ),
-                    //             'orange_border' => __( 'White with orange border' ),
-                    //             'transparent' => __( 'Transparent' ),
-                    //         ) ),
-                    //         Field::make( 'select', 'icon', __( 'Icon' ) )
-                    //         ->set_options( array(
-                    //             'no_icon' => __( 'No icon' ),
-                    //             'icon_phone' => __( 'Phone' ),
-                    //             'icon_external_link' => __( 'External link' ),
-                    //         ) ),
-                    //         Field::make( 'text', 'text', __( 'Button Text (can use html-tags)' ) ),
-                    //         Field::make( 'text', 'url', __( 'Button URL' ) ),
-                    //         Field::make( 'select', 'target', __( 'Target' ) )
-                    //         ->set_options( array(
-                    //             'same_tab' => __( 'Same tab' ),
-                    //             'new_tab' => __( 'New tab' ),
-                    //         ) ),
-                    // ) ),
-                ) )
+                //     // Field::make( 'text', 'header_2', __( 'Header (can use html-tags)' ) ),
+                //     // Field::make( 'rich_text', 'text_2', __( 'Text' ) ),
+                //     // Field::make( 'image', 'image_2', __( 'Image' ) ),
+                //     // Field::make( 'complex', 'cta_button_2', __( 'Add Button' ) )
+                //     //     ->add_fields( array(
+                //     //         Field::make( 'select', 'color', __( 'Color' ) )
+                //     //         ->set_options( array(
+                //     //             'full_orange' => __( 'Full orange' ),
+                //     //             'orange_border' => __( 'White with orange border' ),
+                //     //             'transparent' => __( 'Transparent' ),
+                //     //         ) ),
+                //     //         Field::make( 'select', 'icon', __( 'Icon' ) )
+                //     //         ->set_options( array(
+                //     //             'no_icon' => __( 'No icon' ),
+                //     //             'icon_phone' => __( 'Phone' ),
+                //     //             'icon_external_link' => __( 'External link' ),
+                //     //         ) ),
+                //     //         Field::make( 'text', 'text', __( 'Button Text (can use html-tags)' ) ),
+                //     //         Field::make( 'text', 'url', __( 'Button URL' ) ),
+                //     //         Field::make( 'select', 'target', __( 'Target' ) )
+                //     //         ->set_options( array(
+                //     //             'same_tab' => __( 'Same tab' ),
+                //     //             'new_tab' => __( 'New tab' ),
+                //     //         ) ),
+                //     // ) ),
+                // ) )
                 // ->add_fields( 'office_boxes', 'Offices', array(
                 //     Field::make( 'separator', 'separator1', __( 'Offices' ) ),
                 //     Field::make( 'association', 'office_associations', __( 'Select offices' ))
@@ -397,11 +397,11 @@ function crbRegisterFields($args) {
                 ->add_fields( '1column', 'Content', array(
                     Field::make( 'complex', 'fullwidth', 'Content' )
                         ->add_fields('tekst', array(
-                            Field::make( 'separator', 'separator1', __( 'Text' ) ),
+                            // Field::make( 'separator', 'separator1', __( 'Text' ) ),
                             Field::make( 'rich_text', 'text', 'Tekst' ),
                         ) )
                         ->add_fields('afbeelding', array(
-                            Field::make( 'separator', 'separator1', __( 'Image' ) ),
+                            // Field::make( 'separator', 'separator1', __( 'Image' ) ),
                             Field::make( 'image', 'image', 'Afbeelding' ),
                         ) ),
                         // ->add_fields('bestand', array(
