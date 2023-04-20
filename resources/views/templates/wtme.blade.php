@@ -35,19 +35,7 @@
 
     <div class="contentWrapper">
         @yield('content')
-
-
-        <div class="eventsGrid">
-            <img src="{{ asset('statics/wt-media-events-logo.png') }}" alt="WT Media & Events">
-            <img src="{{ asset('statics/wt-media-events-logo.png') }}" alt="WT Media & Events">
-            <img src="{{ asset('statics/wt-media-events-logo.png') }}" alt="WT Media & Events">
-            <img src="{{ asset('statics/wt-media-events-logo.png') }}" alt="WT Media & Events">
-            <img src="{{ asset('statics/wt-media-events-logo.png') }}" alt="WT Media & Events">
-            <img src="{{ asset('statics/wt-media-events-logo.png') }}" alt="WT Media & Events">
-            <img src="{{ asset('statics/wt-media-events-logo.png') }}" alt="WT Media & Events">
-            <img src="{{ asset('statics/wt-media-events-logo.png') }}" alt="WT Media & Events">
-        </div>
-
+        @include('snippets.subscription-form')
     </div>
     
     <footer>

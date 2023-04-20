@@ -454,6 +454,7 @@ class PagesController extends Controller
         $this->allMediaById = $simpleMedia->makeListById();
 
         if(isset($options->working_with)) $options->working_with = $this->getMediaGallery($options->working_with, 'medium');
+        if(isset($options->events)) $options->events = $this->getMediaGallery($options->events, 'medium');
 
         $allCrbSections = array();
         foreach($spages[0] as $sPage) {

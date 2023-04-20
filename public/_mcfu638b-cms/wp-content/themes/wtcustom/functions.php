@@ -23,6 +23,7 @@ $websiteOptions[] = array('text', 'package2_price', 'Pakket 2 prijs');
 $websiteOptions[] = array('text', 'package3_title', 'Pakket 3 titel');
 $websiteOptions[] = array('textarea', 'package3_text', 'Pakket 3 tekst');
 $websiteOptions[] = array('text', 'package3_price', 'Pakket 3 prijs');
+$websiteOptions[] = array('text', 'subscribe_text', 'Aanmelden tekst');
 // $websiteOptions[] = array('text', 'facebook', 'Facebook link');
 // $websiteOptions[] = array('text', 'linkedin', 'LinkedIn link');
 // $websiteOptions[] = array('text', 'twitter', 'Twitter link');

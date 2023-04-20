@@ -75,6 +75,9 @@
         @if($section->_type == 'working_with' && $section->show_working_with)
             @include('sections.working_with')
         @endif
+        @if($section->_type == 'events' && $section->show_events)
+            @include('sections.events')
+        @endif
         @if ($section->_type == '1column')
         <div class="fullw">
             @foreach ($section->fullwidth as $secData)
