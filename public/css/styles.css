@@ -94,17 +94,6 @@ form .error span {
   gap: 20px;
   align-items: center;
 }
-.alert .thumbsUpIcon:before {
-  font-family: "glomaroffshore";
-  font-size: 60px;
-  content: "\e809";
-}
-.alert .exclamationTriangleIcon:before {
-  font-family: "glomaroffshore";
-  font-size: 60px;
-  content: "\e80e";
-}
-
 #toTop {
   display: flex;
   align-items: center;
@@ -675,6 +664,10 @@ nav ul {
   transform: scale(1.2);
 }
 
+.subscribeContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
 .subscribeContent .getUpdatesText {
   text-align: center;
   font-size: 2em;

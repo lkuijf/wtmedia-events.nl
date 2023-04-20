@@ -15,6 +15,23 @@
 </head>
 <body>
     @yield('after_body_tag')
+    @if(session('success'))
+        <div class="alert alert-success">
+            <div><p class="thumbsUpIcon"></p></div>
+            {{-- @if(session('success') == 'contact')<div><p>{{ $data['website_options']->form_success }}</p></div>@endif --}}
+            @if(session('success') == 'subscription')<div><p>{{ $data['website_options']->form_subscription_success }}</p></div>@endif
+            {{-- <div><p>Gelukt</p></div> --}}
+        </div>
+    @endif
+    @if($errors->any())
+        <div class="alert alert-danger">
+            <div><p class="exclamationTriangleIcon"></p></div>
+            <div><p>{{ $data['website_options']->form_error }}</p></div>
+            {{-- <div><p>MISlukt</p></div> --}}
+        </div>
+    @endif
+
+
 
     <header class="headerOuter">
         {{-- <div class="inner"> --}}
@@ -45,6 +62,17 @@
     <a href="" id="toTop"></a>
     
     <script src="{{ asset('js/script.js') }}"></script>
+    @if($errors->any())
+    <script>
+        const errors = document.querySelectorAll('.error');
+        errors.forEach((el) => {
+            const err = document.createElement('span');
+            err.classList.add('errMsg');
+            err.innerHTML = el.dataset.errMsg;
+            el.appendChild(err);
+        });
+    </script>
+    @endif
     @yield('before_closing_body_tag')
 </body>
 </html>

@@ -76,15 +76,11 @@ class SubmitController extends Controller
         if($request->get('valkuil') || $request->get('valstrik')) return abort(404);
 
         $toValidate = array(
-            'First_name' => 'required',
-            'Last_name' => 'required',
             'Email' => 'required|email',
         );
         $validationMessages = array(
-            'First_name.required'=> 'Please provide a first name',
-            'Last_name.required'=> 'Please provide a last name',
-            'Email.required'=> 'Please provide an e-mail address',
-            'Email.email'=> 'The e-mail address is not correctly formed',
+            'Email.required'=> 'Vul een e-mail adres in',
+            'Email.email'=> 'Het e-mail adres is niet juist geformuleerd',
         );
         /***********************************************************************************
             Gebruik maken van manually created validator ($validated = $request->validate($toValidate,$validationMessages)
@@ -95,25 +91,25 @@ class SubmitController extends Controller
         // $validated = $request->validate($toValidate,$validationMessages);
         $validator = Validator::make($request->all(), $toValidate, $validationMessages);
         if($validator->fails()) {
-            return redirect('/contact')->withErrors($validator)->withInput();
+            return redirect('/homepage')->withErrors($validator)->withInput();
         }
 
         $allWebsiteOptions = new WebsiteOptionsApi();
         $websiteOptions = $allWebsiteOptions->get();
 
-        $to_email = $websiteOptions->email_address;
-        // $to_email = 'leon@wtmedia-events.nl';
+        // $to_email = $websiteOptions->email_address;
+        $to_email = 'leon@wtmedia-events.nl';
         // $to_email = 'frans@tamatta.org, rense@tamatta.org';
-        $subjectCompany = 'Ingevuld subscription-formulier vanaf glomaroffshore.com';
-        $subjectVisitor = 'Copy of your message to glomaroffshore.com';
+        $subjectCompany = 'Ingevuld aanmeld-formulier vanaf wtmedia-events.nl';
+        $subjectVisitor = 'Kopie van uw bericht aan wtmedia-events.nl';
         
-        $messages = $this->getHtmlEmails($request->all(), url('statics/email/logo.png'), 'De volgende gegevens zijn achtergelaten door de bezoeker.', 'Thanks for your message. We received the following information:');
+        $messages = $this->getHtmlEmails($request->all(), url('statics/email/logo.png'), 'De volgende gegevens zijn achtergelaten door de bezoeker.', 'Bedankt voor uw bericht. De volgende informatie hebben we ontvangen:');
 
         $headers = array(
             "MIME-Version: 1.0",
             "Content-Type: text/html; charset=ISO-8859-1",
-            "From: Glomar Offshore <subscription-form@glomaroffshore.com>",
-            "Reply-To: info@glomaroffshore.com",
+            "From: WT Media & Events <aanmeld-formulier@wtmedia-events.nl>",
+            "Reply-To: support@wtmedia-events.nl",
             // "X-Priority: 1",
         );
         $headers = implode("\r\n", $headers);

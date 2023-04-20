@@ -28,6 +28,8 @@ Route::get('/', function () {
     return redirect('https://www.wtgroup.nl/wtmediaevents/');
 });
 
+Route::post('/submit-subscription-form', [SubmitController::class, 'submitSubscriptionForm']);
+
 
 /* Check for a page request */
 Route::get('/{section}', [PagesController::class, 'showOnePager'])->where([
