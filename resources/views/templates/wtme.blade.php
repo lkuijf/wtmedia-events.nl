@@ -34,7 +34,7 @@
     <div class="contentWrapper">
         @yield('content')
 
-        <div class="inner">
+        {{-- <div class="inner">
             <div class="pricing3Column">
                 @for ($x=0;$x<3;$x++)  
                 <article>
@@ -49,7 +49,7 @@
                 </article>
                 @endfor
             </div>
-            </div>
+        </div> --}}
 
     </div>
     

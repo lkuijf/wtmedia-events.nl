@@ -263,16 +263,19 @@ nav ul {
         border: 1px solid transparent;
         padding: 10px;
         > div {
+            border-bottom: 10px solid transparent;
             background-color: $colorWTM;
             color: $colorWhite;
             padding: 10px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
             h3 {
                 font-size: 2em;
-            }
-            *:first-child {
-                margin-top: 0;
+                margin: 0;
             }
             > div {
+                margin-top: auto;
                 display: flex;
                 justify-content: space-between;
                 text-align: right;

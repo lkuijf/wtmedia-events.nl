@@ -419,14 +419,14 @@ class PagesController extends Controller
         $allWebsiteOptions = new WebsiteOptionsApi();
         $websiteOptions = $allWebsiteOptions->get();
 
-        $footerOffice1Assoc = $websiteOptions->footer_office_1[0];
-        $footerOffice2Assoc = $websiteOptions->footer_office_2[0];
+        // $footerOffice1Assoc = $websiteOptions->footer_office_1[0];
+        // $footerOffice2Assoc = $websiteOptions->footer_office_2[0];
         
-        $aValuesToRetreive = array('title', 'country', 'phone', 'email', 'address1', 'address2', 'address3', 'address4', 'google_maps_address');
-        $oCustPostType1 = $this->getCustomPostTypeViaRestApi($footerOffice1Assoc->subtype, $footerOffice1Assoc->id, $aValuesToRetreive);
-        $oCustPostType2 = $this->getCustomPostTypeViaRestApi($footerOffice2Assoc->subtype, $footerOffice2Assoc->id, $aValuesToRetreive);
-        $websiteOptions->footer_office_1[0] = $oCustPostType1;
-        $websiteOptions->footer_office_2[0] = $oCustPostType2;
+        // $aValuesToRetreive = array('title', 'country', 'phone', 'email', 'address1', 'address2', 'address3', 'address4', 'google_maps_address');
+        // $oCustPostType1 = $this->getCustomPostTypeViaRestApi($footerOffice1Assoc->subtype, $footerOffice1Assoc->id, $aValuesToRetreive);
+        // $oCustPostType2 = $this->getCustomPostTypeViaRestApi($footerOffice2Assoc->subtype, $footerOffice2Assoc->id, $aValuesToRetreive);
+        // $websiteOptions->footer_office_1[0] = $oCustPostType1;
+        // $websiteOptions->footer_office_2[0] = $oCustPostType2;
 
         return $websiteOptions;
     }
@@ -449,6 +449,8 @@ class PagesController extends Controller
         $htmlMenu->generateUlMenu();
         $options = $this->getWebsiteOptions();
 
+        if(isset($options->working_with)) $options->working_with = $this->getMediaGallery($options->working_with, 'medium');
+
         $simpleMedia = new SimpleMediaApi();
         $simpleMedia->get();
         $this->allMediaById = $simpleMedia->makeListById();
@@ -466,6 +468,7 @@ class PagesController extends Controller
             $allCrbSections = array_merge($allCrbSections, $crbSecs);
         }
 // dd($allCrbSections);
+// dd($options);
         $data= [
             'head_title' => 'title test',
             'meta_description' => 'meta test',

@@ -594,17 +594,20 @@ nav ul {
   }
 }
 .pricing3Column article > div {
+  border-bottom: 10px solid transparent;
   background-color: #19b4b6;
   color: #FFF;
   padding: 10px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 .pricing3Column article > div h3 {
   font-size: 2em;
-}
-.pricing3Column article > div *:first-child {
-  margin-top: 0;
+  margin: 0;
 }
 .pricing3Column article > div > div {
+  margin-top: auto;
   display: flex;
   justify-content: space-between;
   text-align: right;

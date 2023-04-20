@@ -69,7 +69,12 @@
     @if($section->_type == 'news_boxes')
         @include('sections.news', ['news' => $section->news_associations])
     @endif --}}
-
+        @if($section->_type == 'packages' && $section->show_packages)
+            @include('sections.packages')
+        @endif
+        @if($section->_type == 'working_with' && $section->working_with)
+            @include('sections.working_with')
+        @endif
         @if ($section->_type == '1column')
         <div class="fullw">
             @foreach ($section->fullwidth as $secData)
