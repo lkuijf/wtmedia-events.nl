@@ -379,7 +379,7 @@ function crbRegisterFields($args) {
                     Field::make( 'separator', 'separator1', __( 'Prijs Pakketten' ) ),
                     Field::make( 'checkbox', 'show_packages', __( 'Show Pricing Packages' ) ),
                 ) )
-                ->add_fields( 'working_with', 'Working with', array(
+                ->add_fields( 'working_with', 'Clients', array(
                     Field::make( 'separator', 'separator1', __( 'Working with' ) ),
                     Field::make( 'checkbox', 'show_working_with', __( 'Show "Clients" section' ) ),
                 ) )
