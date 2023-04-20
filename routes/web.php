@@ -32,9 +32,10 @@ Route::post('/submit-subscription-form', [SubmitController::class, 'submitSubscr
 
 
 /* Check for a page request */
-Route::get('/{section}', [PagesController::class, 'showOnePager'])->where([
-    'section' => '[a-z0-9_-]+',
-]);
+// Route::get('/{section}', [PagesController::class, 'showOnePager'])->where([
+//     'section' => '[a-z0-9_-]+',
+// ]);
+Route::get('/homepage', [PagesController::class, 'showOnePager'])->name('home');
 
 
 

@@ -82,8 +82,13 @@ form {
     }
 }
 .alert {
-    min-height: 120px;
-    padding: 60px 20px 60px 20px;
+    // top: $headerHeight - 40;
+    bottom: 0;
+    min-height: 80px;
+    width: 100%;
+    position: fixed;
+    z-index: 101;
+    padding: 40px 20px 40px 20px;
     display: flex;
     align-items: center;
     gap: 20px;

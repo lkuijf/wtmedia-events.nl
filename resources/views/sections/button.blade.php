@@ -1,1 +1,1 @@
-<p><a href="{{ $url }}" class="ctaBtn">{{ $title }}</a></p>
+<p class="ctaBtnWrap"><a href="{{ $url }}" class="ctaBtn">{{ $title }}</a></p>

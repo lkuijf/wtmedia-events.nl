@@ -31,7 +31,7 @@ $fontSize: 16px;
 @import 'inc/totop-btn';
 @import 'inc/hero';
 
-@mixin mainNavButtonActive {
+@mixin mainNavButton {
     font-family: $fontFamilyButton;
     color: $colorBlack;
     text-transform: uppercase;
@@ -190,7 +190,7 @@ nav ul {
                     gap: 20px;
                     li {
                         a {
-                            @include mainNavButtonActive;
+                            @include mainNavButton;
                         }
                     }
                 }
@@ -207,7 +207,7 @@ nav ul {
                     gap: 40px;
                     li {
                         a {
-                            @include mainNavButtonActive;
+                            @include mainNavButton;
                         }
                     }
                 }
@@ -331,6 +331,10 @@ nav ul {
 .eventsContent {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
+    // @media (max-width: $sbp1_desktop) {grid-template-columns: repeat(4, 1fr);}
+    @media (max-width: $sbp2_laptop) {grid-template-columns: repeat(4, 1fr);}
+    @media (max-width: $sbp3_tablet) {grid-template-columns: repeat(3, 1fr);}
+    @media (max-width: $sbp4_mobile) {grid-template-columns: repeat(2, 1fr);}
     grid-gap: 5px;
     img {
         width: 100%;
@@ -363,6 +367,8 @@ nav ul {
         border-radius: 20px;
         height: 50px;
         padding: 0 20px;
+        width: 350px;
+        @media (max-width: $sbp4_mobile) {width: 100%;}
     }
     button {
         margin-top: 20px;
@@ -379,6 +385,72 @@ nav ul {
         &:active {
             transform: translate(5px, 5px);
             box-shadow: #e1e1e1 5px 5px 0px -2px, $colorCtaBtn 5px 5px;
+        }
+    }
+}
+
+footer {
+    padding: 50px 0;
+    height: 400px;
+    .ftr {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @media (max-width: $sbp2_laptop) {flex-direction: column;}
+        img {
+            height: 100px;
+        }
+        .footerContact {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            a {
+                background-color: $colorWTM;
+                color: $colorWhite;
+                font-size: 1.2em;
+                text-decoration: none;
+                border-radius: 20px;
+                padding: 8px 15px;
+            }
+        }
+        ul {
+            @media (max-width: $sbp2_laptop) {display: none;}
+            display: flex;
+            gap: 20px;
+            li {
+                a {
+                    font-family: $fontFamilyButton;
+                    color: $colorBlack;
+                    text-transform: uppercase;
+                    font-size: 1.1em;
+                    text-decoration: none;
+                    &:hover {
+                        color: #AAA;
+                    }
+                }
+            }
+        }
+    }
+    .btm {
+        padding-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @media (max-width: $sbp3_tablet) {flex-direction: column;justify-content:flex-start;text-align:center;}
+        a {
+            color: $colorBlack;
+            &:hover {
+                color: $colorWTM;
+            }
+        }
+        .socials {
+            display: flex;
+            gap: 20px;
+            a {
+                img {
+                    height: 40px;
+                }
+            }
         }
     }
 }

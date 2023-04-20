@@ -36,7 +36,7 @@
     <header class="headerOuter">
         {{-- <div class="inner"> --}}
             <div class="headerInnerWrap">
-                <div class="mainLogoWrap"><img src="{{ asset('statics/wt-media-events-logo.png') }}" alt="WT Media & Events"></div>
+                <div class="mainLogoWrap"><a href="{{ url()->route('home') }}"><img src="{{ asset('statics/wt-media-events-logo.png') }}" alt="WT Media & Events"></a></div>
                 <nav class="mainNav">
                     <input type="checkbox" id="burger-check">
                     <label for="burger-check" class="burger-label">
@@ -55,9 +55,27 @@
         @include('snippets.subscription-form')
     </div>
     
-    <footer>
-        f
-    </footer>
+    <div class="inner">
+        <footer>
+            <div class="ftr">
+                <div class="footerContact">
+                    <img src="{{ asset('statics/wt-media-events-logo.png') }}" alt="WT Media & Events">
+                    <a href="javascript:void(0)">CONTACT</a>
+                </div>
+                <nav>
+                    {!! $data['html_menu'] !!}
+                </nav>
+            </div>
+            <div class="btm">
+                <p>&copy; W.T. Media &amp; Events | <a href="javascript:void(0);">Privacy Policy</a> | {{ date('Y') }} All Rights Reserved</p>
+                <p class="socials">
+                    <a href="javascript:void(0)" class="ig"><img src="{{ asset('statics/instagram.png') }}" alt="Instagram"></a>
+                    <a href="javascript:void(0)" class="fb"><img src="{{ asset('statics/facebook.png') }}" alt="Facebook"></a>
+                    <a href="javascript:void(0)" class="li"><img src="{{ asset('statics/linkedin.png') }}" alt="LinkedIn"></a>
+                </p>
+            </div>
+        </footer>
+    </div>
 
     <a href="" id="toTop"></a>
     

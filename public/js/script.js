@@ -103,42 +103,51 @@ if(heroSlideshowImages && heroSlideshowImages.length > 1) setTimeout(slideShow, 
 /*********************************************/
 /***** Fade in elements when in viewport *****/
 // Beware of user has disabled JS; do not hide elements using CSS
-// const ctaBtnElms = document.querySelectorAll('.ctaBtn');
+const ctaBtnElms = document.querySelectorAll('.ctaBtnWrap');
+const headers = document.querySelectorAll('.contentWrapper h1');
 // const introTexts = document.querySelectorAll('.introTextWrap');
-// const observerOptions = {
-//     root: null,
-//     threshold: 0.2
-// };
-// function observerCallback(entries, observer) {
-//     entries.forEach(entry => {
-//         if (entry.isIntersecting) {
-//             // entry.target.classList.replace('fadeOut', 'fadeIn');
-//             entry.target.style.opacity = 1;
-//             entry.target.style.transform = "translateY(0px)";
-//         } else {
-//             // entry.target.classList.replace('fadeIn', 'fadeOut');
-//         }
-//     });
-// }
-// ctaBtnElms.forEach(el => {
-//     el.style.opacity = 0; // Beware of user has disabled JS; do not hide elements using CSS
-//     el.style.transform = "translateY(50px)";
-// });
+const observerOptions = {
+    root: null,
+    threshold: 0.2
+};
+function observerCallback(entries, observer) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            // entry.target.classList.replace('fadeOut', 'fadeIn');
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = "translate(0px, 0px)";
+        } else {
+            // entry.target.classList.replace('fadeIn', 'fadeOut');
+        }
+    });
+}
+ctaBtnElms.forEach(el => {
+    el.style.opacity = 0; // Beware of user has disabled JS; do not hide elements using CSS
+    el.style.transform = "translate(0px, 50px)";
+});
+headers.forEach(el => {
+    el.style.opacity = 0; // Beware of user has disabled JS; do not hide elements using CSS
+    el.style.transform = "translate(-50px, 0px)";
+});
 // introTexts.forEach(el => {
 //     // el.style.opacity = 0; // Beware of user has disabled JS; do not hide elements using CSS
 //     el.style.transform = "translateY(50px)";
 // });
-// setTimeout(() => { // using setTimeout for elements that are directly in viewport, so they show the effect
-//     const observer = new IntersectionObserver(observerCallback, observerOptions);
-//     ctaBtnElms.forEach(el => {
-//         el.style.transition = "opacity 0.7s ease-in, transform 0.7s ease-out";
-//         observer.observe(el);
-//     });
-//     introTexts.forEach(el => {
-//         el.style.transition = "opacity 0.7s ease-in, transform 0.7s ease-out";
-//         observer.observe(el);
-//     });
-// }, 1);
+setTimeout(() => { // using setTimeout for elements that are directly in viewport, so they show the effect
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    ctaBtnElms.forEach(el => {
+        el.style.transition = "opacity 0.7s ease-in, transform 0.7s ease-out";
+        observer.observe(el);
+    });
+    headers.forEach(el => {
+        el.style.transition = "opacity 0.7s ease-in, transform 0.7s ease-out";
+        observer.observe(el);
+    });
+    // introTexts.forEach(el => {
+    //     el.style.transition = "opacity 0.7s ease-in, transform 0.7s ease-out";
+    //     observer.observe(el);
+    // });
+}, 1);
 /*************************************************/
 
 var swiperPartner = new Swiper(".partnerSwiper", {
