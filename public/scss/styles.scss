@@ -205,9 +205,11 @@ nav ul {
                 ul {
                     display: flex;
                     gap: 40px;
+                    @media (max-width: $sbp1_desktop) {gap: 15px;}
                     li {
                         a {
                             @include mainNavButton;
+                            @media (max-width: $sbp1_desktop) {font-size: 1.1em;}
                         }
                     }
                 }

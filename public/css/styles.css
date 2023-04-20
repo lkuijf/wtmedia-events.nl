@@ -498,6 +498,13 @@ nav ul {
     display: flex;
     gap: 40px;
   }
+}
+@media (min-width: 769px) and (max-width: 1200px) {
+  .headerOuter .headerInnerWrap .mainNav ul {
+    gap: 15px;
+  }
+}
+@media (min-width: 769px) {
   .headerOuter .headerInnerWrap .mainNav ul li a {
     font-family: "Karla", sans-serif;
     color: #222;
@@ -516,6 +523,11 @@ nav ul {
   }
   .headerOuter .headerInnerWrap .mainNav ul li a.activeButton:hover {
     color: #EEE;
+  }
+}
+@media (min-width: 769px) and (max-width: 1200px) {
+  .headerOuter .headerInnerWrap .mainNav ul li a {
+    font-size: 1.1em;
   }
 }
 
