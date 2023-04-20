@@ -6,7 +6,7 @@ const mainLogo = document.querySelector('.mainLogoWrap img');
 // const body = document.querySelector('body');
 const mainLogoInitialHeight = mainLogo.style.height;
 const anchors = document.querySelectorAll('.anchorPoint');
-const bodyRect = document.body.getBoundingClientRect();
+// const bodyRect = document.body.getBoundingClientRect();
 const buttons = document.querySelectorAll('.mainNav ul li a');
 let anchorPositions = [];
 
@@ -16,12 +16,20 @@ const heroSlideshowImages = document.querySelectorAll('.heroImages img');
 
 // setArticlesClickable();
 // upCountNumbers();
+getAnchorPositions();
+setTimeout(function(){getAnchorPositions();}, 2000); // Wait for the page te be load for correctle getting anchor positions
 
-anchors.forEach(el => {
-    var rect = el.getBoundingClientRect();
-    offset = rect.top - bodyRect.top;
-    anchorPositions.push(offset);
-});
+function getAnchorPositions() {
+    anchorPositions = [];
+    anchors.forEach(el => {
+        var rect = el.getBoundingClientRect();
+// console.log(rect.top, bodyRect.top, window.scrollY);
+        // offset = rect.top - bodyRect.top;
+        offset = rect.top + window.scrollY;
+        anchorPositions.push(offset);
+    });
+    console.log(anchorPositions);
+}
 
 /***** To Top Button *************************/
 toTopBtn.addEventListener('click', (e) => {
@@ -51,8 +59,10 @@ window.addEventListener("scroll",debounce(function(e){
         mainLogo.classList.remove('afterScroll');
         headerWrap.classList.remove('afterScroll');
     }
+
     anchorPositions.forEach((val, i) => {
         if(fromTop+1 >= val) activeButton = i;
+// console.log(fromTop + ' ' + val);
     });
 // console.log(activeButton);
     buttons.forEach((btnEl, i) => {

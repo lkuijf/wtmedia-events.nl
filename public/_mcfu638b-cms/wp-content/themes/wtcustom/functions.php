@@ -403,6 +403,10 @@ function crbRegisterFields($args) {
                         ->add_fields('afbeelding', array(
                             // Field::make( 'separator', 'separator1', __( 'Image' ) ),
                             Field::make( 'image', 'image', 'Afbeelding' ),
+                        ) )
+                        ->add_fields('button', array(
+                            Field::make( 'text', 'title', 'Titel' ),
+                            Field::make( 'text', 'url', 'Link' ),
                         ) ),
                         // ->add_fields('bestand', array(
                         //     Field::make( 'file', 'file', 'Bestand' ),
@@ -426,6 +430,10 @@ function crbRegisterFields($args) {
                         ) )
                         ->add_fields('afbeelding', array(
                             Field::make( 'image', 'image', 'Afbeelding' ),
+                        ) )
+                        ->add_fields('button', array(
+                            Field::make( 'text', 'title', 'Titel' ),
+                            Field::make( 'text', 'url', 'Link' ),
                         ) ),
                         // ->add_fields('bestand', array(
                         //     Field::make( 'file', 'file', 'Bestand' ),
@@ -446,6 +454,10 @@ function crbRegisterFields($args) {
                         ) )
                         ->add_fields('afbeelding', array(
                             Field::make( 'image', 'image', 'Afbeelding' ),
+                        ) )
+                        ->add_fields('button', array(
+                            Field::make( 'text', 'title', 'Titel' ),
+                            Field::make( 'text', 'url', 'Link' ),
                         ) ),
                         // ->add_fields('bestand', array(
                         //     Field::make( 'file', 'file', 'Bestand' ),
