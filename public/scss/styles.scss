@@ -50,6 +50,10 @@ $fontSize: 16px;
         }
     }
 }
+@mixin textPaddingOnMobile {
+    @media (max-width: $sbp3_tablet) {padding-left:30px;padding-right:30px;}
+    @media (max-width: $sbp4_mobile) {padding-left:20px;padding-right:20px;}
+}
 
 
 html, body {
@@ -255,10 +259,7 @@ nav ul {
     // }
 }
 .textPadMobile {
-    // @media (max-width: $sbp1_desktop) {padding-left:50px;padding-right:50px;}
-    // @media (max-width: $sbp2_laptop) {padding-left:40px;padding-right:40px;}
-    @media (max-width: $sbp3_tablet) {padding-left:30px;padding-right:30px;}
-    @media (max-width: $sbp4_mobile) {padding-left:20px;padding-right:20px;}
+    @include textPaddingOnMobile;
     *:first-child {
         margin-top: 0;
     }
@@ -378,9 +379,11 @@ nav ul {
     .getUpdatesText {
         text-align: center;
         font-size: 2em;
+        @include textPaddingOnMobile;
     }
 }
 .subscriptionForm {
+    @include textPaddingOnMobile;
     text-align: center;
     input {
         font-family: $fontFamily;
@@ -456,6 +459,7 @@ footer {
         }
     }
     .btm {
+        @include textPaddingOnMobile;
         padding-top: 20px;
         display: flex;
         align-items: center;

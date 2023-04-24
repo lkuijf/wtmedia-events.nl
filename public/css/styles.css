@@ -732,9 +732,33 @@ nav ul {
   text-align: center;
   font-size: 2em;
 }
+@media (max-width: 768px) {
+  .subscribeContent .getUpdatesText {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+@media (max-width: 480px) {
+  .subscribeContent .getUpdatesText {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
 
 .subscriptionForm {
   text-align: center;
+}
+@media (max-width: 768px) {
+  .subscriptionForm {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+@media (max-width: 480px) {
+  .subscriptionForm {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 .subscriptionForm input {
   font-family: "Inter", sans-serif;
@@ -823,6 +847,18 @@ footer .btm {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+@media (max-width: 768px) {
+  footer .btm {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+@media (max-width: 480px) {
+  footer .btm {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 @media (max-width: 768px) {
   footer .btm {
