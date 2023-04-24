@@ -131,10 +131,10 @@ nav ul {
     max-width: $contentWidth;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 60px;
-    padding-right: 60px;
-    @media (max-width: $sbp1_desktop) {padding-left:50px;padding-right:50px;}
-    @media (max-width: $sbp2_laptop) {padding-left:40px;padding-right:40px;}
+    padding-left: 100px;
+    padding-right: 100px;
+    @media (max-width: $sbp1_desktop) {padding-left:80px;padding-right:80px;}
+    @media (max-width: $sbp2_laptop) {padding-left:60px;padding-right:60px;}
     @media (max-width: $sbp3_tablet) {padding-left:0;padding-right:0;}
     @media (max-width: $sbp4_mobile) {padding-left:0;padding-right:0;}
 }
@@ -215,9 +215,9 @@ nav ul {
 
 .columns {
     display: flex;
-    gap: 60px;
-    @media (max-width: $sbp1_desktop) {gap: 50px;}
-    @media (max-width: $sbp2_laptop) {gap: 40px;}
+    gap: 100px;
+    @media (max-width: $sbp1_desktop) {gap: 80px;}
+    @media (max-width: $sbp2_laptop) {gap: 60px;}
     @media (max-width: $sbp3_tablet) {gap: 30px;}
     @media (max-width: $sbp4_mobile) {gap: 20px;}
     @media (max-width: $sbp3_tablet) {flex-direction: column;}
