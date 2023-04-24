@@ -207,8 +207,6 @@ if(!$editorCanAddAndRemovePosts && $editor->has_cap('delete_posts')) {
     do_action( 'wt_cap_action', $editor, $capabilities_posts );
 }
 
-
-
 if (!current_user_can('administrator')) {
 
     if(!$editor->has_cap('delete_pages')) add_action('admin_footer', 'removePageActionsEditorRole');
@@ -220,7 +218,7 @@ if (!current_user_can('administrator')) {
     // add_filter('page_row_actions', 'remove_page_row_actions', 10, 2);
     
     // add_action('admin_head', 'customBackendStyles');
-    add_action('admin_enqueue_scripts', 'wt_admin_style');
+    
 
     add_action('admin_footer', 'customBackendScriptsEditorRol');
     add_filter('carbon_fields_theme_options_container_admin_only_access', '__return_false');
@@ -234,6 +232,7 @@ if (!current_user_can('administrator')) {
     add_filter('screen_options_show_screen', 'remove_screen_options');
 }
 
+add_action('admin_enqueue_scripts', 'wt_admin_style');
 function wt_admin_style() {
     wp_enqueue_style( 'admin-style', get_stylesheet_directory_uri() . '/css/wt.css' );
 }
