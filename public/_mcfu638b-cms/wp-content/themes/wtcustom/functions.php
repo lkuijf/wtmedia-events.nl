@@ -450,6 +450,11 @@ function crbRegisterFields($args) {
                 ) )
 
                 ->add_fields( '2column', 'Content (2 kolommen)', array(
+                    Field::make( 'select', 'column_direction', __( 'Column direction on mobile device' ) )
+                    ->set_options( array(
+                        'default' => __( 'Standaard' ),
+                        'reverse' => __( 'Omgekeerd' ),
+                    ) ),
                     Field::make( 'complex', 'left', 'Linker kolom' )
                         ->add_fields('tekst', array(
                             Field::make( 'rich_text', 'text', 'Tekst' ),

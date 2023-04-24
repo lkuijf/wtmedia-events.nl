@@ -1,5 +1,5 @@
 <div class="textContent">
     <div class="inner">
-        {!! $text !!}
+        @include('sections.text')
     </div>
 </div>

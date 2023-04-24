@@ -3,7 +3,7 @@ $sbp2_laptop: 1024px; // ScreenBreakpoint for Laptops
 $sbp3_tablet: 768px; // // ScreenBreakpoint for iPads/Tablets
 $sbp4_mobile: 480px; // ScreenBreakpoint for Mobile devices
 
-$contentWidth: 1200px; // max contentwidht .inner
+$contentWidth: 100%; // max contentwidht .inner
 // $contentWidthFooter: 1600px;
 $headerHeight: 200px;
 $headerHeightAfterScroll: 120px;
@@ -102,16 +102,21 @@ nav ul {
             width: 100%;
         }
     }
-    .ctaBtn {
-        background-color: $colorCtaBtn;
-        color: $colorWhite;
-        text-decoration: none;
-        padding: 25px 100px;
-        display: inline-block;
-        box-shadow: #e1e1e1 10px 10px 0px -2px, $colorCtaBtn 10px 10px;
-        &:active {
-            transform: translate(5px, 5px);
-            box-shadow: #e1e1e1 5px 5px 0px -2px, $colorCtaBtn 5px 5px;
+    .ctaBtnWrap {
+        @media (max-width: $sbp3_tablet) {
+            text-align: center;
+        }
+        .ctaBtn {
+            background-color: $colorCtaBtn;
+            color: $colorWhite;
+            text-decoration: none;
+            padding: 25px 100px;
+            display: inline-block;
+            box-shadow: #e1e1e1 10px 10px 0px -2px, $colorCtaBtn 10px 10px;
+            &:active {
+                transform: translate(5px, 5px);
+                box-shadow: #e1e1e1 5px 5px 0px -2px, $colorCtaBtn 5px 5px;
+            }
         }
     }
 }
@@ -130,15 +135,15 @@ nav ul {
 }
 
 .inner {
-    // max-width: $contentWidth;
-    // margin-left: auto;
-    // margin-right: auto;
+    max-width: $contentWidth;
+    margin-left: auto;
+    margin-right: auto;
     padding-left: 60px;
     padding-right: 60px;
     @media (max-width: $sbp1_desktop) {padding-left:50px;padding-right:50px;}
     @media (max-width: $sbp2_laptop) {padding-left:40px;padding-right:40px;}
-    @media (max-width: $sbp3_tablet) {padding-left:30px;padding-right:30px;}
-    @media (max-width: $sbp4_mobile) {padding-left:20px;padding-right:20px;}
+    @media (max-width: $sbp3_tablet) {padding-left:0;padding-right:0;}
+    @media (max-width: $sbp4_mobile) {padding-left:0;padding-right:0;}
     // > :first-child {
     //     margin-top: 0;
     // }
@@ -245,6 +250,12 @@ nav ul {
             margin-top: 0;
         }
     }
+}
+.textPadMobile {
+    // @media (max-width: $sbp1_desktop) {padding-left:50px;padding-right:50px;}
+    // @media (max-width: $sbp2_laptop) {padding-left:40px;padding-right:40px;}
+    @media (max-width: $sbp3_tablet) {padding-left:30px;padding-right:30px;}
+    @media (max-width: $sbp4_mobile) {padding-left:20px;padding-right:20px;}
 }
 .anchorPoint {
     display: block;

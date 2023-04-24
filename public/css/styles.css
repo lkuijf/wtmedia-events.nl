@@ -323,7 +323,12 @@ nav ul {
 .contentWrapper .fullw img, .contentWrapper .twoColumns img {
   width: 100%;
 }
-.contentWrapper .ctaBtn {
+@media (max-width: 768px) {
+  .contentWrapper .ctaBtnWrap {
+    text-align: center;
+  }
+}
+.contentWrapper .ctaBtnWrap .ctaBtn {
   background-color: #006878;
   color: #FFF;
   text-decoration: none;
@@ -331,7 +336,7 @@ nav ul {
   display: inline-block;
   box-shadow: #e1e1e1 10px 10px 0px -2px, #006878 10px 10px;
 }
-.contentWrapper .ctaBtn:active {
+.contentWrapper .ctaBtnWrap .ctaBtn:active {
   transform: translate(5px, 5px);
   box-shadow: #e1e1e1 5px 5px 0px -2px, #006878 5px 5px;
 }
@@ -345,6 +350,9 @@ nav ul {
   font-display: swap;
 }
 .inner {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
   padding-left: 60px;
   padding-right: 60px;
 }
@@ -362,14 +370,14 @@ nav ul {
 }
 @media (max-width: 768px) {
   .inner {
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 @media (max-width: 480px) {
   .inner {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
@@ -569,6 +577,19 @@ nav ul {
 
 .textContent > div *:first-child {
   margin-top: 0;
+}
+
+@media (max-width: 768px) {
+  .textPadMobile {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+@media (max-width: 480px) {
+  .textPadMobile {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 
 .anchorPoint {

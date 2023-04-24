@@ -1,1 +1,1 @@
-{!! $text !!}
+@include('sections.text')

@@ -1,5 +1,3 @@
-<div class="textContent">
-    <div class="inner">
-        {!! $text !!}
-    </div>
+<div class="textPadMobile">
+    {!! $text !!}
 </div>
