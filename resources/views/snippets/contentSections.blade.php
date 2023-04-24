@@ -124,7 +124,7 @@
         @if ($section->_type == '2column')
             <div class="twoColumns">
                 <div class="inner">
-                <div class="columns">
+                <div class="columns @if($section->column_direction == 'reverse'){{ 'colReverse' }}@endif">
                     <div>
                         @foreach ($section->left as $secData)
                             @include('snippets.contentSection_2columns')

@@ -574,9 +574,10 @@ nav ul {
 .columns > div > :first-child {
   margin-top: 0;
 }
-
-.textContent > div *:first-child {
-  margin-top: 0;
+@media (max-width: 768px) {
+  .columns.colReverse {
+    flex-direction: column-reverse;
+  }
 }
 
 @media (max-width: 768px) {
@@ -590,6 +591,9 @@ nav ul {
     padding-left: 20px;
     padding-right: 20px;
   }
+}
+.textPadMobile *:first-child {
+  margin-top: 0;
 }
 
 .anchorPoint {
