@@ -38,10 +38,10 @@ function remove_page_row_actions($actions, $post) {
 function customBackendStyles() {
     ?>
     <style type="text/css">
-      #taxonomy-category #taxonomy-category-new { display: none; }
+      /* #taxonomy-category #taxonomy-category-new { display: none; }
       .cf-complex__inserter-button {
           border: 1px solid red;
-      }
+      } */
       .cf-complex__group-actions.cf-complex__group-actions--tabbed {
         background-color: #fde6e6;
       }

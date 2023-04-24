@@ -218,7 +218,7 @@ if (!current_user_can('administrator')) {
 
     add_filter('bulk_actions-edit-page', 'remove_from_bulk_actions');
     // add_filter('page_row_actions', 'remove_page_row_actions', 10, 2);
-    // add_action('admin_head', 'customBackendStyles');
+    add_action('admin_head', 'customBackendStyles');
     add_action('admin_footer', 'customBackendScriptsEditorRol');
     add_filter('carbon_fields_theme_options_container_admin_only_access', '__return_false');
     add_filter('wp_rest_cache/settings_capability', 'wprc_change_settings_capability', 10, 1);
