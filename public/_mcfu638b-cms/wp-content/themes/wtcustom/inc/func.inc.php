@@ -35,15 +35,6 @@ function remove_page_row_actions($actions, $post) {
     }
     return $actions;
 }
-// function customBackendStyles() {
-//     echo '
-//     <style>
-//       .cf-complex__group-actions.cf-complex__group-actions--tabbed {
-//         background-color: #fde6e6;
-//       }
-//     </style>
-//     ';
-// }
 function removePageActionsEditorRole() {
     ?>
     <script>
@@ -142,7 +133,7 @@ function customBackendScripts() {
             // customizeCarbonFieldsPlugin();
             customizeNestedPagesPlugin();
             flushSimplePagesCacheOnDrag();
-            jQuery('.cf-complex__inserter-button').css('backgroundColor', '#b3edb3');
+            // jQuery('.cf-complex__inserter-button').css('backgroundColor', '#b3edb3');
             // jQuery('.cf-complex__group-actions.cf-complex__group-actions--tabbed').css('backgroundColor', '#fde6e6');
 
             // function customizeCarbonFieldsPlugin() {
