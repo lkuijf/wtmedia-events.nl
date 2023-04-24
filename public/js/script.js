@@ -3,36 +3,29 @@
 const toTopBtn = document.querySelector('#toTop');
 const headerWrap = document.querySelector('.headerInnerWrap');
 const mainLogo = document.querySelector('.mainLogoWrap img');
-// const body = document.querySelector('body');
 const mainLogoInitialHeight = mainLogo.style.height;
 const anchors = document.querySelectorAll('.anchorPoint');
-// const bodyRect = document.body.getBoundingClientRect();
 const buttons = document.querySelectorAll('.mainNav ul li a');
-// let anchorPositions = [];
 let anchorsInViewport = [];
-
-buttons[0].classList.add("activeButton");
 
 const heroSlideshowImages = document.querySelectorAll('.heroImages img');
 
 // setArticlesClickable();
 // upCountNumbers();
 
+setAfterScrollAttributes(); // when page is loaded at some scroll position. scroll event will not fire.
 
-
-
+/***** Activate navigation button when anchor is in viewport *************************/
 const observerOptionsAnchor = {
     root: null,
-    threshold: 0.9
+    threshold: 0.9 // 1 can sometimes not give the desired result
 };
-
-
-setTimeout(() => { // using setTimeout for elements that are directly in viewport, so they show the effect
+// setTimeout(() => { // using setTimeout for elements that are directly in viewport, so they show the effect
     const observer = new IntersectionObserver(observerAnchorCallback, observerOptionsAnchor);
     anchors.forEach(el => {
         observer.observe(el);
     });
-}, 1);
+// }, 1);
 function observerAnchorCallback(entries, observer) {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -44,36 +37,22 @@ function observerAnchorCallback(entries, observer) {
             }
         }
     });
-console.log(anchorsInViewport);
     setActiveButtons(anchorsInViewport);
 }
 function setActiveButtons(activeAnchors) {
-    let alreadyActivated = false;
-    buttons.forEach((btnEl, i) => {
-        var hash = btnEl.href.substring(btnEl.href.indexOf('#')+1);
-        btnEl.classList.remove("activeButton");
-        if(activeAnchors.length && activeAnchors.indexOf(hash) !== -1 && !alreadyActivated) {
-            btnEl.classList.add("activeButton");
-            alreadyActivated = true;
-        }
-    });
+    if(activeAnchors.length) {
+        let alreadyActivated = false;
+        buttons.forEach((btnEl, i) => {
+            var hash = btnEl.href.substring(btnEl.href.indexOf('#')+1);
+            btnEl.classList.remove("activeButton");
+            if(activeAnchors.indexOf(hash) !== -1 && !alreadyActivated) {
+                btnEl.classList.add("activeButton");
+                alreadyActivated = true;
+            }
+        });
+    }
 }
-
-
-
-
-
-// getAnchorPositions();
-// setTimeout(function(){getAnchorPositions();}, 2000); // Wait for the page te be load for correctle getting anchor positions
-// function getAnchorPositions() {
-//     anchorPositions = [];
-//     anchors.forEach(el => {
-//         var rect = el.getBoundingClientRect();
-//         offset = rect.top + window.scrollY;
-//         anchorPositions.push(offset);
-//     });
-//     console.log(anchorPositions);
-// }
+/************************************************************************************/
 
 /***** To Top Button *************************/
 toTopBtn.addEventListener('click', (e) => {
@@ -83,19 +62,18 @@ toTopBtn.addEventListener('click', (e) => {
 if(window.scrollY > 800) {
     toTopBtn.classList.add('show');
 }
-
-
+/*********************************************/
+/***** When user scrolls *********************/
 window.addEventListener("scroll",debounce(function(e){
-    // let fromTop = window.scrollY + 400; // +400 so it is more user friendly
-    let fromTop = window.scrollY; // +400 so it is more user friendly
-    let activeButton = 0;
-    // if(fromTop > 800) {
+    setAfterScrollAttributes();
+}));
+function setAfterScrollAttributes() {
+    let fromTop = window.scrollY;
     if(fromTop > 400) {
         toTopBtn.classList.add('show');
     } else {
         toTopBtn.classList.remove('show');
     }
-    // if(fromTop > 600) {
     if(fromTop > 200) {
         mainLogo.classList.add('afterScroll');
         headerWrap.classList.add('afterScroll');
@@ -103,20 +81,7 @@ window.addEventListener("scroll",debounce(function(e){
         mainLogo.classList.remove('afterScroll');
         headerWrap.classList.remove('afterScroll');
     }
-
-    // anchorPositions.forEach((val, i) => {
-    //     if(fromTop+1 >= val) activeButton = i;
-    // });
-    // buttons.forEach((btnEl, i) => {
-    //     if(i == activeButton) {
-    //         btnEl.classList.add("activeButton");
-    //     } else {
-    //         btnEl.classList.remove("activeButton");
-    //     }
-    // });
-
-}));
-
+}
 function debounce(func){
     var timer;
     return function(event){
@@ -124,8 +89,6 @@ function debounce(func){
         timer = setTimeout(func,10,event);
     };
 }
-
-
 /*********************************************/
 /***** Hero slideshow ************************/
 let curIndex = 0;
@@ -148,7 +111,6 @@ if(heroSlideshowImages && heroSlideshowImages.length > 1) setTimeout(slideShow, 
 // Beware of user has disabled JS; do not hide elements using CSS
 const ctaBtnElms = document.querySelectorAll('.ctaBtnWrap');
 const headers = document.querySelectorAll('.contentWrapper h1');
-// const introTexts = document.querySelectorAll('.introTextWrap');
 const observerOptions = {
     root: null,
     threshold: 0.2
@@ -172,10 +134,6 @@ headers.forEach(el => {
     el.style.opacity = 0; // Beware of user has disabled JS; do not hide elements using CSS
     el.style.transform = "translate(-50px, 0px)";
 });
-// introTexts.forEach(el => {
-//     // el.style.opacity = 0; // Beware of user has disabled JS; do not hide elements using CSS
-//     el.style.transform = "translateY(50px)";
-// });
 setTimeout(() => { // using setTimeout for elements that are directly in viewport, so they show the effect
     const observer = new IntersectionObserver(observerCallback, observerOptions);
     ctaBtnElms.forEach(el => {
@@ -186,10 +144,6 @@ setTimeout(() => { // using setTimeout for elements that are directly in viewpor
         el.style.transition = "opacity 0.7s ease-in, transform 0.7s ease-out";
         observer.observe(el);
     });
-    // introTexts.forEach(el => {
-    //     el.style.transition = "opacity 0.7s ease-in, transform 0.7s ease-out";
-    //     observer.observe(el);
-    // });
 }, 1);
 /*************************************************/
 
@@ -217,76 +171,6 @@ var swiperPartner = new Swiper(".partnerSwiper", {
     }
 });
 
-
-// var swiperStats = new Swiper(".statsSwiper", {
-//     slidesPerView: 1,
-//     spaceBetween: 0,
-//     speed: 1000,
-//     autoplay: {
-//         delay: 2500,
-//         disableOnInteraction: false,
-//     },
-//     navigation: {
-//         nextEl: ".swiper-button-next-stats",
-//         prevEl: ".swiper-button-prev-stats",
-//     },
-//     breakpoints: {
-//         768: {
-//             slidesPerView: 2,
-//           },
-//           1024: {
-//             slidesPerView: 3,
-//           },
-//         }
-// });
-
-// var swiperProfessionals = new Swiper(".professionalsSwiper", {
-//     slidesPerView: 1,
-//     spaceBetween: 0,
-//     speed: 1000,
-//     autoplay: {
-//         delay: 2500,
-//         disableOnInteraction: false,
-//     },
-//     navigation: {
-//         nextEl: ".swiper-button-next-prof",
-//         prevEl: ".swiper-button-prev-prof",
-//     },
-//     breakpoints: {
-//         480: {
-//             slidesPerView: 2,
-//           },
-//         768: {
-//           slidesPerView: 3,
-//         },
-//       }
-// });
-
-// var swiperOurVessels = new Swiper(".ourVesselsSwiper", {
-//     slidesPerView: 1,
-//     spaceBetween: 0,
-//     speed: 1000,
-//     navigation: {
-//         nextEl: ".swiper-button-next-vessels",
-//         prevEl: ".swiper-button-prev-vessels",
-//     },
-//     pagination: {
-//         el: '.swiper-pagination',
-//         clickable: true,
-//         type: 'bullets',
-//     },
-//     breakpoints: {
-//         480: {
-//             slidesPerView: 1,
-//           },
-//           768: {
-//             slidesPerView: 2,
-//           },
-//           1024: {
-//             slidesPerView: 3,
-//           },
-//     }
-// });
 
 // function upCountNumbers() {
 //     if(statNumbers && statNumbers.length) {
