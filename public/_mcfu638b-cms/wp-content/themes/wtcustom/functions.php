@@ -14,8 +14,8 @@ $editorCanAddAndRemovePosts = true; // !!! may take 2 reloads for changes to tak
 $carbonFieldsArgs = array();
 $websiteOptions = array();
 // $websiteOptions[] = array('text', 'header_big', 'Website kop tekst GROOT');
-$websiteOptions[] = array('text', 'meta_title', 'Pagina titel (<title>)');
-$websiteOptions[] = array('text', 'meta_description', 'Pagina omschrijving (<meta name=description>)');
+$websiteOptions[] = array('text', 'meta_title', 'Pagina titel');
+$websiteOptions[] = array('text', 'meta_description', 'Pagina omschrijving (meta description)');
 $websiteOptions[] = array('text', 'package1_title', 'Pakket 1 titel');
 $websiteOptions[] = array('text', 'package1_title', 'Pakket 1 titel');
 $websiteOptions[] = array('textarea', 'package1_text', 'Pakket 1 tekst');
