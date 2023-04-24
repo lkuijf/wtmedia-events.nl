@@ -34,20 +34,18 @@
 
 
     <header class="headerOuter">
-        {{-- <div class="inner"> --}}
-            <div class="headerInnerWrap">
-                <div class="mainLogoWrap"><a href="{{ url()->route('home') }}"><img src="{{ asset('statics/wt-media-events-logo.png') }}" alt="WT Media & Events"></a></div>
-                <nav class="mainNav">
-                    <input type="checkbox" id="burger-check">
-                    <label for="burger-check" class="burger-label">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </label>
-                    {!! $data['html_menu'] !!}
-                </nav>
-            </div>
-        {{-- </div> --}}
+        <div class="headerInnerWrap">
+            <div class="mainLogoWrap"><a href="{{ url()->route('home') }}"><img src="{{ asset('statics/wt-media-events-logo.png') }}" alt="WT Media & Events"></a></div>
+            <nav class="mainNav">
+                <input type="checkbox" id="burger-check">
+                <label for="burger-check" class="burger-label">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                {!! $data['html_menu'] !!}
+            </nav>
+        </div>
     </header>
 
     <div class="contentWrapper">

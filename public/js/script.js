@@ -8,7 +8,8 @@ const mainLogoInitialHeight = mainLogo.style.height;
 const anchors = document.querySelectorAll('.anchorPoint');
 // const bodyRect = document.body.getBoundingClientRect();
 const buttons = document.querySelectorAll('.mainNav ul li a');
-let anchorPositions = [];
+// let anchorPositions = [];
+let anchorsInViewport = [];
 
 buttons[0].classList.add("activeButton");
 
@@ -16,20 +17,63 @@ const heroSlideshowImages = document.querySelectorAll('.heroImages img');
 
 // setArticlesClickable();
 // upCountNumbers();
-getAnchorPositions();
-setTimeout(function(){getAnchorPositions();}, 2000); // Wait for the page te be load for correctle getting anchor positions
 
-function getAnchorPositions() {
-    anchorPositions = [];
+
+
+
+const observerOptionsAnchor = {
+    root: null,
+    threshold: 0.9
+};
+
+
+setTimeout(() => { // using setTimeout for elements that are directly in viewport, so they show the effect
+    const observer = new IntersectionObserver(observerAnchorCallback, observerOptionsAnchor);
     anchors.forEach(el => {
-        var rect = el.getBoundingClientRect();
-// console.log(rect.top, bodyRect.top, window.scrollY);
-        // offset = rect.top - bodyRect.top;
-        offset = rect.top + window.scrollY;
-        anchorPositions.push(offset);
+        observer.observe(el);
     });
-    console.log(anchorPositions);
+}, 1);
+function observerAnchorCallback(entries, observer) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            anchorsInViewport.push(entry.target.id);
+        } else {
+            var index = anchorsInViewport.indexOf(entry.target.id);
+            if (index !== -1) {
+                anchorsInViewport.splice(index, 1);
+            }
+        }
+    });
+console.log(anchorsInViewport);
+    setActiveButtons(anchorsInViewport);
 }
+function setActiveButtons(activeAnchors) {
+    let alreadyActivated = false;
+    buttons.forEach((btnEl, i) => {
+        var hash = btnEl.href.substring(btnEl.href.indexOf('#')+1);
+        btnEl.classList.remove("activeButton");
+        if(activeAnchors.length && activeAnchors.indexOf(hash) !== -1 && !alreadyActivated) {
+            btnEl.classList.add("activeButton");
+            alreadyActivated = true;
+        }
+    });
+}
+
+
+
+
+
+// getAnchorPositions();
+// setTimeout(function(){getAnchorPositions();}, 2000); // Wait for the page te be load for correctle getting anchor positions
+// function getAnchorPositions() {
+//     anchorPositions = [];
+//     anchors.forEach(el => {
+//         var rect = el.getBoundingClientRect();
+//         offset = rect.top + window.scrollY;
+//         anchorPositions.push(offset);
+//     });
+//     console.log(anchorPositions);
+// }
 
 /***** To Top Button *************************/
 toTopBtn.addEventListener('click', (e) => {
@@ -60,18 +104,17 @@ window.addEventListener("scroll",debounce(function(e){
         headerWrap.classList.remove('afterScroll');
     }
 
-    anchorPositions.forEach((val, i) => {
-        if(fromTop+1 >= val) activeButton = i;
-// console.log(fromTop + ' ' + val);
-    });
-// console.log(activeButton);
-    buttons.forEach((btnEl, i) => {
-        if(i == activeButton) {
-            btnEl.classList.add("activeButton");
-        } else {
-            btnEl.classList.remove("activeButton");
-        }
-    });
+    // anchorPositions.forEach((val, i) => {
+    //     if(fromTop+1 >= val) activeButton = i;
+    // });
+    // buttons.forEach((btnEl, i) => {
+    //     if(i == activeButton) {
+    //         btnEl.classList.add("activeButton");
+    //     } else {
+    //         btnEl.classList.remove("activeButton");
+    //     }
+    // });
+
 }));
 
 function debounce(func){
