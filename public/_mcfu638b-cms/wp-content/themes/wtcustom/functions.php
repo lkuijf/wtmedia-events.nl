@@ -496,12 +496,13 @@ function crbRegisterFields($args) {
                 ) )
 
         ))
-        ->add_tab( __('Page information'), array(
-            Field::make( 'separator', 'separator', __( 'Information about the page' ) ),
-            Field::make( 'text', 'meta_title', __( 'Page title (shown in browser tab)' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'text', 'meta_description', __( 'Page meta description (shown in search engines)' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'checkbox', 'hide_from_menu', __('Hide page from menu (page is still available via permalink)') )->set_visible_in_rest_api($visible = true),
-        ));
+        // ->add_tab( __('Page information'), array(
+        //     Field::make( 'separator', 'separator', __( 'Information about the page' ) ),
+        //     Field::make( 'text', 'meta_title', __( 'Page title (shown in browser tab)' ))->set_visible_in_rest_api($visible = true),
+        //     Field::make( 'text', 'meta_description', __( 'Page meta description (shown in search engines)' ))->set_visible_in_rest_api($visible = true),
+        //     Field::make( 'checkbox', 'hide_from_menu', __('Hide page from menu (page is still available via permalink)') )->set_visible_in_rest_api($visible = true),
+        // ))
+        ;
 
     Container::make( 'post_meta', __( 'Information' ) )
         ->where( 'post_type', '=', 'news' )
