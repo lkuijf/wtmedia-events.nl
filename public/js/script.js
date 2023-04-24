@@ -162,7 +162,7 @@ setTimeout(() => { // using setTimeout for elements that are directly in viewpor
         el.style.transition = "height 1.2s ease";
         observer.observe(el.parentElement);
     });
-}, 1);
+}, 100);
 /*************************************************/
 
 var swiperPartner = new Swiper(".partnerSwiper", {
