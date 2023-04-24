@@ -133,7 +133,7 @@ function customBackendScripts() {
             // customizeCarbonFieldsPlugin();
             customizeNestedPagesPlugin();
             flushSimplePagesCacheOnDrag();
-            // jQuery('.cf-complex__inserter-button').css('backgroundColor', '#b3edb3');
+            jQuery('.cf-complex__inserter-button').css('backgroundColor', '#b3edb3');
             // jQuery('.cf-complex__group-actions.cf-complex__group-actions--tabbed').css('backgroundColor', '#fde6e6');
 
             // function customizeCarbonFieldsPlugin() {
