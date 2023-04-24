@@ -55,8 +55,8 @@
         @include('snippets.subscription-form')
     </div>
     
-    <div class="inner">
-        <footer>
+    <footer>
+        <div class="inner">
             <div class="ftr">
                 <div class="footerContact">
                     <img src="{{ asset('statics/wt-media-events-logo.png') }}" alt="WT Media & Events">
@@ -74,8 +74,8 @@
                     <a href="javascript:void(0)" class="li"><img src="{{ asset('statics/linkedin.png') }}" alt="LinkedIn"></a>
                 </p>
             </div>
-        </footer>
-    </div>
+        </div>
+    </footer>
 
     <a href="" id="toTop"></a>
     

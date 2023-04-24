@@ -122,19 +122,21 @@
         @endif
 
         @if ($section->_type == '2column')
-            <div class="inner">
-            <div class="columns">
-                <div>
-                    @foreach ($section->left as $secData)
-                        @include('snippets.contentSection_2columns')
-                    @endforeach
+            <div class="twoColumns">
+                <div class="inner">
+                <div class="columns">
+                    <div>
+                        @foreach ($section->left as $secData)
+                            @include('snippets.contentSection_2columns')
+                        @endforeach
+                    </div>
+                    <div>
+                        @foreach ($section->right as $secData)
+                            @include('snippets.contentSection_2columns')
+                        @endforeach
+                    </div>
                 </div>
-                <div>
-                    @foreach ($section->right as $secData)
-                        @include('snippets.contentSection_2columns')
-                    @endforeach
                 </div>
-            </div>
             </div>
         @endif
 

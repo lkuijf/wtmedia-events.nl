@@ -320,7 +320,7 @@ nav ul {
   width: 70px;
   transform: translateY(5px);
 }
-.contentWrapper .fullw img, .contentWrapper .columns img {
+.contentWrapper .fullw img, .contentWrapper .twoColumns img {
   width: 100%;
 }
 .contentWrapper .ctaBtn {
@@ -564,6 +564,10 @@ nav ul {
   flex: 1 1 50%;
 }
 .columns > div > :first-child {
+  margin-top: 0;
+}
+
+.textContent > div *:first-child {
   margin-top: 0;
 }
 
