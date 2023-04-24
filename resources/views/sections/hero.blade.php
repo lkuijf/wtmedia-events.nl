@@ -1,12 +1,14 @@
 <div class="hero">
     <div class="heroOverlay">
         <div>
-            @if (isset($title) && $title)
-                <h1>{!! $title !!}</h1>
-            @endif
-            @if (isset($text) && $text)
-                <p>{!! $text !!}</p>
-            @endif
+            <div class="heroText">
+                @if (isset($title) && $title)
+                    <h1>{!! $title !!}</h1>
+                @endif
+                @if (isset($text) && $text)
+                    <p>{!! $text !!}</p>
+                @endif
+            </div>
             @if (isset($email) && $email && isset($phone) && $phone)
             <div class="makeContact">
                 @if (isset($email) && $email)

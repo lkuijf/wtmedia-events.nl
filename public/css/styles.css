@@ -168,6 +168,19 @@ form .error span {
     padding: 20px;
   }
 }
+.hero .heroOverlay > div .heroText {
+  max-width: 60%;
+}
+@media (max-width: 1200px) {
+  .hero .heroOverlay > div .heroText {
+    max-width: 80%;
+  }
+}
+@media (max-width: 1024px) {
+  .hero .heroOverlay > div .heroText {
+    max-width: 100%;
+  }
+}
 .hero .heroOverlay h1 {
   margin: 0;
   line-height: 1.2em;

@@ -8,23 +8,15 @@ $contentWidth: 100%; // max contentwidht .inner
 $headerHeight: 200px;
 $headerHeightAfterScroll: 120px;
 
-// $colorGrey: #54595F; // body-back + footer, from original
-// $colorGreyBottom: #43464C; // bottom, from original
-// $colorGreyDark: #3A3E43; // topbar, from original
-// $colorGreyLight: #CCC; // topbar text
-// $colorGreyLighter: #F2F2F2; // background working with
 $colorBlack: #222; // text
 $colorWhite: #FFF;
 $colorWTM: #19b4b6; // logo color
 $colorWTMdark: #0c5a5b;
 $colorCtaBtn: #006878;
-// $colorBackground: #E1E1E1;
-// $colorOrange: #FF5303; // button-active, from original
 
 $fontFamily: 'Inter', sans-serif;
 $fontFamilyButton: 'Karla', sans-serif;
 $fontSize: 16px;
-// $fontFamilyHeaders: 'Playfair Display', serif;
 
 @import 'inc/burger-menu.adapter';
 @import 'inc/contact-form';
@@ -67,17 +59,8 @@ html {
     color: $colorBlack;
     background-color: $colorWhite;
     scroll-behavior: smooth;
-    
-    // padding-top: 140px;
-    // @media (max-width: $sbp3_tablet) {
-    //     padding-top: 50px;
-    // }
     background-image: url('../statics/bg.jpg');
     background-size: 100%;
-    // background-repeat: no-repeat;
-    // background-attachment: fixed;
-    // background-color: $colorBackground;
-    // margin-top: $headerHeight;
 }
 *, *:before, *:after {
     box-sizing: inherit;
@@ -148,9 +131,6 @@ nav ul {
     @media (max-width: $sbp2_laptop) {padding-left:40px;padding-right:40px;}
     @media (max-width: $sbp3_tablet) {padding-left:0;padding-right:0;}
     @media (max-width: $sbp4_mobile) {padding-left:0;padding-right:0;}
-    // > :first-child {
-    //     margin-top: 0;
-    // }
 }
 
 .headerOuter {
@@ -230,19 +210,16 @@ nav ul {
 .columns {
     display: flex;
     gap: 60px;
-    // margin: 10px 0;
     @media (max-width: $sbp1_desktop) {gap: 50px;}
     @media (max-width: $sbp2_laptop) {gap: 40px;}
     @media (max-width: $sbp3_tablet) {gap: 30px;}
     @media (max-width: $sbp4_mobile) {gap: 20px;}
-    // @media (max-width: $sbp3_tablet) {flex-wrap: wrap;}
     @media (max-width: $sbp3_tablet) {flex-direction: column;}
     > div {
         flex: 1 1 50%;
         > :first-child {
             margin-top: 0;
         }
-        // @media (max-width: $sbp3_tablet) {flex: 1 1 100%;}
     }
     &.colReverse {
         @media (max-width: $sbp3_tablet) {flex-direction: column-reverse;}
@@ -252,11 +229,6 @@ nav ul {
 
 .textContent {
     // min-height: 500px;
-    // > div {
-    //     *:first-child {
-    //         margin-top: 0;
-    //     }
-    // }
 }
 .textPadMobile {
     @include textPaddingOnMobile;
@@ -356,7 +328,6 @@ nav ul {
 .eventsContent {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    // @media (max-width: $sbp1_desktop) {grid-template-columns: repeat(4, 1fr);}
     @media (max-width: $sbp2_laptop) {grid-template-columns: repeat(4, 1fr);}
     @media (max-width: $sbp3_tablet) {grid-template-columns: repeat(3, 1fr);}
     @media (max-width: $sbp4_mobile) {grid-template-columns: repeat(2, 1fr);}
@@ -403,7 +374,6 @@ nav ul {
         font-family: $fontFamily;
         color: $colorWhite;
         font-size: 1.5em;
-        // text-decoration: none;
         border: 0;
         border-radius: 20px;
         padding: 10px 50px;
