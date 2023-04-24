@@ -332,6 +332,10 @@ nav ul {
 }
 .contentWrapper .fullw img, .contentWrapper .twoColumns img {
   width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
 }
 @media (max-width: 768px) {
   .contentWrapper .ctaBtnWrap {

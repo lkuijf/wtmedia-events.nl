@@ -6,6 +6,7 @@ const mainLogo = document.querySelector('.mainLogoWrap img');
 const mainLogoInitialHeight = mainLogo.style.height;
 const anchors = document.querySelectorAll('.anchorPoint');
 const buttons = document.querySelectorAll('.mainNav ul li a');
+
 let anchorsInViewport = [];
 
 const heroSlideshowImages = document.querySelectorAll('.heroImages img');
@@ -111,9 +112,10 @@ if(heroSlideshowImages && heroSlideshowImages.length > 1) setTimeout(slideShow, 
 // Beware of user has disabled JS; do not hide elements using CSS
 const ctaBtnElms = document.querySelectorAll('.ctaBtnWrap');
 const headers = document.querySelectorAll('.contentWrapper h1');
+const sectionImages = document.querySelectorAll('.fullw img, .twoColumns img');
 const observerOptions = {
     root: null,
-    threshold: 0.2
+    threshold: 0.3
 };
 function observerCallback(entries, observer) {
     entries.forEach(entry => {
@@ -121,6 +123,11 @@ function observerCallback(entries, observer) {
             // entry.target.classList.replace('fadeOut', 'fadeIn');
             entry.target.style.opacity = 1;
             entry.target.style.transform = "translate(0px, 0px)";
+
+            if(entry.target.classList.contains('imgHolder')) {
+                entry.target.firstElementChild.style.height = entry.target.firstElementChild.dataset.originalHeight + 'px';
+            }
+            
         } else {
             // entry.target.classList.replace('fadeIn', 'fadeOut');
         }
@@ -134,6 +141,13 @@ headers.forEach(el => {
     el.style.opacity = 0; // Beware of user has disabled JS; do not hide elements using CSS
     el.style.transform = "translate(-50px, 0px)";
 });
+sectionImages.forEach(el => {
+    el.onload = function(){
+        this.parentElement.style.height = this.offsetHeight + 'px';
+        this.dataset.originalHeight = this.offsetHeight;
+        this.style.height = 0;
+    }
+});
 setTimeout(() => { // using setTimeout for elements that are directly in viewport, so they show the effect
     const observer = new IntersectionObserver(observerCallback, observerOptions);
     ctaBtnElms.forEach(el => {
@@ -143,6 +157,10 @@ setTimeout(() => { // using setTimeout for elements that are directly in viewpor
     headers.forEach(el => {
         el.style.transition = "opacity 0.7s ease-in, transform 0.7s ease-out";
         observer.observe(el);
+    });
+    sectionImages.forEach(el => {
+        el.style.transition = "height 1.2s ease";
+        observer.observe(el.parentElement);
     });
 }, 1);
 /*************************************************/
