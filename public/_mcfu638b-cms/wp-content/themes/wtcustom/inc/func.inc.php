@@ -42,6 +42,9 @@ function customBackendStyles() {
       .cf-complex__inserter-button {
           border: 1px solid red;
       }
+      .cf-complex__group-actions.cf-complex__group-actions--tabbed {
+        background-color: #fde6e6;
+      }
     </style>
     <?php
 }
@@ -144,7 +147,7 @@ function customBackendScripts() {
             customizeNestedPagesPlugin();
             flushSimplePagesCacheOnDrag();
             jQuery('.cf-complex__inserter-button').css('backgroundColor', '#b3edb3');
-            jQuery('.cf-complex__group-actions.cf-complex__group-actions--tabbed').css('backgroundColor', '#fde6e6');
+            // jQuery('.cf-complex__group-actions.cf-complex__group-actions--tabbed').css('backgroundColor', '#fde6e6');
 
             // function customizeCarbonFieldsPlugin() {
             //     let divStyles = {
