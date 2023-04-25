@@ -54,7 +54,7 @@ class PagesController extends Controller
         $options = $this->getWebsiteOptions();
 
         // if(isset($options['header_image'])) $options['header_image'] = $this->generateMediaUrl($options['header_image']);
-        if(isset($options->working_with)) $options->working_with = $this->getMediaGallery($options->working_with, 'medium');
+        if(isset($options->working_with)) $options->working_with = $this->getMediaGallery($options->working_with);
         $vessels = array();
         $news = array();
         $vessel = false;
@@ -468,8 +468,8 @@ class PagesController extends Controller
         $this->allMediaById = $simpleMedia->makeListById();
 // dd($this->allMediaById);
 
-        if(isset($options->working_with)) $options->working_with = $this->getMediaGallery($options->working_with, 'medium');
-        if(isset($options->events)) $options->events = $this->getMediaGallery($options->events, 'medium_large');
+        if(isset($options->working_with)) $options->working_with = $this->getMediaGallery($options->working_with);
+        if(isset($options->events)) $options->events = $this->getMediaGallery($options->events);
 
         $allCrbSections = array();
         foreach($spages[0] as $sPage) {
