@@ -390,23 +390,37 @@ class PagesController extends Controller
         if(!is_array($gall)) $gall = array($gall);
 
         foreach($gall as $mediaId) {
-            $url = $this->generateMediaUrl($mediaId, $size);
+            // $url = $this->generateMediaUrl($mediaId, $size);
+            $url = $this->generateMediaUrl($mediaId);
+            $sizes = $this->generateMediaSizes($mediaId);
             $alt = $this->generateMediaAlt($mediaId);
             if(isset($this->allMediaById[$mediaId]) && isset($this->allMediaById[$mediaId]->alt) && $this->allMediaById[$mediaId]->alt) $alt = $this->allMediaById[$mediaId]->alt;
             $i['url'] = $url;
+            $i['sizes'] = $sizes;
             $i['alt'] = $alt;
             $res[] = $i;
         }
         return $res;
     }
-    public function generateMediaUrl($mediaId, $size = false) {
+    public function generateMediaUrl($mediaId) {
         if(isset($this->allMediaById[$mediaId])) {
-            if($size) $url = $this->allMediaById[$mediaId]->sizes->{$size};
-            else $url = $this->allMediaById[$mediaId]->url;
+            $url = $this->allMediaById[$mediaId]->url;
             return str_replace(array('http://', '_mcfu638b-cms/wp-content/uploads'), array('https://', 'media'), $url);
         }
         else {
             return 'https://via.placeholder.com/800x600?text=Geen+afbeelding+gevonden';
+        }
+    }
+    public function generateMediaSizes($mediaId) {
+        $sizes = [];
+        if(isset($this->allMediaById[$mediaId]) && isset($this->allMediaById[$mediaId]->sizes)) {
+            foreach($this->allMediaById[$mediaId]->sizes as $size => $url) {
+                $sizes[$size] = str_replace(array('http://', '_mcfu638b-cms/wp-content/uploads'), array('https://', 'media'), $url);
+            }
+            return $sizes;
+        }
+        else {
+            return false;
         }
     }
     public function generateMediaAlt($mediaId) {
@@ -452,6 +466,7 @@ class PagesController extends Controller
         $simpleMedia = new SimpleMediaApi();
         $simpleMedia->get();
         $this->allMediaById = $simpleMedia->makeListById();
+// dd($this->allMediaById);
 
         if(isset($options->working_with)) $options->working_with = $this->getMediaGallery($options->working_with, 'medium');
         if(isset($options->events)) $options->events = $this->getMediaGallery($options->events, 'medium_large');
@@ -468,6 +483,7 @@ class PagesController extends Controller
             $crbSecs = $this->getPageCrbSections($sPage->id);
             $allCrbSections = array_merge($allCrbSections, $crbSecs);
         }
+
 // dd($allCrbSections);
 // dd($options);
         $data= [
@@ -510,13 +526,13 @@ class PagesController extends Controller
             // $secs[] = $s;
 
             if($sec->_type == 'hero') {
-                $sec->crb_media_gallery = $this->getMediaGallery($sec->crb_media_gallery, '2048x2048');
+                $sec->crb_media_gallery = $this->getMediaGallery($sec->crb_media_gallery);
             }
             if($sec->_type == '1column') {
                 if(count($sec->fullwidth)) {
                     foreach($sec->fullwidth as &$v) {
                         if($v->_type == 'afbeelding') {
-                            $v->image = $this->getMediaGallery(array($v->image), 'medium_large');
+                            $v->image = $this->getMediaGallery(array($v->image));
                         }
                     }
                 }
@@ -525,14 +541,14 @@ class PagesController extends Controller
                 if(count($sec->left)) {
                     foreach($sec->left as &$v) {
                         if($v->_type == 'afbeelding') {
-                            $v->image = $this->getMediaGallery(array($v->image), 'medium_large');
+                            $v->image = $this->getMediaGallery(array($v->image));
                         }
                     }
                 }
                 if(count($sec->right)) {
                     foreach($sec->right as &$v) {
                         if($v->_type == 'afbeelding') {
-                            $v->image = $this->getMediaGallery(array($v->image), 'medium_large');
+                            $v->image = $this->getMediaGallery(array($v->image));
                         }
                     }
                 }

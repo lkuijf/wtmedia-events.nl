@@ -25,7 +25,7 @@
         <div>
             @if (isset($images))
             @foreach ($images as $image)
-                @if ($image['url'])<img src="{!! $image['url'] !!}" alt="{{ $image['alt'] }}">@endif
+                @if ($image['sizes']['2048x2048'])<img src="{!! $image['sizes']['2048x2048'] !!}" alt="{{ $image['alt'] }}">@endif
             @endforeach
             @endif
         </div>

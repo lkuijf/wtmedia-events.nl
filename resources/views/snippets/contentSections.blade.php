@@ -92,7 +92,8 @@
                 @endif
                 @if ($secData->_type == 'afbeelding')
                     @include('sections.fullwidth_afbeelding', [
-                    'imgUrl' => $secData->image[0]['url'],
+                    'imgUrlMedium' => $secData->image[0]['sizes']['medium_large'],
+                    'imgUrlLarge' => $secData->image[0]['sizes']['large'],
                     'imgAlt' => $secData->image[0]['alt'],
                     ])
                 @endif

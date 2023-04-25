@@ -124,9 +124,9 @@ function observerCallback(entries, observer) {
             entry.target.style.opacity = 1;
             entry.target.style.transform = "translate(0px, 0px)";
 
-            if(entry.target.classList.contains('imgHolder')) {
-                entry.target.firstElementChild.style.height = entry.target.firstElementChild.dataset.originalHeight + 'px';
-            }
+            // if(entry.target.classList.contains('imgHolder')) {
+            //     entry.target.querySelector('img:first-of-type').style.height = entry.target.querySelector('img:first-of-type').dataset.originalHeight + 'px';
+            // }
             
         } else {
             // entry.target.classList.replace('fadeIn', 'fadeOut');
@@ -141,13 +141,13 @@ headers.forEach(el => {
     el.style.opacity = 0; // Beware of user has disabled JS; do not hide elements using CSS
     el.style.transform = "translate(-50px, 0px)";
 });
-sectionImages.forEach(el => {
-    el.onload = function(){
-        this.parentElement.style.height = this.offsetHeight + 'px';
-        this.dataset.originalHeight = this.offsetHeight;
-        this.style.height = 0;
-    }
-});
+// sectionImages.forEach(el => {
+//     el.onload = function(){
+//         this.parentElement.style.height = this.offsetHeight + 'px';
+//         this.dataset.originalHeight = this.offsetHeight;
+//         this.style.height = 0;
+//     }
+// });
 setTimeout(() => { // using setTimeout for elements that are directly in viewport, so they show the effect
     const observer = new IntersectionObserver(observerCallback, observerOptions);
     ctaBtnElms.forEach(el => {
@@ -158,10 +158,10 @@ setTimeout(() => { // using setTimeout for elements that are directly in viewpor
         el.style.transition = "opacity 0.7s ease-in, transform 0.7s ease-out";
         observer.observe(el);
     });
-    sectionImages.forEach(el => {
-        el.style.transition = "height 1.2s ease";
-        observer.observe(el.parentElement);
-    });
+    // sectionImages.forEach(el => {
+    //     el.style.transition = "height 1.2s ease";
+    //     observer.observe(el.parentElement);
+    // });
 }, 100);
 /*************************************************/
 
