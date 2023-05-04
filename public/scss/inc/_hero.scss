@@ -1,11 +1,15 @@
-$standardHeroHeight: 650px;
-
-@media (max-width: $sbp3_tablet) {
-    $standardHeroHeight: 550px; // for mobile
+@mixin heroHeight() {
+    @media (max-width: $sbp3_tablet) {
+        height: 550px;
+    }
+    @media (min-width: ($sbp3_tablet+1)) {
+        height: 650px;
+    }
 }
+
 .hero {
     position: relative;
-    height: $standardHeroHeight;
+    @include heroHeight;
     .heroOverlay {
         > div {
             display: flex;
@@ -27,7 +31,7 @@ $standardHeroHeight: 650px;
         position: absolute;
         top: 0;
         width: 100%;
-        height: $standardHeroHeight;
+        @include heroHeight;
         background-image: linear-gradient(to left, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.8));
         color: $colorWhite;
         z-index: 1;
@@ -93,7 +97,7 @@ $standardHeroHeight: 650px;
         > div {
             display: block;
             width: 100%;
-            height: $standardHeroHeight;
+            @include heroHeight;
             overflow: hidden;
             position: absolute;
             top: 0;
@@ -102,7 +106,7 @@ $standardHeroHeight: 650px;
                 position: absolute;
                 top: 0;
                 width: 100%;
-                height: $standardHeroHeight;
+                @include heroHeight;
                 object-fit: cover;
                 transition: opacity 0.7s ease;
                 opacity: 0;

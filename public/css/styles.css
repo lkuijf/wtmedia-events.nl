@@ -129,13 +129,21 @@ form .error span {
 
 .hero {
   position: relative;
-  height: 650px;
+}
+@media (max-width: 768px) {
+  .hero {
+    height: 550px;
+  }
+}
+@media (min-width: 769px) {
+  .hero {
+    height: 650px;
+  }
 }
 .hero .heroOverlay {
   position: absolute;
   top: 0;
   width: 100%;
-  height: 650px;
   background-image: linear-gradient(to left, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.8));
   color: #FFF;
   z-index: 1;
@@ -179,6 +187,16 @@ form .error span {
 @media (max-width: 1024px) {
   .hero .heroOverlay > div .heroText {
     max-width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .hero .heroOverlay {
+    height: 550px;
+  }
+}
+@media (min-width: 769px) {
+  .hero .heroOverlay {
+    height: 650px;
   }
 }
 .hero .heroOverlay h1 {
@@ -263,21 +281,39 @@ form .error span {
 .hero .heroImages > div {
   display: block;
   width: 100%;
-  height: 650px;
   overflow: hidden;
   position: absolute;
   top: 0;
   background-color: #222;
 }
+@media (max-width: 768px) {
+  .hero .heroImages > div {
+    height: 550px;
+  }
+}
+@media (min-width: 769px) {
+  .hero .heroImages > div {
+    height: 650px;
+  }
+}
 .hero .heroImages > div img {
   position: absolute;
   top: 0;
   width: 100%;
-  height: 650px;
   -o-object-fit: cover;
      object-fit: cover;
   transition: opacity 0.7s ease;
   opacity: 0;
+}
+@media (max-width: 768px) {
+  .hero .heroImages > div img {
+    height: 550px;
+  }
+}
+@media (min-width: 769px) {
+  .hero .heroImages > div img {
+    height: 650px;
+  }
 }
 .hero .heroImages > div img:first-child {
   opacity: 1;
