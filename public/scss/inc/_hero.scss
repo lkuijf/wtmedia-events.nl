@@ -1,8 +1,7 @@
 $standardHeroHeight: 650px;
-$smallerHeroHeight: 550px; // for mobile
 
 @media (max-width: $sbp3_tablet) {
-    $standardHeroHeight: $smallerHeroHeight;
+    $standardHeroHeight: 550px; // for mobile
 }
 .hero {
     position: relative;
