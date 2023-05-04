@@ -177,12 +177,13 @@ nav ul {
                 @include burgerMenuAdapter;
                 #burger-check ~ ul {
                     background-color: #EFEFEF;
-                    padding: 20px 0;
+                    padding: 60px 0 20px 0;
                     z-index: 1;
                     text-align: center;
                     display: flex;
                     flex-direction: column;
                     gap: 20px;
+                    top: 0;
                     li {
                         a {
                             @include mainNavButton;
@@ -191,6 +192,12 @@ nav ul {
                 }
                 #burger-check:checked ~ ul {
                     width: 60%;
+                }
+                .burger-label {
+                    z-index: 2;
+                    &.afterScroll {
+                        top: 41px;
+                    }
                 }
             }
             @media (min-width: ($sbp3_tablet + 1)) {

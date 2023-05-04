@@ -480,12 +480,13 @@ nav ul {
   }
   .headerOuter .headerInnerWrap .mainNav #burger-check ~ ul {
     background-color: #EFEFEF;
-    padding: 20px 0;
+    padding: 60px 0 20px 0;
     z-index: 1;
     text-align: center;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    top: 0;
   }
   .headerOuter .headerInnerWrap .mainNav #burger-check ~ ul li a {
     font-family: "Karla", sans-serif;
@@ -508,6 +509,12 @@ nav ul {
   }
   .headerOuter .headerInnerWrap .mainNav #burger-check:checked ~ ul {
     width: 60%;
+  }
+  .headerOuter .headerInnerWrap .mainNav .burger-label {
+    z-index: 2;
+  }
+  .headerOuter .headerInnerWrap .mainNav .burger-label.afterScroll {
+    top: 41px;
   }
 }
 @media (min-width: 769px) {

@@ -6,6 +6,7 @@ const mainLogo = document.querySelector('.mainLogoWrap img');
 const mainLogoInitialHeight = mainLogo.style.height;
 const anchors = document.querySelectorAll('.anchorPoint');
 const buttons = document.querySelectorAll('.mainNav ul li a');
+const burgerMenuLabel = document.querySelector('.burger-label');
 
 let anchorsInViewport = [];
 
@@ -78,9 +79,11 @@ function setAfterScrollAttributes() {
     if(fromTop > 200) {
         mainLogo.classList.add('afterScroll');
         headerWrap.classList.add('afterScroll');
+        burgerMenuLabel.classList.add('afterScroll');
    } else {
         mainLogo.classList.remove('afterScroll');
         headerWrap.classList.remove('afterScroll');
+        burgerMenuLabel.classList.remove('afterScroll');
     }
 }
 function debounce(func){
