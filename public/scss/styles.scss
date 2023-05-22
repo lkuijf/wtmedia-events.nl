@@ -9,6 +9,9 @@ $headerHeight: 200px;
 $headerHeightAfterScroll: 120px;
 
 $colorBlack: #222; // text
+$colorBlackLight: #555;
+$colorGrey: #555; // packages header background
+$colorGreyLight: #BBB; // package bullet splitters
 $colorWhite: #FFF;
 $colorWTM: #19b4b6; // logo color
 $colorWTMdark: #0c5a5b;
@@ -23,6 +26,9 @@ $fontSize: 16px;
 @import 'inc/totop-btn';
 @import 'inc/hero';
 
+@mixin borderRadius {
+    border-radius: 15px;
+}
 @mixin mainNavButton {
     font-family: $fontFamilyButton;
     color: $colorBlack;
@@ -35,8 +41,8 @@ $fontSize: 16px;
     &.activeButton {
         background-color: $colorWTM;
         color: $colorWhite;
-        border-radius: 20px;
-        padding: 8px 16px;
+        @include borderRadius;
+        padding: 7px 16px 8px 16px;
         &:hover {
             color: #EEE;
         }
@@ -89,10 +95,24 @@ nav ul {
         }
     }
     .fullw, .twoColumns {
-        img {
-            width: 100%;
-            object-fit: cover;
-            object-position: top;
+        picture {
+            img {
+                width: 100%;
+                position: relative;
+                @media (min-width: ($sbp3_tablet + 1)) {
+                    width: auto;
+                    height: auto;
+                    max-width: 100%;
+                    max-height: 100%;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    max-height: 700px;
+                }
+                object-fit: contain;
+                object-position: top;
+                @include borderRadius;
+            }
         }
     }
     .ctaBtnWrap {
@@ -100,6 +120,7 @@ nav ul {
             text-align: center;
         }
         .ctaBtn {
+            @include borderRadius;
             background-color: $colorCtaBtn;
             color: $colorWhite;
             text-decoration: none;
@@ -161,10 +182,10 @@ nav ul {
             flex-direction: column;
             justify-content: space-around;
             img {
-                height: 100px;
+                height: 180px;
                 transition: height 0.3s ease;
                 &.afterScroll {
-                    height: 60px;
+                    height: 100px;
                 }
             }
         }
@@ -209,9 +230,31 @@ nav ul {
                     gap: 40px;
                     @media (max-width: $sbp1_desktop) {gap: 15px;}
                     li {
+                        position: relative;
                         a {
                             @include mainNavButton;
                             @media (max-width: $sbp1_desktop) {font-size: 1.1em;}
+                        }
+                        ul {
+                            display: none;
+                            left: 10px;
+                            // top: 35px;
+                            white-space: nowrap;
+                            position: absolute;
+                            background-color: $colorWTMdark;
+                            @include borderRadius;
+                            padding: 20px;
+                            li {
+                                padding: 5px 0;
+                                a {
+                                    color: #FFF;
+                                }
+                            }
+                        }
+                        &:hover {
+                            ul {
+                                display: block;
+                            }
                         }
                     }
                 }
@@ -259,64 +302,134 @@ nav ul {
 
 .pricing3Column {
     display: flex;
-    @media (max-width: $sbp2_laptop) {
-        flex-direction: column;
-        align-items: center;
-    }
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
     article {
-        cursor: pointer;
-        transition: transform 0.2s ease;
-        width: 350px;
-        @media (max-width: $sbp4_mobile) {width:100%}
-        border: 1px solid transparent;
-        padding: 10px;
-        > div {
-            border-bottom: 10px solid transparent;
-            background-color: $colorWTM;
-            color: $colorWhite;
+        flex: 0 1 400px;
+        @media (max-width: $sbp4_mobile) {
+            flex: 0 1 95%;
+        }
+        background-color: #EFEFEF;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        .packHeader {
+            background-color: $colorGrey;
             padding: 10px;
-            height: 100%;
+            color: #FFF;
+            h3 {
+                font-size: 1.8em;
+            }
+        }
+        .packInfo {
+            color: $colorBlackLight;
+            padding: 20px 40px;
+            flex: 1 1 auto;
             display: flex;
             flex-direction: column;
-            h3 {
-                font-size: 2em;
-                margin: 0;
-            }
-            > div {
-                margin-top: auto;
-                display: flex;
-                justify-content: space-between;
-                text-align: right;
+            justify-content: space-between;
+            gap: 20px;
+
+            div:first-child {
                 p {
-                    margin: 0;
-                    font-size: 1.5em;
-                    &:first-of-type {
-                        border: 1px solid $colorWhite;
-                        display: inline-block;
-                        width: 50px;
-                        &:before {
-                            font-family: "wt_media_events";
-                            display: block;
-                            width: 50px;
-                            font-size: 30px;
-                            content: '\e802';
-                            text-align: center;
-                            padding-top: 9px;
-                        }
+                    font-size: 2em;
+                    font-weight: bold;
+                }
+            }
+            div:last-child {
+                a {
+                    font-size: 1em;
+                    padding: 10px 20px;
+                    background-color: $colorGrey;
+                    color: #FFF;
+                    text-decoration: none;
+                    @include borderRadius;
+                }
+            }
+            ul {
+                margin: 0;
+                padding: 0;
+                list-style-type: none;
+                li {
+                    border-bottom: 2px solid $colorGreyLight;
+                    line-height: 3em;
+                    &:before {
+                        font-family: 'wt_media_events';
+                        font-size: 1.3em;
+                        content: '\e803\00a0\00a0';
                     }
                 }
             }
         }
         &:hover {
-            transform: scale(1.03);
-            border: 1px solid $colorWTMdark;
-            > div {
-                background-color: $colorWTMdark;
-                border-bottom: 10px solid #1BFCFF;
+            cursor: pointer;
+            .packHeader {
+                background-color: $colorWTM;
+            }
+            .packInfo {
+                color: $colorBlack;
+            }
+            div:last-child {
+                a {
+                    background-color: $colorWTM;
+                }
             }
         }
+
+
+        // cursor: pointer;
+        // transition: transform 0.2s ease;
+        // width: 350px;
+        // @media (max-width: $sbp4_mobile) {width:100%}
+        // border: 1px solid transparent;
+        // padding: 10px;
+        // > div {
+        //     border-bottom: 10px solid transparent;
+        //     background-color: $colorWTM;
+        //     color: $colorWhite;
+        //     padding: 10px;
+        //     height: 100%;
+        //     display: flex;
+        //     flex-direction: column;
+        //     h3 {
+        //         font-size: 2em;
+        //         margin: 0;
+        //     }
+        //     > div {
+        //         margin-top: auto;
+        //         display: flex;
+        //         justify-content: space-between;
+        //         text-align: right;
+        //         p {
+        //             margin: 0;
+        //             font-size: 1.5em;
+        //             &:first-of-type {
+        //                 border: 1px solid $colorWhite;
+        //                 display: inline-block;
+        //                 width: 50px;
+        //                 &:before {
+        //                     font-family: "wt_media_events";
+        //                     display: block;
+        //                     width: 50px;
+        //                     font-size: 30px;
+        //                     content: '\e802';
+        //                     text-align: center;
+        //                     padding-top: 9px;
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
+        // &:hover {
+        //     transform: scale(1.03);
+        //     border: 1px solid $colorWTMdark;
+        //     > div {
+        //         background-color: $colorWTMdark;
+        //         border-bottom: 10px solid #1BFCFF;
+        //     }
+        // }
     }
 }
 
@@ -375,7 +488,7 @@ nav ul {
         background-color: $colorBlack;
         color: $colorWhite;
         border: 0;
-        border-radius: 20px;
+        @include borderRadius;
         height: 50px;
         padding: 0 20px;
         width: 350px;
@@ -388,7 +501,7 @@ nav ul {
         color: $colorWhite;
         font-size: 1.5em;
         border: 0;
-        border-radius: 20px;
+        @include borderRadius;
         padding: 10px 50px;
         display: inline-block;
         box-shadow: #e1e1e1 10px 10px 0px -2px, $colorCtaBtn 10px 10px;
@@ -419,7 +532,7 @@ footer {
                 color: $colorWhite;
                 font-size: 1.2em;
                 text-decoration: none;
-                border-radius: 20px;
+                @include borderRadius;
                 padding: 8px 15px;
             }
         }

@@ -78,6 +78,7 @@
                     <a href="javascript:void(0)" class="fb"><img src="{{ asset('statics/facebook.png') }}" alt="Facebook"></a>
                     <a href="javascript:void(0)" class="li"><img src="{{ asset('statics/linkedin.png') }}" alt="LinkedIn"></a>
                 </p>
+                <div class="embedsocial-hashtag" data-ref="cb4f26c68a893f54158863a0aecf5a38c087439e"> <a class="feed-powered-by-es feed-powered-by-es-feed-new" href="https://embedsocial.com/social-media-aggregator/" target="_blank" title="Widget by EmbedSocial"> Widget by EmbedSocial<span>→</span> </a> </div> <script> (function(d, s, id) { var js; if (d.getElementById(id)) {return;} js = d.createElement(s); js.id = id; js.src = "https://embedsocial.com/cdn/ht.js"; d.getElementsByTagName("head")[0].appendChild(js); }(document, "script", "EmbedSocialHashtagScript")); </script>
             </div>
         </div>
     </footer>

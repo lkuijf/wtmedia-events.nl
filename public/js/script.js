@@ -1,5 +1,5 @@
 // const statNumbers = document.querySelectorAll('.statNumber');
-// const articles = document.querySelectorAll('article');
+const articles = document.querySelectorAll('article');
 const toTopBtn = document.querySelector('#toTop');
 const headerWrap = document.querySelector('.headerInnerWrap');
 const mainLogo = document.querySelector('.mainLogoWrap img');
@@ -12,7 +12,7 @@ let anchorsInViewport = [];
 
 const heroSlideshowImages = document.querySelectorAll('.heroImages img');
 
-// setArticlesClickable();
+setArticlesClickable();
 // upCountNumbers();
 
 setAfterScrollAttributes(); // when page is loaded at some scroll position. scroll event will not fire.
@@ -103,10 +103,13 @@ function slideShow() {
     if (curIndex == heroSlideshowImages.length) {
         curIndex = 0;
         heroSlideshowImages.forEach((element,i) => {
-            if(i != 0) element.style.opacity = 0;
+            if(i != 0) {
+                element.style.opacity = 0;
+            }
         });
     }
     heroSlideshowImages[curIndex].style.opacity = 1;
+    if(heroSlideshowImages[curIndex-1]) heroSlideshowImages[curIndex-1].style.opacity = 0;
     setTimeout(slideShow, imgDuration);
 }
 if(heroSlideshowImages && heroSlideshowImages.length > 1) setTimeout(slideShow, imgDuration);
@@ -192,6 +195,20 @@ var swiperPartner = new Swiper(".partnerSwiper", {
     }
 });
 
+function setArticlesClickable() {
+    if(articles.length) {
+        articles.forEach(item => {
+            let link = item.querySelector('a');
+            if(link) {
+                item.addEventListener('click', () => {
+                    window.location = link.getAttribute("href");
+                });
+            }
+        });
+    }
+}
+
+
 
 // function upCountNumbers() {
 //     if(statNumbers && statNumbers.length) {
@@ -206,15 +223,3 @@ var swiperPartner = new Swiper(".partnerSwiper", {
 //     }
 // }
 
-// function setArticlesClickable() {
-//     if(articles.length) {
-//         articles.forEach(item => {
-//             let link = item.querySelector('a');
-//             if(link) {
-//                 item.addEventListener('click', () => {
-//                     window.location = link.getAttribute("href");
-//                 });
-//             }
-//         });
-//     }
-// }

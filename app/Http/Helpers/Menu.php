@@ -22,15 +22,18 @@ class Menu {
             
             $pageUrl = $url . '/' . $page->slug;
             $this->html .= '<li itemprop="name">';
-            // if(substr_count($pageUrl, '/') == 2) {
+            $href = $pageUrl;
+            if(isset($page->alt_url) && $page->alt_url) $href = $page->alt_url; // mironmarine.nl
+
+            if(substr_count($pageUrl, '/') == 2) {
                 // $this->html .= '<a href="#">'; // only for Miron Marine Service
-            // } else {
-                $href = $pageUrl;
-                if(isset($page->alt_url) && $page->alt_url) $href = $page->alt_url; // mironmarine.nl
+                $this->html .= '<a itemprop="url" href="' . $href . '">';
+            } else {
                 // if($page->title == 'Home') $href = '/';
                 // $this->html .= '<a itemprop="url" href="' . $href . '">';
                 $this->html .= '<a itemprop="url" href="#' . substr($href, 1) . '">'; // rotterdamsehorecawandeling.nl (onepager)
-            // }
+            }
+
             $this->html .= $page->title;
             $this->html .= '</a>';
             if(isset($this->allPagesFlattenedPerParent[$page->id])) $this->generateUlMenu($page->id, $pageUrl);
