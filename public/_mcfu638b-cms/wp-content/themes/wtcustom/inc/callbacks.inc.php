@@ -103,7 +103,13 @@ function getCustomPostsSimplified(WP_REST_Request $request) {
         'order' => $order,
         'post_type' => $postType,
     ]);
-    $aRes = getPostsCollectionAttrs($posts);
+
+
+
+    $aRes = getCustomPostsCollectionAttrs($posts);
+
+
+    
     $response = new WP_REST_Response($aRes);
     $response->set_status(200);
     return $response;
@@ -180,6 +186,39 @@ function getPostsCollectionAttrs($coll) {
         $oP->tags = $aTags;
         $oP->esplendor_group = $group;
         $oP->topics = $topics;
+        $aRes[] = $oP;
+    }
+    return $aRes;
+}
+function getCustomPostsCollectionAttrs($coll) {
+    $aRes = [];
+    foreach ($coll as $item) {
+        $oP = new stdClass();
+
+        // $tags = get_the_tags($item->ID);
+        // $aTags = array();
+        // if($tags) {
+        //     foreach ($tags as $oTag) {
+        //         $aTags[$oTag->slug] = $oTag->name;
+        //     }
+        // }
+
+        // $metaTopics = get_post_meta($item->ID, 'topics');
+        // $topics = array();
+        // if($metaTopics && count(array_filter($metaTopics))) {
+        //     $topics = $metaTopics[0];
+        // }
+
+        $oP->id = $item->ID;
+        $oP->title = $item->post_title;
+        $oP->slug = $item->post_name;
+        $oP->parent = $item->post_parent;
+        $oP->order = $item->menu_order;
+        $oP->status = $item->post_status;
+        $oP->date = $item->post_date;
+        $oP->category = get_the_category($item->ID)[0]->name;
+        // $oP->tags = $aTags;
+        // $oP->topics = $topics;
         $aRes[] = $oP;
     }
     return $aRes;

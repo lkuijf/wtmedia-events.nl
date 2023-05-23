@@ -6,6 +6,13 @@ class SimpleCustomPostsApi extends ApiCall {
         $this->parameters['post_type'] = $postType;
         $this->endpoint = '/index.php/wp-json/wtcustom/simple-custom-posts';
     }
+    public function getItems() {
+        $data = new \stdClass();
+
+        $data = $this->res;
+
+        return $data;
+    }
     // public function setParameters($oFilters) {
     //     if(isset($oFilters->sort[0])) {
     //         if($oFilters->sort[0] == 'newest-first') { $this->parameters['orderby'] = 'date'; $this->parameters['order'] = 'desc'; }

@@ -155,7 +155,9 @@ class PagesController extends Controller
         $content = $this->getContent(942);
         
         $blogItems = new SimpleCustomPostsApi('blog');
-dd($blogItems);
+        $blogItems->get();
+        $items = $blogItems->getItems();
+dd($items);
 
         $data= [
             'head_title' => 'all blog posts',
