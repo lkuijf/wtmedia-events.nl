@@ -522,6 +522,7 @@ function crbRegisterFields($args) {
             Field::make( 'media_gallery', 'hero_gallery', __( 'Hero images' ) )->set_visible_in_rest_api($visible = true),
             Field::make( 'text', 'hero_title', __( 'Hero title (can use html-tags)' ))->set_visible_in_rest_api($visible = true),
             Field::make( 'textarea', 'hero_text', __( 'Hero text (can use html-tags)' ))->set_visible_in_rest_api($visible = true),
+            Field::make( 'textarea', 'card_text', __( 'Card text (can use html-tags)' ))->set_visible_in_rest_api($visible = true),
             Field::make( 'rich_text', 'text', __( 'Text' ))->set_visible_in_rest_api($visible = true),
             )
         );

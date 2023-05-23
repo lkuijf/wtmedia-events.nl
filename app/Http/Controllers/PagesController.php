@@ -157,7 +157,12 @@ class PagesController extends Controller
         $blogItems = new SimpleCustomPostsApi('blog');
         $blogItems->get();
         $items = $blogItems->getItems();
-dd($items);
+        foreach($items as &$blog) {
+            $blog->gallery = $this->getMediaGallery($blog->gallery);
+        }
+// dd($items);
+
+//$sec->crb_media_gallery = $this->getMediaGallery($sec->crb_media_gallery);
 
         $data= [
             'head_title' => 'all blog posts',
@@ -167,6 +172,7 @@ dd($items);
             // 'cart_total' => $cartTotalItems,
             // 'user_logged_in' => $loggedInUserId,
             'content_sections' => $content->contentSections,
+            'blog_items' => $items,
             // 'blog_text' => $post[0]->text,
             // 'blog_hero_title' => $post[0]->hero_title,
             // 'blog_hero_text' => $post[0]->hero_text,
