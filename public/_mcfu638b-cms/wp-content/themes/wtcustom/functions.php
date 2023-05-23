@@ -253,6 +253,7 @@ add_action('edit_term', 'deleteSimpleTaxonomiesRestCache');
 add_action('delete_term', 'deleteSimpleTaxonomiesRestCache');
 
 add_action('save_post_page', 'deleteSimplePagesRestCache');
+add_action('save_post', 'deleteSimpleCustomPostsRestCache');
 
 // add_action('admin_head', 'loadAxios');
 // function loadAxios() {
