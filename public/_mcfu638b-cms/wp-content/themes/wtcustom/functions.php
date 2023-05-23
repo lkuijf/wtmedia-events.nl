@@ -252,8 +252,14 @@ add_action('create_term', 'deleteSimpleTaxonomiesRestCache');
 add_action('edit_term', 'deleteSimpleTaxonomiesRestCache');
 add_action('delete_term', 'deleteSimpleTaxonomiesRestCache');
 
-add_action('save_post_page', 'deleteSimplePagesRestCache');
-add_action('save_post_blog', 'deleteSimpleCustomPostsRestCache');
+// add_action('save_post_page', 'deleteSimplePagesRestCache');
+// add_action('save_post_blog', 'deleteSimpleCustomPostsRestCache');
+
+add_action('save_post', 'deleteAllPostRestCache');
+function deleteAllPostRestCache() {
+    \WP_Rest_Cache_Plugin\Includes\Caching\Caching::get_instance()->delete_cache_by_endpoint( '/_mcfu638b-cms/index.php/wp-json/wtcustom/simple-pages' );
+    \WP_Rest_Cache_Plugin\Includes\Caching\Caching::get_instance()->delete_cache_by_endpoint( '/_mcfu638b-cms/index.php/wp-json/wtcustom/simple-custom-posts' );
+}
 
 // add_action('admin_head', 'loadAxios');
 // function loadAxios() {
