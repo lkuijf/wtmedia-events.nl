@@ -551,14 +551,23 @@ nav ul {
   .headerOuter .headerInnerWrap .mainNav #burger-check ~ ul li a:hover {
     color: #AAA;
   }
-  .headerOuter .headerInnerWrap .mainNav #burger-check ~ ul li a.activeButton {
+  .headerOuter .headerInnerWrap .mainNav #burger-check ~ ul li a.active {
     background-color: #19b4b6;
     color: #FFF;
     border-radius: 15px;
     padding: 7px 16px 8px 16px;
   }
-  .headerOuter .headerInnerWrap .mainNav #burger-check ~ ul li a.activeButton:hover {
+  .headerOuter .headerInnerWrap .mainNav #burger-check ~ ul li a.active:hover {
     color: #EEE;
+  }
+  .headerOuter .headerInnerWrap .mainNav #burger-check ~ ul li ul {
+    padding-top: 10px;
+  }
+  .headerOuter .headerInnerWrap .mainNav #burger-check ~ ul li ul li {
+    padding: 10px 0;
+  }
+  .headerOuter .headerInnerWrap .mainNav #burger-check ~ ul li ul li a {
+    font-size: 1em;
   }
   .headerOuter .headerInnerWrap .mainNav #burger-check:checked ~ ul {
     width: 60%;
@@ -600,13 +609,13 @@ nav ul {
   .headerOuter .headerInnerWrap .mainNav ul li a:hover {
     color: #AAA;
   }
-  .headerOuter .headerInnerWrap .mainNav ul li a.activeButton {
+  .headerOuter .headerInnerWrap .mainNav ul li a.active {
     background-color: #19b4b6;
     color: #FFF;
     border-radius: 15px;
     padding: 7px 16px 8px 16px;
   }
-  .headerOuter .headerInnerWrap .mainNav ul li a.activeButton:hover {
+  .headerOuter .headerInnerWrap .mainNav ul li a.active:hover {
     color: #EEE;
   }
 }
@@ -630,6 +639,7 @@ nav ul {
   }
   .headerOuter .headerInnerWrap .mainNav ul li ul li a {
     color: #FFF;
+    padding: 7px 16px 8px 16px;
   }
 }
 @media (min-width: 769px) {
@@ -946,6 +956,9 @@ footer .ftr ul li a {
 }
 footer .ftr ul li a:hover {
   color: #AAA;
+}
+footer .ftr ul li ul {
+  display: none;
 }
 footer .btm {
   padding-top: 20px;

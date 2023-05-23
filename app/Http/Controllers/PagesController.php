@@ -219,140 +219,180 @@ class PagesController extends Controller
             $s['gallery'] = [];
             $sections[] = $s;
         }
-        if(isset($pageData->crb_sections) && count($pageData->crb_sections)) {
-            $loadWoo_once = true;
-            foreach($pageData->crb_sections as $sec) {
-                if($sec->_type == 'hero') {
-                    $sec->crb_media_gallery = $this->getMediaGallery($sec->crb_media_gallery, '2048x2048');
-                }
-                if($sec->_type == 'text') {
-                    $sec->image = $this->getMediaGallery($sec->image, 'medium_large');
-                    $sec->image_2 = $this->getMediaGallery($sec->image_2, 'medium_large');
-                }
-                if($sec->_type == 'office_boxes') {
-                    $aValuesToRetreive = array('title', 'country', 'phone', 'email', 'address1', 'address2', 'address3', 'address4', 'google_maps_address');
-                    foreach($sec->office_associations as $k => $assoc) {
-                        $oCustPostType = $this->getCustomPostTypeViaRestApi($assoc->subtype, $assoc->id, $aValuesToRetreive);
-                        if(!$oCustPostType) unset($sec->office_associations[$k]);
-                        else $sec->office_associations[$k] = $oCustPostType;
-                    }
-                }
-                if($sec->_type == 'professional_boxes') {
-                    $aValuesToRetreive = array('title', 'function', 'image');
-                    foreach($sec->professional_associations as $k => $assoc) {
-                        $oCustPostType = $this->getCustomPostTypeViaRestApi($assoc->subtype, $assoc->id, $aValuesToRetreive);
-                        if(!$oCustPostType) unset($sec->professional_associations[$k]);
-                        else {
-                            if($oCustPostType->image) $oCustPostType->image = $this->getMediaGallery($oCustPostType->image, 'medium_large');
-                            $sec->professional_associations[$k] = $oCustPostType;
-                        }
-                    }
-                }
-                if($sec->_type == 'vessel_boxes') {
-                    $aValuesToRetreive = array('title', 'small_image', 'type_text', 'class', 'length', 'breadth', 'slug');
-                    foreach($sec->vessels_associations as $k => $assoc) {
-                        $oCustPostType = $this->getCustomPostTypeViaRestApi($assoc->subtype, $assoc->id, $aValuesToRetreive);
-                        if(!$oCustPostType) unset($sec->vessels_associations[$k]);
-                        else {
-                            if($oCustPostType->small_image) $oCustPostType->small_image = $this->getMediaGallery($oCustPostType->small_image, 'medium_large');
-                            $sec->vessels_associations[$k] = $oCustPostType;
-                        }
-                    }
-                }
-                if($sec->_type == 'news_boxes') {
-                    $aValuesToRetreive = array('title', 'card_text', 'small_image', 'date', 'slug');
-                    foreach($sec->news_associations as $k => $assoc) {
-                        $oCustPostType = $this->getCustomPostTypeViaRestApi($assoc->subtype, $assoc->id, $aValuesToRetreive);
-                        if(!$oCustPostType) unset($sec->news_associations[$k]);
-                        else {
-                            if($oCustPostType->small_image) $oCustPostType->small_image = $this->getMediaGallery($oCustPostType->small_image, 'medium_large');
-                            $sec->news_associations[$k] = $oCustPostType;
-                        }
-                    }
-                }
+        // if(isset($pageData->crb_sections) && count($pageData->crb_sections)) {
+        //     $loadWoo_once = true;
+        //     $secs = [];
+        //     foreach($pageData->crb_sections as $sec) {
 
-                // if($sec->_type == '1column') {
-                //     if(isset($sec->fullwidth) && count($sec->fullwidth)) {
-                //         $s['1column'] = array();
-                //         foreach($sec->fullwidth as $fullWidthItem) {
-                //             if($fullWidthItem->_type == 'afbeelding') {
-                //                 $fullWidthItem->img = $this->generateMediaUrl($fullWidthItem->image);
-                //                 $fullWidthItem->alt = $this->generateMediaAlt($fullWidthItem->image);
-                //                 unset($fullWidthItem->image);
-                //             }
-                //             if($fullWidthItem->_type == 'bestand') {
-                //                 $fullWidthItem->file = $this->generateMediaUrl($fullWidthItem->file);
-                //             }
 
-                //             if($fullWidthItem->_type == 'nieuws-items') {
-                //                 $aValuesToRetreive = array('title', 'site_title', 'news_url', 'text', 'image');
-                //                 if(isset($fullWidthItem->news_associations) && count($fullWidthItem->news_associations)) {
-                //                     foreach($fullWidthItem->news_associations as $k => $newsItem) {
-                //                         $oCustPostType = $this->getCustomPostTypeViaRestApi($newsItem->subtype, $newsItem->id, $aValuesToRetreive);
-                //                         if($oCustPostType->image) $oCustPostType->image = $this->getMediaGallery(array($oCustPostType->image));
-                //                         $fullWidthItem->news_associations[$k] = $oCustPostType;
-                //                     }
-                //                 }
-                //             }
 
-                //             $s['1column'][] =  $fullWidthItem;
-                //         }
-                //     }
-                // }
-                // if($sec->_type == '2column') {
-                //     $s['2column']['left'] = array();
-                //     $s['2column']['right'] = array();
-                //     if(isset($sec->left) && count($sec->left)) {
-                //         foreach($sec->left as $leftItem) {
-                //             if($leftItem->_type == 'afbeelding') {
-                //                 $leftItem->img = $this->generateMediaUrl($leftItem->image);
-                //                 $leftItem->alt = $this->generateMediaAlt($leftItem->image);
-                //                 unset($leftItem->image);
-                //             }
-                //             if($leftItem->_type == 'bestand') {
-                //                 $leftItem->file = $this->generateMediaUrl($leftItem->file);
-                //             }
-                //             if($leftItem->_type == 'nieuws-items') {
-                //                 $aValuesToRetreive = array('title', 'site_title', 'news_url', 'text', 'image');
-                //                 if(isset($leftItem->news_associations) && count($leftItem->news_associations)) {
-                //                     foreach($leftItem->news_associations as $k => $newsItem) {
-                //                         $oCustPostType = $this->getCustomPostTypeViaRestApi($newsItem->subtype, $newsItem->id, $aValuesToRetreive);
-                //                         if($oCustPostType->image) $oCustPostType->image = $this->getMediaGallery(array($oCustPostType->image));
-                //                         $leftItem->news_associations[$k] = $oCustPostType;
-                //                     }
-                //                 }
-                //             }
-                //             $s['2column']['left'][] = $leftItem;
-                //         }
-                //     }
-                //     if(isset($sec->right) && count($sec->right)) {
-                //         foreach($sec->right as $rightItem) {
-                //             if($rightItem->_type == 'afbeelding') {
-                //                 $rightItem->img = $this->generateMediaUrl($rightItem->image);
-                //                 $rightItem->alt = $this->generateMediaAlt($rightItem->image);
-                //                 unset($rightItem->image);
-                //             }
-                //             if($rightItem->_type == 'bestand') {
-                //                 $rightItem->file = $this->generateMediaUrl($rightItem->file);
-                //             }
-                //             if($rightItem->_type == 'nieuws-items') {
-                //                 $aValuesToRetreive = array('title', 'site_title', 'news_url', 'text', 'image');
-                //                 if(isset($rightItem->news_associations) && count($rightItem->news_associations)) {
-                //                     foreach($rightItem->news_associations as $k => $newsItem) {
-                //                         $oCustPostType = $this->getCustomPostTypeViaRestApi($newsItem->subtype, $newsItem->id, $aValuesToRetreive);
-                //                         if($oCustPostType->image) $oCustPostType->image = $this->getMediaGallery(array($oCustPostType->image));
-                //                         $rightItem->news_associations[$k] = $oCustPostType;
-                //                     }
-                //                 }
-                //             }
-                //             $s['2column']['right'][] = $rightItem;
-                //         }
-                //     }
-                // }
-                $sections[] = $sec;
-            }
-        }
+        //         if($sec->_type == 'hero') {
+        //             $sec->crb_media_gallery = $this->getMediaGallery($sec->crb_media_gallery);
+        //         }
+        //         if($sec->_type == '1column') {
+        //             if(count($sec->fullwidth)) {
+        //                 foreach($sec->fullwidth as &$v) {
+        //                     if($v->_type == 'afbeelding') {
+        //                         $v->image = $this->getMediaGallery(array($v->image));
+        //                     }
+        //                 }
+        //             }
+        //         }
+        //         if($sec->_type == '2column') {
+        //             if(count($sec->left)) {
+        //                 foreach($sec->left as &$v) {
+        //                     if($v->_type == 'afbeelding') {
+        //                         $v->image = $this->getMediaGallery(array($v->image));
+        //                     }
+        //                 }
+        //             }
+        //             if(count($sec->right)) {
+        //                 foreach($sec->right as &$v) {
+        //                     if($v->_type == 'afbeelding') {
+        //                         $v->image = $this->getMediaGallery(array($v->image));
+        //                     }
+        //                 }
+        //             }
+        //         }
+        //         $secs[] = $sec;
+    
+
+
+
+        //         // if($sec->_type == 'hero') {
+        //         //     $sec->crb_media_gallery = $this->getMediaGallery($sec->crb_media_gallery, '2048x2048');
+        //         // }
+        //         // if($sec->_type == 'text') {
+        //         //     $sec->image = $this->getMediaGallery($sec->image, 'medium_large');
+        //         //     $sec->image_2 = $this->getMediaGallery($sec->image_2, 'medium_large');
+        //         // }
+        //         // if($sec->_type == 'office_boxes') {
+        //         //     $aValuesToRetreive = array('title', 'country', 'phone', 'email', 'address1', 'address2', 'address3', 'address4', 'google_maps_address');
+        //         //     foreach($sec->office_associations as $k => $assoc) {
+        //         //         $oCustPostType = $this->getCustomPostTypeViaRestApi($assoc->subtype, $assoc->id, $aValuesToRetreive);
+        //         //         if(!$oCustPostType) unset($sec->office_associations[$k]);
+        //         //         else $sec->office_associations[$k] = $oCustPostType;
+        //         //     }
+        //         // }
+        //         // if($sec->_type == 'professional_boxes') {
+        //         //     $aValuesToRetreive = array('title', 'function', 'image');
+        //         //     foreach($sec->professional_associations as $k => $assoc) {
+        //         //         $oCustPostType = $this->getCustomPostTypeViaRestApi($assoc->subtype, $assoc->id, $aValuesToRetreive);
+        //         //         if(!$oCustPostType) unset($sec->professional_associations[$k]);
+        //         //         else {
+        //         //             if($oCustPostType->image) $oCustPostType->image = $this->getMediaGallery($oCustPostType->image, 'medium_large');
+        //         //             $sec->professional_associations[$k] = $oCustPostType;
+        //         //         }
+        //         //     }
+        //         // }
+        //         // if($sec->_type == 'vessel_boxes') {
+        //         //     $aValuesToRetreive = array('title', 'small_image', 'type_text', 'class', 'length', 'breadth', 'slug');
+        //         //     foreach($sec->vessels_associations as $k => $assoc) {
+        //         //         $oCustPostType = $this->getCustomPostTypeViaRestApi($assoc->subtype, $assoc->id, $aValuesToRetreive);
+        //         //         if(!$oCustPostType) unset($sec->vessels_associations[$k]);
+        //         //         else {
+        //         //             if($oCustPostType->small_image) $oCustPostType->small_image = $this->getMediaGallery($oCustPostType->small_image, 'medium_large');
+        //         //             $sec->vessels_associations[$k] = $oCustPostType;
+        //         //         }
+        //         //     }
+        //         // }
+        //         // if($sec->_type == 'news_boxes') {
+        //         //     $aValuesToRetreive = array('title', 'card_text', 'small_image', 'date', 'slug');
+        //         //     foreach($sec->news_associations as $k => $assoc) {
+        //         //         $oCustPostType = $this->getCustomPostTypeViaRestApi($assoc->subtype, $assoc->id, $aValuesToRetreive);
+        //         //         if(!$oCustPostType) unset($sec->news_associations[$k]);
+        //         //         else {
+        //         //             if($oCustPostType->small_image) $oCustPostType->small_image = $this->getMediaGallery($oCustPostType->small_image, 'medium_large');
+        //         //             $sec->news_associations[$k] = $oCustPostType;
+        //         //         }
+        //         //     }
+        //         // }
+
+        //         // if($sec->_type == '1column') {
+        //         //     if(isset($sec->fullwidth) && count($sec->fullwidth)) {
+        //         //         $s['1column'] = array();
+        //         //         foreach($sec->fullwidth as $fullWidthItem) {
+        //         //             if($fullWidthItem->_type == 'afbeelding') {
+        //         //                 $fullWidthItem->img = $this->generateMediaUrl($fullWidthItem->image);
+        //         //                 $fullWidthItem->alt = $this->generateMediaAlt($fullWidthItem->image);
+        //         //                 unset($fullWidthItem->image);
+        //         //             }
+        //         //             if($fullWidthItem->_type == 'bestand') {
+        //         //                 $fullWidthItem->file = $this->generateMediaUrl($fullWidthItem->file);
+        //         //             }
+
+        //         //             if($fullWidthItem->_type == 'nieuws-items') {
+        //         //                 $aValuesToRetreive = array('title', 'site_title', 'news_url', 'text', 'image');
+        //         //                 if(isset($fullWidthItem->news_associations) && count($fullWidthItem->news_associations)) {
+        //         //                     foreach($fullWidthItem->news_associations as $k => $newsItem) {
+        //         //                         $oCustPostType = $this->getCustomPostTypeViaRestApi($newsItem->subtype, $newsItem->id, $aValuesToRetreive);
+        //         //                         if($oCustPostType->image) $oCustPostType->image = $this->getMediaGallery(array($oCustPostType->image));
+        //         //                         $fullWidthItem->news_associations[$k] = $oCustPostType;
+        //         //                     }
+        //         //                 }
+        //         //             }
+
+        //         //             $s['1column'][] =  $fullWidthItem;
+        //         //         }
+        //         //     }
+        //         // }
+        //         // if($sec->_type == '2column') {
+        //         //     $s['2column']['left'] = array();
+        //         //     $s['2column']['right'] = array();
+        //         //     if(isset($sec->left) && count($sec->left)) {
+        //         //         foreach($sec->left as $leftItem) {
+        //         //             if($leftItem->_type == 'afbeelding') {
+        //         //                 $leftItem->img = $this->generateMediaUrl($leftItem->image);
+        //         //                 $leftItem->alt = $this->generateMediaAlt($leftItem->image);
+        //         //                 unset($leftItem->image);
+        //         //             }
+        //         //             if($leftItem->_type == 'bestand') {
+        //         //                 $leftItem->file = $this->generateMediaUrl($leftItem->file);
+        //         //             }
+        //         //             if($leftItem->_type == 'nieuws-items') {
+        //         //                 $aValuesToRetreive = array('title', 'site_title', 'news_url', 'text', 'image');
+        //         //                 if(isset($leftItem->news_associations) && count($leftItem->news_associations)) {
+        //         //                     foreach($leftItem->news_associations as $k => $newsItem) {
+        //         //                         $oCustPostType = $this->getCustomPostTypeViaRestApi($newsItem->subtype, $newsItem->id, $aValuesToRetreive);
+        //         //                         if($oCustPostType->image) $oCustPostType->image = $this->getMediaGallery(array($oCustPostType->image));
+        //         //                         $leftItem->news_associations[$k] = $oCustPostType;
+        //         //                     }
+        //         //                 }
+        //         //             }
+        //         //             $s['2column']['left'][] = $leftItem;
+        //         //         }
+        //         //     }
+        //         //     if(isset($sec->right) && count($sec->right)) {
+        //         //         foreach($sec->right as $rightItem) {
+        //         //             if($rightItem->_type == 'afbeelding') {
+        //         //                 $rightItem->img = $this->generateMediaUrl($rightItem->image);
+        //         //                 $rightItem->alt = $this->generateMediaAlt($rightItem->image);
+        //         //                 unset($rightItem->image);
+        //         //             }
+        //         //             if($rightItem->_type == 'bestand') {
+        //         //                 $rightItem->file = $this->generateMediaUrl($rightItem->file);
+        //         //             }
+        //         //             if($rightItem->_type == 'nieuws-items') {
+        //         //                 $aValuesToRetreive = array('title', 'site_title', 'news_url', 'text', 'image');
+        //         //                 if(isset($rightItem->news_associations) && count($rightItem->news_associations)) {
+        //         //                     foreach($rightItem->news_associations as $k => $newsItem) {
+        //         //                         $oCustPostType = $this->getCustomPostTypeViaRestApi($newsItem->subtype, $newsItem->id, $aValuesToRetreive);
+        //         //                         if($oCustPostType->image) $oCustPostType->image = $this->getMediaGallery(array($oCustPostType->image));
+        //         //                         $rightItem->news_associations[$k] = $oCustPostType;
+        //         //                     }
+        //         //                 }
+        //         //             }
+        //         //             $s['2column']['right'][] = $rightItem;
+        //         //         }
+        //         //     }
+        //         // }
+        //         // $sections[] = $sec;
+        //     }
+        // }
 // dd($sections);
+
+        $sections = $this->handleCrbSections($pageData->crb_sections);
+
         $res->pageMetaDescription = $metaDesc;
         $res->pageTitle = $hTitle;
         $res->contentSections = $sections;
@@ -508,23 +548,6 @@ class PagesController extends Controller
     public function handleCrbSections($pCrbSecs) {
         $secs = [];
         foreach($pCrbSecs as $sec) {
-            // $s = [];
-            // $s['type'] = $sec->_type;
-            // if($sec->_type == 'text') {
-            //     $s['text'] = $sec->text;
-            // }
-            // if($sec->_type == 'reserve_form') {
-            //     $s['checked'] = $sec->show_reserve_form;
-            // }
-            // if($sec->_type == 'order_form') {
-            //     $s['checked'] = $sec->crb_show_order_form;
-            // }
-            // if($sec->_type == 'banner') {
-            //     $img = $this->getMediaGallery(array($sec->image));
-            //     $s['image'] = $img;
-            // }
-            // $secs[] = $s;
-
             if($sec->_type == 'hero') {
                 $sec->crb_media_gallery = $this->getMediaGallery($sec->crb_media_gallery);
             }

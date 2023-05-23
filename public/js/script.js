@@ -46,9 +46,9 @@ function setActiveButtons(activeAnchors) {
         let alreadyActivated = false;
         buttons.forEach((btnEl, i) => {
             var hash = btnEl.href.substring(btnEl.href.indexOf('#')+1);
-            btnEl.classList.remove("activeButton");
+            btnEl.classList.remove("active");
             if(activeAnchors.indexOf(hash) !== -1 && !alreadyActivated) {
-                btnEl.classList.add("activeButton");
+                btnEl.classList.add("active");
                 alreadyActivated = true;
             }
         });

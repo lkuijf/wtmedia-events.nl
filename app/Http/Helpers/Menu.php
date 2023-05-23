@@ -24,14 +24,15 @@ class Menu {
             $this->html .= '<li itemprop="name">';
             $href = $pageUrl;
             if(isset($page->alt_url) && $page->alt_url) $href = $page->alt_url; // mironmarine.nl
-
+            $active = false;
+            if('/' . request()->path() == $pageUrl) $active = true;
             if(substr_count($pageUrl, '/') == 2) {
                 // $this->html .= '<a href="#">'; // only for Miron Marine Service
-                $this->html .= '<a itemprop="url" href="' . $href . '">';
+                $this->html .= '<a itemprop="url" href="' . $href . '"' . ($active?' class="active"':'') . '>';
             } else {
                 // if($page->title == 'Home') $href = '/';
                 // $this->html .= '<a itemprop="url" href="' . $href . '">';
-                $this->html .= '<a itemprop="url" href="#' . substr($href, 1) . '">'; // rotterdamsehorecawandeling.nl (onepager)
+                $this->html .= '<a itemprop="url" href="' . route('home') . '#' . substr($href, 1) . '"' . ($active?' class="active"':'') . '>'; // rotterdamsehorecawandeling.nl (onepager)
             }
 
             $this->html .= $page->title;

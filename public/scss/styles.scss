@@ -38,7 +38,7 @@ $fontSize: 16px;
     &:hover {
         color: #AAA;
     }
-    &.activeButton {
+    &.active {
         background-color: $colorWTM;
         color: $colorWhite;
         @include borderRadius;
@@ -209,6 +209,18 @@ nav ul {
                         a {
                             @include mainNavButton;
                         }
+                        ul {
+                            padding-top: 10px;
+                            // text-align: left;
+                            li {
+                                padding: 10px 0;
+                                a {
+                                    // position: relative;
+                                    // left: 40%;
+                                    font-size: 1em;
+                                }
+                            }
+                        }
                     }
                 }
                 #burger-check:checked ~ ul {
@@ -238,7 +250,6 @@ nav ul {
                         ul {
                             display: none;
                             left: 10px;
-                            // top: 35px;
                             white-space: nowrap;
                             position: absolute;
                             background-color: $colorWTMdark;
@@ -248,6 +259,7 @@ nav ul {
                                 padding: 5px 0;
                                 a {
                                     color: #FFF;
+                                    padding: 7px 16px 8px 16px;
                                 }
                             }
                         }
@@ -550,6 +562,9 @@ footer {
                     &:hover {
                         color: #AAA;
                     }
+                }
+                ul {
+                    display: none;
                 }
             }
         }
