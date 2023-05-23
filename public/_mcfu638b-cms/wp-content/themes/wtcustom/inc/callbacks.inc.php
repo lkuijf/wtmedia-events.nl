@@ -215,7 +215,7 @@ function getCustomPostsCollectionAttrs($coll) {
         // $oP->order = $item->menu_order;
         $oP->status = $item->post_status;
         $oP->date = $item->post_date;
-        $oP->gallery = get_post_meta($item->ID, 'hero_gallery');
+        $oP->gallery = get_option('_hero_gallery');
         // $oP->category = get_the_category($item->ID)[0]->name;
         // $oP->tags = $aTags;
         // $oP->topics = $topics;
