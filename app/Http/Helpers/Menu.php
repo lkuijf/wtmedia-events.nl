@@ -32,7 +32,12 @@ class Menu {
             } else {
                 // if($page->title == 'Home') $href = '/';
                 // $this->html .= '<a itemprop="url" href="' . $href . '">';
-                $this->html .= '<a itemprop="url" href="' . route('home') . '#' . substr($href, 1) . '"' . ($active?' class="active"':'') . '>'; // rotterdamsehorecawandeling.nl (onepager)
+                if($page->title == 'Blog') {
+                    $href = '/blog';
+                    $this->html .= '<a itemprop="url" href="' . $href . '"' . ($active?' class="active"':'') . '>'; // rotterdamsehorecawandeling.nl (onepager)
+                } else {
+                    $this->html .= '<a itemprop="url" href="' . route('home') . '#' . substr($href, 1) . '"' . ($active?' class="active"':'') . '>'; // rotterdamsehorecawandeling.nl (onepager)
+                }
             }
 
             $this->html .= $page->title;

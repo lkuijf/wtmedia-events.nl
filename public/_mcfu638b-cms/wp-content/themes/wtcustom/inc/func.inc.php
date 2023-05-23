@@ -74,6 +74,7 @@ function customBackendScriptsEditorRol() {
             jQuery('input[value="Vacatures"]').attr('disabled', 'disabled').parent().next().find('button').remove();
             jQuery('input[value="Interviews"]').attr('disabled', 'disabled').parent().next().find('button').remove();
             jQuery('input[value="FAQ"]').attr('disabled', 'disabled').parent().next().find('button').remove();
+            jQuery('input[value="Blog"]').attr('disabled', 'disabled').parent().next().find('button').remove();
             // if(
             //     jQuery('input[value="[HOMEPAGE]"]').length ||
             //     jQuery('input[value="Producten"]').length ||

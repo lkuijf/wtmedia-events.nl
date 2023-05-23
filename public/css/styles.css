@@ -492,6 +492,33 @@ nav ul {
   }
 }
 
+@media (max-width: 768px) {
+  .blogDetail {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+@media (max-width: 480px) {
+  .blogDetail {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+.blogDetail .date {
+  font-size: 1.5em;
+}
+.blogDetail .date span {
+  text-decoration: underline;
+}
+.blogDetail .date:before {
+  font-family: "wt_media_events";
+  content: "\e804 ";
+}
+.blogDetail img {
+  max-width: 100%;
+  height: auto;
+}
+
 .headerOuter {
   position: fixed;
   width: 100%;

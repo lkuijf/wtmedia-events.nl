@@ -143,33 +143,73 @@ class PagesController extends Controller
         return view('standard-page')->with('data', $data);
         // return view('onepager')->with('data', $data);
     }
-    public function showPost($slug) {
+    public function showBlog() {
         $simplePages = new SimplePagesApi();
         $htmlMenu = new Menu($simplePages->get());
         $htmlMenu->generateUlMenu();
         $options = $this->getWebsiteOptions();
+        $simpleMedia = new SimpleMediaApi();
+        $simpleMedia->get();
+        $this->allMediaById = $simpleMedia->makeListById();
+        $content = $this->getContent(942);
 
-        $cPost = new CustomPostApi('posts', false, $slug);
-        $post = $cPost->get();
-        if(!count($post)) return abort(404);
-        
-        // echo $post[0]->title->rendered;
         $data= [
-            'head_title' => $post[0]->title->rendered,
-            /**********************/
-            'meta_description' => $content->pageMetaDescription,
+            'head_title' => 'all blog posts',
+            'meta_description' => 'all blogs',
             'html_menu' => $htmlMenu->html,
             'website_options' => $options,
             // 'cart_total' => $cartTotalItems,
             // 'user_logged_in' => $loggedInUserId,
             'content_sections' => $content->contentSections,
+            // 'blog_text' => $post[0]->text,
+            // 'blog_hero_title' => $post[0]->hero_title,
+            // 'blog_hero_text' => $post[0]->hero_text,
+            // 'blog_hero_gallery' => $post[0]->hero_gallery,
+            // 'blog_date' => date('d-m-Y', strtotime($post[0]->date)),
             // 'vessels' => $vessels,
             // 'news' => $news,
             // 'vessel' => $vessel,
             // 'newsItem' => $newsItem,
         ];
 
-        return view('standard-page')->with('data', $data);
+        return view('blog-overview-page')->with('data', $data);
+    }
+    public function showPost($slug) {
+        $simplePages = new SimplePagesApi();
+        $htmlMenu = new Menu($simplePages->get());
+        $htmlMenu->generateUlMenu();
+        $options = $this->getWebsiteOptions();
+        $simpleMedia = new SimpleMediaApi();
+        $simpleMedia->get();
+        $this->allMediaById = $simpleMedia->makeListById();
+
+        $cPost = new CustomPostApi('blog', false, $slug);
+        $post = $cPost->get();
+        if(!count($post)) return abort(404);
+
+        if(count($post[0]->hero_gallery)) {
+            $post[0]->hero_gallery = $this->getMediaGallery($post[0]->hero_gallery);
+        }
+// dd($post);
+        $data= [
+            'head_title' => $post[0]->title->rendered,
+            'meta_description' => $post[0]->title->rendered,
+            'html_menu' => $htmlMenu->html,
+            'website_options' => $options,
+            // 'cart_total' => $cartTotalItems,
+            // 'user_logged_in' => $loggedInUserId,
+            'blog_text' => $post[0]->text,
+            'blog_hero_title' => $post[0]->hero_title,
+            'blog_hero_text' => $post[0]->hero_text,
+            'blog_hero_gallery' => $post[0]->hero_gallery,
+            'blog_date' => date('d-m-Y', strtotime($post[0]->date)),
+            // 'vessels' => $vessels,
+            // 'news' => $news,
+            // 'vessel' => $vessel,
+            // 'newsItem' => $newsItem,
+        ];
+
+        return view('blog-detail-page')->with('data', $data);
 
     }
     public function showVacature($slug, $apply) {
