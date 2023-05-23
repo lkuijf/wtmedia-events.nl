@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Helpers\ApiCall;
 use App\Http\Helpers\SimplePagesApi;
 use App\Http\Helpers\SimplePostsApi;
+use App\Http\Helpers\SimpleCustomPostsApi;
 use App\Http\Helpers\SimpleMediaApi;
 use App\Http\Helpers\SimpleTaxonomiesApi;
 use App\Http\Helpers\Menu;
@@ -152,6 +153,9 @@ class PagesController extends Controller
         $simpleMedia->get();
         $this->allMediaById = $simpleMedia->makeListById();
         $content = $this->getContent(942);
+        
+        $blogItems = new SimpleCustomPostsApi('blog');
+dd($blogItems);
 
         $data= [
             'head_title' => 'all blog posts',

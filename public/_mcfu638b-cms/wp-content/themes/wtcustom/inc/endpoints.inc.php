@@ -2,6 +2,7 @@
 /** Register endpoints so they will be cached. */
 add_filter('wp_rest_cache/allowed_endpoints', 'wprc_add_simple_pages_endpoint', 10, 1);
 add_filter('wp_rest_cache/allowed_endpoints', 'wprc_add_simple_posts_endpoint', 10, 1);
+add_filter('wp_rest_cache/allowed_endpoints', 'wprc_add_simple_custom_posts_endpoint', 10, 1);
 add_filter('wp_rest_cache/allowed_endpoints', 'wprc_add_website_options_endpoint', 10, 1);
 add_filter('wp_rest_cache/allowed_endpoints', 'wprc_add_simple_media_endpoint', 10, 1);
 add_filter('wp_rest_cache/allowed_endpoints', 'wprc_add_simple_taxonomies_endpoint', 10, 1);
@@ -16,6 +17,10 @@ function wprc_add_simple_pages_endpoint($allowed_endpoints) {
 }
 function wprc_add_simple_posts_endpoint($allowed_endpoints) {
     if(!isset($allowed_endpoints['wtcustom']) || !in_array('simple-posts', $allowed_endpoints['wtcustom'])) $allowed_endpoints['wtcustom'][] = 'simple-posts';
+    return $allowed_endpoints;
+}
+function wprc_add_simple_custom_posts_endpoint($allowed_endpoints) {
+    if(!isset($allowed_endpoints['wtcustom']) || !in_array('simple-custom-posts', $allowed_endpoints['wtcustom'])) $allowed_endpoints['wtcustom'][] = 'simple-custom-posts';
     return $allowed_endpoints;
 }
 function wprc_add_website_options_endpoint($allowed_endpoints) {
@@ -58,6 +63,12 @@ add_action('rest_api_init', function () {
     register_rest_route('wtcustom', '/simple-posts', array(
         'methods' => 'GET',
         'callback' => 'getPostsSimplified',
+    ));
+});
+add_action('rest_api_init', function () {
+    register_rest_route('wtcustom', '/simple-custom-posts', array(
+        'methods' => 'GET',
+        'callback' => 'getCustomPostsSimplified',
     ));
 });
 add_action('rest_api_init', function () {

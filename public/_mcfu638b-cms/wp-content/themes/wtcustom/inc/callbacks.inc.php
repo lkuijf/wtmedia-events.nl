@@ -83,6 +83,31 @@ function getPostsSimplified(WP_REST_Request $request) {
     $response->set_status(200);
     return $response;
 }
+function getCustomPostsSimplified(WP_REST_Request $request) {
+    $parameters = $request->get_params();
+    $orderby = 'date';
+    $order = 'DESC';
+    $postType = 'post';
+    if (isset($parameters['orderby'])) {
+        $orderby = $parameters['orderby'];
+    }
+    if (isset($parameters['order'])) {
+        $order = $parameters['order'];
+    }
+    if (isset($parameters['post_type'])) {
+        $postType = $parameters['post_type'];
+    }
+    $posts = get_posts([
+        'numberposts' => -1,
+        'orderby' => $orderby,
+        'order' => $order,
+        'post_type' => $postType,
+    ]);
+    $aRes = getPostsCollectionAttrs($posts);
+    $response = new WP_REST_Response($aRes);
+    $response->set_status(200);
+    return $response;
+}
 
 function getWebsiteOptions() {
     global $carbonFieldsArgs; // using global. Importing does not work: https://stackoverflow.com/questions/11086773/php-function-use-variable-from-outside
