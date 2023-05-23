@@ -143,6 +143,35 @@ class PagesController extends Controller
         return view('standard-page')->with('data', $data);
         // return view('onepager')->with('data', $data);
     }
+    public function showPost($slug) {
+        $simplePages = new SimplePagesApi();
+        $htmlMenu = new Menu($simplePages->get());
+        $htmlMenu->generateUlMenu();
+        $options = $this->getWebsiteOptions();
+
+        $cPost = new CustomPostApi('posts', false, $slug);
+        $post = $cPost->get();
+        if(!count($post)) return abort(404);
+        
+        // echo $post[0]->title->rendered;
+        $data= [
+            'head_title' => $post[0]->title->rendered,
+            /**********************/
+            'meta_description' => $content->pageMetaDescription,
+            'html_menu' => $htmlMenu->html,
+            'website_options' => $options,
+            // 'cart_total' => $cartTotalItems,
+            // 'user_logged_in' => $loggedInUserId,
+            'content_sections' => $content->contentSections,
+            // 'vessels' => $vessels,
+            // 'news' => $news,
+            // 'vessel' => $vessel,
+            // 'newsItem' => $newsItem,
+        ];
+
+        return view('standard-page')->with('data', $data);
+
+    }
     public function showVacature($slug, $apply) {
         $simplePages = new SimplePagesApi();
         $htmlMenu = new Menu($simplePages->get());

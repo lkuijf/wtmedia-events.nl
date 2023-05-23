@@ -48,33 +48,33 @@ $websiteOptions[] = array('media_gallery', 'working_with', 'Partner logo\'s');
 $websiteOptions[] = array('media_gallery', 'events', 'Events');
 $carbonFieldsArgs['websiteOptions'] = $websiteOptions;
 
-// add_action( 'init', 'create_posttype_news' );
+add_action( 'init', 'create_posttype_blog' );
 // add_action( 'init', 'create_posttype_offices' );
 // add_action( 'init', 'create_posttype_professionals' );
 // add_action( 'init', 'create_posttype_vessels' );
 // add_action( 'init', 'register_taxonomy_vessel_type' );
 
 // Our custom post type function
-// function create_posttype_news() {
-//     register_post_type( 'news',
-//         array(
-//             'labels' => array(
-//                 'name' => __( 'News' ),
-//                 'singular_name' => __( 'News' ),
-//                 'add_new_item' => __( 'Add New News-item' ),
-//                 'add_new' => __( 'Add New News-item' ),
-//                 'edit_item' => __( 'Edit News-item' ),
-//                 'update_item' => __( 'Update News-item' ),
-//             ),
-//             'public' => true,
-//             // 'has_archive' => true,
-//             // 'rewrite' => array('slug' => 'movies'),
-//             'show_in_rest' => true,
-//             // 'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
-//             'supports'            => array( 'title'),
-//             )
-//     );
-// }
+function create_posttype_blog() {
+    register_post_type( 'blog',
+        array(
+            'labels' => array(
+                'name' => __( 'Blog' ),
+                'singular_name' => __( 'Blog' ),
+                'add_new_item' => __( 'Add New Blog-item' ),
+                'add_new' => __( 'Add New Blog-item' ),
+                'edit_item' => __( 'Edit Blog-item' ),
+                'update_item' => __( 'Update Blog-item' ),
+            ),
+            'public' => true,
+            // 'has_archive' => true,
+            // 'rewrite' => array('slug' => 'movies'),
+            'show_in_rest' => true,
+            // 'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
+            'supports'            => array( 'title'),
+            )
+    );
+}
 // function create_posttype_offices() {
 //     register_post_type( 'office',
 //         array(
@@ -515,12 +515,12 @@ function crbRegisterFields($args) {
         ;
 
     Container::make( 'post_meta', __( 'Information' ) )
-        ->where( 'post_type', '=', 'news' )
+        ->where( 'post_type', '=', 'blog' )
         ->add_fields(array(
             // Field::make( 'text', 'title', __( 'Title' ))->set_visible_in_rest_api($visible = true),
             Field::make( 'textarea', 'card_text', __( 'Card text' ))->set_visible_in_rest_api($visible = true),
             Field::make( 'rich_text', 'text', __( 'Text' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'image', 'small_image', __( 'Card image' ) )->set_visible_in_rest_api($visible = true),
+            // Field::make( 'image', 'small_image', __( 'Card image' ) )->set_visible_in_rest_api($visible = true),
             Field::make( 'image', 'large_image', __( 'Hero image' ) )->set_visible_in_rest_api($visible = true),
             )
         );
