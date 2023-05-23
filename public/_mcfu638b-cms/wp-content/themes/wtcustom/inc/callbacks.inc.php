@@ -188,6 +188,9 @@ function getPostsCollectionAttrs($coll) {
 }
 function getCustomPostsCollectionAttrs($coll) {
     $aRes = [];
+
+var_dump($coll);
+
     foreach ($coll as $item) {
         $oP = new stdClass();
 
