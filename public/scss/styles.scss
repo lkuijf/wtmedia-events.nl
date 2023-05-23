@@ -80,6 +80,9 @@ nav ul {
     list-style-type: none;
 }
 .contentWrapper {
+    .standardPage {
+        padding-top: $headerHeight;
+    }
     // min-height: 5000px;
     // > * {
     //     margin: 20px 0;

@@ -6,6 +6,14 @@
         height: 650px;
     }
 }
+@mixin heroHeightStandardPage() {
+    @media (max-width: $sbp3_tablet) {
+        height: 350px;
+    }
+    @media (min-width: ($sbp3_tablet+1)) {
+        height: 450px;
+    }
+}
 
 .hero {
     position: relative;
@@ -121,7 +129,24 @@
                 animation: scale 40s linear infinite;
             }
         }
+    }
 }
+.standardPage {
+    .hero {
+        @include heroHeightStandardPage;
+        .heroOverlay {
+            @include heroHeightStandardPage;
+        }
+        .heroImages {
+            > div {
+                @include heroHeightStandardPage;
+                img {
+                    @include heroHeightStandardPage;
+                }
+            }
+        }
+    
+    }
 }
 @keyframes scale {
     50% {

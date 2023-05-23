@@ -140,8 +140,8 @@ class PagesController extends Controller
         } else if($section == 'afspraak-maken') {
             return view('bookly-page')->with('data', $data);
         } else
-        // return view('standard-page')->with('data', $data);
-        return view('onepager')->with('data', $data);
+        return view('standard-page')->with('data', $data);
+        // return view('onepager')->with('data', $data);
     }
     public function showVacature($slug, $apply) {
         $simplePages = new SimplePagesApi();
