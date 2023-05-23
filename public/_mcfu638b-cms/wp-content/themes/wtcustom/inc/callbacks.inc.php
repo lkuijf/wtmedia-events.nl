@@ -104,11 +104,7 @@ function getCustomPostsSimplified(WP_REST_Request $request) {
         'post_type' => $postType,
     ]);
 
-
-
     $aRes = getCustomPostsCollectionAttrs($posts);
-
-
     
     $response = new WP_REST_Response($aRes);
     $response->set_status(200);
@@ -212,11 +208,12 @@ function getCustomPostsCollectionAttrs($coll) {
         $oP->id = $item->ID;
         $oP->title = $item->post_title;
         $oP->slug = $item->post_name;
-        $oP->parent = $item->post_parent;
-        $oP->order = $item->menu_order;
+        // $oP->parent = $item->post_parent;
+        // $oP->order = $item->menu_order;
         $oP->status = $item->post_status;
         $oP->date = $item->post_date;
-        $oP->category = get_the_category($item->ID)[0]->name;
+        $oP->gallery = $item->hero_gallery;
+        // $oP->category = get_the_category($item->ID)[0]->name;
         // $oP->tags = $aTags;
         // $oP->topics = $topics;
         $aRes[] = $oP;
