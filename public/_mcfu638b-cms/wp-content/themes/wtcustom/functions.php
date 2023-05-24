@@ -48,6 +48,7 @@ $websiteOptions[] = array('text', 'form_error', 'Formulier error melding');
 // $websiteOptions[] = array('rich_text', 'footer_tekst_2', 'Footer tekst rechts');
 // $websiteOptions[] = array('file', 'wt_algemene_voorwaarden', 'Algemene voorwaarden');
 // $websiteOptions[] = array('image', 'header_image', 'Header afbeelding');
+$websiteOptions[] = array('separator', 'separator5', 'Logo\'s en afbeeldingen');
 $websiteOptions[] = array('media_gallery', 'working_with', 'Partner logo\'s');
 $websiteOptions[] = array('media_gallery', 'events', 'Events');
 $carbonFieldsArgs['websiteOptions'] = $websiteOptions;
