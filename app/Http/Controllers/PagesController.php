@@ -165,8 +165,8 @@ class PagesController extends Controller
 //$sec->crb_media_gallery = $this->getMediaGallery($sec->crb_media_gallery);
 
         $data= [
-            'head_title' => 'all blog posts',
-            'meta_description' => 'all blogs',
+            'head_title' => $content->pageTitle,
+            'meta_description' => $content->pageMetaDescription,
             'html_menu' => $htmlMenu->html,
             'website_options' => $options,
             // 'cart_total' => $cartTotalItems,
