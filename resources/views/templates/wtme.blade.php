@@ -66,7 +66,7 @@
             <div class="ftr">
                 <div class="footerContact">
                     <img src="{{ asset('statics/wt-media-events-logo.png') }}" alt="WT Media & Events">
-                    <a href="javascript:void(0)">CONTACT</a>
+                    <a href="mailto:support@wtmedia-events.nl">CONTACT</a>
                 </div>
                 <nav>
                     {!! $data['html_menu'] !!}
@@ -75,9 +75,9 @@
             <div class="btm">
                 <p>&copy; W.T. Media &amp; Events | <a href="javascript:void(0);">Privacy Policy</a> | {{ date('Y') }} All Rights Reserved</p>
                 <p class="socials">
-                    <a href="javascript:void(0)" class="ig"><img src="{{ asset('statics/instagram.png') }}" alt="Instagram"></a>
-                    <a href="javascript:void(0)" class="fb"><img src="{{ asset('statics/facebook.png') }}" alt="Facebook"></a>
-                    <a href="javascript:void(0)" class="li"><img src="{{ asset('statics/linkedin.png') }}" alt="LinkedIn"></a>
+                    <a href="https://www.instagram.com/wtmedia_events/" target="_blank" class="ig"><img src="{{ asset('statics/instagram.png') }}" alt="Instagram"></a>
+                    <a href="https://www.facebook.com/profile.php?id=100083027634220" target="_blank" class="fb"><img src="{{ asset('statics/facebook.png') }}" alt="Facebook"></a>
+                    <a href="https://www.linkedin.com/company/w-t-media-events/" target="_blank" class="li"><img src="{{ asset('statics/linkedin.png') }}" alt="LinkedIn"></a>
                 </p>
                 <div class="embedsocial-hashtag" data-ref="cb4f26c68a893f54158863a0aecf5a38c087439e"> <a class="feed-powered-by-es feed-powered-by-es-feed-new" href="https://embedsocial.com/social-media-aggregator/" target="_blank" title="Widget by EmbedSocial"> Widget by EmbedSocial<span>→</span> </a> </div> <script> (function(d, s, id) { var js; if (d.getElementById(id)) {return;} js = d.createElement(s); js.id = id; js.src = "https://embedsocial.com/cdn/ht.js"; d.getElementsByTagName("head")[0].appendChild(js); }(document, "script", "EmbedSocialHashtagScript")); </script>
             </div>
