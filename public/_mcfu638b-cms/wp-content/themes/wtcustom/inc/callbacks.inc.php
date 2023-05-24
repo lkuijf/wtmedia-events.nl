@@ -217,6 +217,8 @@ function getCustomPostsCollectionAttrs($coll) {
         $oP->status = $item->post_status;
         $oP->date = $item->post_date;
         $oP->card_text = carbon_get_post_meta( $item->ID, 'card_text' );
+        $oP->blog_title = carbon_get_post_meta( $item->ID, 'blog_title' );
+        $oP->blog_meta_description = carbon_get_post_meta( $item->ID, 'blog_meta_description' );
         $oP->gallery = carbon_get_post_meta( $item->ID, 'hero_gallery' );
         // $oP->category = get_the_category($item->ID)[0]->name;
         // $oP->tags = $aTags;

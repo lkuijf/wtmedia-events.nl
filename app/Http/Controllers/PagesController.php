@@ -204,8 +204,8 @@ class PagesController extends Controller
         }
 // dd($post);
         $data= [
-            'head_title' => $post[0]->title->rendered,
-            'meta_description' => $post[0]->title->rendered,
+            'head_title' => $post[0]->blog_title,
+            'meta_description' => $post[0]->blog_meta_description,
             'html_menu' => $htmlMenu->html,
             'website_options' => $options,
             // 'cart_total' => $cartTotalItems,
