@@ -10,7 +10,7 @@ const burgerMenuLabel = document.querySelector('.burger-label');
 
 let anchorsInViewport = [];
 
-const heroSlideshowImages = document.querySelectorAll('.heroImages img');
+const heroSlideshowImages = document.querySelectorAll('.heroImages div img');
 
 setArticlesClickable();
 // upCountNumbers();
