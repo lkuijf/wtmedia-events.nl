@@ -1068,4 +1068,72 @@ footer .btm .socials {
 }
 footer .btm .socials a img {
   height: 40px;
+}
+
+.blogWrap {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+}
+@media (max-width: 1024px) {
+  .blogWrap {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .blogWrap {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .blogWrap {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.blogWrap article {
+  background-color: #FFF;
+  border: 3px solid #19b4b6;
+}
+.blogWrap article img {
+  width: 100%;
+  aspect-ratio: 2/1;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.blogWrap article > div {
+  padding: 20px;
+}
+.blogWrap article > div :first-child {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.blogWrap article > div :nth-child(2) {
+  margin-top: 0;
+  font-size: 0.8em;
+}
+.blogWrap article > div :last-child {
+  margin-bottom: 0;
+}
+.blogWrap article > div h2 {
+  color: #0c5a5b;
+}
+.blogWrap article a {
+  color: #19b4b6;
+  font-weight: bold;
+  text-decoration: none;
+}
+.blogWrap article a:hover {
+  text-decoration: underline;
+}
+.blogWrap article:hover {
+  background-color: #0c5a5b;
+  color: #FFF;
+  cursor: pointer;
+}
+.blogWrap article:hover h2 {
+  color: #FFF;
 }/*# sourceMappingURL=styles.css.map */

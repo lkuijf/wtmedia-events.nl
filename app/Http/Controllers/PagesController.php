@@ -283,8 +283,10 @@ class PagesController extends Controller
         $reqPage = new PageApi($id);
         $pageData = $reqPage->get();    
 // dd($pageData);
-        if($pageData->title->rendered == '[HOMEPAGE]') $hTitle = config('app_wt.metaTitle');
-        else $hTitle = $pageData->title->rendered . ' - ' . config('app_wt.metaTitle');
+        // if($pageData->title->rendered == '[HOMEPAGE]') $hTitle = config('app_wt.metaTitle');
+        // else
+        $hTitle = config('app_wt.metaTitle');
+        if($pageData->title->rendered) $hTitle = $pageData->title->rendered;
         if($pageData->meta_title) $hTitle = $pageData->meta_title;
         if($pageData->meta_description) $metaDesc = $pageData->meta_description;
 
