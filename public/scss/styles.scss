@@ -549,7 +549,7 @@ nav ul {
 
 footer {
     padding: 50px 0;
-    height: 400px;
+    min-height: 700px;
     .ftr {
         display: flex;
         justify-content: space-between;
@@ -596,7 +596,8 @@ footer {
         @include textPaddingOnMobile;
         padding-top: 20px;
         display: flex;
-        align-items: center;
+        gap: 20px;
+        align-items: flex-start;
         justify-content: space-between;
         @media (max-width: $sbp3_tablet) {flex-direction: column;justify-content:flex-start;text-align:center;}
         a {

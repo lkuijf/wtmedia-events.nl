@@ -982,7 +982,7 @@ nav ul {
 
 footer {
   padding: 50px 0;
-  height: 400px;
+  min-height: 700px;
 }
 footer .ftr {
   display: flex;
@@ -1035,7 +1035,8 @@ footer .ftr ul li ul {
 footer .btm {
   padding-top: 20px;
   display: flex;
-  align-items: center;
+  gap: 20px;
+  align-items: flex-start;
   justify-content: space-between;
 }
 @media (max-width: 768px) {

@@ -79,7 +79,8 @@
                     <a href="https://www.facebook.com/profile.php?id=100083027634220" target="_blank" class="fb"><img src="{{ asset('statics/facebook.png') }}" alt="Facebook"></a>
                     <a href="https://www.linkedin.com/company/w-t-media-events/" target="_blank" class="li"><img src="{{ asset('statics/linkedin.png') }}" alt="LinkedIn"></a>
                 </p>
-                <div class="embedsocial-hashtag" data-ref="cb4f26c68a893f54158863a0aecf5a38c087439e"> <a class="feed-powered-by-es feed-powered-by-es-feed-new" href="https://embedsocial.com/social-media-aggregator/" target="_blank" title="Widget by EmbedSocial"> Widget by EmbedSocial<span>→</span> </a> </div> <script> (function(d, s, id) { var js; if (d.getElementById(id)) {return;} js = d.createElement(s); js.id = id; js.src = "https://embedsocial.com/cdn/ht.js"; d.getElementsByTagName("head")[0].appendChild(js); }(document, "script", "EmbedSocialHashtagScript")); </script>
+                <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script><div class="elfsight-app-a6161f0f-1cc2-420f-9dc7-d19848614a67"></div>
+                {{-- <div class="embedsocial-hashtag" data-ref="cb4f26c68a893f54158863a0aecf5a38c087439e"> <a class="feed-powered-by-es feed-powered-by-es-feed-new" href="https://embedsocial.com/social-media-aggregator/" target="_blank" title="Widget by EmbedSocial"> Widget by EmbedSocial<span>→</span> </a> </div> <script> (function(d, s, id) { var js; if (d.getElementById(id)) {return;} js = d.createElement(s); js.id = id; js.src = "https://embedsocial.com/cdn/ht.js"; d.getElementsByTagName("head")[0].appendChild(js); }(document, "script", "EmbedSocialHashtagScript")); </script> --}}
             </div>
         </div>
     </footer>

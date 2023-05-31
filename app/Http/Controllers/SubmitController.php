@@ -118,7 +118,7 @@ class SubmitController extends Controller
         // mail($to_email, $subject, $message, $headers);
         // mail($to_email, $subject, $message);
         // return back()->with('success', 'Bedankt dat u contact met ons heeft opgenomen, we zullen uw bericht zo snel mogelijk in behandeling nemen!');
-        return redirect('/contact')->with('success', 'subscription');
+        return redirect(route('home'))->with('success', 'subscription');
     }
     public function submitBestellenForm(Request $request) {
         $validated = $request->validate([
