@@ -382,7 +382,8 @@ html {
   color: #222;
   background-color: #FFF;
   scroll-behavior: smooth;
-  background-image: url("../statics/bg.jpg");
+  background-image: url("../statics/bg_v2.jpg");
+  background-repeat: repeat;
   background-size: 100%;
 }
 
