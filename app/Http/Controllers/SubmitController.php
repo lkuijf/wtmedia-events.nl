@@ -91,7 +91,7 @@ class SubmitController extends Controller
         // $validated = $request->validate($toValidate,$validationMessages);
         $validator = Validator::make($request->all(), $toValidate, $validationMessages);
         if($validator->fails()) {
-            return redirect('/homepage')->withErrors($validator)->withInput();
+            return redirect(route('home'))->withErrors($validator)->withInput();
         }
 
         $allWebsiteOptions = new WebsiteOptionsApi();
