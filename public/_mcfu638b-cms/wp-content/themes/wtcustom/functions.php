@@ -455,9 +455,12 @@ function crbRegisterFields($args) {
                     Field::make( 'separator', 'separator1', __( 'Clients' ) ),
                     Field::make( 'checkbox', 'show_working_with', __( 'Show "Clients" section' ) ),
                 ) )
-                ->add_fields( 'events', 'Cases', array(
+                ->add_fields( 'cases', 'Cases', array(
                     Field::make( 'separator', 'separator1', __( 'Cases' ) ),
-                    Field::make( 'checkbox', 'show_events', __( 'Show "Cases" section' ) ),
+                    Field::make( 'checkbox', 'show_cases_highlighted', __( 'Show highlighted cases' ) ),
+                    Field::make( 'checkbox', 'show_cases_online_marketing', __( 'Show online marketing cases' ) ),
+                    Field::make( 'checkbox', 'show_cases_web_development', __( 'Show web development cases' ) ),
+                    Field::make( 'checkbox', 'show_cases_events', __( 'Show event cases' ) ),
                 ) )
                 // ->add_fields( 'get_in_touch', 'Get in touch', array(
                 //     Field::make( 'separator', 'separator1', __( 'Get in touch' ) ),

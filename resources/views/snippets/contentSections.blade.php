@@ -75,7 +75,7 @@
         @if($section->_type == 'working_with' && $section->show_working_with)
             @include('sections.working_with')
         @endif
-        @if($section->_type == 'events' && $section->show_events)
+        @if($section->_type == 'cases' && $section->show_cases_highlighted)
             @include('sections.events')
         @endif
         @if ($section->_type == '1column')
