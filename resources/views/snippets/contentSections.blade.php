@@ -80,7 +80,7 @@
                 @include('sections.events')
             @endif
             @if ($section->show_cases_online_marketing)
-                @include('sections.cases_online_marketing')
+                @include('sections.cases_online_marketing', ['cases' => $section->cases])
             @endif
         @endif
         @if ($section->_type == '1column')

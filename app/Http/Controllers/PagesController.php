@@ -662,21 +662,20 @@ class PagesController extends Controller
                 }
             }
             if($sec->_type == 'cases') {
-                if($sec->show_cases_online_marketing) {
-                    $items = [];
 
-                    $caseItems = new SimpleCustomPostsApi('case');
-                    // $caseItems->parameters['category'] = 'online_marketing';
-                    $caseItems->get();
-                    $cases = $caseItems->getItems();
-dd($cases);
-                    foreach($cases as &$case) {
-                        $case->gallery = $this->getMediaGallery($case->gallery);
-                    }
+                $caseItems = new SimpleCustomPostsApi('case');
 
-// dd($cases);
-                    $sec->cases_om = $cases;
+                if($sec->show_cases_online_marketing) $caseItems->parameters['category'] = 'online-marketing';
+                if($sec->show_cases_web_development) $caseItems->parameters['category'] = 'web-development';
+                if($sec->show_cases_events) $caseItems->parameters['category'] = 'events';
+                
+                $caseItems->get();
+                $cases = $caseItems->getItems();
+                foreach($cases as &$case) {
+                    $case->gallery = $this->getMediaGallery($case->gallery);
                 }
+                $sec->cases = $cases;
+// dd($cases);
             }
             $secs[] = $sec;
         }
