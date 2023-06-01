@@ -88,7 +88,7 @@ function getCustomPostsSimplified(WP_REST_Request $request) {
     $orderby = 'date';
     $order = 'DESC';
     $postType = 'post';
-    $category = '';
+    $category = false;
     if (isset($parameters['orderby'])) {
         $orderby = $parameters['orderby'];
     }
@@ -98,26 +98,23 @@ function getCustomPostsSimplified(WP_REST_Request $request) {
     if (isset($parameters['post_type'])) {
         $postType = $parameters['post_type'];
     }
-    $posts = get_posts([
+    if (isset($parameters['category'])) {
+        $category = $parameters['category'];
+    }
+    $postParams = [
         'numberposts' => -1,
         'orderby' => $orderby,
         'order' => $order,
         'post_type' => $postType,
-        'tax_query' => array(
-            array(
-                'taxonomy' => 'case_category',
-                'field'    => 'slug',
-                'terms'    => array( 'online-marketing' )
+    ];
+    if($category) $postParams['tax_query'] = array(
+        array(
+            'taxonomy' => 'case_category',
+            'field'    => 'slug',
+            'terms'    => array( $category )
             )
-        )
-        // 'tax_query' => array(
-        //     array(
-        //         'taxonomy' => 'case_category',
-        //         'field' => 'slug',
-        //         'terms' => 'online_marketing',
-        //     )
-        // )
-    ]);
+        );
+    $posts = get_posts($postParams);
 
     $aRes = getCustomPostsCollectionAttrs($posts);
     
