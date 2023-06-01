@@ -661,8 +661,23 @@ class PagesController extends Controller
                     }
                 }
             }
+            if($sec->_type == 'cases') {
+                if($sec->show_cases_online_marketing) {
+                    $items = [];
+                    // for($x=0;$x<5;$x++) {
+                    //     $items[] = 'abc';
+                    // }
+
+                    $caseItems = new SimpleCustomPostsApi('case');
+                    $caseItems->get();
+                    $cases = $caseItems->getItems();
+dd($cases);
+                    $sec->cases_om = $cases;
+                }
+            }
             $secs[] = $sec;
         }
+// dd($secs);
         return $secs;
     }
 }

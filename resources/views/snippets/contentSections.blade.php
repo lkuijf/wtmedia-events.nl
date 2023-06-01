@@ -75,8 +75,13 @@
         @if($section->_type == 'working_with' && $section->show_working_with)
             @include('sections.working_with')
         @endif
-        @if($section->_type == 'cases' && $section->show_cases_highlighted)
-            @include('sections.events')
+        @if($section->_type == 'cases')
+            @if ($section->show_cases_highlighted)
+                @include('sections.events')
+            @endif
+            @if ($section->show_cases_online_marketing)
+                @include('sections.cases_online_marketing')
+            @endif
         @endif
         @if ($section->_type == '1column')
         <div class="fullw">
