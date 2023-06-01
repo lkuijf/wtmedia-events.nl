@@ -404,6 +404,9 @@ nav ul {
 .contentWrapper .standardPage {
   padding-top: 200px;
 }
+.contentWrapper .standardPage > div {
+  margin-bottom: 40px;
+}
 .contentWrapper h1 {
   font-weight: normal;
   font-size: 2.5em;
@@ -500,28 +503,28 @@ nav ul {
 }
 
 @media (max-width: 768px) {
-  .blogDetail {
+  .detailArticle {
     padding-left: 40px;
     padding-right: 40px;
   }
 }
 @media (max-width: 480px) {
-  .blogDetail {
+  .detailArticle {
     padding-left: 20px;
     padding-right: 20px;
   }
 }
-.blogDetail .date {
+.detailArticle .date {
   font-size: 1.5em;
 }
-.blogDetail .date span {
+.detailArticle .date span {
   text-decoration: underline;
 }
-.blogDetail .date:before {
+.detailArticle .date:before {
   font-family: "wt_media_events";
   content: "\e804 ";
 }
-.blogDetail img {
+.detailArticle img {
   max-width: 100%;
   height: auto;
 }

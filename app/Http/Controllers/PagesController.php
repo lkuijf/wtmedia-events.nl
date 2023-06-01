@@ -200,9 +200,7 @@ class PagesController extends Controller
         $post = $cPost->get();
         if(!count($post)) return abort(404);
 
-        // if(count($post[0]->gallery)) {
-            $post[0]->gallery = $this->getMediaGallery($post[0]->gallery);
-        // }
+        $post[0]->gallery = $this->getMediaGallery($post[0]->gallery);
 // dd($post);
         $data= [
             'head_title' => $post[0]->page_title,
@@ -223,6 +221,36 @@ class PagesController extends Controller
         ];
 
         return view('blog-detail-page')->with('data', $data);
+
+    }
+    public function showCase($slug) {
+        $simplePages = new SimplePagesApi();
+        $htmlMenu = new Menu($simplePages->get());
+        $htmlMenu->generateUlMenu();
+        $options = $this->getWebsiteOptions();
+        $simpleMedia = new SimpleMediaApi();
+        $simpleMedia->get();
+        $this->allMediaById = $simpleMedia->makeListById();
+
+        $cPost = new CustomPostApi('case', false, $slug);
+        $post = $cPost->get();
+        if(!count($post)) return abort(404);
+
+        $post[0]->gallery = $this->getMediaGallery($post[0]->gallery);
+// dd($post);
+        $data= [
+            'head_title' => $post[0]->page_title,
+            'meta_description' => $post[0]->page_meta_description,
+            'html_menu' => $htmlMenu->html,
+            'website_options' => $options,
+            'text' => $post[0]->text,
+            'hero_title' => $post[0]->title->rendered,
+            // 'hero_text' => $post[0]->hero_text,
+            'gallery' => $post[0]->gallery,
+            // 'blog_date' => date('d-m-Y', strtotime($post[0]->date)),
+        ];
+
+        return view('case-detail-page')->with('data', $data);
 
     }
     public function showVacature($slug, $apply) {

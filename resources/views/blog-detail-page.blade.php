@@ -12,7 +12,7 @@
             // 'phone' => $section->btn_phone,
             ])
         <div class="inner">
-            <article class="blogDetail">
+            <article class="detailArticle">
                 <p class="date"><span>{{ $data['blog_date'] }}</span></p>
                 {!! $data['blog_text'] !!}
             </article>
