@@ -58,6 +58,7 @@ add_action( 'init', 'create_posttype_case' );
 // add_action( 'init', 'create_posttype_professionals' );
 // add_action( 'init', 'create_posttype_vessels' );
 // add_action( 'init', 'register_taxonomy_vessel_type' );
+add_action( 'init', 'register_taxonomy_case_category' );
 
 // Our custom post type function
 function create_posttype_blog() {
@@ -185,6 +186,31 @@ function create_posttype_case() {
 //     );
 //     register_taxonomy( 'vessel_type', [ 'vessel' ], $args );
 // }
+function register_taxonomy_case_category() {
+    $labels = array(
+        'name'              => _x( 'Categories', 'taxonomy general name' ),
+        'singular_name'     => _x( 'Category', 'taxonomy singular name' ),
+        'search_items'      => __( 'Search Categories' ),
+        'all_items'         => __( 'All Categories' ),
+        'parent_item'       => __( 'Parent Category' ),
+        'parent_item_colon' => __( 'Parent Category:' ),
+        'edit_item'         => __( 'Edit Category' ),
+        'update_item'       => __( 'Update Category' ),
+        'add_new_item'      => __( 'Add New Category' ),
+        'new_item_name'     => __( 'New Category Name' ),
+        'menu_name'         => __( 'Category' ),
+    );
+    $args   = array(
+        'hierarchical'      => true, // make it hierarchical (like categories)
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'show_in_rest'      => true,
+        'query_var'         => true,
+        'rewrite'           => [ 'slug' => 'case_category' ],
+    );
+    register_taxonomy( 'case_category', [ 'case' ], $args );
+}
 
 $editor = get_role('editor');
 $capabilities_pages = array(
