@@ -207,7 +207,7 @@ function register_taxonomy_case_category() {
         'show_admin_column' => true,
         'show_in_rest'      => true,
         'query_var'         => true,
-        'rewrite'           => [ 'slug' => 'case_category' ],
+        // 'rewrite'           => [ 'slug' => 'case_category' ],
     );
     register_taxonomy( 'case_category', [ 'case' ], $args );
 }

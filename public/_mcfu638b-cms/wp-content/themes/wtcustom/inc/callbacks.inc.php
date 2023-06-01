@@ -88,6 +88,7 @@ function getCustomPostsSimplified(WP_REST_Request $request) {
     $orderby = 'date';
     $order = 'DESC';
     $postType = 'post';
+    $category = '';
     if (isset($parameters['orderby'])) {
         $orderby = $parameters['orderby'];
     }
@@ -102,6 +103,13 @@ function getCustomPostsSimplified(WP_REST_Request $request) {
         'orderby' => $orderby,
         'order' => $order,
         'post_type' => $postType,
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'category',
+                'field' => 'slug',
+                'terms' => 'online_marketing',
+            )
+        )
     ]);
 
     $aRes = getCustomPostsCollectionAttrs($posts);

@@ -664,13 +664,16 @@ class PagesController extends Controller
             if($sec->_type == 'cases') {
                 if($sec->show_cases_online_marketing) {
                     $items = [];
-                    // for($x=0;$x<5;$x++) {
-                    //     $items[] = 'abc';
-                    // }
 
                     $caseItems = new SimpleCustomPostsApi('case');
+                    $caseItems->parameters['category'] = 'online_marketing';
                     $caseItems->get();
                     $cases = $caseItems->getItems();
+                    
+                    foreach($cases as &$case) {
+                        $case->gallery = $this->getMediaGallery($case->gallery);
+                    }
+
 dd($cases);
                     $sec->cases_om = $cases;
                 }
