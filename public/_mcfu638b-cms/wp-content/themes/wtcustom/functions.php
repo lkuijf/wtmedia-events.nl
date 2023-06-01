@@ -54,7 +54,7 @@ $websiteOptions[] = array('media_gallery', 'events', 'Events');
 $carbonFieldsArgs['websiteOptions'] = $websiteOptions;
 
 add_action( 'init', 'create_posttype_blog' );
-// add_action( 'init', 'create_posttype_offices' );
+add_action( 'init', 'create_posttype_case' );
 // add_action( 'init', 'create_posttype_professionals' );
 // add_action( 'init', 'create_posttype_vessels' );
 // add_action( 'init', 'register_taxonomy_vessel_type' );
@@ -70,6 +70,26 @@ function create_posttype_blog() {
                 'add_new' => __( 'Add New Blog-item' ),
                 'edit_item' => __( 'Edit Blog-item' ),
                 'update_item' => __( 'Update Blog-item' ),
+            ),
+            'public' => true,
+            // 'has_archive' => true,
+            // 'rewrite' => array('slug' => 'movies'),
+            'show_in_rest' => true,
+            // 'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
+            'supports'            => array( 'title'),
+            )
+    );
+}
+function create_posttype_case() {
+    register_post_type( 'case',
+        array(
+            'labels' => array(
+                'name' => __( 'Cases' ),
+                'singular_name' => __( 'Case' ),
+                'add_new_item' => __( 'Add New Case' ),
+                'add_new' => __( 'Add New Case' ),
+                'edit_item' => __( 'Edit Case' ),
+                'update_item' => __( 'Update Case' ),
             ),
             'public' => true,
             // 'has_archive' => true,
@@ -562,95 +582,110 @@ function crbRegisterFields($args) {
             )
         );
     Container::make( 'post_meta', __( 'Information' ) )
-        ->where( 'post_type', '=', 'office' )
+        ->where( 'post_type', '=', 'case' )
         ->add_fields(array(
-            Field::make( 'text', 'country', __( 'Country' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'text', 'phone', __( 'Phone number' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'text', 'email', __( 'E-mail address' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'text', 'address1', __( 'Address line 1' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'text', 'address2', __( 'Address line 2' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'text', 'address3', __( 'Address line 3' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'text', 'address4', __( 'Address line 4' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'text', 'google_maps_address', __( 'Address for Google Maps Marker' ))->set_visible_in_rest_api($visible = true),
+            Field::make( 'separator', 'separator1', __( 'Images' ) ),
+            Field::make( 'media_gallery', 'images', __( 'Images' ) )->set_visible_in_rest_api($visible = true),
+            // Field::make( 'text', 'hero_title', __( 'Hero title (can use html-tags)' ))->set_visible_in_rest_api($visible = true),
+            // Field::make( 'textarea', 'hero_text', __( 'Hero text (can use html-tags)' ))->set_visible_in_rest_api($visible = true),
+            Field::make( 'separator', 'separator2', __( 'Case text' ) ),
+            Field::make( 'textarea', 'card_text', __( 'Card text (can use html-tags)' ))->set_visible_in_rest_api($visible = true),
+            Field::make( 'rich_text', 'text', __( 'Text' ))->set_visible_in_rest_api($visible = true),
+            Field::make( 'separator', 'separator3', __( 'SEO information' ) ),
+            Field::make( 'text', 'case_page_title', __( 'Blog title (shown in browser tab)' ))->set_visible_in_rest_api($visible = true),
+            Field::make( 'text', 'case_meta_description', __( 'Blog meta description (shown in search engines)' ))->set_visible_in_rest_api($visible = true),
             )
         );
-    Container::make( 'post_meta', __( 'Information' ) )
-        ->where( 'post_type', '=', 'professional' )
-        ->add_fields(array(
-            Field::make( 'text', 'function', __( 'Function' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'image', 'image', __( 'Image' ) )->set_visible_in_rest_api($visible = true),
-            )
-        );
+    // Container::make( 'post_meta', __( 'Information' ) )
+    //     ->where( 'post_type', '=', 'office' )
+    //     ->add_fields(array(
+    //         Field::make( 'text', 'country', __( 'Country' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'text', 'phone', __( 'Phone number' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'text', 'email', __( 'E-mail address' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'text', 'address1', __( 'Address line 1' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'text', 'address2', __( 'Address line 2' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'text', 'address3', __( 'Address line 3' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'text', 'address4', __( 'Address line 4' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'text', 'google_maps_address', __( 'Address for Google Maps Marker' ))->set_visible_in_rest_api($visible = true),
+    //         )
+    //     );
+    // Container::make( 'post_meta', __( 'Information' ) )
+    //     ->where( 'post_type', '=', 'professional' )
+    //     ->add_fields(array(
+    //         Field::make( 'text', 'function', __( 'Function' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'image', 'image', __( 'Image' ) )->set_visible_in_rest_api($visible = true),
+    //         )
+    //     );
 
-    Container::make( 'post_meta', __( 'Information' ) )
-        ->where( 'post_type', '=', 'vessel' )
-        ->add_fields(array(
-            Field::make( 'image', 'small_image', __( 'Card image' ) )->set_visible_in_rest_api($visible = true),
-            Field::make( 'image', 'large_image', __( 'Hero image' ) )->set_visible_in_rest_api($visible = true),
-            Field::make( 'text', 'type_text', __( 'Type' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'separator', 'separator1', __( 'General' ) ),
-            Field::make( 'text', 'class', __( 'Class' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'text', 'flag', __( 'Flag' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'text', 'built', __( 'Built' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'text', 'rebuilt', __( 'Rebuilt' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'text', 'call-sign', __( 'Call Sign' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'separator', 'separator2', __( 'Dimensions' ) ),
-            Field::make( 'text', 'length', __( 'Length' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'text', 'breadth', __( 'Breadth' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'text', 'draft', __( 'Draft' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'text', 'depth', __( 'Depth' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'text', 'gt', __( 'GT' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'text', 'nt', __( 'NT' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'separator', 'separator3', __( 'Performance' ) ),
-            Field::make( 'text', 'bollard-pull', __( 'Bollard Pull' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'text', 'max-speed-fuel-consumption', __( 'Max Speed + Fuel Consumption' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'text', 'cruise-economic-speed-fuel-consumption', __( 'Cruise/Economic Speed + Fuel Consumption' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'text', 'standby-fuel-consumption', __( 'Standby Fuel Consumption' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'separator', 'separator4', __( 'Machinery and Propulsion' ) ),
-            Field::make( 'text', 'main-engine', __( 'Main Engine' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'text', 'gearbox', __( 'Gearbox' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'text', 'propellor-shafts', __( 'Propellor & shafts' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'text', 'auxiliary-engines', __( 'Auxiliary Engines' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'text', 'harbor-generator', __( 'Harbor generator' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'text', 'azimuth-thruster', __( 'Azimuth Thruster' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'text', 'sewage-plant', __( 'Sewage plant' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'text', 'engine-room-fire-protection', __( 'Engine room fire protection' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'text', 'bilge-water-separator', __( 'Bilge water separator' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'text', 'fuel-oil-separator', __( 'Fuel oil separator' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'text', 'electrical-installation', __( 'Electrical installation' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'separator', 'separator5', __( 'Tank capacities and deck area' ) ),
-            Field::make( 'text', 'total-fresh-water-tank', __( 'Total Fresh Water Tank' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'text', 'total-ballast-water-tank', __( 'Total Ballast Water Tank' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'text', 'total-fuel-tank', __( 'Total Fuel Tank' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'text', 'deck-area', __( 'Deck Area' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'separator', 'separator6', __( 'Deck equipment' ) ),
-            Field::make( 'text', 'deckcrane-ps', __( 'Deckcrane PS' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'text', 'safe-working-load', __( 'Safe Working Load' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'text', 'steel-wire-1', __( 'Steel Wire' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'separator', 'separator7', __( 'Rescue equipment' ) ),
-            Field::make( 'text', 'davit-sb', __( 'Davit SB' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'text', 'working-load-limit', __( 'Working Load Limit' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'text', 'steel-wire-2', __( 'Steel Wire' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'text', 'fast-rescue-craft', __( 'Fast Rescue Craft' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'separator', 'separator8', __( 'Radio and navigation equipment' ) ),
-            Field::make( 'text', 'compass', __( 'Compass' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'text', 'radar', __( 'Radar' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'text', 'gmdss', __( 'GMDSS' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'text', 'epirb', __( 'EPIRB' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'text', 'sart', __( 'SART' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'text', 'ais', __( 'AIS' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'text', 'lrit', __( 'LRIT' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'separator', 'separator9', __( 'Accommodation' ) ),
-            Field::make( 'text', 'total-accommodation', __( 'Total Accommodation (Berths)' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'text', 'cabins', __( 'Cabins' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'text', 'single-cabins', __( 'Single Cabins' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'text', 'double-cabins', __( 'Double Cabins' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'text', 'three-bed-cabins', __( 'Three Bed Cabins' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'text', 'six-bed-cabins', __( 'Six Bed Cabins' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'separator', 'separator10', __( 'Downloads' ) ),
-            Field::make( 'file', 'pdf-sheet', __( 'PDF Sheet' ) )->set_visible_in_rest_api($visible = true),
-        )
-    );
+    // Container::make( 'post_meta', __( 'Information' ) )
+    //     ->where( 'post_type', '=', 'vessel' )
+    //     ->add_fields(array(
+    //         Field::make( 'image', 'small_image', __( 'Card image' ) )->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'image', 'large_image', __( 'Hero image' ) )->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'text', 'type_text', __( 'Type' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'separator', 'separator1', __( 'General' ) ),
+    //         Field::make( 'text', 'class', __( 'Class' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'text', 'flag', __( 'Flag' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'text', 'built', __( 'Built' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'text', 'rebuilt', __( 'Rebuilt' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'text', 'call-sign', __( 'Call Sign' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'separator', 'separator2', __( 'Dimensions' ) ),
+    //         Field::make( 'text', 'length', __( 'Length' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'text', 'breadth', __( 'Breadth' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'text', 'draft', __( 'Draft' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'text', 'depth', __( 'Depth' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'text', 'gt', __( 'GT' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'text', 'nt', __( 'NT' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'separator', 'separator3', __( 'Performance' ) ),
+    //         Field::make( 'text', 'bollard-pull', __( 'Bollard Pull' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'text', 'max-speed-fuel-consumption', __( 'Max Speed + Fuel Consumption' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'text', 'cruise-economic-speed-fuel-consumption', __( 'Cruise/Economic Speed + Fuel Consumption' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'text', 'standby-fuel-consumption', __( 'Standby Fuel Consumption' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'separator', 'separator4', __( 'Machinery and Propulsion' ) ),
+    //         Field::make( 'text', 'main-engine', __( 'Main Engine' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'text', 'gearbox', __( 'Gearbox' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'text', 'propellor-shafts', __( 'Propellor & shafts' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'text', 'auxiliary-engines', __( 'Auxiliary Engines' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'text', 'harbor-generator', __( 'Harbor generator' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'text', 'azimuth-thruster', __( 'Azimuth Thruster' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'text', 'sewage-plant', __( 'Sewage plant' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'text', 'engine-room-fire-protection', __( 'Engine room fire protection' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'text', 'bilge-water-separator', __( 'Bilge water separator' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'text', 'fuel-oil-separator', __( 'Fuel oil separator' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'text', 'electrical-installation', __( 'Electrical installation' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'separator', 'separator5', __( 'Tank capacities and deck area' ) ),
+    //         Field::make( 'text', 'total-fresh-water-tank', __( 'Total Fresh Water Tank' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'text', 'total-ballast-water-tank', __( 'Total Ballast Water Tank' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'text', 'total-fuel-tank', __( 'Total Fuel Tank' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'text', 'deck-area', __( 'Deck Area' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'separator', 'separator6', __( 'Deck equipment' ) ),
+    //         Field::make( 'text', 'deckcrane-ps', __( 'Deckcrane PS' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'text', 'safe-working-load', __( 'Safe Working Load' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'text', 'steel-wire-1', __( 'Steel Wire' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'separator', 'separator7', __( 'Rescue equipment' ) ),
+    //         Field::make( 'text', 'davit-sb', __( 'Davit SB' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'text', 'working-load-limit', __( 'Working Load Limit' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'text', 'steel-wire-2', __( 'Steel Wire' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'text', 'fast-rescue-craft', __( 'Fast Rescue Craft' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'separator', 'separator8', __( 'Radio and navigation equipment' ) ),
+    //         Field::make( 'text', 'compass', __( 'Compass' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'text', 'radar', __( 'Radar' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'text', 'gmdss', __( 'GMDSS' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'text', 'epirb', __( 'EPIRB' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'text', 'sart', __( 'SART' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'text', 'ais', __( 'AIS' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'text', 'lrit', __( 'LRIT' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'separator', 'separator9', __( 'Accommodation' ) ),
+    //         Field::make( 'text', 'total-accommodation', __( 'Total Accommodation (Berths)' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'text', 'cabins', __( 'Cabins' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'text', 'single-cabins', __( 'Single Cabins' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'text', 'double-cabins', __( 'Double Cabins' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'text', 'three-bed-cabins', __( 'Three Bed Cabins' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'text', 'six-bed-cabins', __( 'Six Bed Cabins' ))->set_visible_in_rest_api($visible = true),
+    //         Field::make( 'separator', 'separator10', __( 'Downloads' ) ),
+    //         Field::make( 'file', 'pdf-sheet', __( 'PDF Sheet' ) )->set_visible_in_rest_api($visible = true),
+    //     )
+    // );
 
     // Container::make('term_meta', 'Woo Category Options')
     //     ->where('term_taxonomy', '=', 'product_cat')
