@@ -23,5 +23,5 @@
     <meta property="og:title" content="{{ $data['head_title'] }}" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="{{ url()->full() }}" />
-    <meta property="og:image" content="{{ $data['blog_hero_gallery'][0]['sizes']['large'] }}" />
+    @if (isset($data['blog_hero_gallery'][0]['sizes']))<meta property="og:image" content="{{ $data['blog_hero_gallery'][0]['sizes']['large'] }}" />@endif
 @endsection

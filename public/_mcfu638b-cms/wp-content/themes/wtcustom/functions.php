@@ -455,9 +455,9 @@ function crbRegisterFields($args) {
                     Field::make( 'separator', 'separator1', __( 'Clients' ) ),
                     Field::make( 'checkbox', 'show_working_with', __( 'Show "Clients" section' ) ),
                 ) )
-                ->add_fields( 'events', 'Events', array(
-                    Field::make( 'separator', 'separator1', __( 'Events' ) ),
-                    Field::make( 'checkbox', 'show_events', __( 'Show "Events" section' ) ),
+                ->add_fields( 'events', 'Cases', array(
+                    Field::make( 'separator', 'separator1', __( 'Cases' ) ),
+                    Field::make( 'checkbox', 'show_events', __( 'Show "Cases" section' ) ),
                 ) )
                 // ->add_fields( 'get_in_touch', 'Get in touch', array(
                 //     Field::make( 'separator', 'separator1', __( 'Get in touch' ) ),

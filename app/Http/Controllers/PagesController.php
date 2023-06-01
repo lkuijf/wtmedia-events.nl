@@ -200,9 +200,9 @@ class PagesController extends Controller
         $post = $cPost->get();
         if(!count($post)) return abort(404);
 
-        if(count($post[0]->hero_gallery)) {
-            $post[0]->hero_gallery = $this->getMediaGallery($post[0]->hero_gallery);
-        }
+        // if(count($post[0]->gallery)) {
+            $post[0]->gallery = $this->getMediaGallery($post[0]->gallery);
+        // }
 // dd($post);
         $data= [
             'head_title' => $post[0]->page_title,
@@ -505,8 +505,8 @@ class PagesController extends Controller
         $res = [];
 
         if(!$gall) {
-            $i['url'] = '';
-            $i['alt'] = '';
+            $i['url'] = 'https://via.placeholder.com/800x600?text=Geen+afbeelding+gevonden';
+            $i['alt'] = 'Geen afbeelding gevonden';
             $res[] = $i;
             return $res;
         }
