@@ -81,74 +81,28 @@
         @if ($section->_type == '1column')
         <div class="fullw">
             @foreach ($section->fullwidth as $secData)
-
-                @if ($secData->_type == 'tekst')
-                    {{-- @include('sections.fullwidth_text', [
-                    'text' => $secData->text,
-                    ]) --}}
-                    @php
-                        $secData->text = str_replace('---', '<hr>', $secData->text);
-                    @endphp
-                    @include('sections.fullwidth_text', [
-                        'text' => $secData->text,
-                        ])
-                @endif
-                @if ($secData->_type == 'afbeelding')
-                    @include('sections.fullwidth_afbeelding', [
-                    'imgUrlMedium' => $secData->image[0]['sizes']['medium_large'],
-                    'imgUrlLarge' => $secData->image[0]['sizes']['large'],
-                    'imgAlt' => $secData->image[0]['alt'],
-                    ])
-                @endif
-                @if ($secData->_type == 'button')
-                    @include('sections.fullwidth_button', ['url' => $secData->url, 'title' => $secData->title])
-                @endif
-                {{-- @if ($secData->_type == 'bestand')
-                    @include('sections.fullwidth_bestand', [
-                    'file' => $secData->file,
-                    'title' => $secData->title,
-                    ])
-                @endif
-                @if ($secData->_type == 'nieuws-items')
-                    @foreach ($secData->news_associations as $newsItem)
-                        @include('sections.fullwidth_news', [
-                        'title' => $newsItem->title,
-                        'site_title' => $newsItem->site_title,
-                        'news_url' => $newsItem->news_url,
-                        'text' => $newsItem->text,
-                        'image' => $newsItem->image,
-                        ])
-                    @endforeach
-                @endif --}}
-
+                @include('snippets.dynamicSections', ['secData' => $secData, 'layout' => 'fullwidth'])
             @endforeach
         </div>
         @endif
-
         @if ($section->_type == '2column')
             <div class="twoColumns">
                 <div class="inner">
                 <div class="columns @if($section->column_direction == 'reverse'){{ 'colReverse' }}@endif">
                     <div>
                         @foreach ($section->left as $secData)
-                            @include('snippets.contentSection_2columns')
+                            @include('snippets.dynamicSections', ['secData' => $secData, 'layout' => '2column'])
                         @endforeach
                     </div>
                     <div>
                         @foreach ($section->right as $secData)
-                            @include('snippets.contentSection_2columns')
+                            @include('snippets.dynamicSections', ['secData' => $secData, 'layout' => '2column'])
                         @endforeach
                     </div>
                 </div>
                 </div>
             </div>
         @endif
-
-
-
-
-
-
     {{-- @if ($section['type'] == 'banner')
         @include('sections.banner', [
             'image' => $section['img'], 

@@ -1157,4 +1157,43 @@ footer .btm .socials a img {
 }
 .blogWrap article:hover h2 {
   color: #FFF;
+}
+
+.servicesBtns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+@media (max-width: 768px) {
+  .servicesBtns {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+.servicesBtns .serviceBtnWrap {
+  margin: 0;
+}
+@media (max-width: 768px) {
+  .servicesBtns .serviceBtnWrap {
+    text-align: center;
+    margin: 0 auto;
+  }
+}
+.servicesBtns .serviceBtnWrap a {
+  border-radius: 15px;
+  background-color: #006878;
+  color: #FFF;
+  text-decoration: none;
+  padding: 18px 35px;
+  display: inline-block;
+  box-shadow: #ccc 10px 10px 0px -2px, #006878 10px 10px;
+}
+@media (max-width: 768px) {
+  .servicesBtns .serviceBtnWrap a {
+    width: 300px;
+  }
+}
+.servicesBtns .serviceBtnWrap a:active {
+  transform: translate(5px, 5px);
+  box-shadow: #ccc 5px 5px 0px -2px, #006878 5px 5px;
 }/*# sourceMappingURL=styles.css.map */
