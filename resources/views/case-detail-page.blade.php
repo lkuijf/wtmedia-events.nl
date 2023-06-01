@@ -26,6 +26,7 @@
     </div>
 @endsection
 @section('extra_head')
+    {{-- <link rel="stylesheet" href="{{ asset('css/lightbox.min.css') }}"> --}}
     <meta property="og:title" content="{{ $data['head_title'] }}" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="{{ url()->full() }}" />
@@ -33,4 +34,5 @@
 @endsection
 @section('before_closing_body_tag')
     <script src="{{ asset('js/fslightbox.js') }}"></script>
+    {{-- <script src="{{ asset('js/lightbox.min.js') }}"></script> --}}
 @endsection
