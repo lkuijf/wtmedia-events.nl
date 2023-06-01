@@ -82,6 +82,12 @@
             @if ($section->show_cases_online_marketing)
                 @include('sections.cases_online_marketing', ['cases' => $section->cases])
             @endif
+            @if ($section->show_cases_web_development)
+                @include('sections.cases_web_development', ['cases' => $section->cases])
+            @endif
+            @if ($section->show_cases_events)
+                @include('sections.cases_events', ['cases' => $section->cases])
+            @endif
         @endif
         @if ($section->_type == '1column')
         <div class="fullw">
