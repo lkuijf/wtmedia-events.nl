@@ -594,6 +594,8 @@ function crbRegisterFields($args) {
             Field::make( 'separator', 'separator3', __( 'SEO information' ) ),
             Field::make( 'text', 'case_page_title', __( 'Blog title (shown in browser tab)' ))->set_visible_in_rest_api($visible = true),
             Field::make( 'text', 'case_meta_description', __( 'Blog meta description (shown in search engines)' ))->set_visible_in_rest_api($visible = true),
+            Field::make( 'separator', 'separator4', __( 'Extra options' ) ),
+            Field::make( 'checkbox', 'highlighted', __('Show on homepage') ),
             )
         );
     // Container::make( 'post_meta', __( 'Information' ) )
