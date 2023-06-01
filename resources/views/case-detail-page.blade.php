@@ -17,7 +17,7 @@
                 <div class="casesContent">
                     @foreach ($data['gallery'] as $image)
                         @if (isset($image['sizes']))
-                            <a data-fslightbox href="{{ $image['sizes']['large'] }}"><img src="{{ $image['sizes']['medium_large'] }}" alt="{{ $image['alt'] }}"></a>
+                            <a data-fslightbox="first-lightbox" href="{{ $image['sizes']['large'] }}"><img src="{{ $image['sizes']['medium_large'] }}" alt="{{ $image['alt'] }}"></a>
                         @endif
                     @endforeach
                 </div>
