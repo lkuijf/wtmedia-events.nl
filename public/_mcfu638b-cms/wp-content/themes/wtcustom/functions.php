@@ -574,8 +574,8 @@ function crbRegisterFields($args) {
             Field::make( 'text', 'hero_title', __( 'Hero title (can use html-tags)' ))->set_visible_in_rest_api($visible = true),
             Field::make( 'textarea', 'hero_text', __( 'Hero text (can use html-tags)' ))->set_visible_in_rest_api($visible = true),
             Field::make( 'separator', 'separator2', __( 'Blog text' ) ),
-            Field::make( 'textarea', 'card_text', __( 'Card text (can use html-tags)' ))->set_visible_in_rest_api($visible = true),
             Field::make( 'rich_text', 'text', __( 'Text' ))->set_visible_in_rest_api($visible = true),
+            Field::make( 'textarea', 'card_text', __( 'Card text (can use html-tags)' ))->set_visible_in_rest_api($visible = true),
             Field::make( 'separator', 'separator3', __( 'SEO information' ) ),
             Field::make( 'text', 'blog_title', __( 'Blog title (shown in browser tab)' ))->set_visible_in_rest_api($visible = true),
             Field::make( 'text', 'blog_meta_description', __( 'Blog meta description (shown in search engines)' ))->set_visible_in_rest_api($visible = true),
@@ -584,13 +584,13 @@ function crbRegisterFields($args) {
     Container::make( 'post_meta', __( 'Information' ) )
         ->where( 'post_type', '=', 'case' )
         ->add_fields(array(
-            Field::make( 'separator', 'separator1', __( 'Images' ) ),
+            // Field::make( 'separator', 'separator1', __( 'Images' ) ),
             Field::make( 'media_gallery', 'images', __( 'Images' ) )->set_visible_in_rest_api($visible = true),
             // Field::make( 'text', 'hero_title', __( 'Hero title (can use html-tags)' ))->set_visible_in_rest_api($visible = true),
             // Field::make( 'textarea', 'hero_text', __( 'Hero text (can use html-tags)' ))->set_visible_in_rest_api($visible = true),
             Field::make( 'separator', 'separator2', __( 'Case text' ) ),
-            Field::make( 'textarea', 'card_text', __( 'Card text (can use html-tags)' ))->set_visible_in_rest_api($visible = true),
             Field::make( 'rich_text', 'text', __( 'Text' ))->set_visible_in_rest_api($visible = true),
+            Field::make( 'textarea', 'card_text', __( 'Card text (can use html-tags)' ))->set_visible_in_rest_api($visible = true),
             Field::make( 'separator', 'separator3', __( 'SEO information' ) ),
             Field::make( 'text', 'case_page_title', __( 'Blog title (shown in browser tab)' ))->set_visible_in_rest_api($visible = true),
             Field::make( 'text', 'case_meta_description', __( 'Blog meta description (shown in search engines)' ))->set_visible_in_rest_api($visible = true),
