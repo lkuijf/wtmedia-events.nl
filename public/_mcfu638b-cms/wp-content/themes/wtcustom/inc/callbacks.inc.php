@@ -103,13 +103,13 @@ function getCustomPostsSimplified(WP_REST_Request $request) {
         'orderby' => $orderby,
         'order' => $order,
         'post_type' => $postType,
-        'tax_query' => array(
-            array(
-                'taxonomy' => 'case_category',
-                'field' => 'slug',
-                'terms' => 'online_marketing',
-            )
-        )
+        // 'tax_query' => array(
+        //     array(
+        //         'taxonomy' => 'case_category',
+        //         'field' => 'slug',
+        //         'terms' => 'online_marketing',
+        //     )
+        // )
     ]);
 
     $aRes = getCustomPostsCollectionAttrs($posts);
