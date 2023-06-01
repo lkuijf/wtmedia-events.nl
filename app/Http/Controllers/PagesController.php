@@ -157,6 +157,7 @@ class PagesController extends Controller
         $blogItems = new SimpleCustomPostsApi('blog');
         $blogItems->get();
         $items = $blogItems->getItems();
+// dd($items);
         foreach($items as &$blog) {
             $blog->gallery = $this->getMediaGallery($blog->gallery);
         }
@@ -204,8 +205,8 @@ class PagesController extends Controller
         }
 // dd($post);
         $data= [
-            'head_title' => $post[0]->blog_title,
-            'meta_description' => $post[0]->blog_meta_description,
+            'head_title' => $post[0]->page_title,
+            'meta_description' => $post[0]->page_meta_description,
             'html_menu' => $htmlMenu->html,
             'website_options' => $options,
             // 'cart_total' => $cartTotalItems,
@@ -213,7 +214,7 @@ class PagesController extends Controller
             'blog_text' => $post[0]->text,
             'blog_hero_title' => $post[0]->hero_title,
             'blog_hero_text' => $post[0]->hero_text,
-            'blog_hero_gallery' => $post[0]->hero_gallery,
+            'blog_hero_gallery' => $post[0]->gallery,
             'blog_date' => date('d-m-Y', strtotime($post[0]->date)),
             // 'vessels' => $vessels,
             // 'news' => $news,
