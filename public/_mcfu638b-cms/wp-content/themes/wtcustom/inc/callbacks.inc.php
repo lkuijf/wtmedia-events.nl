@@ -105,7 +105,7 @@ function getCustomPostsSimplified(WP_REST_Request $request) {
         'post_type' => $postType,
         'tax_query' => array(
             array(
-                'taxonomy' => 'category',
+                'taxonomy' => 'case_category',
                 'field' => 'slug',
                 'terms' => 'online_marketing',
             )

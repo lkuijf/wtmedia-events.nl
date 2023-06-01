@@ -666,15 +666,15 @@ class PagesController extends Controller
                     $items = [];
 
                     $caseItems = new SimpleCustomPostsApi('case');
-                    $caseItems->parameters['category'] = 'online_marketing';
+                    // $caseItems->parameters['category'] = 'online_marketing';
                     $caseItems->get();
                     $cases = $caseItems->getItems();
-                    
+dd($cases);
                     foreach($cases as &$case) {
                         $case->gallery = $this->getMediaGallery($case->gallery);
                     }
 
-dd($cases);
+// dd($cases);
                     $sec->cases_om = $cases;
                 }
             }
