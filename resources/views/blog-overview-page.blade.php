@@ -13,7 +13,7 @@
             @endif
             <div>
                 <h2>{{ $blogItem->title }}</h2>
-                <p>{{ $blogItem->date }}</p>
+                <p class="date">{{ date('d-m-Y', strtotime($blogItem->date)) }}</p>
                 <p>{!! $blogItem->card_text !!}</p>
                 <p><a href="{{ url('blog/' . $blogItem->slug) }}">Lees verder ></a></p>
             </div>

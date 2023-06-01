@@ -450,7 +450,12 @@ function crbRegisterFields($args) {
                         ->add_fields('button', array(
                             Field::make( 'text', 'title', 'Titel' ),
                             Field::make( 'text', 'url', 'Link' ),
+                        ) )
+                        ->add_fields( 'services_buttons', 'Services buttons', array(
+                            // Field::make( 'separator', 'separator1', __( 'Services' ) ),
+                            Field::make( 'checkbox', 'show_services_buttons', __( 'Show services buttons' ) ),
                         ) ),
+
                         // ->add_fields('bestand', array(
                         //     Field::make( 'file', 'file', 'Bestand' ),
                         //     Field::make( 'text', 'title', 'Titel' ),
@@ -482,6 +487,10 @@ function crbRegisterFields($args) {
                         ->add_fields('button', array(
                             Field::make( 'text', 'title', 'Titel' ),
                             Field::make( 'text', 'url', 'Link' ),
+                        ) )
+                        ->add_fields( 'services_buttons', 'Services buttons', array(
+                            // Field::make( 'separator', 'separator1', __( 'Services' ) ),
+                            Field::make( 'checkbox', 'show_services_buttons', __( 'Show services buttons' ) ),
                         ) ),
                         // ->add_fields('bestand', array(
                         //     Field::make( 'file', 'file', 'Bestand' ),
@@ -506,6 +515,10 @@ function crbRegisterFields($args) {
                         ->add_fields('button', array(
                             Field::make( 'text', 'title', 'Titel' ),
                             Field::make( 'text', 'url', 'Link' ),
+                        ) )
+                        ->add_fields( 'services_buttons', 'Services buttons', array(
+                            // Field::make( 'separator', 'separator1', __( 'Services' ) ),
+                            Field::make( 'checkbox', 'show_services_buttons', __( 'Show services buttons' ) ),
                         ) ),
                         // ->add_fields('bestand', array(
                         //     Field::make( 'file', 'file', 'Bestand' ),

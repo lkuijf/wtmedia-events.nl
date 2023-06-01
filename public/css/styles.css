@@ -413,6 +413,12 @@ nav ul {
   width: 70px;
   transform: translateY(5px);
 }
+.contentWrapper h1 em {
+  color: #19b4b6;
+  font-style: normal;
+  font-weight: bold;
+  text-shadow: -1px 0 #555, 0 1px #555, 1px 0 #555, 0 -1px #555;
+}
 .contentWrapper .fullw picture img, .contentWrapper .twoColumns picture img {
   width: 100%;
   position: relative;
@@ -446,11 +452,11 @@ nav ul {
   text-decoration: none;
   padding: 25px 100px;
   display: inline-block;
-  box-shadow: #e1e1e1 10px 10px 0px -2px, #006878 10px 10px;
+  box-shadow: #ccc 10px 10px 0px -2px, #006878 10px 10px;
 }
 .contentWrapper .ctaBtnWrap .ctaBtn:active {
   transform: translate(5px, 5px);
-  box-shadow: #e1e1e1 5px 5px 0px -2px, #006878 5px 5px;
+  box-shadow: #ccc 5px 5px 0px -2px, #006878 5px 5px;
 }
 
 @font-face {
@@ -798,6 +804,7 @@ nav ul {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  border-radius: 15px;
 }
 @media (max-width: 480px) {
   .pricing3Column article {
@@ -805,7 +812,10 @@ nav ul {
   }
 }
 .pricing3Column article .packHeader {
-  background-color: #555;
+  border-radius: 15px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  background-color: #19b4b6;
   padding: 10px;
   color: #FFF;
 }
@@ -813,7 +823,7 @@ nav ul {
   font-size: 1.8em;
 }
 .pricing3Column article .packInfo {
-  color: #555;
+  color: #222;
   padding: 20px 40px;
   flex: 1 1 auto;
   display: flex;
@@ -828,7 +838,7 @@ nav ul {
 .pricing3Column article .packInfo div:last-child a {
   font-size: 1em;
   padding: 10px 20px;
-  background-color: #555;
+  background-color: #19b4b6;
   color: #FFF;
   text-decoration: none;
   border-radius: 15px;
@@ -851,13 +861,13 @@ nav ul {
   cursor: pointer;
 }
 .pricing3Column article:hover .packHeader {
-  background-color: #19b4b6;
+  background-color: #555;
 }
 .pricing3Column article:hover .packInfo {
-  color: #222;
+  color: #555;
 }
 .pricing3Column article:hover div:last-child a {
-  background-color: #19b4b6;
+  background-color: #555;
 }
 
 .workingWithContent {
@@ -900,6 +910,7 @@ nav ul {
   }
 }
 .eventsContent img {
+  border-radius: 15px;
   width: 100%;
   aspect-ratio: 1/1;
   -o-object-fit: cover;
@@ -973,11 +984,11 @@ nav ul {
   border-radius: 15px;
   padding: 10px 50px;
   display: inline-block;
-  box-shadow: #e1e1e1 10px 10px 0px -2px, #006878 10px 10px;
+  box-shadow: #ccc 10px 10px 0px -2px, #006878 10px 10px;
 }
 .subscriptionForm button:active {
   transform: translate(5px, 5px);
-  box-shadow: #e1e1e1 5px 5px 0px -2px, #006878 5px 5px;
+  box-shadow: #ccc 5px 5px 0px -2px, #006878 5px 5px;
 }
 
 footer {
@@ -1099,19 +1110,23 @@ footer .btm .socials a img {
 .blogWrap article {
   background-color: #FFF;
   border: 3px solid #19b4b6;
+  border-radius: 15px;
 }
 .blogWrap article img {
   width: 100%;
   aspect-ratio: 2/1;
   -o-object-fit: cover;
      object-fit: cover;
+  border-radius: 11px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 .blogWrap article > div {
   padding: 20px;
 }
 .blogWrap article > div :first-child {
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 5px;
 }
 .blogWrap article > div :nth-child(2) {
   margin-top: 0;
@@ -1122,6 +1137,10 @@ footer .btm .socials a img {
 }
 .blogWrap article > div h2 {
   color: #0c5a5b;
+}
+.blogWrap article > div .date:before {
+  font-family: "wt_media_events";
+  content: "\e804 ";
 }
 .blogWrap article a {
   color: #19b4b6;

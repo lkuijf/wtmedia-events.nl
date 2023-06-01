@@ -11,7 +11,7 @@
                     {!! $data['website_options']->package1_text !!}
                 </div>
                 <div>
-                    <p><a href="mailto:support@wtmedia-events.nl">Meer informatie</a></p>
+                    <p><a href="mailto:support@wtmedia-events.nl">Neem contact op</a></p>
                 </div>
             </div>
         </article>
@@ -26,7 +26,7 @@
                     {!! $data['website_options']->package2_text !!}
                 </div>
                 <div>
-                    <p><a href="mailto:support@wtmedia-events.nl">Meer informatie</a></p>
+                    <p><a href="mailto:support@wtmedia-events.nl">Neem contact op</a></p>
                 </div>
             </div>
         </article>
@@ -41,7 +41,7 @@
                     {!! $data['website_options']->package3_text !!}
                 </div>
                 <div>
-                    <p><a href="mailto:support@wtmedia-events.nl">Meer informatie</a></p>
+                    <p><a href="mailto:support@wtmedia-events.nl">Neem contact op</a></p>
                 </div>
             </div>
         </article>

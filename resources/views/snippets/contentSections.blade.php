@@ -86,8 +86,11 @@
                     {{-- @include('sections.fullwidth_text', [
                     'text' => $secData->text,
                     ]) --}}
+                    @php
+                        $secData->text = str_replace('---', '<hr>', $secData->text);
+                    @endphp
                     @include('sections.fullwidth_text', [
-                        'text' => str_replace('---', '<hr>', $secData->text),
+                        'text' => $secData->text,
                         ])
                 @endif
                 @if ($secData->_type == 'afbeelding')

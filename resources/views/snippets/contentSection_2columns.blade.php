@@ -1,6 +1,9 @@
 @if ($secData->_type == 'tekst')
+    @php
+        $secData->text = str_replace('---', '<hr>', $secData->text);
+    @endphp
     @include('sections.2column_text', [
-    'text' => str_replace('---', '<hr>', $secData->text),
+    'text' => $secData->text,
     ])
 @endif
 @if ($secData->_type == 'afbeelding')
