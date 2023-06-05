@@ -41,6 +41,9 @@ function deleteSimpleCustomPostsRestCacheCase() {
     \WP_Rest_Cache_Plugin\Includes\Caching\Caching::get_instance()->delete_cache_by_endpoint( '/_mcfu638b-cms/index.php/wp-json/wtcustom/simple-custom-posts?category=web-development&post_type=case' );
     \WP_Rest_Cache_Plugin\Includes\Caching\Caching::get_instance()->delete_cache_by_endpoint( '/_mcfu638b-cms/index.php/wp-json/wtcustom/simple-custom-posts?category=events&post_type=case' );
 }
+function deleteSimpleCustomPostsRestCacheReview() {
+    \WP_Rest_Cache_Plugin\Includes\Caching\Caching::get_instance()->delete_cache_by_endpoint( '/_mcfu638b-cms/index.php/wp-json/wtcustom/simple-custom-posts?post_type=review' );
+}
 /* Remove bulk actions for type: page */
 function remove_from_bulk_actions($actions) {
     return array();
