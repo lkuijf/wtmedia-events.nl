@@ -236,8 +236,14 @@ function getCustomPostsCollectionAttrs($coll) {
         // if($metaCategories && count(array_filter($metaCategories))) {
         //     $cats = $metaCategories[0];
         // }
-
+        
+        $cats = [];
         $catTerms = get_the_terms( $item->ID, 'case_category' );
+        if($catTerms && count($catTerms)) {
+            foreach($catTerms as $term) {
+                $cats[] = $term->name;
+            }
+        }
 
         $oP->id = $item->ID;
         $oP->title = $item->post_title;
@@ -253,7 +259,7 @@ function getCustomPostsCollectionAttrs($coll) {
         // $oP->category = get_the_category($item->ID)[0]->name;
         // $oP->tags = $aTags;
         // $oP->topics = $topics;
-        $oP->categories = $catTerms;
+        $oP->categories = $cats;
         $aRes[] = $oP;
     }
     return $aRes;
