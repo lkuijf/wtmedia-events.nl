@@ -121,7 +121,7 @@ function getCustomPostsSimplified(WP_REST_Request $request) {
     if($highlighted) $postParams['meta_query'] = array(
         array(
             'key' => 'highlighted',
-            'value'    => '1'
+            'value'    => true
             )
         );
     $posts = get_posts($postParams);
