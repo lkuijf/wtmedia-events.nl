@@ -241,12 +241,14 @@ function getCustomPostsCollectionAttrs($coll) {
         $catTerms = get_the_terms( $item->ID, 'case_category' );
         if($catTerms && count($catTerms)) {
             foreach($catTerms as $term) {
-                // $sCat = [];
-                // $sCat['slug'] = $term->slug;
-                // $sCat['name'] = $term->name;
-                // $cats[] = $sCat;
+                // $cats[$term->slug] = $term->name;
 
-                $cats[$term->slug] = $term->name;
+                $sCat = [];
+                $sCat['slug'] = $term->slug;
+                $sCat['name'] = $term->name;
+                $cats[] = $sCat;
+
+                
             }
         }
 
