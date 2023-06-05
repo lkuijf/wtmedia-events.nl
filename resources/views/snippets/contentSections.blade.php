@@ -77,7 +77,7 @@
         @endif
         @if($section->_type == 'cases')
             @if ($section->show_cases_highlighted)
-                @include('sections.events')
+                @include('sections.events', ['cases' => $data['cases_highlighted']])
             @endif
             @if ($section->show_cases_online_marketing)
                 @include('sections.cases_online_marketing', ['cases' => $section->cases])

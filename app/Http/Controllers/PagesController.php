@@ -103,10 +103,10 @@ class PagesController extends Controller
             // 'cart_total' => $cartTotalItems,
             // 'user_logged_in' => $loggedInUserId,
             'content_sections' => $content->contentSections,
-            'vessels' => $vessels,
-            'news' => $news,
-            'vessel' => $vessel,
-            'newsItem' => $newsItem,
+            // 'vessels' => $vessels,
+            // 'news' => $news,
+            // 'vessel' => $vessel,
+            // 'newsItem' => $newsItem,
         ];
         if($vessel) {
             $data['head_title'] = $vessel->title->rendered . ' - ' . config('app_wt.metaTitle');
@@ -623,6 +623,15 @@ class PagesController extends Controller
         if(isset($options->working_with)) $options->working_with = $this->getMediaGallery($options->working_with);
         if(isset($options->events)) $options->events = $this->getMediaGallery($options->events);
 
+        $casesHighlighted = new SimpleCustomPostsApi('case');
+        $casesHighlighted->parameters['highlighted'] = '1';
+        $casesHighlighted->get();
+        $homepageCases = $casesHighlighted->getItems();
+        foreach($homepageCases as &$case) {
+            $case->gallery = $this->getMediaGallery($case->gallery);
+        }
+dd($homepageCases);
+
         $allCrbSections = array();
         foreach($spages[0] as $sPage) {
             if($sPage->title == 'Blog') continue;
@@ -645,6 +654,7 @@ class PagesController extends Controller
             'html_menu' => $htmlMenu->html,
             'website_options' => $options,
             'content_sections' => $allCrbSections,
+            'cases_highlighted' => $homepageCases,
         ];
         return view('onepager')->with('data', $data);
     }
