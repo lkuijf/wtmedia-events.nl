@@ -180,29 +180,29 @@ setTimeout(() => { // using setTimeout for elements that are directly in viewpor
 }, 100);
 /*************************************************/
 
-var swiperPartner = new Swiper(".partnerSwiper", {
-    slidesPerView: 2,
-    spaceBetween: 0,
-    speed: 1000,
-    // loop: true, // not compatible with slidesPerView
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-        type: 'bullets',
-    },
-    autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-    },
-    breakpoints: {
-        768: {
-          slidesPerView: 3,
-        },
-        1024: {
-          slidesPerView: 5,
-        },
-    }
-});
+// var swiperPartner = new Swiper(".partnerSwiper", {
+//     slidesPerView: 2,
+//     spaceBetween: 0,
+//     speed: 1000,
+//     // loop: true, // not compatible with slidesPerView
+//     pagination: {
+//         el: '.swiper-pagination',
+//         clickable: true,
+//         type: 'bullets',
+//     },
+//     autoplay: {
+//         delay: 2500,
+//         disableOnInteraction: false,
+//     },
+//     breakpoints: {
+//         768: {
+//           slidesPerView: 3,
+//         },
+//         1024: {
+//           slidesPerView: 5,
+//         },
+//     }
+// });
 
 function setArticlesClickable() {
     if(articles.length) {

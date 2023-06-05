@@ -422,6 +422,14 @@ nav ul {
   font-weight: bold;
   text-shadow: -1px 0 #555, 0 1px #555, 1px 0 #555, 0 -1px #555;
 }
+.contentWrapper a {
+  color: #006878;
+  font-weight: bold;
+  text-decoration: none;
+}
+.contentWrapper a:hover {
+  text-decoration: underline;
+}
 .contentWrapper .fullw picture img, .contentWrapper .twoColumns picture img {
   width: 100%;
   position: relative;
@@ -905,6 +913,8 @@ nav ul {
 @media (max-width: 768px) {
   .casesContent {
     grid-template-columns: repeat(3, 1fr);
+    padding-left: 40px;
+    padding-right: 40px;
   }
 }
 @media (max-width: 480px) {
@@ -913,6 +923,7 @@ nav ul {
   }
 }
 .casesContent img {
+  cursor: pointer;
   border-radius: 15px;
   width: 100%;
   aspect-ratio: 1/1;

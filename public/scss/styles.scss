@@ -107,6 +107,14 @@ nav ul {
             text-shadow: -1px 0 $colorGrey, 0 1px $colorGrey, 1px 0 $colorGrey, 0 -1px $colorGrey;
         }
     }
+    a {
+        color: $colorCtaBtn;
+        font-weight: bold;
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
     .fullw, .twoColumns {
         picture {
             img {
@@ -315,6 +323,7 @@ nav ul {
     @media (max-width: $sbp3_tablet) {gap: 30px;}
     @media (max-width: $sbp4_mobile) {gap: 20px;}
     @media (max-width: $sbp3_tablet) {flex-direction: column;}
+    // align-items: flex-end;
     > div {
         flex: 1 1 50%;
         > :first-child {
@@ -327,9 +336,6 @@ nav ul {
 }
 
 
-.textContent {
-    // min-height: 500px;
-}
 .textPadMobile {
     @include textPaddingOnMobile;
     *:first-child {
@@ -503,10 +509,11 @@ nav ul {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     @media (max-width: $sbp2_laptop) {grid-template-columns: repeat(4, 1fr);}
-    @media (max-width: $sbp3_tablet) {grid-template-columns: repeat(3, 1fr);}
+    @media (max-width: $sbp3_tablet) {grid-template-columns: repeat(3, 1fr);padding-left:40px;padding-right:40px;}
     @media (max-width: $sbp4_mobile) {grid-template-columns: repeat(2, 1fr);}
     grid-gap: 5px;
     img {
+        cursor: pointer;
         @include borderRadius;
         width: 100%;
         aspect-ratio: 1/1;
