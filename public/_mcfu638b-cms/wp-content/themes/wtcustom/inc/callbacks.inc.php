@@ -89,6 +89,7 @@ function getCustomPostsSimplified(WP_REST_Request $request) {
     $order = 'DESC';
     $postType = 'post';
     $category = false;
+    $highlighted = false;
     if (isset($parameters['orderby'])) {
         $orderby = $parameters['orderby'];
     }
@@ -100,6 +101,9 @@ function getCustomPostsSimplified(WP_REST_Request $request) {
     }
     if (isset($parameters['category'])) {
         $category = $parameters['category'];
+    }
+    if (isset($parameters['highlighted'])) {
+        $highlighted = $parameters['highlighted'];
     }
     $postParams = [
         'numberposts' => -1,
@@ -114,6 +118,13 @@ function getCustomPostsSimplified(WP_REST_Request $request) {
             'terms'    => array( $category )
             )
         );
+    if($highlighted) $postParams['highlighted'] = 1;
+        // array(
+        //     'taxonomy' => 'case_category',
+        //     'field'    => 'slug',
+        //     'terms'    => array( $category )
+        //     )
+        // );
     $posts = get_posts($postParams);
 
     $aRes = getCustomPostsCollectionAttrs($posts);
