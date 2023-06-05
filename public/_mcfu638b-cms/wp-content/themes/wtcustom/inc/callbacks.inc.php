@@ -248,7 +248,7 @@ function getCustomPostsCollectionAttrs($coll, $pType) {
             $oP->text = carbon_get_post_meta( $item->ID, 'text' );
             $oP->image = carbon_get_post_meta( $item->ID, 'image' );
             $oP->leading_title = carbon_get_post_meta( $item->ID, 'leading_title' );
-            $oP->by = carbon_get_post_meta( $item->ID, 'by' );
+            // $oP->by = carbon_get_post_meta( $item->ID, 'by' );
             $aRes[] = $oP;
         } else {
             $cats = [];
