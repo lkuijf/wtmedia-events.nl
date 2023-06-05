@@ -7,7 +7,7 @@
         @endif --}}
         @if($cases && count($cases))
             @foreach ($cases as $case)
-                <a href="">{{ $case->title }}
+                <a href="{{ url('diensten/' . $case->categories[0]->slug . '/' . $case->slug) }}">{{ $case->title }}
                 @if (isset($case->gallery[0]) && isset($case->gallery[0]['sizes']))
                     <img src="{{ $case->gallery[0]['sizes']['medium'] }}" alt="{{ $case->gallery[0]['alt'] }}">
                 @else
