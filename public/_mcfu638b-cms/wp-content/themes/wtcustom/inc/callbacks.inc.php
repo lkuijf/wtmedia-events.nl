@@ -231,11 +231,13 @@ function getCustomPostsCollectionAttrs($coll) {
         //     $topics = $metaTopics[0];
         // }
 
-        $metaCategories = get_post_meta($item->ID, 'categories');
-        $cats = array();
-        if($metaCategories && count(array_filter($metaCategories))) {
-            $cats = $metaCategories[0];
-        }
+        // $metaCategories = get_post_meta($item->ID, 'categories');
+        // $cats = array();
+        // if($metaCategories && count(array_filter($metaCategories))) {
+        //     $cats = $metaCategories[0];
+        // }
+
+        $catTerms = get_the_terms( $item->ID, 'categories' );
 
         $oP->id = $item->ID;
         $oP->title = $item->post_title;
@@ -251,7 +253,7 @@ function getCustomPostsCollectionAttrs($coll) {
         // $oP->category = get_the_category($item->ID)[0]->name;
         // $oP->tags = $aTags;
         // $oP->topics = $topics;
-        $oP->categories = $cats;
+        $oP->categories = $catTerms;
         $aRes[] = $oP;
     }
     return $aRes;
