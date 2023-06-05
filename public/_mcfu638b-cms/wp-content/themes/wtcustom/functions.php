@@ -74,7 +74,7 @@ function custom_case_column( $column, $post_id ) {
             // $terms = get_the_term_list( $post_id , 'book_author' , '' , ',' , '' );
             $highlighted = carbon_get_post_meta( $post_id, 'highlighted' );
             // if ( is_string( $terms ) )
-                echo $highlighted;
+                echo ($highlighted?'Yes':'');
             // else
                 // _e( 'Unable to get author(s)', 'your_text_domain' );
             break;
