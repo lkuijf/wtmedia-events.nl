@@ -126,7 +126,7 @@ function getCustomPostsSimplified(WP_REST_Request $request) {
         );
     $posts = get_posts($postParams);
 
-    $aRes = getCustomPostsCollectionAttrs($posts);
+    $aRes = getCustomPostsCollectionAttrs($posts, $postType);
     
     $response = new WP_REST_Response($aRes);
     $response->set_status(200);
@@ -208,7 +208,7 @@ function getPostsCollectionAttrs($coll) {
     }
     return $aRes;
 }
-function getCustomPostsCollectionAttrs($coll) {
+function getCustomPostsCollectionAttrs($coll, $pType) {
     $aRes = [];
 
 // var_dump($coll);
@@ -216,6 +216,7 @@ function getCustomPostsCollectionAttrs($coll) {
 
     foreach ($coll as $item) {
         $oP = new stdClass();
+
 
         // $tags = get_the_tags($item->ID);
         // $aTags = array();
@@ -236,34 +237,49 @@ function getCustomPostsCollectionAttrs($coll) {
         // if($metaCategories && count(array_filter($metaCategories))) {
         //     $cats = $metaCategories[0];
         // }
-        
-        $cats = [];
-        $catTerms = get_the_terms( $item->ID, 'case_category' );
-        if($catTerms && count($catTerms)) {
-            foreach($catTerms as $term) {
-                $sCat = [];
-                $sCat['slug'] = $term->slug;
-                $sCat['name'] = $term->name;
-                $cats[] = $sCat;
-            }
-        }
 
-        $oP->id = $item->ID;
-        $oP->title = $item->post_title;
-        $oP->slug = $item->post_name;
-        // $oP->parent = $item->post_parent;
-        // $oP->order = $item->menu_order;
-        $oP->status = $item->post_status;
-        $oP->date = $item->post_date;
-        $oP->card_text = carbon_get_post_meta( $item->ID, 'card_text' );
-        $oP->page_title = carbon_get_post_meta( $item->ID, 'page_title' );
-        $oP->page_meta_description = carbon_get_post_meta( $item->ID, 'page_meta_description' );
-        $oP->gallery = carbon_get_post_meta( $item->ID, 'gallery' );
-        // $oP->category = get_the_category($item->ID)[0]->name;
-        // $oP->tags = $aTags;
-        // $oP->topics = $topics;
-        $oP->categories = $cats;
-        $aRes[] = $oP;
+
+        if($pType == 'review') {
+            $oP->id = $item->ID;
+            $oP->title = $item->post_title;
+            $oP->slug = $item->post_name;
+            $oP->status = $item->post_status;
+            $oP->date = $item->post_date;
+            $oP->text = carbon_get_post_meta( $item->ID, 'text' );
+            $oP->image = carbon_get_post_meta( $item->ID, 'image' );
+            $oP->leading_title = carbon_get_post_meta( $item->ID, 'leading_title' );
+            $oP->by = carbon_get_post_meta( $item->ID, 'by' );
+        } else {
+            $cats = [];
+            $catTerms = get_the_terms( $item->ID, 'case_category' );
+            if($catTerms && count($catTerms)) {
+                foreach($catTerms as $term) {
+                    $sCat = [];
+                    $sCat['slug'] = $term->slug;
+                    $sCat['name'] = $term->name;
+                    $cats[] = $sCat;
+                }
+            }
+    
+            $oP->id = $item->ID;
+            $oP->title = $item->post_title;
+            $oP->slug = $item->post_name;
+            // $oP->parent = $item->post_parent;
+            // $oP->order = $item->menu_order;
+            $oP->status = $item->post_status;
+            $oP->date = $item->post_date;
+            $oP->card_text = carbon_get_post_meta( $item->ID, 'card_text' );
+            $oP->page_title = carbon_get_post_meta( $item->ID, 'page_title' );
+            $oP->page_meta_description = carbon_get_post_meta( $item->ID, 'page_meta_description' );
+            $oP->gallery = carbon_get_post_meta( $item->ID, 'gallery' );
+            // $oP->category = get_the_category($item->ID)[0]->name;
+            // $oP->tags = $aTags;
+            // $oP->topics = $topics;
+            $oP->categories = $cats;
+            $aRes[] = $oP;
+        }
+       
+        
     }
     return $aRes;
 }

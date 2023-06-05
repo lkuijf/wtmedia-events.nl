@@ -630,7 +630,13 @@ class PagesController extends Controller
         foreach($homepageCases as &$case) {
             $case->gallery = $this->getMediaGallery($case->gallery);
         }
-// dd($homepageCases);
+        $reviewPosts = new SimpleCustomPostsApi('review');
+        $reviewPosts->get();
+        $reviews = $reviewPosts->getItems();
+        // foreach($homepageCases as &$case) {
+        //     $case->gallery = $this->getMediaGallery($case->gallery);
+        // }
+dd($reviews);
 
         $allCrbSections = array();
         foreach($spages[0] as $sPage) {
