@@ -60,6 +60,28 @@ add_action( 'init', 'create_posttype_case' );
 // add_action( 'init', 'register_taxonomy_vessel_type' );
 add_action( 'init', 'register_taxonomy_case_category' );
 
+add_filter( 'manage_case_posts_columns', 'set_custom_case_columns' );
+add_action( 'manage_case_posts_custom_column' , 'custom_case_column', 10, 2 );
+function set_custom_case_columns($columns) {
+    // unset( $columns['author'] );
+    $columns['highlighted_on_homepage'] = __( 'Highlighed', 'highlighed' );
+    // $columns['publisher'] = __( 'Publisher', 'your_text_domain' );
+    return $columns;
+}
+function custom_case_column( $column, $post_id ) {
+    switch ( $column ) {
+        case 'highlighted_on_homepage' :
+            // $terms = get_the_term_list( $post_id , 'book_author' , '' , ',' , '' );
+            $highlighted = carbon_get_post_meta( $post_id, 'highlighted' );
+            // if ( is_string( $terms ) )
+                echo $highlighted;
+            // else
+                // _e( 'Unable to get author(s)', 'your_text_domain' );
+            break;
+
+    }
+}
+
 // Our custom post type function
 function create_posttype_blog() {
     register_post_type( 'blog',
