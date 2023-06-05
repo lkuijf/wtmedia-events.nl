@@ -118,13 +118,12 @@ function getCustomPostsSimplified(WP_REST_Request $request) {
             'terms'    => array( $category )
             )
         );
-    if($highlighted) $postParams['highlighted'] = 1;
-        // array(
-        //     'taxonomy' => 'case_category',
-        //     'field'    => 'slug',
-        //     'terms'    => array( $category )
-        //     )
-        // );
+    if($highlighted) $postParams['meta_query'] = array(
+        array(
+            'key' => 'highlighted',
+            'value'    => '1'
+            )
+        );
     $posts = get_posts($postParams);
 
     $aRes = getCustomPostsCollectionAttrs($posts);
