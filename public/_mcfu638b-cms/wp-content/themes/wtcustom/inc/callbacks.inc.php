@@ -241,7 +241,7 @@ function getCustomPostsCollectionAttrs($coll) {
         $catTerms = get_the_terms( $item->ID, 'case_category' );
         if($catTerms && count($catTerms)) {
             foreach($catTerms as $term) {
-                $oCat = new stdClas();
+                $oCat = new stdClas();//
                 $oCat->slug = $term->slug;
                 $oCat->name = $term->name;
                 $cats[] = $oCat;
