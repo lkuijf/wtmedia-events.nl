@@ -630,7 +630,7 @@ class PagesController extends Controller
         foreach($homepageCases as &$case) {
             $case->gallery = $this->getMediaGallery($case->gallery);
         }
-dd($homepageCases);
+// dd($homepageCases);
 
         $allCrbSections = array();
         foreach($spages[0] as $sPage) {
