@@ -55,6 +55,7 @@ $carbonFieldsArgs['websiteOptions'] = $websiteOptions;
 
 add_action( 'init', 'create_posttype_blog' );
 add_action( 'init', 'create_posttype_case' );
+add_action( 'init', 'create_posttype_review' );
 // add_action( 'init', 'create_posttype_professionals' );
 // add_action( 'init', 'create_posttype_vessels' );
 // add_action( 'init', 'register_taxonomy_vessel_type' );
@@ -113,6 +114,26 @@ function create_posttype_case() {
                 'add_new' => __( 'Add New Case' ),
                 'edit_item' => __( 'Edit Case' ),
                 'update_item' => __( 'Update Case' ),
+            ),
+            'public' => true,
+            // 'has_archive' => true,
+            // 'rewrite' => array('slug' => 'movies'),
+            'show_in_rest' => true,
+            // 'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
+            'supports'            => array( 'title'),
+            )
+    );
+}
+function create_posttype_review() {
+    register_post_type( 'review',
+        array(
+            'labels' => array(
+                'name' => __( 'Reviews' ),
+                'singular_name' => __( 'Review' ),
+                'add_new_item' => __( 'Add New Review' ),
+                'add_new' => __( 'Add New Review' ),
+                'edit_item' => __( 'Edit Review' ),
+                'update_item' => __( 'Update Review' ),
             ),
             'public' => true,
             // 'has_archive' => true,
@@ -648,6 +669,24 @@ function crbRegisterFields($args) {
             Field::make( 'text', 'page_meta_description', __( 'Blog meta description (shown in search engines)' ))->set_visible_in_rest_api($visible = true),
             Field::make( 'separator', 'separator4', __( 'Extra options' ) ),
             Field::make( 'checkbox', 'highlighted', __('Show on homepage') ),
+            )
+        );
+    Container::make( 'post_meta', __( 'Information' ) )
+        ->where( 'post_type', '=', 'review' )
+        ->add_fields(array(
+            // Field::make( 'separator', 'separator1', __( 'Images' ) ),
+            Field::make( 'image', 'image', __( 'Image' ) ),
+            // Field::make( 'media_gallery', 'gallery', __( 'Images' ) )->set_visible_in_rest_api($visible = true),
+            // Field::make( 'text', 'hero_title', __( 'Hero title (can use html-tags)' ))->set_visible_in_rest_api($visible = true),
+            // Field::make( 'textarea', 'hero_text', __( 'Hero text (can use html-tags)' ))->set_visible_in_rest_api($visible = true),
+            Field::make( 'separator', 'separator2', __( 'Review text' ) ),
+            Field::make( 'text', 'title', __( 'Title' ))->set_visible_in_rest_api($visible = true),
+            Field::make( 'rich_text', 'text', __( 'Text' ))->set_visible_in_rest_api($visible = true),
+            Field::make( 'text', 'by', __( 'Review by' ))->set_visible_in_rest_api($visible = true),
+            // Field::make( 'textarea', 'card_text', __( 'Card text (can use html-tags)' ))->set_visible_in_rest_api($visible = true),
+            // Field::make( 'separator', 'separator3', __( 'SEO information' ) ),
+            // Field::make( 'separator', 'separator4', __( 'Extra options' ) ),
+            // Field::make( 'checkbox', 'highlighted', __('Show on homepage') ),
             )
         );
     // Container::make( 'post_meta', __( 'Information' ) )
