@@ -499,6 +499,10 @@ function crbRegisterFields($args) {
                     Field::make( 'separator', 'separator1', __( 'Clients' ) ),
                     Field::make( 'checkbox', 'show_working_with', __( 'Show "Clients" section' ) ),
                 ) )
+                ->add_fields( 'reviews', 'Reviews', array(
+                    Field::make( 'separator', 'separator1', __( 'Reviews' ) ),
+                    Field::make( 'checkbox', 'show_reviews', __( 'Show Reviews' ) ),
+                ) )
                 ->add_fields( 'cases', 'Cases', array(
                     Field::make( 'separator', 'separator1', __( 'Cases' ) ),
                     Field::make( 'checkbox', 'show_cases_highlighted', __( 'Show highlighted cases' ) ),

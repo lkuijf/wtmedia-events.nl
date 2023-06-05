@@ -633,10 +633,10 @@ class PagesController extends Controller
         $reviewPosts = new SimpleCustomPostsApi('review');
         $reviewPosts->get();
         $reviews = $reviewPosts->getItems();
-        // foreach($homepageCases as &$case) {
-        //     $case->gallery = $this->getMediaGallery($case->gallery);
-        // }
-dd($reviews);
+        foreach($reviews as &$review) {
+            $review->image = $this->getMediaGallery($review->image);
+        }
+// dd($reviews);
 
         $allCrbSections = array();
         foreach($spages[0] as $sPage) {
@@ -661,6 +661,7 @@ dd($reviews);
             'website_options' => $options,
             'content_sections' => $allCrbSections,
             'cases_highlighted' => $homepageCases,
+            'reviews' => $reviews,
         ];
         return view('onepager')->with('data', $data);
     }
