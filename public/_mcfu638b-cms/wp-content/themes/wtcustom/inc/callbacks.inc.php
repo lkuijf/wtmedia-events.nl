@@ -237,7 +237,7 @@ function getCustomPostsCollectionAttrs($coll) {
         //     $cats = $metaCategories[0];
         // }
 
-        $catTerms = get_the_terms( $item->ID, 'categories' );
+        $catTerms = get_the_terms( $item->ID, 'category' );
 
         $oP->id = $item->ID;
         $oP->title = $item->post_title;
