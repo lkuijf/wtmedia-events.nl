@@ -1,5 +1,5 @@
 <div class="inner">
-    <div class="casesContent">
+    <div class="casesContentDiensten">
         @include('sections.cases', ['cases' => $cases, 'type' => 'events'])
     </div>
 </div>

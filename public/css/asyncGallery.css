@@ -176,7 +176,7 @@
   }
   
   /* DEMO */
-  * {
+  /* * {
     font-family: monospace;
     box-sizing: border-box;
   }
@@ -209,7 +209,7 @@
   
   .gallery div img {
     max-width: 100%;
-  }
+  } */
   
   @media screen and (max-width: 768px) {
     .asyncGallery__Close {
@@ -249,7 +249,7 @@
     }
   
     /* DEMO */
-    .gallery {
+    /* .gallery {
       display: block;
     }
   
@@ -261,6 +261,6 @@
     .gallery div img {
       max-width: 100%;
       min-width: 100%;
-    }
+    } */
   }
   

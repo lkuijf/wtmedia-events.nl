@@ -922,7 +922,65 @@ nav ul {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-.casesContent img {
+.casesContent > div {
+  border-radius: 15px;
+  transition: transform 0.2s ease;
+}
+.casesContent > div a {
+  position: relative;
+  display: block;
+}
+.casesContent > div a div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 20px 0;
+}
+.casesContent > div a div p {
+  font-size: 1.4em;
+  margin: 0;
+  color: #0c5a5b;
+}
+.casesContent > div a img {
+  border-radius: 15px;
+  width: 100%;
+  aspect-ratio: 1/1;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.casesContent > div:hover {
+  transform: scale(1.2);
+  box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.3);
+}
+
+.casesContentDiensten {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 5px;
+}
+@media (max-width: 1024px) {
+  .casesContentDiensten {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .casesContentDiensten {
+    grid-template-columns: repeat(3, 1fr);
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+@media (max-width: 480px) {
+  .casesContentDiensten {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.casesContentDiensten img {
   cursor: pointer;
   border-radius: 15px;
   width: 100%;
@@ -931,7 +989,7 @@ nav ul {
      object-fit: cover;
   transition: transform 0.2s ease;
 }
-.casesContent img:hover {
+.casesContentDiensten img:hover {
   transform: scale(1.2);
   box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.3);
 }
@@ -939,7 +997,7 @@ nav ul {
 .reviewsContent {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 40px;
+  grid-gap: 60px;
 }
 @media (max-width: 1024px) {
   .reviewsContent {
@@ -948,7 +1006,7 @@ nav ul {
 }
 @media (max-width: 768px) {
   .reviewsContent {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     padding-left: 40px;
     padding-right: 40px;
   }
