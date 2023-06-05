@@ -64,7 +64,7 @@ add_filter( 'manage_case_posts_columns', 'set_custom_case_columns' );
 add_action( 'manage_case_posts_custom_column' , 'custom_case_column', 10, 2 );
 function set_custom_case_columns($columns) {
     // unset( $columns['author'] );
-    $columns['highlighted_on_homepage'] = __( 'Highlighed', 'highlighed' );
+    $columns['highlighted_on_homepage'] = __( 'Highlighted', 'highlighted' );
     // $columns['publisher'] = __( 'Publisher', 'your_text_domain' );
     return $columns;
 }
