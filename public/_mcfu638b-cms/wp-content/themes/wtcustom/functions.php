@@ -62,6 +62,7 @@ $carbonFieldsArgs['websiteOptions'] = $websiteOptions;
 add_action( 'init', 'create_posttype_blog' );
 add_action( 'init', 'create_posttype_case' );
 add_action( 'init', 'create_posttype_review' );
+add_action( 'init', 'create_posttype_teammember' );
 // add_action( 'init', 'create_posttype_professionals' );
 // add_action( 'init', 'create_posttype_vessels' );
 // add_action( 'init', 'register_taxonomy_vessel_type' );
@@ -140,6 +141,26 @@ function create_posttype_review() {
                 'add_new' => __( 'Add New Review' ),
                 'edit_item' => __( 'Edit Review' ),
                 'update_item' => __( 'Update Review' ),
+            ),
+            'public' => true,
+            // 'has_archive' => true,
+            // 'rewrite' => array('slug' => 'movies'),
+            'show_in_rest' => true,
+            // 'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
+            'supports'            => array( 'title'),
+            )
+    );
+}
+function create_posttype_teammember() {
+    register_post_type( 'teammember',
+        array(
+            'labels' => array(
+                'name' => __( 'Team members' ),
+                'singular_name' => __( 'Team member' ),
+                'add_new_item' => __( 'Add New Team member' ),
+                'add_new' => __( 'Add New Team member' ),
+                'edit_item' => __( 'Edit Team member' ),
+                'update_item' => __( 'Update Team member' ),
             ),
             'public' => true,
             // 'has_archive' => true,
@@ -356,6 +377,7 @@ add_action('save_post_page', 'deleteSimplePagesRestCache');
 add_action('save_post_blog', 'deleteSimpleCustomPostsRestCacheBlog');
 add_action('save_post_case', 'deleteSimpleCustomPostsRestCacheCase');
 add_action('save_post_review', 'deleteSimpleCustomPostsRestCacheReview');
+add_action('save_post_teammember', 'deleteSimpleCustomPostsRestCacheTeammember');
 
 // add_action('save_post_page', 'deleteAllPostRestCache');
 // add_action('save_post_blog', 'deleteAllPostRestCache');
@@ -509,6 +531,10 @@ function crbRegisterFields($args) {
                 ->add_fields( 'reviews', 'Reviews', array(
                     Field::make( 'separator', 'separator1', __( 'Reviews' ) ),
                     Field::make( 'checkbox', 'show_reviews', __( 'Show Reviews' ) ),
+                ) )
+                ->add_fields( 'teammembers', 'Team members', array(
+                    Field::make( 'separator', 'separator1', __( 'Team members' ) ),
+                    Field::make( 'checkbox', 'show_teammembers', __( 'Show Team members' ) ),
                 ) )
                 ->add_fields( 'cases', 'Cases', array(
                     Field::make( 'separator', 'separator1', __( 'Cases' ) ),
@@ -693,6 +719,24 @@ function crbRegisterFields($args) {
             Field::make( 'separator', 'separator2', __( 'Review text' ) ),
             Field::make( 'text', 'leading_title', __( 'Leading title' ))->set_visible_in_rest_api($visible = true),
             Field::make( 'rich_text', 'text', __( 'Text' ))->set_visible_in_rest_api($visible = true),
+            // Field::make( 'text', 'by', __( 'Review by' ))->set_visible_in_rest_api($visible = true),
+            // Field::make( 'textarea', 'card_text', __( 'Card text (can use html-tags)' ))->set_visible_in_rest_api($visible = true),
+            // Field::make( 'separator', 'separator3', __( 'SEO information' ) ),
+            // Field::make( 'separator', 'separator4', __( 'Extra options' ) ),
+            // Field::make( 'checkbox', 'highlighted', __('Show on homepage') ),
+            )
+        );
+    Container::make( 'post_meta', __( 'Information' ) )
+        ->where( 'post_type', '=', 'teammember' )
+        ->add_fields(array(
+            // Field::make( 'separator', 'separator1', __( 'Images' ) ),
+            Field::make( 'image', 'image', __( 'Image' ) ),
+            // Field::make( 'media_gallery', 'gallery', __( 'Images' ) )->set_visible_in_rest_api($visible = true),
+            // Field::make( 'text', 'hero_title', __( 'Hero title (can use html-tags)' ))->set_visible_in_rest_api($visible = true),
+            // Field::make( 'textarea', 'hero_text', __( 'Hero text (can use html-tags)' ))->set_visible_in_rest_api($visible = true),
+            // Field::make( 'separator', 'separator2', __( 'Review text' ) ),
+            Field::make( 'text', 'function', __( 'Function' ))->set_visible_in_rest_api($visible = true),
+            // Field::make( 'rich_text', 'text', __( 'Text' ))->set_visible_in_rest_api($visible = true),
             // Field::make( 'text', 'by', __( 'Review by' ))->set_visible_in_rest_api($visible = true),
             // Field::make( 'textarea', 'card_text', __( 'Card text (can use html-tags)' ))->set_visible_in_rest_api($visible = true),
             // Field::make( 'separator', 'separator3', __( 'SEO information' ) ),
