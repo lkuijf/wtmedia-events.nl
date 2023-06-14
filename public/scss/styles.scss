@@ -516,6 +516,12 @@ nav ul {
                 width: 300px;
                 object-fit: cover;
             }
+            p {
+                margin: 0;
+                &:first-of-type {
+                    font-weight: bold;
+                }
+            }
         }
         // .swiper-pagination-team {
             // bottom: -10px !important;

@@ -882,6 +882,12 @@ nav ul {
   -o-object-fit: cover;
      object-fit: cover;
 }
+.teammembersContent .outerSwiperBox .teamMembersSwiper p {
+  margin: 0;
+}
+.teammembersContent .outerSwiperBox .teamMembersSwiper p:first-of-type {
+  font-weight: bold;
+}
 .teammembersContent .outerSwiperBox .swiper-scrollbar-team {
   height: 5px;
   margin-top: 10px;
