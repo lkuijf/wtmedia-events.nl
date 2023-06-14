@@ -93,7 +93,6 @@ l[i].q=l[i].q||[];o=e.createElement(a);f=e.getElementsByTagName(a)[0];o.async=1;
     </footer>
 
     <a href="" id="toTop"></a>
-    
     <script src="{{ asset('js/script.js') }}"></script>
     @if($errors->any())
     <script>

@@ -2,17 +2,21 @@
     <div class="teammembersContent">
 
         <div class="outerSwiperBox">
-            <div class="swiper partnerSwiper">
+            <div class="swiper teamMembersSwiper">
                 <div class="swiper-wrapper">
-                    @if($data['website_options']->working_with)
-                    @foreach ($data['website_options']->working_with as $image)
-                    <div class="swiper-slide"><img src="{!! $image['sizes']['medium'] !!}" alt="{{ $image['alt'] }}"></div>
+                    @if($data['team_members'] && count($data['team_members']))
+                    @foreach ($data['team_members'] as $member)
+                    <div class="swiper-slide">
+                        <img src="{!! $member->image[0]['sizes']['medium_large'] !!}" alt="{{ $member->image[0]['alt'] }}">
+                        <p>{{ $member->title }}</p>
+                    </div>
                     @endforeach
                     @endif
                 </div>
                 
             </div>
-            <div class="swiper-pagination"></div>
+            <div class="swiper-scrollbar-team"></div>
+            {{-- <div class="swiper-pagination-team"></div> --}}
         </div>
 
     </div>

@@ -870,6 +870,26 @@ nav ul {
   bottom: -10px !important;
 }
 
+.teammembersContent {
+  text-align: center;
+}
+.teammembersContent .outerSwiperBox {
+  position: relative;
+}
+.teammembersContent .outerSwiperBox .teamMembersSwiper img {
+  height: 300px;
+  width: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.teammembersContent .outerSwiperBox .swiper-scrollbar-team {
+  height: 5px;
+  margin-top: 10px;
+}
+.teammembersContent .outerSwiperBox .swiper-scrollbar-team > div {
+  background-color: #19b4b6;
+}
+
 .casesContent {
   display: grid;
   grid-template-columns: repeat(5, 1fr);

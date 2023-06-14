@@ -204,6 +204,44 @@ var swiperPartner = new Swiper(".partnerSwiper", {
     }
 });
 
+
+var swiperTeam = new Swiper(".teamMembersSwiper", {
+    slidesPerView: 2,
+    spaceBetween: 0,
+    speed: 1000,
+    // loop: true, // not compatible with slidesPerView
+    // pagination: {
+    //     el: '.swiper-pagination-team',
+    //     clickable: true,
+    //     type: 'bullets',
+    // },
+    scrollbar: {
+        el: '.swiper-scrollbar-team',
+        draggable: true,
+      },
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    },
+    breakpoints: {
+        0: {
+            slidesPerView: 1,
+          },
+          640: {
+            slidesPerView: 2,
+          },
+          1120: {
+            slidesPerView: 3,
+          },
+            1460: {
+            slidesPerView: 4,
+          },
+          1760: {
+            slidesPerView: 5,
+          },
+        }
+});
+
 function setArticlesClickable() {
     if(articles.length) {
         articles.forEach(item => {

@@ -640,10 +640,10 @@ class PagesController extends Controller
         $teamPosts->get();
         $teamMembers = $teamPosts->getItems();
         foreach($teamMembers as &$member) {
-            // $member->image = $this->getMediaGallery($member->image);
+            $member->image = $this->getMediaGallery($member->image);
         }
 // dd($homepageCases);
-dd($teamMembers);
+// dd($teamMembers);
 
         $allCrbSections = array();
         foreach($spages[0] as $sPage) {
@@ -669,6 +669,7 @@ dd($teamMembers);
             'content_sections' => $allCrbSections,
             'cases_highlighted' => $homepageCases,
             'reviews' => $reviews,
+            'team_members' => $teamMembers,
         ];
         return view('onepager')->with('data', $data);
     }

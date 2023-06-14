@@ -505,6 +505,31 @@ nav ul {
         }
     }
 }
+.teammembersContent {
+    text-align: center;
+    .outerSwiperBox {
+        position: relative;
+        .teamMembersSwiper {
+            // padding: 20px;
+            img {
+                height: 300px;
+                width: 300px;
+                object-fit: cover;
+            }
+        }
+        // .swiper-pagination-team {
+            // bottom: -10px !important;
+        // }
+        .swiper-scrollbar-team {
+            // outline: 1px solid red;
+            height: 5px;
+            margin-top: 10px;
+            > div {
+                background-color: $colorWTM;
+            }
+        }
+    }
+}
 
 .casesContent {
     display: grid;
