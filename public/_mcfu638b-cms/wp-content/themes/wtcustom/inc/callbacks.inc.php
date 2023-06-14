@@ -250,6 +250,16 @@ function getCustomPostsCollectionAttrs($coll, $pType) {
             $oP->leading_title = carbon_get_post_meta( $item->ID, 'leading_title' );
             // $oP->by = carbon_get_post_meta( $item->ID, 'by' );
             $aRes[] = $oP;
+        } elseif($pType == 'teammember') {
+            $oP->id = $item->ID;
+            $oP->title = $item->post_title;
+            $oP->slug = $item->post_name;
+            $oP->status = $item->post_status;
+            $oP->date = $item->post_date;
+            // $oP->text = carbon_get_post_meta( $item->ID, 'text' );
+            $oP->image = carbon_get_post_meta( $item->ID, 'image' );
+            // $oP->leading_title = carbon_get_post_meta( $item->ID, 'leading_title' );
+            $aRes[] = $oP;
         } else {
             $cats = [];
             $catTerms = get_the_terms( $item->ID, 'case_category' );

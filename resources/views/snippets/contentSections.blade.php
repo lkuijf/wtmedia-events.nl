@@ -78,6 +78,9 @@
         @if($section->_type == 'working_with' && $section->show_working_with)
             @include('sections.working_with')
         @endif
+        @if($section->_type == 'teammembers' && $section->show_teammembers)
+            @include('sections.teammembers')
+        @endif
         @if($section->_type == 'cases')
             @if ($section->show_cases_highlighted)
                 @include('sections.events', ['cases' => $data['cases_highlighted']])

@@ -636,8 +636,14 @@ class PagesController extends Controller
         foreach($reviews as &$review) {
             $review->image = $this->getMediaGallery($review->image);
         }
+        $teamPosts = new SimpleCustomPostsApi('teammember');
+        $teamPosts->get();
+        $teamMembers = $teamPosts->getItems();
+        foreach($teamMembers as &$member) {
+            // $member->image = $this->getMediaGallery($member->image);
+        }
 // dd($homepageCases);
-// dd($reviews);
+dd($teamMembers);
 
         $allCrbSections = array();
         foreach($spages[0] as $sPage) {
