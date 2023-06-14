@@ -96,7 +96,7 @@ function customBackendScriptsEditorRol() {
             jQuery('input[value="FAQ"]').attr('disabled', 'disabled').parent().next().find('button').remove();
             jQuery('input[value="Blog"]').attr('disabled', 'disabled').parent().next().find('button').remove();
             jQuery('input[value="Online Marketing"]').attr('disabled', 'disabled').parent().next().find('button').remove();
-            jQuery('input[value="Web Development"]').attr('disabled', 'disabled').parent().next().find('button').remove();
+            jQuery('input[value="Webdevelopment"]').attr('disabled', 'disabled').parent().next().find('button').remove();
             jQuery('input[value="Events"]').attr('disabled', 'disabled').parent().next().find('button').remove();
             // if(
             //     jQuery('input[value="[HOMEPAGE]"]').length ||
