@@ -9,6 +9,7 @@
                     <div class="swiper-slide">
                         <img src="{!! $member->image[0]['sizes']['medium_large'] !!}" alt="{{ $member->image[0]['alt'] }}">
                         <p>{{ $member->title }}</p>
+                        <p>{{ $member->function }}</p>
                     </div>
                     @endforeach
                     @endif

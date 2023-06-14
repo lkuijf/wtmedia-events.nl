@@ -643,7 +643,7 @@ class PagesController extends Controller
             $member->image = $this->getMediaGallery($member->image);
         }
 // dd($homepageCases);
-// dd($teamMembers);
+dd($teamMembers);
 
         $allCrbSections = array();
         foreach($spages[0] as $sPage) {
