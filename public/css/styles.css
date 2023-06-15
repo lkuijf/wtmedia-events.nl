@@ -881,6 +881,7 @@ nav ul {
   width: 300px;
   -o-object-fit: cover;
      object-fit: cover;
+  border-radius: 15px;
 }
 .teammembersContent .outerSwiperBox .teamMembersSwiper p {
   margin: 0;
