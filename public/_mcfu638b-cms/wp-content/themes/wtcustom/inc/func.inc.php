@@ -90,24 +90,29 @@ function customBackendScriptsEditorRol() {
             // jQuery('.page-template-label-wrapper').remove();
             // jQuery('#page_template').remove();
             jQuery('#post-preview').remove();
-            jQuery('input[value="[HOMEPAGE]"]').attr('disabled', 'disabled').parent().next().find('button').remove();
-            jQuery('input[value="[HOMEPAGE]"]').closest('#post-body').find('#major-publishing-actions #delete-action').remove();
-            // jQuery('input[value="Producten"]').attr('disabled', 'disabled').parent().next().find('button').remove();
-            // jQuery('input[value="Afspraak maken"]').attr('disabled', 'disabled').parent().next().find('button').remove();
-            // jQuery('input[value="Contact"]').attr('disabled', 'disabled').parent().next().find('button').remove();
-            // jQuery('input[value="Vacatures"]').attr('disabled', 'disabled').parent().next().find('button').remove();
-            // jQuery('input[value="Interviews"]').attr('disabled', 'disabled').parent().next().find('button').remove();
-            // jQuery('input[value="FAQ"]').attr('disabled', 'disabled').parent().next().find('button').remove();
-            jQuery('input[value="Blog"]').attr('disabled', 'disabled').parent().next().find('button').remove();
-            jQuery('input[value="Blog"]').closest('#post-body').find('#major-publishing-actions #delete-action').remove();
-            jQuery('input[value="Online Marketing"]').attr('disabled', 'disabled').parent().next().find('button').remove();
-            jQuery('input[value="Online Marketing"]').closest('#post-body').find('#major-publishing-actions #delete-action').remove();
-            jQuery('input[value="Webdevelopment"]').attr('disabled', 'disabled').parent().next().find('button').remove();
-            jQuery('input[value="Webdevelopment"]').closest('#post-body').find('#major-publishing-actions #delete-action').remove();
-            jQuery('input[value="Events"]').attr('disabled', 'disabled').parent().next().find('button').remove();
-            jQuery('input[value="Events"]').closest('#post-body').find('#major-publishing-actions #delete-action').remove();
-            jQuery('input[value="Instagram feed"]').attr('disabled', 'disabled').parent().next().find('button').remove();
-            jQuery('input[value="Instagram feed"]').closest('#post-body').find('#major-publishing-actions #delete-action').remove();
+
+            let pagesToProtect = ['[HOMEPAGE]', 'Blog', 'Online Marketing', 'Webdevelopment', 'Events', 'Instagram feed'];
+            pagesToProtect.forEach(page => {
+                jQuery('input[value="' + page + '"]').attr('disabled', 'disabled').parent().next().find('button').remove();
+                jQuery('input[value="' + page + '"]').closest('#post-body').find('#major-publishing-actions #delete-action').remove();
+                jQuery('a.row-title:contains("' + page + '")').parent().siblings('.row-actions').find('.trash').remove();
+            });
+
+            // jQuery('input[value="[HOMEPAGE]"]').attr('disabled', 'disabled').parent().next().find('button').remove();
+            // jQuery('input[value="[HOMEPAGE]"]').closest('#post-body').find('#major-publishing-actions #delete-action').remove();
+            // jQuery('input[value="Blog"]').attr('disabled', 'disabled').parent().next().find('button').remove();
+            // jQuery('input[value="Blog"]').closest('#post-body').find('#major-publishing-actions #delete-action').remove();
+            // jQuery('input[value="Online Marketing"]').attr('disabled', 'disabled').parent().next().find('button').remove();
+            // jQuery('input[value="Online Marketing"]').closest('#post-body').find('#major-publishing-actions #delete-action').remove();
+            // jQuery('input[value="Webdevelopment"]').attr('disabled', 'disabled').parent().next().find('button').remove();
+            // jQuery('input[value="Webdevelopment"]').closest('#post-body').find('#major-publishing-actions #delete-action').remove();
+            // jQuery('input[value="Events"]').attr('disabled', 'disabled').parent().next().find('button').remove();
+            // jQuery('input[value="Events"]').closest('#post-body').find('#major-publishing-actions #delete-action').remove();
+            // jQuery('input[value="Instagram feed"]').attr('disabled', 'disabled').parent().next().find('button').remove();
+            // jQuery('input[value="Instagram feed"]').closest('#post-body').find('#major-publishing-actions #delete-action').remove();
+            // jQuery('a.row-title:contains("Instagram feed")').parent().siblings('.row-actions').find('.trash').remove();
+
+
             // if(
             //     jQuery('input[value="[HOMEPAGE]"]').length ||
             //     jQuery('input[value="Producten"]').length ||

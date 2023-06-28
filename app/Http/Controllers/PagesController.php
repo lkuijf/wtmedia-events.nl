@@ -645,6 +645,12 @@ class PagesController extends Controller
 // dd($homepageCases);
 // dd($teamMembers);
 
+
+        $instagramFeedPage = new PageApi(1067);
+        $instagramFeedPageData = $instagramFeedPage->get();
+dd($instagramFeedPageData);
+
+
         $allCrbSections = array();
         foreach($spages[0] as $sPage) {
             if($sPage->title == 'Blog') continue;
