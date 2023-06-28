@@ -153,26 +153,7 @@ function getHeadContent() {
 }
 function getFooterContent() {
     // do_action( 'wp_footer' );
-    global $wp_styles, $wp_scripts;
-
-    $registered_styles = $wp_styles->registered;
-    $registered_scripts = $wp_scripts->registered;
-
-    // Loop through registered styles
-    foreach ($registered_styles as $style) {
-        // Get the stylesheet URL
-        $style_url = $style->src;
-        // Do something with the URL, like storing it in an array or printing it
-        echo $style_url . '<br>';
-    }
-
-    // Loop through registered scripts
-    foreach ($registered_scripts as $script) {
-        // Get the script URL
-        $script_url = $script->src;
-        // Do something with the URL, like storing it in an array or printing it
-        echo $script_url . '<br>';
-    }
+    echo wp_footer();
 
     exit;
 }
