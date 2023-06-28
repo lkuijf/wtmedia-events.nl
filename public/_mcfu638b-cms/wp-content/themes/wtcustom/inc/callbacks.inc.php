@@ -160,6 +160,7 @@ function getFooterContent() {
     // Get the post object
     $post = get_post($post_id);
     setup_postdata($post);
+    echo '[' . $post->post_title . ']';
 
     // Set the global $post variable
     // global $post;
