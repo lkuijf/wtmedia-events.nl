@@ -148,8 +148,9 @@ function getHeadContent() {
   $res = do_action( 'wp_head' );
   
     $response = new WP_REST_Response($res);
-    die();
+    
   $response->set_status(200);
+  die();
   return $response;
 }
 function getPagesCollectionAttrs($coll) {
