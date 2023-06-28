@@ -13,13 +13,13 @@
     <link rel="mask-icon" href="{{ asset('safari-pinned-tab.svg') }}" color="#19b4b6">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#19b4b6">
-    {{-- <link rel="preconnect" href="https://fonts.googleapis.com"> --}}
-    {{-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> --}}
-    {{-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Karla:wght@200&display=swap" rel="stylesheet"> --}}
-    {{-- <script src="{{ asset('js/swiper-bundle.min.js') }}"></script> --}}
-    {{-- <link rel="stylesheet" href="{{ asset('css/swiper-bundle.min.css') }}"> --}}
-    <link rel='stylesheet' href='{{ asset('_mcfu638b-cms/wp-content/plugins/instagram-feed/css/sbi-styles.min.css?ver=6.1.5') }}' type='text/css' media='all' />
-    {{-- <link rel="stylesheet" href="{{ asset('css/styles.css') }}"> --}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Karla:wght@200&display=swap" rel="stylesheet">
+    <script src="{{ asset('js/swiper-bundle.min.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('css/swiper-bundle.min.css') }}">
+    {{-- <link rel='stylesheet' href='{{ asset('_mcfu638b-cms/wp-content/plugins/instagram-feed/css/sbi-styles.min.css?ver=6.1.5') }}' type='text/css' media='all' /> --}}
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     @yield('extra_head')
     
 <!-- Leadinfo tracking code -->
