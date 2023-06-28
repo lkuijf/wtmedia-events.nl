@@ -163,11 +163,11 @@ function getFooterContent() {
     $page = get_post($page_id);
 
     // Set the global $post variable
-    global $post;
-    $post = $page;
+    // global $post;
+    // $post = $page;
 
-    // setup_postdata($post);
-    echo '[' . $post->post_title . ']';
+    setup_postdata($page);
+    echo '[' . $page->post_title . ']';
 
     wp_footer();
 
