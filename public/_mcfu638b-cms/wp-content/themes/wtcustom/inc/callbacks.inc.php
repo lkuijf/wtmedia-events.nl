@@ -159,10 +159,11 @@ function getFooterContent() {
 
     // Get the post object
     $post = get_post($post_id);
+    setup_postdata($post);
 
     // Set the global $post variable
-    global $post;
-    $post = $post;
+    // global $post;
+    // $post = $post;
 
     echo wp_footer();
 
