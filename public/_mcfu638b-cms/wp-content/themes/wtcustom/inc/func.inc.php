@@ -98,29 +98,6 @@ function customBackendScriptsEditorRol() {
                 jQuery('a.row-title:contains("' + page + '")').parent().siblings('.row-actions').find('.trash').remove();
             });
 
-            // jQuery('input[value="[HOMEPAGE]"]').attr('disabled', 'disabled').parent().next().find('button').remove();
-            // jQuery('input[value="[HOMEPAGE]"]').closest('#post-body').find('#major-publishing-actions #delete-action').remove();
-            // jQuery('input[value="Blog"]').attr('disabled', 'disabled').parent().next().find('button').remove();
-            // jQuery('input[value="Blog"]').closest('#post-body').find('#major-publishing-actions #delete-action').remove();
-            // jQuery('input[value="Online Marketing"]').attr('disabled', 'disabled').parent().next().find('button').remove();
-            // jQuery('input[value="Online Marketing"]').closest('#post-body').find('#major-publishing-actions #delete-action').remove();
-            // jQuery('input[value="Webdevelopment"]').attr('disabled', 'disabled').parent().next().find('button').remove();
-            // jQuery('input[value="Webdevelopment"]').closest('#post-body').find('#major-publishing-actions #delete-action').remove();
-            // jQuery('input[value="Events"]').attr('disabled', 'disabled').parent().next().find('button').remove();
-            // jQuery('input[value="Events"]').closest('#post-body').find('#major-publishing-actions #delete-action').remove();
-            // jQuery('input[value="Instagram feed"]').attr('disabled', 'disabled').parent().next().find('button').remove();
-            // jQuery('input[value="Instagram feed"]').closest('#post-body').find('#major-publishing-actions #delete-action').remove();
-            // jQuery('a.row-title:contains("Instagram feed")').parent().siblings('.row-actions').find('.trash').remove();
-
-
-            // if(
-            //     jQuery('input[value="[HOMEPAGE]"]').length ||
-            //     jQuery('input[value="Producten"]').length ||
-            //     jQuery('input[value="Afspraak maken"]').length
-            // )
-            
-            
-            // jQuery('#major-publishing-actions #delete-action').remove();
 
             /*
             jQuery('.term-display-type-wrap').remove(); // wooCommerce category display type

@@ -648,7 +648,8 @@ class PagesController extends Controller
 
         $instagramFeedPage = new PageApi(1067);
         $instagramFeedPageData = $instagramFeedPage->get();
-dd($instagramFeedPageData);
+        $instaCode = $instagramFeedPageData->content->rendered;
+// dd($instagramFeedPageData);
 
 
         $allCrbSections = array();
@@ -676,6 +677,7 @@ dd($instagramFeedPageData);
             'cases_highlighted' => $homepageCases,
             'reviews' => $reviews,
             'team_members' => $teamMembers,
+            'instagram_widget_code' => $instaCode,
         ];
         return view('onepager')->with('data', $data);
     }

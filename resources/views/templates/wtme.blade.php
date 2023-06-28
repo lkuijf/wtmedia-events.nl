@@ -18,6 +18,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Karla:wght@200&display=swap" rel="stylesheet">
     <script src="{{ asset('js/swiper-bundle.min.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('css/swiper-bundle.min.css') }}">
+    <link rel='stylesheet' href='{{ asset('_mcfu638b-cms/wp-content/plugins/instagram-feed/css/sbi-styles.min.css?ver=6.1.5') }}' type='text/css' media='all' />
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     @yield('extra_head')
     
@@ -88,6 +89,7 @@ l[i].q=l[i].q||[];o=e.createElement(a);f=e.getElementsByTagName(a)[0];o.async=1;
                 </p>
                 {{-- <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script><div class="elfsight-app-a6161f0f-1cc2-420f-9dc7-d19848614a67"></div> --}}
                 {{-- <div class="embedsocial-hashtag" data-ref="cb4f26c68a893f54158863a0aecf5a38c087439e"> <a class="feed-powered-by-es feed-powered-by-es-feed-new" href="https://embedsocial.com/social-media-aggregator/" target="_blank" title="Widget by EmbedSocial"> Widget by EmbedSocial<span>→</span> </a> </div> <script> (function(d, s, id) { var js; if (d.getElementById(id)) {return;} js = d.createElement(s); js.id = id; js.src = "https://embedsocial.com/cdn/ht.js"; d.getElementsByTagName("head")[0].appendChild(js); }(document, "script", "EmbedSocialHashtagScript")); </script> --}}
+                {!! $data['instagram_widget_code'] !!}
             </div>
         </div>
     </footer>
