@@ -153,6 +153,11 @@ function getHeadContent() {
 }
 function getFooterContent() {
     // do_action( 'wp_footer' );
+
+    global $post;
+    $page_id = $post->ID;
+    echo 'Page ID: [' . $page_id . ']';
+
     echo wp_footer();
 
     exit;
