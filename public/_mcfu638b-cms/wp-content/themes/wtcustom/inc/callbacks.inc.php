@@ -151,6 +151,10 @@ function getHeadContent() {
     // $response->set_status(200);
     // return $response;
 }
+function getFooterContent() {
+    do_action( 'wp_footer' );
+    exit;
+}
 function getPagesCollectionAttrs($coll) {
     $aRes = [];
     foreach ($coll as $item) {

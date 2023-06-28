@@ -91,8 +91,16 @@ add_action('rest_api_init', function () {
 });
 /** display <head> section, (for copy-pasting plugin css and js includes) **/
 add_action('rest_api_init', function () {
-  register_rest_route( 'wtcustom', '/head-content',array(
-    'methods'  => 'GET',
-    'callback' => 'getHeadContent'
-  ));
-});
+    register_rest_route( 'wtcustom', '/head-content',array(
+      'methods'  => 'GET',
+      'callback' => 'getHeadContent'
+    ));
+  });
+  /** display <footer> section, (for copy-pasting plugin css and js includes) **/
+add_action('rest_api_init', function () {
+    register_rest_route( 'wtcustom', '/footer-content',array(
+      'methods'  => 'GET',
+      'callback' => 'getFooterContent'
+    ));
+  });
+  
