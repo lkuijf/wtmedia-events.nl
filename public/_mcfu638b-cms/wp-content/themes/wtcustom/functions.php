@@ -59,7 +59,7 @@ $websiteOptions[] = array('media_gallery', 'working_with', 'Partner logo\'s');
 // $websiteOptions[] = array('media_gallery', 'events', 'Events');
 $carbonFieldsArgs['websiteOptions'] = $websiteOptions;
 
-add_action('init', 'remove_editor_init'); // put this in comment when using a plugin, so the embed-code can be placed in the default editor (Default template)
+// add_action('init', 'remove_editor_init'); // put this in comment when using a plugin, so the embed-code can be placed in the default editor (Default template)
 
 add_action( 'init', 'create_posttype_blog' );
 add_action( 'init', 'create_posttype_case' );
