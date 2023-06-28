@@ -361,7 +361,7 @@ function wt_admin_style() {
 add_action('admin_footer', 'customBackendScripts');
 
 add_action('add_meta_boxes', 'set_default_page_template', 1);
-add_action('init', 'remove_editor_init');
+// add_action('init', 'remove_editor_init');
 add_action('carbon_fields_register_fields', function() use ( $carbonFieldsArgs ) { crbRegisterFields( $carbonFieldsArgs ); });
 add_action('carbon_fields_theme_options_container_saved', 'deleteWebsiteOptionsRestCache');
 
