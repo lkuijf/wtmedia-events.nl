@@ -167,7 +167,7 @@ function getFooterContent() {
     // $post = $page;
 
     setup_postdata($page);
-    echo '[' . $page->post_title . ']';
+    echo '[' . $page->post_title . ' x]';
 
     wp_footer();
 
