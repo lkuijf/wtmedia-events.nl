@@ -146,10 +146,11 @@ function getWebsiteOptions() {
 function getHeadContent() {
 
   $res = do_action( 'wp_head' );
-  die();
-  //   $response = new WP_REST_Response($res);
-//   $response->set_status(200);
-//   return $response;
+  
+    $response = new WP_REST_Response($res);
+    die();
+  $response->set_status(200);
+  return $response;
 }
 function getPagesCollectionAttrs($coll) {
     $aRes = [];
