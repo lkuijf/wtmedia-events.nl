@@ -154,9 +154,18 @@ function getHeadContent() {
 function getFooterContent() {
     // do_action( 'wp_footer' );
 
+    // Set the desired post ID
+    $post_id = 1067;
+
+    // Get the post object
+    $post = get_post($post_id);
+
+    // Set the global $post variable
     global $post;
-    $page_id = $post->ID;
-    echo 'Page ID: [' . $page_id . ']';
+    $post = $post;
+
+    // Restore the global $post data
+    wp_reset_postdata();
 
     echo wp_footer();
 
