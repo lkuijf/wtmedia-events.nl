@@ -164,10 +164,10 @@ function getFooterContent() {
     global $post;
     $post = $post;
 
+    echo wp_footer();
+
     // Restore the global $post data
     wp_reset_postdata();
-
-    echo wp_footer();
 
     exit;
 }
