@@ -150,8 +150,9 @@ function getHeadContent() {
     $response = new WP_REST_Response($res);
     
   $response->set_status(200);
-  die();
+  
   return $response;
+  die();
 }
 function getPagesCollectionAttrs($coll) {
     $aRes = [];
