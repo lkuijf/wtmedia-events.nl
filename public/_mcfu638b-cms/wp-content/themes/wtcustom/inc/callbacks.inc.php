@@ -144,10 +144,10 @@ function getWebsiteOptions() {
     return $response;
 }
 function getHeadContent() {
-echo '_getHeadContent';
-die();
-//   $res = do_action( 'wp_head' );
-//   $response = new WP_REST_Response($res);
+
+  $res = do_action( 'wp_head' );
+  die();
+  //   $response = new WP_REST_Response($res);
 //   $response->set_status(200);
 //   return $response;
 }
