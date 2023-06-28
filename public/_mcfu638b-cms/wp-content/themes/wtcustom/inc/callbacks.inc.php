@@ -152,7 +152,7 @@ function getHeadContent() {
     // return $response;
 }
 function getFooterContent() {
-    do_action( 'wp_enqueue_scripts' );
+    do_action( 'wp_footer' );
     exit;
 }
 function getPagesCollectionAttrs($coll) {
