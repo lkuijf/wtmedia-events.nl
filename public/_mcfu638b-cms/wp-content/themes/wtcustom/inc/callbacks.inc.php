@@ -144,10 +144,12 @@ function getWebsiteOptions() {
     return $response;
 }
 function getHeadContent() {
-  $res = do_action( 'wp_head' );
-  $response = new WP_REST_Response($res);
-  $response->set_status(200);
-  return $response;
+echo '_getHeadContent';
+die();
+//   $res = do_action( 'wp_head' );
+//   $response = new WP_REST_Response($res);
+//   $response->set_status(200);
+//   return $response;
 }
 function getPagesCollectionAttrs($coll) {
     $aRes = [];
