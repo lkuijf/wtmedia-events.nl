@@ -145,7 +145,7 @@ function getWebsiteOptions() {
 }
 function getHeadContent() {
     do_action( 'wp_head' );
-
+    exit;
     // $res = do_action( 'wp_head' );
     // $response = new WP_REST_Response($res);
     // $response->set_status(200);
