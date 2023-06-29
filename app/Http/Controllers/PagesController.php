@@ -170,6 +170,9 @@ class PagesController extends Controller
 // dd($items);
 
 //$sec->crb_media_gallery = $this->getMediaGallery($sec->crb_media_gallery);
+        $instagramFeedPage = new PageApi(1067);
+        $instagramFeedPageData = $instagramFeedPage->get();
+        $instaCode = $instagramFeedPageData->content->rendered;
 
         $data= [
             'head_title' => $content->pageTitle,
@@ -189,6 +192,7 @@ class PagesController extends Controller
             // 'news' => $news,
             // 'vessel' => $vessel,
             // 'newsItem' => $newsItem,
+            'instagram_widget_code' => $instaCode,
         ];
 
         return view('blog-overview-page')->with('data', $data);
@@ -208,6 +212,10 @@ class PagesController extends Controller
 
         $post[0]->gallery = $this->getMediaGallery($post[0]->gallery);
 // dd($post);
+        $instagramFeedPage = new PageApi(1067);
+        $instagramFeedPageData = $instagramFeedPage->get();
+        $instaCode = $instagramFeedPageData->content->rendered;
+
         $data= [
             'head_title' => $post[0]->page_title,
             'meta_description' => $post[0]->page_meta_description,
@@ -224,6 +232,7 @@ class PagesController extends Controller
             // 'news' => $news,
             // 'vessel' => $vessel,
             // 'newsItem' => $newsItem,
+            'instagram_widget_code' => $instaCode,
         ];
 
         return view('blog-detail-page')->with('data', $data);
@@ -244,6 +253,10 @@ class PagesController extends Controller
 
         $post[0]->gallery = $this->getMediaGallery($post[0]->gallery);
 // dd($post);
+        $instagramFeedPage = new PageApi(1067);
+        $instagramFeedPageData = $instagramFeedPage->get();
+        $instaCode = $instagramFeedPageData->content->rendered;
+
         $data= [
             'head_title' => $post[0]->page_title,
             'meta_description' => $post[0]->page_meta_description,
@@ -254,6 +267,7 @@ class PagesController extends Controller
             // 'hero_text' => $post[0]->hero_text,
             'gallery' => $post[0]->gallery,
             // 'blog_date' => date('d-m-Y', strtotime($post[0]->date)),
+            'instagram_widget_code' => $instaCode,
         ];
 
         return view('case-detail-page')->with('data', $data);
