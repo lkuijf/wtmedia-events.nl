@@ -143,26 +143,28 @@ function getWebsiteOptions() {
     $response->set_status(200);
     return $response;
 }
-function getHeadContent() {
-    do_action( 'wp_head' );
-    exit;
-    // $res = do_action( 'wp_head' );
-    // $response = new WP_REST_Response($res);
-    // $response->set_status(200);
-    // return $response;
-}
-function getFooterContent() {
+// function getHeadContent() {
+//     do_action( 'wp_head' );
+//     exit;
+//     // $res = do_action( 'wp_head' );
+//     // $response = new WP_REST_Response($res);
+//     // $response->set_status(200);
+//     // return $response;
+// }
+function getWordPressGeneratedPage() {
     $post_id = 1067; // Set the desired post ID (Or Page Id)
 
     global $post;
     $post = get_post($post_id); // Get the post object
     setup_postdata($post);
 
-    // get_header(); // with HTML tags
-    wp_head();
+    //!!!! get_header(), the_content() and get_footer() HAVE TO BE CALLED ALL 3 ! for right code to be generated. 
+
+    get_header(); // with HTML tags
+    // wp_head();
     the_content();
-    // get_footer(); // with HTML tags
-    wp_footer();
+    get_footer(); // with HTML tags
+    // wp_footer();
 
     wp_reset_postdata(); // Restore the global $post data
 
