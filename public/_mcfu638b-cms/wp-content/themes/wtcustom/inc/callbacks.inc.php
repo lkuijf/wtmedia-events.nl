@@ -159,9 +159,9 @@ function getFooterContent() {
     setup_postdata($post);
 
     // wp_footer();
-    get_header();
+    // get_header();
     // wp_head();
-    the_content();
+    // the_content();
     get_footer();
     // wp_footer();
 
