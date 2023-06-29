@@ -1182,6 +1182,10 @@ footer .btm {
     text-align: center;
   }
 }
+footer .btm > * {
+  flex: 1;
+  flex-basis: 0;
+}
 footer .btm a {
   color: #222;
 }

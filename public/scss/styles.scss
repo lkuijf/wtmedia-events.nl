@@ -723,6 +723,10 @@ footer {
         align-items: flex-start;
         justify-content: space-between;
         @media (max-width: $sbp3_tablet) {flex-direction: column;justify-content:flex-start;text-align:center;}
+        > * {
+            flex: 1;
+            flex-basis: 0;
+        }
         a {
             color: $colorBlack;
             &:hover {
