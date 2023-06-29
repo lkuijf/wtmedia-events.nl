@@ -154,12 +154,12 @@ function getHeadContent() {
 function getFooterContent() {
     // do_action( 'wp_footer' );
 
-    ob_start();
+    // ob_start();
     $page_id = 1067; // Set the desired post ID
     $post = get_post($page_id); // Get the post object
-    // setup_postdata($post);
+    setup_postdata($post);
 
-    global $post;
+    // global $post;
 
     echo '[' . $post->post_title . ']';
     // wp_footer();
@@ -171,8 +171,8 @@ function getFooterContent() {
     // wp_footer();
 
 
-    $footer_output = ob_get_clean();
-    echo $footer_output;
+    // $footer_output = ob_get_clean();
+    // echo $footer_output;
     wp_reset_postdata(); // Restore the global $post data
 
     exit;
