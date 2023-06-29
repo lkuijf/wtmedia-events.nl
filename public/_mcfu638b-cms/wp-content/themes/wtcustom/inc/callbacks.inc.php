@@ -158,12 +158,11 @@ function getFooterContent() {
     $post = get_post($post_id); // Get the post object
     setup_postdata($post);
 
-    // wp_footer();
-    // get_header();
-    // wp_head();
-    // the_content();
-    get_footer();
-    // wp_footer();
+    // get_header(); // with HTML tags
+    wp_head();
+    the_content();
+    // get_footer(); // with HTML tags
+    wp_footer();
 
     wp_reset_postdata(); // Restore the global $post data
 
