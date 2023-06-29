@@ -95,6 +95,11 @@ class PagesController extends Controller
         // $cartTotalItems = ShopController::getTotalCartItems();
         // $loggedInUserId = ShopController::getLoggedinUser();
 // dd($content->contentSections);
+
+        $instagramFeedPage = new PageApi(1067);
+        $instagramFeedPageData = $instagramFeedPage->get();
+        $instaCode = $instagramFeedPageData->content->rendered;
+
         $data= [
             'head_title' => $content->pageTitle,
             'meta_description' => $content->pageMetaDescription,
@@ -107,6 +112,7 @@ class PagesController extends Controller
             // 'news' => $news,
             // 'vessel' => $vessel,
             // 'newsItem' => $newsItem,
+            'instagram_widget_code' => $instaCode,
         ];
         if($vessel) {
             $data['head_title'] = $vessel->title->rendered . ' - ' . config('app_wt.metaTitle');
