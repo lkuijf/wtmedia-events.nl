@@ -110,9 +110,15 @@ l[i].q=l[i].q||[];o=e.createElement(a);f=e.getElementsByTagName(a)[0];o.async=1;
     <!-- Instagram Feed JS -->
     <script type="text/javascript">
         var sbiajaxurl = "https://wtmedia-events.nl/_mcfu638b-cms/wp-admin/admin-ajax.php";
-        var sb_instagram_js_options = {"font_method":"svg","resized_url":"https:\/\/wtmedia-events.nl\/_mcfu638b-cms\/wp-content\/uploads\/sb-instagram-feed-images\/","placeholder":"https:\/\/wtmedia-events.nl\/_mcfu638b-cms\/wp-content\/plugins\/instagram-feed\/img\/placeholder.png","ajax_url":"https:\/\/wtmedia-events.nl\/_mcfu638b-cms\/wp-admin\/admin-ajax.php"};
     </script>
-    <script type='text/javascript' src='{{ asset('_mcfu638b-cms/wp-content/plugins/instagram-feed/js/sbi-scripts.min.js?ver=6.1.5') }}' id='sbi_scripts-js'></script>
+    <script type='text/javascript' src='https://wtmedia-events.nl/_mcfu638b-cms/wp-includes/js/jquery/jquery.min.js?ver=3.6.4' id='jquery-core-js'></script>
+    <script type='text/javascript' src='https://wtmedia-events.nl/_mcfu638b-cms/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.0' id='jquery-migrate-js'></script>
+    <script type='text/javascript' id='sbi_scripts-js-extra'>
+    /* <![CDATA[ */
+    var sb_instagram_js_options = {"font_method":"svg","resized_url":"https:\/\/wtmedia-events.nl\/_mcfu638b-cms\/wp-content\/uploads\/sb-instagram-feed-images\/","placeholder":"https:\/\/wtmedia-events.nl\/_mcfu638b-cms\/wp-content\/plugins\/instagram-feed\/img\/placeholder.png","ajax_url":"https:\/\/wtmedia-events.nl\/_mcfu638b-cms\/wp-admin\/admin-ajax.php"};
+    /* ]]> */
+    </script>
+    <script type='text/javascript' src='https://wtmedia-events.nl/_mcfu638b-cms/wp-content/plugins/instagram-feed/js/sbi-scripts.min.js?ver=6.1.5' id='sbi_scripts-js'></script>
     @yield('before_closing_body_tag')
 </body>
 </html>
