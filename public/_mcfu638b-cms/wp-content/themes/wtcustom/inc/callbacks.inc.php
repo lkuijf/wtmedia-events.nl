@@ -161,11 +161,11 @@ function getFooterContent() {
     echo '[' . $page->post_title . ']';
     // wp_footer();
 
-    // get_header();
-    wp_head();
+    get_header();
+    // wp_head();
     the_content();
-    // get_footer();
-    wp_footer();
+    get_footer();
+    // wp_footer();
 
 
     $footer_output = ob_get_clean();
