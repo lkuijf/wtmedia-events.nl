@@ -159,7 +159,15 @@ function getFooterContent() {
     $page = get_post($page_id); // Get the post object
     setup_postdata($page);
     echo '[' . $page->post_title . ']';
+    // wp_footer();
+
+    // get_header();
+    wp_head();
+    the_content();
+    // get_footer();
     wp_footer();
+
+
     $footer_output = ob_get_clean();
     echo $footer_output;
     wp_reset_postdata(); // Restore the global $post data
