@@ -156,9 +156,12 @@ function getFooterContent() {
 
     ob_start();
     $page_id = 1067; // Set the desired post ID
-    $page = get_post($page_id); // Get the post object
-    setup_postdata($page);
-    echo '[' . $page->post_title . ']';
+    $post = get_post($page_id); // Get the post object
+    // setup_postdata($post);
+
+    global $post;
+
+    echo '[' . $post->post_title . ']';
     // wp_footer();
 
     get_header();
