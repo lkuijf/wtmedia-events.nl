@@ -171,7 +171,7 @@ class SubmitController extends Controller
         );
         $headers = implode("\r\n", $headers);
         mail($to_email, $subjectCompany, $messages[0], $headers);
-        mail($request->get('Email'), $subjectVisitor, $messages[1], $headers);
+        mail($request->get('email'), $subjectVisitor, $messages[1], $headers);
         // mail($to_email, $subject, $message, $headers);
         // mail($to_email, $subject, $message);
         // return back()->with('success', 'Bedankt dat u contact met ons heeft opgenomen, we zullen uw bericht zo snel mogelijk in behandeling nemen!');
