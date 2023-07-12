@@ -31,10 +31,10 @@ class SubmitController extends Controller
             'Accept_conditions.required'=> 'Please read and accept the general conditions',
         );
         /***********************************************************************************
-            Gebruik maken van manually created validator ($validated = $request->validate($toValidate,$validationMessages)
-                OF gebruik van redirect()->back() / url()->previous() WERKT NIET!!! ---> strict-origin-when-cross-origin (referrer-policy)
+            redirect()->back() / url()->previous() WERKT NIET!!! ---> strict-origin-when-cross-origin (referrer-policy)
             alleen redirect('/contact') gebruiken (bijvoorbeeld)
                 OF bij dynamische paginas de huidige gebruiken: url()->current()
+                    OF op de server de referrer-policy aanpassen van de vhost, naar bijvoorbeeld no-referrer-when-downgrade
         ************************************************************************************/
         // $validated = $request->validate($toValidate,$validationMessages);
         $validator = Validator::make($request->all(), $toValidate, $validationMessages);
@@ -84,10 +84,10 @@ class SubmitController extends Controller
             'Email.email'=> 'Het e-mail adres is niet juist geformuleerd',
         );
         /***********************************************************************************
-            Gebruik maken van manually created validator ($validated = $request->validate($toValidate,$validationMessages)
-                OF gebruik van redirect()->back() / url()->previous() WERKT NIET!!! ---> strict-origin-when-cross-origin (referrer-policy)
+            redirect()->back() / url()->previous() WERKT NIET!!! ---> strict-origin-when-cross-origin (referrer-policy)
             alleen redirect('/contact') gebruiken (bijvoorbeeld)
                 OF bij dynamische paginas de huidige gebruiken: url()->current()
+                    OF op de server de referrer-policy aanpassen van de vhost, naar bijvoorbeeld no-referrer-when-downgrade
         ************************************************************************************/
         // $validated = $request->validate($toValidate,$validationMessages);
         $validator = Validator::make($request->all(), $toValidate, $validationMessages);
@@ -138,10 +138,10 @@ class SubmitController extends Controller
             'phone.required'=> 'Vul een telefoonnummer in',
         );
         /***********************************************************************************
-            Gebruik maken van manually created validator ($validated = $request->validate($toValidate,$validationMessages)
-                OF gebruik van redirect()->back() / url()->previous() WERKT NIET!!! ---> strict-origin-when-cross-origin (referrer-policy)
+            redirect()->back() / url()->previous() WERKT NIET!!! ---> strict-origin-when-cross-origin (referrer-policy)
             alleen redirect('/contact') gebruiken (bijvoorbeeld)
                 OF bij dynamische paginas de huidige gebruiken: url()->current()
+                    OF op de server de referrer-policy aanpassen van de vhost, naar bijvoorbeeld no-referrer-when-downgrade
         ************************************************************************************/
         // $validated = $request->validate($toValidate,$validationMessages);
         $validator = Validator::make($request->all(), $toValidate, $validationMessages);
@@ -244,7 +244,7 @@ class SubmitController extends Controller
         $messageCompany = '';
         $messageVisitor = '';
         foreach($values as $i => $v) {
-            if($i == '_token' || $i == 'g-recaptcha-response' || $i == 'valstrik' || $i == 'valkuil') continue;
+            if($i == '_token' || $i == 'g-recaptcha-response' || $i == 'valstrik' || $i == 'valkuil' || $i == 'success_text' || $i == 'email_to') continue;
             $messageCompany .= '
             <p>
                 ' . str_replace('_', ' ', $i) . ':<br />
