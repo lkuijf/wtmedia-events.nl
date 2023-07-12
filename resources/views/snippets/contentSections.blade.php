@@ -81,6 +81,14 @@
         @if($section->_type == 'teammembers' && $section->show_teammembers)
             @include('sections.teammembers')
         @endif
+        @if($section->_type == 'schedule_call')
+            @include('sections.schedule_call', [
+                'title' => $section->title,
+                'text' => $section->text,
+                'email_to' => $section->email_to,
+                'success_text' => $section->success_text,
+            ])
+        @endif
         @if($section->_type == 'cases')
             @if ($section->show_cases_highlighted)
                 @include('sections.events', ['cases' => $data['cases_highlighted']])

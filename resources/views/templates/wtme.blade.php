@@ -35,7 +35,11 @@ l[i].q=l[i].q||[];o=e.createElement(a);f=e.getElementsByTagName(a)[0];o.async=1;
         <div class="alert alert-success">
             <div><p class="thumbsUpIcon"></p></div>
             {{-- @if(session('success') == 'contact')<div><p>{{ $data['website_options']->form_success }}</p></div>@endif --}}
-            @if(session('success') == 'subscription')<div><p>{{ $data['website_options']->form_subscription_success }}</p></div>@endif
+            @if(session('success') == 'subscription')
+                <div><p>{{ $data['website_options']->form_subscription_success }}</p></div>
+            @else
+                <div><p>{{ session('success') }}</p></div>
+            @endif
             {{-- <div><p>Gelukt</p></div> --}}
         </div>
     @endif

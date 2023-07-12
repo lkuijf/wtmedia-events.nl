@@ -20,6 +20,7 @@ use App\Http\Helpers\WooCategoriesApi;
 // use App\Http\Helpers\WooCategoryApi;
 use App\Http\Helpers\WooFilterProductsApi;
 use App\Http\Helpers\FilterJobOffersApi;
+use Illuminate\Support\Facades\Crypt;
 
 class PagesController extends Controller
 {
@@ -757,6 +758,10 @@ class PagesController extends Controller
                 }
                 $sec->cases = $cases;
 // dd($cases);
+            }
+            if($sec->_type == 'schedule_call') {
+                $sec->email_to = Crypt::encryptString($sec->email_to);
+                $sec->success_text = Crypt::encryptString($sec->success_text);
             }
             $secs[] = $sec;
         }

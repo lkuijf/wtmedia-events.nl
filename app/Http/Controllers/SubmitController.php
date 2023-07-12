@@ -8,6 +8,7 @@ use Illuminate\Support\Str;
 
 use App\Http\Helpers\ApiCall;
 use App\Http\Helpers\WebsiteOptionsApi;
+use Illuminate\Support\Facades\Crypt;
 
 class SubmitController extends Controller
 {
@@ -119,6 +120,63 @@ class SubmitController extends Controller
         // mail($to_email, $subject, $message);
         // return back()->with('success', 'Bedankt dat u contact met ons heeft opgenomen, we zullen uw bericht zo snel mogelijk in behandeling nemen!');
         return redirect(route('home'))->with('success', 'subscription');
+    }
+    public function submitScheduleCallForm(Request $request) {
+
+        // 'prohibited' validation rule does not work!!!'
+        if($request->get('valkuil') || $request->get('valstrik')) return abort(404);
+
+        $toValidate = array(
+            'email' => 'required|email',
+            'name' => 'required',
+            'phone' => 'required',
+        );
+        $validationMessages = array(
+            'email.required'=> 'Vul een e-mail adres in',
+            'email.email'=> 'Het e-mail adres is niet juist geformuleerd',
+            'name.required'=> 'Vul een naam in',
+            'phone.required'=> 'Vul een telefoonnummer in',
+        );
+        /***********************************************************************************
+            Gebruik maken van manually created validator ($validated = $request->validate($toValidate,$validationMessages)
+                OF gebruik van redirect()->back() / url()->previous() WERKT NIET!!! ---> strict-origin-when-cross-origin (referrer-policy)
+            alleen redirect('/contact') gebruiken (bijvoorbeeld)
+                OF bij dynamische paginas de huidige gebruiken: url()->current()
+        ************************************************************************************/
+        // $validated = $request->validate($toValidate,$validationMessages);
+        $validator = Validator::make($request->all(), $toValidate, $validationMessages);
+        if($validator->fails()) {
+            // return redirect(route('home'))->withErrors($validator)->withInput();
+            return back()->withErrors($validator)->withInput();
+        }
+
+        $allWebsiteOptions = new WebsiteOptionsApi();
+        $websiteOptions = $allWebsiteOptions->get();
+
+        // $to_email = $websiteOptions->email_address;
+        // $to_email = 'leon@wtmedia-events.nl';
+        $to_email = Crypt::decryptString($request->get('email_to'));
+        // $to_email = 'frans@tamatta.org, rense@tamatta.org';
+        $subjectCompany = 'Ingevuld schedule-call-formulier vanaf wtmedia-events.nl';
+        $subjectVisitor = 'Kopie van uw bericht aan wtmedia-events.nl';
+        
+        $messages = $this->getHtmlEmails($request->all(), url('statics/email/logo.png'), 'De volgende gegevens zijn achtergelaten door de bezoeker.', 'Bedankt voor uw bericht. De volgende informatie hebben we ontvangen:');
+
+        $headers = array(
+            "MIME-Version: 1.0",
+            "Content-Type: text/html; charset=ISO-8859-1",
+            "From: WT Media & Events <schedule-call-form@wtmedia-events.nl>",
+            "Reply-To: support@wtmedia-events.nl",
+            // "X-Priority: 1",
+        );
+        $headers = implode("\r\n", $headers);
+        mail($to_email, $subjectCompany, $messages[0], $headers);
+        mail($request->get('Email'), $subjectVisitor, $messages[1], $headers);
+        // mail($to_email, $subject, $message, $headers);
+        // mail($to_email, $subject, $message);
+        // return back()->with('success', 'Bedankt dat u contact met ons heeft opgenomen, we zullen uw bericht zo snel mogelijk in behandeling nemen!');
+        // return redirect(route('home'))->with('success', 'subscription');
+        return back()->with('success', Crypt::decryptString($request->get('success_text')));
     }
     public function submitBestellenForm(Request $request) {
         $validated = $request->validate([

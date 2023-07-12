@@ -29,6 +29,7 @@ Route::get('/', function () {
 });
 
 Route::post('/submit-subscription-form', [SubmitController::class, 'submitSubscriptionForm']);
+Route::post('/submit-schedule-call-form', [SubmitController::class, 'submitScheduleCallForm'])->name('submitScheduleCall');
 
 
 /* Check for a page request */
