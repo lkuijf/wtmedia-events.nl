@@ -494,16 +494,16 @@ function crbRegisterFields($args) {
                 //         ),
                 //     ) )
                 // ) )
-                // ->add_fields( 'professional_boxes', 'Professionals', array(
-                //     Field::make( 'separator', 'separator1', __( 'Professionals' ) ),
-                //     Field::make( 'association', 'professional_associations', __( 'Select professionals' ))
-                //     ->set_types( array(
-                //         array(
-                //             'type' => 'post',
-                //             'post_type' => 'professional',
-                //         ),
-                //     ) )
-                // ) )
+                ->add_fields( 'team_specialists', 'Team specialists', array(
+                    Field::make( 'separator', 'separator1', __( 'Team specialists' ) ),
+                    Field::make( 'association', 'team_specialists_associations', __( 'Select team specialists' ))
+                    ->set_types( array(
+                        array(
+                            'type' => 'post',
+                            'post_type' => 'teammember',
+                        ),
+                    ) )
+                ) )
                 // ->add_fields( 'news_boxes', 'News', array(
                 //     Field::make( 'separator', 'separator1', __( 'News' ) ),
                 //     Field::make( 'association', 'news_associations', __( 'Select news (max 3)' ))
