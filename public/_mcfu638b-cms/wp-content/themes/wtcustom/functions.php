@@ -538,7 +538,7 @@ function crbRegisterFields($args) {
                 ) )
                 ->add_fields( 'teammembers', 'Team members', array(
                     Field::make( 'separator', 'separator1', __( 'Team members' ) ),
-                    Field::make( 'checkbox', 'show_teammembers', __( 'Show Team members' ) ),
+                    Field::make( 'checkbox', 'show_teammembers', __( 'Show Team members carousel' ) ),
                 ) )
                 ->add_fields( 'cases', 'Cases', array(
                     Field::make( 'separator', 'separator1', __( 'Cases' ) ),
