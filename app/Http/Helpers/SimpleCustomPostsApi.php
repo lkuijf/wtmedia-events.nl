@@ -4,6 +4,7 @@ namespace App\Http\Helpers;
 class SimpleCustomPostsApi extends ApiCall {
     public function __construct($postType) {
         $this->parameters['post_type'] = $postType;
+        //extra available parameters: orderby, category, ids (see callbacks.inc.php)
         $this->endpoint = '/index.php/wp-json/wtcustom/simple-custom-posts';
     }
     public function getItems() {

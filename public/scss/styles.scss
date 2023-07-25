@@ -897,3 +897,26 @@ footer {
         }
     }
 }
+.teamSpecialistsContent {
+    @include textPaddingOnMobile;
+    article {
+        display: flex;
+        gap: 100px;
+        @media (max-width: $sbp1_desktop) {gap: 80px;}
+        @media (max-width: $sbp2_laptop) {gap: 60px;}
+        @media (max-width: $sbp3_tablet) {gap: 30px;flex-direction: column;}
+        @media (max-width: $sbp4_mobile) {gap: 20px;}
+        > div {
+            flex: 1 1 50%;
+            > :first-child {
+                margin-top: 0;
+            }
+        }
+        img {
+            @include borderRadius;
+            width: 100%;
+            aspect-ratio: 4/5;
+            object-fit: cover;
+        }
+    }
+}

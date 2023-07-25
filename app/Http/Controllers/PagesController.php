@@ -765,14 +765,22 @@ class PagesController extends Controller
             }
             if($sec->_type == 'team_specialists' && count($sec->team_specialists_associations)) {
                 foreach($sec->team_specialists_associations as &$specialist) {
-                    $cTeamMember = new CustomPostApi('teammember', $specialist->id, false);
-                    $teamMember = $cTeamMember->get();
-                    $specialist = $teamMember;
+                    // $cTeamMember = new CustomPostApi('teammember', $specialist->id, false);
+                    // $teamMember = $cTeamMember->get();
+                    // $specialist = $teamMember;
+
+                    $cTeamMember = new SimpleCustomPostsApi('teammember');
+                    $cTeamMember->parameters['ids'] = $specialist->id;
+                    $teamMembers = $cTeamMember->get();
+                    $specialist = $teamMembers[0];
+                    if(isset($specialist->image) && $specialist->image) {
+                        $specialist->image = $this->getMediaGallery($specialist->image);
+                    }
                 }
             }
             $secs[] = $sec;
         }
-dd($secs);
+// dd($secs);
         return $secs;
     }
 }

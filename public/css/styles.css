@@ -699,8 +699,6 @@ nav ul {
     color: #FFF;
     padding: 7px 16px 8px 16px;
   }
-}
-@media (min-width: 769px) {
   .headerOuter .headerInnerWrap .mainNav ul li:hover ul {
     display: block;
   }
@@ -1383,4 +1381,55 @@ footer .btm .socials a img {
 }
 .scheduleCallContent form button:active {
   box-shadow: #19b4b6 5px 5px 0px -2px, #FFF 5px 5px;
+}
+
+@media (max-width: 768px) {
+  .teamSpecialistsContent {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+@media (max-width: 480px) {
+  .teamSpecialistsContent {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+.teamSpecialistsContent article {
+  display: flex;
+  gap: 100px;
+}
+@media (max-width: 1200px) {
+  .teamSpecialistsContent article {
+    gap: 80px;
+  }
+}
+@media (max-width: 1024px) {
+  .teamSpecialistsContent article {
+    gap: 60px;
+  }
+}
+@media (max-width: 768px) {
+  .teamSpecialistsContent article {
+    gap: 30px;
+    flex-direction: column;
+  }
+}
+@media (max-width: 480px) {
+  .teamSpecialistsContent article {
+    gap: 20px;
+  }
+}
+.teamSpecialistsContent article > div {
+  flex: 1 1 50%;
+}
+.teamSpecialistsContent article > div > :first-child {
+  margin-top: 0;
+}
+.teamSpecialistsContent article img {
+  border-radius: 15px;
+  width: 100%;
+  aspect-ratio: 4/5;
+  -o-object-fit: cover;
+     object-fit: cover;
 }/*# sourceMappingURL=styles.css.map */
