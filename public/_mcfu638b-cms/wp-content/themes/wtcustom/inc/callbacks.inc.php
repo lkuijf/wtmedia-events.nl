@@ -90,7 +90,7 @@ function getCustomPostsSimplified(WP_REST_Request $request) {
     $postType = 'post';
     $category = false;
     $highlighted = false;
-    $id = false;
+    $ids = false;
     if (isset($parameters['orderby'])) {
         $orderby = $parameters['orderby'];
     }
@@ -106,8 +106,8 @@ function getCustomPostsSimplified(WP_REST_Request $request) {
     if (isset($parameters['highlighted'])) {
         $highlighted = $parameters['highlighted'];
     }
-    if (isset($parameters['id'])) {
-        $id = $parameters['id'];
+    if (isset($parameters['ids'])) {
+        $ids = explode(',', $parameters['ids']);
     }
     $postParams = [
         'numberposts' => -1,
@@ -115,6 +115,7 @@ function getCustomPostsSimplified(WP_REST_Request $request) {
         'order' => $order,
         'post_type' => $postType,
     ];
+    if($ids) $postParams['post__in'] = $ids;
     if($category) $postParams['tax_query'] = array(
         array(
             'taxonomy' => 'case_category',
@@ -128,12 +129,12 @@ function getCustomPostsSimplified(WP_REST_Request $request) {
             'value'    => 'yes'
             )
         );
-    if($id) $postParams['meta_query'] = array(
-        array(
-            'key' => 'id',
-            'value'    => $id
-            )
-        );
+    // if($id) $postParams['meta_query'] = array(
+    //     array(
+    //         'key' => 'id',
+    //         'value'    => $id
+    //         )
+    //     );
     $posts = get_posts($postParams);
 
     $aRes = getCustomPostsCollectionAttrs($posts, $postType);
