@@ -2,7 +2,7 @@
     <div class="scheduleCallContent">
 
         <div class="twoColumns">
-            <div class="inner">
+            {{-- <div class="inner"> --}}
             <div class="columns">
                 <div>
                     <form action="{{ route('submitScheduleCall') }}" method="POST">
@@ -22,11 +22,11 @@
                     {{-- <p>asdf asdf asdf asdf asdf asdf asdf asdf asdf asd fsad f asdf asdf asdf asdf asd fa sdf</p> --}}
                 </div>
                 <div>
-                    <h1>{{ $title }}</h1>
+                    <h2>{{ $title }}</h2>
                     {!! $text !!}
                 </div>
             </div>
-            </div>
+            {{-- </div> --}}
         </div>
 
     </div>

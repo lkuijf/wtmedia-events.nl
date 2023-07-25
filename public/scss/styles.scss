@@ -108,7 +108,7 @@ nav ul {
     //     margin: 20px 0;
     //     padding: 20px 0;
     // }
-    h1 {
+    h1,h3 {
         font-weight: normal;
         font-size: 2.5em;
         hr {
@@ -122,6 +122,9 @@ nav ul {
             font-weight: bold;
             text-shadow: -1px 0 $colorGrey, 0 1px $colorGrey, 1px 0 $colorGrey, 0 -1px $colorGrey;
         }
+    }
+    h3 {
+        font-size: 2em;
     }
     a {
         color: $colorCtaBtn;
@@ -850,11 +853,12 @@ footer {
     }
 }
 .scheduleCallContent {
-    .twoColumns {
-        .inner {
-            @include textPaddingOnMobile;
-        }
-    }
+    @include textPaddingOnMobile;
+    // .twoColumns {
+    //     .inner {
+    //         @include textPaddingOnMobile;
+    //     }
+    // }
     form {
         width: 100%;
         background-color: $colorWTM;
@@ -900,16 +904,27 @@ footer {
 .teamSpecialistsContent {
     @include textPaddingOnMobile;
     article {
+        margin-bottom: 60px;
         display: flex;
+        align-items: center;
         gap: 100px;
         @media (max-width: $sbp1_desktop) {gap: 80px;}
         @media (max-width: $sbp2_laptop) {gap: 60px;}
         @media (max-width: $sbp3_tablet) {gap: 30px;flex-direction: column;}
         @media (max-width: $sbp4_mobile) {gap: 20px;}
         > div {
-            flex: 1 1 50%;
+            // flex: 1 1 50%;
+            flex-grow: 1;
+            flex-shrink: 1;
+            
             > :first-child {
                 margin-top: 0;
+            }
+            &:first-child {
+                flex-basis: 33%;
+            }
+            &:last-child {
+                flex-basis: 67%;
             }
         }
         img {

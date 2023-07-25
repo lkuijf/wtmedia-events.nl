@@ -389,20 +389,23 @@ nav ul {
 .contentWrapper .standardPage > div {
   margin-bottom: 40px;
 }
-.contentWrapper h1 {
+.contentWrapper h1, .contentWrapper h3 {
   font-weight: normal;
   font-size: 2.5em;
 }
-.contentWrapper h1 hr {
+.contentWrapper h1 hr, .contentWrapper h3 hr {
   display: inline-block;
   width: 70px;
   transform: translateY(5px);
 }
-.contentWrapper h1 em {
+.contentWrapper h1 em, .contentWrapper h3 em {
   color: #19b4b6;
   font-style: normal;
   font-weight: bold;
   text-shadow: -1px 0 #555, 0 1px #555, 1px 0 #555, 0 -1px #555;
+}
+.contentWrapper h3 {
+  font-size: 2em;
 }
 .contentWrapper a {
   color: #006878;
@@ -1315,13 +1318,13 @@ footer .btm .socials a img {
 }
 
 @media (max-width: 768px) {
-  .scheduleCallContent .twoColumns .inner {
+  .scheduleCallContent {
     padding-left: 30px;
     padding-right: 30px;
   }
 }
 @media (max-width: 480px) {
-  .scheduleCallContent .twoColumns .inner {
+  .scheduleCallContent {
     padding-left: 20px;
     padding-right: 20px;
   }
@@ -1396,7 +1399,9 @@ footer .btm .socials a img {
   }
 }
 .teamSpecialistsContent article {
+  margin-bottom: 60px;
   display: flex;
+  align-items: center;
   gap: 100px;
 }
 @media (max-width: 1200px) {
@@ -1421,10 +1426,17 @@ footer .btm .socials a img {
   }
 }
 .teamSpecialistsContent article > div {
-  flex: 1 1 50%;
+  flex-grow: 1;
+  flex-shrink: 1;
 }
 .teamSpecialistsContent article > div > :first-child {
   margin-top: 0;
+}
+.teamSpecialistsContent article > div:first-child {
+  flex-basis: 33%;
+}
+.teamSpecialistsContent article > div:last-child {
+  flex-basis: 67%;
 }
 .teamSpecialistsContent article img {
   border-radius: 15px;
