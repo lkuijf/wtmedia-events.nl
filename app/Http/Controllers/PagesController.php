@@ -763,9 +763,16 @@ class PagesController extends Controller
                 $sec->email_to = Crypt::encryptString($sec->email_to);
                 $sec->success_text = Crypt::encryptString($sec->success_text);
             }
+            if($sec->_type == 'team_specialists' && count($sec->team_specialists_associations)) {
+                foreach($sec->team_specialists_associations as &$specialist) {
+                    $cTeamMember = new CustomPostApi('teammember', $specialist->id, false);
+                    $teamMember = $cTeamMember->get();
+                    $specialist = $teamMember;
+                }
+            }
             $secs[] = $sec;
         }
-// dd($secs);
+dd($secs);
         return $secs;
     }
 }

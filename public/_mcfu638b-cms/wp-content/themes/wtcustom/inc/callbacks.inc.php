@@ -90,6 +90,7 @@ function getCustomPostsSimplified(WP_REST_Request $request) {
     $postType = 'post';
     $category = false;
     $highlighted = false;
+    $id = false;
     if (isset($parameters['orderby'])) {
         $orderby = $parameters['orderby'];
     }
@@ -104,6 +105,9 @@ function getCustomPostsSimplified(WP_REST_Request $request) {
     }
     if (isset($parameters['highlighted'])) {
         $highlighted = $parameters['highlighted'];
+    }
+    if (isset($parameters['id'])) {
+        $id = $parameters['id'];
     }
     $postParams = [
         'numberposts' => -1,
@@ -122,6 +126,12 @@ function getCustomPostsSimplified(WP_REST_Request $request) {
         array(
             'key' => '_highlighted',
             'value'    => 'yes'
+            )
+        );
+    if($id) $postParams['meta_query'] = array(
+        array(
+            'key' => 'id',
+            'value'    => $id
             )
         );
     $posts = get_posts($postParams);
