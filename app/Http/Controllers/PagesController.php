@@ -773,14 +773,14 @@ class PagesController extends Controller
                     // $cTeamMember->parameters['ids'] = $specialist->id;
                     // $teamMembers = $cTeamMember->get();
                     // $specialist = $teamMembers[0];
-                    // if(isset($specialist->image) && $specialist->image) {
-                    //     $specialist->image = $this->getMediaGallery($specialist->image);
-                    // }
+                    if(isset($specialist->image) && $specialist->image) {
+                        $specialist->image = $this->getMediaGallery($specialist->image);
+                    }
                 }
             }
             $secs[] = $sec;
         }
-dd($secs);
+// dd($secs);
         return $secs;
     }
 }
