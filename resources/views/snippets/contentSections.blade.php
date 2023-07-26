@@ -84,6 +84,9 @@
         @if($section->_type == 'team_specialists')
             @include('sections.team_specialists', ['specialists' => $section->team_specialists_associations])
         @endif
+        @if($section->_type == 'service_page_text_header')
+            @include('sections.service_page_text_header', ['title' => $section->title])
+        @endif
         @if($section->_type == 'schedule_call')
             @include('sections.schedule_call', [
                 'title' => $section->title,
