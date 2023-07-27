@@ -1562,6 +1562,12 @@ footer .btm .socials a img {
     height: 800px;
   }
 }
+@media (max-width: 480px) {
+  .marketingTermsContent .marketingTermsGrid {
+    grid-template-columns: repeat(2, 175px);
+    height: 700px;
+  }
+}
 .marketingTermsContent .marketingTermsGrid .mTermCell {
   position: relative;
 }
@@ -1630,6 +1636,11 @@ footer .btm .socials a img {
     left: -75px;
   }
 }
+@media (max-width: 480px) {
+  .marketingTermsContent .marketingTermsGrid .mTermCell .mTermBox:hover {
+    width: 325px;
+  }
+}
 @media (max-width: 1024px) {
   .marketingTermsContent .marketingTermsGrid .mTermCell:nth-child(2) .mTermBox {
     flex-direction: column;
@@ -1641,6 +1652,11 @@ footer .btm .socials a img {
   .marketingTermsContent .marketingTermsGrid .mTermCell:nth-child(2) .mTermBox:hover {
     width: 150px;
     height: 350px;
+  }
+}
+@media (max-width: 480px) {
+  .marketingTermsContent .marketingTermsGrid .mTermCell:nth-child(2) .mTermBox:hover {
+    height: 325px;
   }
 }
 .marketingTermsContent .marketingTermsGrid .mTermCell:nth-child(4) .mTermBox {
@@ -1673,6 +1689,11 @@ footer .btm .socials a img {
     height: 350px;
   }
 }
+@media (max-width: 480px) {
+  .marketingTermsContent .marketingTermsGrid .mTermCell:nth-child(4) .mTermBox:hover {
+    height: 325px;
+  }
+}
 @media (max-width: 1024px) {
   .marketingTermsContent .marketingTermsGrid .mTermCell:nth-child(6) .mTermBox {
     flex-direction: column;
@@ -1684,6 +1705,12 @@ footer .btm .socials a img {
     width: 150px;
     height: 350px;
     top: -200px;
+  }
+}
+@media (max-width: 480px) {
+  .marketingTermsContent .marketingTermsGrid .mTermCell:nth-child(6) .mTermBox:hover {
+    height: 325px;
+    top: -175px;
   }
 }
 .marketingTermsContent .marketingTermsGrid .mTermCell:nth-child(8) .mTermBox {
@@ -1707,5 +1734,11 @@ footer .btm .socials a img {
     width: 150px;
     height: 350px;
     top: -200px;
+  }
+}
+@media (max-width: 480px) {
+  .marketingTermsContent .marketingTermsGrid .mTermCell:nth-child(8) .mTermBox:hover {
+    height: 325px;
+    top: -175px;
   }
 }/*# sourceMappingURL=styles.css.map */
