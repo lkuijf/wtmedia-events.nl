@@ -1809,4 +1809,54 @@ footer .btm .socials a img {
   .marketingTermsContent .marketingTermsGrid .mTermCell:nth-child(8) .mTermBox > div:last-child div {
     width: 130px;
   }
+}
+
+.webDevCasesContent {
+  display: flex;
+  gap: 60px;
+}
+@media (max-width: 768px) {
+  .webDevCasesContent {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+@media (max-width: 480px) {
+  .webDevCasesContent {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+.webDevCasesContent .webDevNumbers {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  flex-basis: 33%;
+}
+.webDevCasesContent .webDevNumbers div {
+  background-color: #006878;
+  border-radius: 15px;
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.webDevCasesContent .webDevNumbers div:last-child {
+  background-color: #19B4B6;
+}
+.webDevCasesContent .webDevNumbers div span {
+  text-align: center;
+  font-size: 4em;
+  color: #FFF;
+  line-height: 1em;
+}
+.webDevCasesContent .webDevNumbers div span:last-child {
+  font-size: 2em;
+}
+.webDevCasesContent .webDevGallery {
+  flex-basis: 64%;
+}
+.webDevCasesContent .webDevGallery img {
+  width: 100%;
+  border-radius: 15px;
 }/*# sourceMappingURL=styles.css.map */
