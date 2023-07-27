@@ -87,6 +87,26 @@
         @if($section->_type == 'service_page_text_header')
             @include('sections.service_page_text_header', ['title' => $section->title])
         @endif
+        @if($section->_type == 'marketing_terms')
+            @include('sections.marketing_terms', [
+                'image1' => $section->image1,
+                'term1' => $section->term1,
+                'image2' => $section->image2,
+                'term2' => $section->term2,
+                'image3' => $section->image3,
+                'term3' => $section->term3,
+                'image4' => $section->image4,
+                'term4' => $section->term4,
+                'image5' => $section->image5,
+                'term5' => $section->term5,
+                'image6' => $section->image6,
+                'term6' => $section->term6,
+                'image7' => $section->image7,
+                'term7' => $section->term7,
+                'image8' => $section->image8,
+                'term8' => $section->term8,
+                ])
+        @endif
         @if($section->_type == 'schedule_call')
             @include('sections.schedule_call', [
                 'title' => $section->title,

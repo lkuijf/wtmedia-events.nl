@@ -1517,4 +1517,195 @@ footer .btm .socials a img {
     padding-left: 20px;
     padding-right: 20px;
   }
+}
+
+.marketingTermsContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.marketingTermsContent .marketingTermsGrid {
+  height: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(4, 400px);
+}
+@media (max-width: 768px) {
+  .marketingTermsContent .marketingTermsGrid {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+@media (max-width: 480px) {
+  .marketingTermsContent .marketingTermsGrid {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+@media (max-width: 1820px) {
+  .marketingTermsContent .marketingTermsGrid {
+    height: 600px;
+    grid-template-columns: repeat(4, 300px);
+  }
+}
+@media (max-width: 1420px) {
+  .marketingTermsContent .marketingTermsGrid {
+    height: 400px;
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+@media (max-width: 1024px) {
+  .marketingTermsContent .marketingTermsGrid {
+    grid-template-columns: repeat(2, 200px);
+    height: 800px;
+  }
+}
+.marketingTermsContent .marketingTermsGrid .mTermCell {
+  position: relative;
+}
+.marketingTermsContent .marketingTermsGrid .mTermCell .mTermBox {
+  border-radius: 15px;
+  background-color: #22644E;
+  width: 250px;
+  height: 250px;
+  transition: width 0.3s ease, height 0.3s ease, top 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  color: #FFF;
+  position: absolute;
+  left: -125px;
+  top: 0;
+}
+@media (max-width: 1820px) {
+  .marketingTermsContent .marketingTermsGrid .mTermCell .mTermBox {
+    width: 200px;
+    height: 200px;
+    gap: 30px;
+    left: -100px;
+  }
+}
+@media (max-width: 1420px) {
+  .marketingTermsContent .marketingTermsGrid .mTermCell .mTermBox {
+    width: 150px;
+    height: 150px;
+    gap: 20px;
+    left: -75px;
+  }
+}
+.marketingTermsContent .marketingTermsGrid .mTermCell .mTermBox > div img {
+  width: 170px;
+  margin: 40px;
+}
+@media (max-width: 1820px) {
+  .marketingTermsContent .marketingTermsGrid .mTermCell .mTermBox > div img {
+    width: 140px;
+    margin: 30px;
+  }
+}
+@media (max-width: 1420px) {
+  .marketingTermsContent .marketingTermsGrid .mTermCell .mTermBox > div img {
+    width: 100px;
+    margin: 20px;
+  }
+}
+.marketingTermsContent .marketingTermsGrid .mTermCell .mTermBox:hover {
+  width: 650px;
+  left: -125px;
+  position: absolute;
+  z-index: 1;
+}
+@media (max-width: 1820px) {
+  .marketingTermsContent .marketingTermsGrid .mTermCell .mTermBox:hover {
+    width: 500px;
+    left: -100px;
+  }
+}
+@media (max-width: 1420px) {
+  .marketingTermsContent .marketingTermsGrid .mTermCell .mTermBox:hover {
+    width: 350px;
+    left: -75px;
+  }
+}
+@media (max-width: 1024px) {
+  .marketingTermsContent .marketingTermsGrid .mTermCell:nth-child(2) .mTermBox {
+    flex-direction: column;
+    padding-top: 30px;
+    padding-top: 25px;
+  }
+}
+@media (max-width: 1024px) {
+  .marketingTermsContent .marketingTermsGrid .mTermCell:nth-child(2) .mTermBox:hover {
+    width: 150px;
+    height: 350px;
+  }
+}
+.marketingTermsContent .marketingTermsGrid .mTermCell:nth-child(4) .mTermBox {
+  flex-direction: column;
+  padding-top: 30px;
+}
+@media (max-width: 1820px) {
+  .marketingTermsContent .marketingTermsGrid .mTermCell:nth-child(4) .mTermBox {
+    padding-top: 27px;
+  }
+}
+@media (max-width: 1420px) {
+  .marketingTermsContent .marketingTermsGrid .mTermCell:nth-child(4) .mTermBox {
+    padding-top: 25px;
+  }
+}
+.marketingTermsContent .marketingTermsGrid .mTermCell:nth-child(4) .mTermBox:hover {
+  width: 250px;
+  height: 650px;
+}
+@media (max-width: 1820px) {
+  .marketingTermsContent .marketingTermsGrid .mTermCell:nth-child(4) .mTermBox:hover {
+    width: 200px;
+    height: 500px;
+  }
+}
+@media (max-width: 1420px) {
+  .marketingTermsContent .marketingTermsGrid .mTermCell:nth-child(4) .mTermBox:hover {
+    width: 150px;
+    height: 350px;
+  }
+}
+@media (max-width: 1024px) {
+  .marketingTermsContent .marketingTermsGrid .mTermCell:nth-child(6) .mTermBox {
+    flex-direction: column;
+    padding-top: 30px;
+  }
+}
+@media (max-width: 1024px) {
+  .marketingTermsContent .marketingTermsGrid .mTermCell:nth-child(6) .mTermBox:hover {
+    width: 150px;
+    height: 350px;
+    top: -200px;
+  }
+}
+.marketingTermsContent .marketingTermsGrid .mTermCell:nth-child(8) .mTermBox {
+  flex-direction: column;
+  padding-top: 30px;
+}
+.marketingTermsContent .marketingTermsGrid .mTermCell:nth-child(8) .mTermBox:hover {
+  width: 250px;
+  height: 650px;
+  top: -400px;
+}
+@media (max-width: 1820px) {
+  .marketingTermsContent .marketingTermsGrid .mTermCell:nth-child(8) .mTermBox:hover {
+    width: 200px;
+    height: 500px;
+    top: -300px;
+  }
+}
+@media (max-width: 1420px) {
+  .marketingTermsContent .marketingTermsGrid .mTermCell:nth-child(8) .mTermBox:hover {
+    width: 150px;
+    height: 350px;
+    top: -200px;
+  }
 }/*# sourceMappingURL=styles.css.map */

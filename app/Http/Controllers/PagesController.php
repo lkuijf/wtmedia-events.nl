@@ -778,6 +778,16 @@ class PagesController extends Controller
                     }
                 }
             }
+            if($sec->_type == 'marketing_terms') {
+                $sec->image1 = $this->getMediaGallery($sec->image1);
+                $sec->image2 = $this->getMediaGallery($sec->image2);
+                $sec->image3 = $this->getMediaGallery($sec->image3);
+                $sec->image4 = $this->getMediaGallery($sec->image4);
+                $sec->image5 = $this->getMediaGallery($sec->image5);
+                $sec->image6 = $this->getMediaGallery($sec->image6);
+                $sec->image7 = $this->getMediaGallery($sec->image7);
+                $sec->image8 = $this->getMediaGallery($sec->image8);
+            }
             $secs[] = $sec;
         }
 // dd($secs);

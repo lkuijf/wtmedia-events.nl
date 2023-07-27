@@ -2,6 +2,8 @@ $sbp1_desktop: 1200px; // ScreenBreakpoint for Desktops
 $sbp2_laptop: 1024px; // ScreenBreakpoint for Laptops
 $sbp3_tablet: 768px; // // ScreenBreakpoint for iPads/Tablets
 $sbp4_mobile: 480px; // ScreenBreakpoint for Mobile devices
+$sbp_marketingTerms1: 1820px; // ScreenBreakpoint for Marketing Terms
+$sbp_marketingTerms2: 1420px; // ScreenBreakpoint for Marketing Terms
 
 $contentWidth: 100%; // max contentwidht .inner
 // $contentWidthFooter: 1600px;
@@ -994,4 +996,160 @@ footer {
 }
 .servicePageHeaderWrap {
     @include textPaddingOnMobile;
+}
+.marketingTermsContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .marketingTermsGrid {
+        height: 800px;
+        @include textPaddingOnMobile;
+        margin-left: auto;
+        margin-right: auto;
+        display: grid;
+        justify-items: center;
+        grid-template-columns: repeat(4, 400px);
+        @media (max-width: $sbp_marketingTerms1) {
+            height: 600px;
+            grid-template-columns: repeat(4, 300px);
+        }
+        @media (max-width: $sbp_marketingTerms2) {
+            height: 400px;
+            grid-template-columns: repeat(4, 200px);
+        }
+        @media (max-width: $sbp2_laptop) {
+            grid-template-columns: repeat(2, 200px);
+            height: 800px;
+        }
+        .mTermCell {
+            position: relative;
+            .mTermBox {
+                @include borderRadius;
+                background-color: #22644E;
+                width: 250px;
+                height: 250px;
+                transition: width 0.3s ease, height 0.3s ease, top 0.3s ease;
+                overflow: hidden;
+                display: flex;
+                gap: 40px;
+                align-items: center;
+                color: #FFF;
+                position: absolute;
+                left: -125px;
+                @media (max-width: $sbp_marketingTerms1) {
+                    width: 200px;
+                    height: 200px;
+                    gap: 30px;
+                    left: -100px;
+                }
+                @media (max-width: $sbp_marketingTerms2) {
+                    width: 150px;
+                    height: 150px;
+                    gap: 20px;
+                    left: -75px;
+                }
+                top: 0;
+                > div {
+                    img {
+                        width: 170px;
+                        margin: 40px;
+                        @media (max-width: $sbp_marketingTerms1) {
+                            width: 140px;
+                            margin: 30px;
+                        }
+                        @media (max-width: $sbp_marketingTerms2) {
+                            width: 100px;
+                            margin: 20px;
+                        }
+                    }
+                }
+                &:hover {
+                    width: 650px;
+                    left: -125px;
+                    @media (max-width: $sbp_marketingTerms1) {
+                        width: 500px;
+                        left: -100px;
+                    }
+                    @media (max-width: $sbp_marketingTerms2) {
+                        width: 350px;
+                        left: -75px;
+                    }
+                    position: absolute;
+                    z-index: 1;
+                    // outline: 1px solid red;
+                }
+            }
+            &:nth-child(2) {
+                .mTermBox {
+                    @media (max-width: $sbp2_laptop) {
+                        flex-direction: column;
+                        padding-top: 30px;
+                        padding-top: 25px;
+                    }
+                    &:hover {
+                        @media (max-width: $sbp2_laptop) {
+                            width: 150px;
+                            height: 350px;
+                        }
+                    }
+                }
+            }
+            &:nth-child(4) {
+                .mTermBox {
+                    flex-direction: column;
+                    padding-top: 30px;
+                    @media (max-width: $sbp_marketingTerms1) {padding-top: 27px;}
+                    @media (max-width: $sbp_marketingTerms2) {padding-top: 25px;}
+                    &:hover {
+                        width: 250px;
+                        height: 650px;
+                        @media (max-width: $sbp_marketingTerms1) {
+                            width: 200px;
+                            height: 500px;
+                        }
+                        @media (max-width: $sbp_marketingTerms2) {
+                            width: 150px;
+                            height: 350px;
+                        }
+                    }
+                }
+            }
+            &:nth-child(6) {
+                .mTermBox {
+                    @media (max-width: $sbp2_laptop) {
+                        flex-direction: column;
+                        padding-top: 30px;
+                    }
+                    &:hover {
+                        @media (max-width: $sbp2_laptop) {
+                            width: 150px;
+                            height: 350px;
+                            top: -200px;
+                        }
+                    }
+                }
+            }
+            &:nth-child(8) {
+                .mTermBox {
+                    flex-direction: column;
+                    padding-top: 30px;
+                    &:hover {
+                        width: 250px;
+                        height: 650px;
+                        top: -400px;
+                        @media (max-width: $sbp_marketingTerms1) {
+                            width: 200px;
+                            height: 500px;
+                            top: -300px;
+                        }
+                        @media (max-width: $sbp_marketingTerms2) {
+                            width: 150px;
+                            height: 350px;
+                            top: -200px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
