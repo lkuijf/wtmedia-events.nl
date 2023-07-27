@@ -91,20 +91,28 @@
             @include('sections.marketing_terms', [
                 'image1' => $section->image1,
                 'term1' => $section->term1,
+                'term1_text' => $section->term1_text,
                 'image2' => $section->image2,
                 'term2' => $section->term2,
+                'term2_text' => $section->term2_text,
                 'image3' => $section->image3,
                 'term3' => $section->term3,
+                'term3_text' => $section->term3_text,
                 'image4' => $section->image4,
                 'term4' => $section->term4,
+                'term4_text' => $section->term4_text,
                 'image5' => $section->image5,
                 'term5' => $section->term5,
+                'term5_text' => $section->term5_text,
                 'image6' => $section->image6,
                 'term6' => $section->term6,
+                'term6_text' => $section->term6_text,
                 'image7' => $section->image7,
                 'term7' => $section->term7,
+                'term7_text' => $section->term7_text,
                 'image8' => $section->image8,
                 'term8' => $section->term8,
+                'term8_text' => $section->term8_text,
                 ])
         @endif
         @if($section->_type == 'schedule_call')

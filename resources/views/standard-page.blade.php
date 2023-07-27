@@ -9,7 +9,13 @@
 @section('before_closing_body_tag')
     <script>
         const events = document.querySelectorAll('.eventCases a');
+        const marketingTermBoxes = document.querySelectorAll('.mTermBox');
         const toggleEventsBtn = document.querySelector('.toggleEvents a');
+        if(marketingTermBoxes.length) {
+            marketingTermBoxes.forEach(mtb => {
+                mtb.style.backgroundColor = mtb.dataset.color;
+            });
+        }
         if(events.length) {
             hideEvents(events);
         }

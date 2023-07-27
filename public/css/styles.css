@@ -414,6 +414,7 @@ nav ul {
   border-bottom: 3px solid #000;
   position: relative;
   margin-top: 80px;
+  margin-bottom: 80px;
 }
 .contentWrapper h1.servicePageHeader span {
   background-color: #CCC;
@@ -1602,20 +1603,64 @@ footer .btm .socials a img {
     left: -75px;
   }
 }
+.marketingTermsContent .marketingTermsGrid .mTermCell .mTermBox h3 {
+  font-size: 1.5em;
+}
+@media (max-width: 1820px) {
+  .marketingTermsContent .marketingTermsGrid .mTermCell .mTermBox h3 {
+    font-size: 1.2em;
+  }
+}
+@media (max-width: 1420px) {
+  .marketingTermsContent .marketingTermsGrid .mTermCell .mTermBox h3 {
+    font-size: 1em;
+  }
+}
+.marketingTermsContent .marketingTermsGrid .mTermCell .mTermBox p {
+  font-size: 0.8em;
+}
+@media (max-width: 1820px) {
+  .marketingTermsContent .marketingTermsGrid .mTermCell .mTermBox p {
+    font-size: 0.7em;
+  }
+}
+@media (max-width: 1420px) {
+  .marketingTermsContent .marketingTermsGrid .mTermCell .mTermBox p {
+    font-size: 0.6em;
+  }
+}
 .marketingTermsContent .marketingTermsGrid .mTermCell .mTermBox > div img {
-  width: 170px;
-  margin: 40px;
+  width: 120px;
+  height: 120px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin: 70px;
 }
 @media (max-width: 1820px) {
   .marketingTermsContent .marketingTermsGrid .mTermCell .mTermBox > div img {
-    width: 140px;
-    margin: 30px;
+    width: 100px;
+    height: 100px;
+    margin: 50px;
   }
 }
 @media (max-width: 1420px) {
   .marketingTermsContent .marketingTermsGrid .mTermCell .mTermBox > div img {
-    width: 100px;
-    margin: 20px;
+    width: 80px;
+    height: 80px;
+    margin: 35px;
+  }
+}
+.marketingTermsContent .marketingTermsGrid .mTermCell .mTermBox > div:last-child div {
+  width: 330px;
+}
+@media (max-width: 1820px) {
+  .marketingTermsContent .marketingTermsGrid .mTermCell .mTermBox > div:last-child div {
+    width: 250px;
+  }
+}
+@media (max-width: 1420px) {
+  .marketingTermsContent .marketingTermsGrid .mTermCell .mTermBox > div:last-child div {
+    width: 160px;
   }
 }
 .marketingTermsContent .marketingTermsGrid .mTermCell .mTermBox:hover {
@@ -1644,8 +1689,6 @@ footer .btm .socials a img {
 @media (max-width: 1024px) {
   .marketingTermsContent .marketingTermsGrid .mTermCell:nth-child(2) .mTermBox {
     flex-direction: column;
-    padding-top: 30px;
-    padding-top: 25px;
   }
 }
 @media (max-width: 1024px) {
@@ -1659,19 +1702,14 @@ footer .btm .socials a img {
     height: 325px;
   }
 }
+@media (max-width: 1024px) {
+  .marketingTermsContent .marketingTermsGrid .mTermCell:nth-child(2) .mTermBox > div:last-child div {
+    width: 130px;
+    padding-top: 20px;
+  }
+}
 .marketingTermsContent .marketingTermsGrid .mTermCell:nth-child(4) .mTermBox {
   flex-direction: column;
-  padding-top: 30px;
-}
-@media (max-width: 1820px) {
-  .marketingTermsContent .marketingTermsGrid .mTermCell:nth-child(4) .mTermBox {
-    padding-top: 27px;
-  }
-}
-@media (max-width: 1420px) {
-  .marketingTermsContent .marketingTermsGrid .mTermCell:nth-child(4) .mTermBox {
-    padding-top: 25px;
-  }
 }
 .marketingTermsContent .marketingTermsGrid .mTermCell:nth-child(4) .mTermBox:hover {
   width: 250px;
@@ -1694,10 +1732,22 @@ footer .btm .socials a img {
     height: 325px;
   }
 }
+.marketingTermsContent .marketingTermsGrid .mTermCell:nth-child(4) .mTermBox > div:last-child div {
+  width: 210px;
+}
+@media (max-width: 1820px) {
+  .marketingTermsContent .marketingTermsGrid .mTermCell:nth-child(4) .mTermBox > div:last-child div {
+    width: 170px;
+  }
+}
+@media (max-width: 1420px) {
+  .marketingTermsContent .marketingTermsGrid .mTermCell:nth-child(4) .mTermBox > div:last-child div {
+    width: 130px;
+  }
+}
 @media (max-width: 1024px) {
   .marketingTermsContent .marketingTermsGrid .mTermCell:nth-child(6) .mTermBox {
     flex-direction: column;
-    padding-top: 30px;
   }
 }
 @media (max-width: 1024px) {
@@ -1713,9 +1763,14 @@ footer .btm .socials a img {
     top: -175px;
   }
 }
+@media (max-width: 1024px) {
+  .marketingTermsContent .marketingTermsGrid .mTermCell:nth-child(6) .mTermBox > div:last-child div {
+    width: 130px;
+    padding-top: 20px;
+  }
+}
 .marketingTermsContent .marketingTermsGrid .mTermCell:nth-child(8) .mTermBox {
   flex-direction: column;
-  padding-top: 30px;
 }
 .marketingTermsContent .marketingTermsGrid .mTermCell:nth-child(8) .mTermBox:hover {
   width: 250px;
@@ -1740,5 +1795,18 @@ footer .btm .socials a img {
   .marketingTermsContent .marketingTermsGrid .mTermCell:nth-child(8) .mTermBox:hover {
     height: 325px;
     top: -175px;
+  }
+}
+.marketingTermsContent .marketingTermsGrid .mTermCell:nth-child(8) .mTermBox > div:last-child div {
+  width: 210px;
+}
+@media (max-width: 1820px) {
+  .marketingTermsContent .marketingTermsGrid .mTermCell:nth-child(8) .mTermBox > div:last-child div {
+    width: 170px;
+  }
+}
+@media (max-width: 1420px) {
+  .marketingTermsContent .marketingTermsGrid .mTermCell:nth-child(8) .mTermBox > div:last-child div {
+    width: 130px;
   }
 }/*# sourceMappingURL=styles.css.map */
