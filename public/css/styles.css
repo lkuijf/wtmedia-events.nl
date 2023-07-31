@@ -954,13 +954,13 @@ nav ul {
   bottom: 20px;
   width: 100%;
   text-align: center;
-  background: rgba(255, 255, 255, 0.5);
+  background-color: #0c5a5b;
   padding: 15px 0;
 }
 .casesContent > div a div p {
   font-size: 1.4em;
   margin: 0;
-  color: #0c5a5b;
+  color: #FFF;
 }
 @media (max-width: 768px) {
   .casesContent > div a div p {
@@ -971,6 +971,10 @@ nav ul {
   .casesContent > div a div p {
     font-size: 1em;
   }
+}
+.casesContent > div a div p:last-child {
+  font-style: italic;
+  font-size: 1em;
 }
 .casesContent > div a img {
   border-radius: 15px;
@@ -1006,7 +1010,7 @@ nav ul {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-.casesContentDiensten a div {
+.casesContentDiensten div {
   position: absolute;
   color: #FFF;
   font-size: 2em;
@@ -1015,16 +1019,16 @@ nav ul {
   display: none;
 }
 @media (max-width: 1200px) {
-  .casesContentDiensten a div {
+  .casesContentDiensten div {
     font-size: 1.5em;
   }
 }
 @media (max-width: 768px) {
-  .casesContentDiensten a div {
+  .casesContentDiensten div {
     font-size: 1em;
   }
 }
-.casesContentDiensten a img {
+.casesContentDiensten img {
   cursor: pointer;
   width: 100%;
   aspect-ratio: 1/1;
@@ -1032,18 +1036,18 @@ nav ul {
      object-fit: cover;
   transition: transform 0.2s ease;
 }
-.casesContentDiensten a img:hover {
+.casesContentDiensten img:hover {
   border-radius: 15px;
   transform: scale(1.2);
   box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.3);
 }
-.casesContentDiensten a.hoverEffectFullList {
+.casesContentDiensten.hoverEffectFullList {
   background-color: #000;
 }
-.casesContentDiensten a.hoverEffectFullList:hover div {
+.casesContentDiensten.hoverEffectFullList:hover div {
   display: block;
 }
-.casesContentDiensten a.hoverEffectFullList img:hover {
+.casesContentDiensten.hoverEffectFullList img:hover {
   transform: none;
   border-radius: 0;
   opacity: 0.3;
