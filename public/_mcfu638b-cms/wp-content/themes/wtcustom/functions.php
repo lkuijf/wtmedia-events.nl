@@ -56,6 +56,9 @@ $websiteOptions[] = array('text', 'form_error', 'Formulier error melding');
 // $websiteOptions[] = array('image', 'header_image', 'Header afbeelding');
 $websiteOptions[] = array('separator', 'separator5', 'Logo\'s en afbeeldingen');
 $websiteOptions[] = array('media_gallery', 'working_with', 'Partner logo\'s');
+$websiteOptions[] = array('separator', 'separator6', 'Statistieken');
+$websiteOptions[] = array('text', 'happy_clients', 'Tevreden klanten (web development dienstenpagina)');
+$websiteOptions[] = array('text', 'total_projects', 'Aantal projecten (web development dienstenpagina)');
 // $websiteOptions[] = array('media_gallery', 'events', 'Events');
 $carbonFieldsArgs['websiteOptions'] = $websiteOptions;
 
