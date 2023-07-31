@@ -9,7 +9,7 @@
                             <p>- {{ $case->categories[0]->name }} -</p>
                         </div>
                         @if (isset($case->gallery[0]) && isset($case->gallery[0]['sizes']))
-                            <img src="{{ $case->gallery[0]['sizes']['medium'] }}" alt="{{ $case->gallery[0]['alt'] }}">
+                            <img src="{{ $case->gallery[0]['sizes']['medium_large'] }}" alt="{{ $case->gallery[0]['alt'] }}">
                         @else
                             <img src="{{ $case->gallery[0]['url'] }}" alt="{{ $case->gallery[0]['alt'] }}">
                         @endif
