@@ -676,6 +676,7 @@ class PagesController extends Controller
         $allCrbSections = array();
         foreach($spages[0] as $sPage) {
             if($sPage->title == 'Blog') continue;
+            if($sPage->title == 'Privacy policy') continue;
             $pageA = new \stdClass;
             $pageA->_type = '_anchor';
             $pageA->value = $sPage->slug;
