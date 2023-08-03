@@ -85,7 +85,7 @@ l[i].q=l[i].q||[];o=e.createElement(a);f=e.getElementsByTagName(a)[0];o.async=1;
                 </nav>
             </div>
             <div class="btm">
-                <p>&copy; W.T. Media &amp; Events | <a href="javascript:void(0);">Privacy Policy</a> | {{ date('Y') }} All Rights Reserved</p>
+                <p>&copy; W.T. Media &amp; Events | <a href="{{ url('privacy-policy') }}">Privacy Policy</a> | {{ date('Y') }} All Rights Reserved</p>
                 <p class="socials">
                     <a href="https://www.instagram.com/wtmedia_events/" target="_blank" class="ig"><img src="{{ asset('statics/instagram.png') }}" alt="Instagram"></a>
                     <a href="https://www.facebook.com/profile.php?id=100083027634220" target="_blank" class="fb"><img src="{{ asset('statics/facebook.png') }}" alt="Facebook"></a>

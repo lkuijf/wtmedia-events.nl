@@ -31,11 +31,6 @@ Route::get('/', function () {
 Route::post('/submit-subscription-form', [SubmitController::class, 'submitSubscriptionForm']);
 Route::post('/submit-schedule-call-form', [SubmitController::class, 'submitScheduleCallForm'])->name('submitScheduleCall');
 
-
-/* Check for a page request */
-// Route::get('/{section}', [PagesController::class, 'showOnePager'])->where([
-//     'section' => '[a-z0-9_-]+',
-// ]);
 Route::get('/homepage', [PagesController::class, 'showOnePager'])->name('home');
 
 Route::get('/blog', [PagesController::class, 'showBlog']);
@@ -53,10 +48,11 @@ Route::get('/diensten/events/{slug}', [PagesController::class, 'showCase'])->whe
 ]);
 
 
-
-// Route::get('/{section}', [PagesController::class, 'showPage'])->defaults('page', false)->defaults('subpage', false)->where([
-//     'section' => '[a-z0-9_-]+',
-// ]);
+// When no matches, check for regular (nested) pages
+/* Check for a page request */
+Route::get('/{section}', [PagesController::class, 'showPage'])->defaults('page', false)->defaults('subpage', false)->where([
+    'section' => '[a-z0-9_-]+',
+]);
 Route::get('/{section}/{page}', [PagesController::class, 'showPage'])->defaults('subpage', false)->where([
     'section' => '[a-z0-9_-]+',
     'page' => '[a-z0-9_-]+',
