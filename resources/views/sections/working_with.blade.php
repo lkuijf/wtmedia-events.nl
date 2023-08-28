@@ -6,7 +6,7 @@
                 <div class="swiper-wrapper">
                     @if($data['website_options']->working_with)
                     @foreach ($data['website_options']->working_with as $image)
-                    <div class="swiper-slide"><img src="{!! $image['sizes']['medium'] !!}" alt="{{ $image['alt'] }}"></div>
+                    <div class="swiper-slide"><img src="{!! $image['sizes']['medium'] !!}" alt="{{ $image['alt'] }}" loading="lazy"></div>
                     @endforeach
                     @endif
                 </div>
