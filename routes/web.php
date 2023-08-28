@@ -31,7 +31,7 @@ Route::get('/', function () {
 Route::get('/clear-response-cache-wt', function () {
     ResponseCache::clear();
     echo 'Response Cache Cleared!';
-})->name('home');
+})->middleware('doNotCacheResponse');
 
 
 Route::post('/submit-subscription-form', [SubmitController::class, 'submitSubscriptionForm']);
