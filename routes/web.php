@@ -39,7 +39,7 @@ Route::post('/submit-schedule-call-form', [SubmitController::class, 'submitSched
 
 Route::get('/homepage', [PagesController::class, 'showOnePager'])->name('home');
 
-Route::get('/blog', [PagesController::class, 'showBlog'])->middleware('doNotCacheResponse');
+Route::get('/blog', [PagesController::class, 'showBlog']);
 Route::get('/blog/{slug}', [PagesController::class, 'showPost'])->where([
     'slug' => '[a-z0-9_-]+',
 ]);
