@@ -361,6 +361,8 @@ if (!current_user_can('administrator')) {
     add_filter('screen_options_show_screen', 'remove_screen_options');
 }
 
+add_action('wp_before_admin_bar_render', 'add_admin_bar_menus' );
+
 add_action('admin_enqueue_scripts', 'wt_admin_style');
 function wt_admin_style() {
     wp_enqueue_style( 'admin-style', get_stylesheet_directory_uri() . '/css/wt.css' );

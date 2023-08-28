@@ -240,12 +240,15 @@ function remove_admin_bar_menus() {
     $wp_admin_bar->remove_menu('wp-logo');
     $wp_admin_bar->remove_menu('site-name');
     $wp_admin_bar->remove_menu('view');
+}
+function add_admin_bar_menus() {
+    global $wp_admin_bar;
     $wp_admin_bar->add_menu(
 		array(
 			'id'     => 'clear-response-cache',
 			'parent' => null , // use 'top-secondary' for toggle menu position.
 			'href'   => '/clear-response-cache-wt',
-			'title'  => __( 'Clear Response Cache', 'text-domain' ),
+			'title'  => __( 'Clear Cache', 'text-domain' ),
             'meta' => ['target' => '_blank'],
 		)
 	);
