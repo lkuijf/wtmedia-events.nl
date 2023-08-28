@@ -21,7 +21,6 @@ use App\Http\Helpers\WooCategoriesApi;
 use App\Http\Helpers\WooFilterProductsApi;
 use App\Http\Helpers\FilterJobOffersApi;
 use Illuminate\Support\Facades\Crypt;
-use Spatie\ResponseCache\Facades\ResponseCache;
 
 class PagesController extends Controller
 {
@@ -153,7 +152,6 @@ class PagesController extends Controller
         // return view('onepager')->with('data', $data);
     }
     public function showBlog() {
-        ResponseCache::clear();
         $simplePages = new SimplePagesApi();
         $htmlMenu = new Menu($simplePages->get());
         $htmlMenu->generateUlMenu();

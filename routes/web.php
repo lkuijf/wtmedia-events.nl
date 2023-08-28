@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\SubmitController;
 use App\Http\Controllers\ImageController;
+use Spatie\ResponseCache\Facades\ResponseCache;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,11 @@ Route::get('/', function () {
     // return view('welcome');
     return redirect('https://www.wtgroup.nl/wtmediaevents/');
 });
+Route::get('/clear-response-cache-wt', function () {
+    ResponseCache::clear();
+    echo 'Response Cache Cleared!';
+})->name('home');
+
 
 Route::post('/submit-subscription-form', [SubmitController::class, 'submitSubscriptionForm']);
 Route::post('/submit-schedule-call-form', [SubmitController::class, 'submitScheduleCallForm'])->name('submitScheduleCall');
