@@ -12,6 +12,8 @@ function set_default_page_template() {
         $post->page_template = "template-section-based.php";
     }
 }
+// 28-8-2023. Leon Kuijf. Removed api-endpoint caching. Using Laravel Response Cache instead.
+/*
 function deleteWebsiteOptionsRestCache() {
     \WP_Rest_Cache_Plugin\Includes\Caching\Caching::get_instance()->delete_cache_by_endpoint( '/_mcfu638b-cms/index.php/wp-json/wtcustom/website-options' );
 }
@@ -24,9 +26,6 @@ function deleteSimpleTaxonomiesRestCache() {
 function deleteSimplePagesRestCache() {
     \WP_Rest_Cache_Plugin\Includes\Caching\Caching::get_instance()->delete_cache_by_endpoint( '/_mcfu638b-cms/index.php/wp-json/wtcustom/simple-pages' );
 }
-// function deleteSimplePostsRestCache() {
-//     \WP_Rest_Cache_Plugin\Includes\Caching\Caching::get_instance()->delete_cache_by_endpoint( '/_mcfu638b-cms/index.php/wp-json/wtcustom/simple-posts' );
-// }
 function deleteSimpleCustomPostsRestCacheBlog() {
     \WP_Rest_Cache_Plugin\Includes\Caching\Caching::get_instance()->delete_cache_by_endpoint( '/_mcfu638b-cms/index.php/wp-json/wtcustom/simple-custom-posts?post_type=blog' );
 }
@@ -47,6 +46,14 @@ function deleteSimpleCustomPostsRestCacheReview() {
 function deleteSimpleCustomPostsRestCacheTeammember() {
     \WP_Rest_Cache_Plugin\Includes\Caching\Caching::get_instance()->delete_cache_by_endpoint( '/_mcfu638b-cms/index.php/wp-json/wtcustom/simple-custom-posts?post_type=teammember' );
 }
+*/
+
+// function deleteSimplePostsRestCache() {
+//     \WP_Rest_Cache_Plugin\Includes\Caching\Caching::get_instance()->delete_cache_by_endpoint( '/_mcfu638b-cms/index.php/wp-json/wtcustom/simple-posts' );
+// }
+
+
+
 /* Remove bulk actions for type: page */
 function remove_from_bulk_actions($actions) {
     return array();
