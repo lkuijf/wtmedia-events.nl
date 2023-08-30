@@ -955,7 +955,8 @@ nav ul {
   width: 100%;
   text-align: center;
   background-color: #0c5a5b;
-  padding: 15px 0;
+  padding: 15px;
+  min-height: 100px;
 }
 .casesContent > div a div p {
   font-size: 1.4em;

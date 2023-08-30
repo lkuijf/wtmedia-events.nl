@@ -589,7 +589,6 @@ nav ul {
         a {
             position: relative;
             display: block;
-            
             div {
                 display: flex;
                 flex-direction: column;
@@ -600,7 +599,8 @@ nav ul {
                 text-align: center;
                 // background: rgba(255, 255, 255, 0.5); 
                 background-color: $colorWTMdark;
-                padding: 15px 0;
+                padding: 15px;
+                min-height: 100px;
                 p {
                     font-size: 1.4em;
                     @media (max-width: $sbp3_tablet) {font-size: 1.2em;}
