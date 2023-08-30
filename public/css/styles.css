@@ -958,24 +958,46 @@ nav ul {
   padding: 15px;
   min-height: 105px;
 }
+@media (max-width: 1200px) {
+  .casesContent > div a div {
+    padding: 5px;
+    min-height: 80px;
+    bottom: 10px;
+  }
+}
+@media (max-width: 768px) {
+  .casesContent > div a div {
+    min-height: 60px;
+  }
+}
 .casesContent > div a div p {
   font-size: 1.4em;
   margin: 0;
   color: #FFF;
 }
-@media (max-width: 768px) {
-  .casesContent > div a div p {
-    font-size: 1.2em;
-  }
-}
-@media (max-width: 480px) {
+@media (max-width: 1200px) {
   .casesContent > div a div p {
     font-size: 1em;
+  }
+}
+@media (max-width: 1024px) {
+  .casesContent > div a div p {
+    font-size: 1em;
+  }
+}
+@media (max-width: 768px) {
+  .casesContent > div a div p {
+    font-size: 0.8em;
   }
 }
 .casesContent > div a div p:last-child {
   font-style: italic;
   font-size: 1em;
+}
+@media (max-width: 1200px) {
+  .casesContent > div a div p:last-child {
+    font-size: 0.8em;
+  }
 }
 .casesContent > div a img {
   border-radius: 15px;
