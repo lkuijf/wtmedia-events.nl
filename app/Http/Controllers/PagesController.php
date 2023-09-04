@@ -52,6 +52,10 @@ class PagesController extends Controller
             if(is_array($pageId)) $pageId = $pageId['id'];
         }
 
+        // if($section == 'diensten' && $page == 'online-marketing') {
+        //     $this->middleware('doNotCacheResponse');
+        // }
+
         $content = $this->getContent($pageId);
         $options = $this->getWebsiteOptions();
 
