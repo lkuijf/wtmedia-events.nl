@@ -1033,44 +1033,86 @@ nav ul {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-.casesContentDiensten div {
+.casesContentDiensten a {
+  position: relative;
+  transition: transform 0.2s ease;
+}
+.casesContentDiensten a div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   position: absolute;
-  color: #FFF;
-  font-size: 2em;
-  font-weight: normal;
-  padding: 20px;
-  display: none;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  background-color: #0c5a5b;
+  padding: 15px;
+  min-height: 105px;
 }
 @media (max-width: 1200px) {
-  .casesContentDiensten div {
-    font-size: 1.5em;
+  .casesContentDiensten a div {
+    padding: 5px;
+    min-height: 80px;
+    bottom: 10px;
   }
 }
 @media (max-width: 768px) {
-  .casesContentDiensten div {
+  .casesContentDiensten a div {
+    min-height: 60px;
+  }
+}
+.casesContentDiensten a div p {
+  font-size: 1.4em;
+  margin: 0;
+  color: #FFF;
+}
+@media (max-width: 1200px) {
+  .casesContentDiensten a div p {
     font-size: 1em;
   }
 }
-.casesContentDiensten img {
+@media (max-width: 1024px) {
+  .casesContentDiensten a div p {
+    font-size: 1em;
+  }
+}
+@media (max-width: 768px) {
+  .casesContentDiensten a div p {
+    font-size: 0.8em;
+  }
+}
+.casesContentDiensten a div p:last-child {
+  font-style: italic;
+  font-size: 1em;
+}
+@media (max-width: 1200px) {
+  .casesContentDiensten a div p:last-child {
+    font-size: 0.8em;
+  }
+}
+.casesContentDiensten a:hover {
+  border-radius: 15px;
+  z-index: 1;
+  transform: scale(1.2);
+  box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.3);
+}
+.casesContentDiensten a:hover img {
+  border-radius: 15px;
+}
+.casesContentDiensten a img {
   cursor: pointer;
   width: 100%;
   aspect-ratio: 1/1;
   -o-object-fit: cover;
      object-fit: cover;
-  transition: transform 0.2s ease;
 }
-.casesContentDiensten img:hover {
-  border-radius: 15px;
-  transform: scale(1.2);
-  box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.3);
-}
-.casesContentDiensten.hoverEffectFullList {
+.casesContentDiensten a.hoverEffectFullList {
   background-color: #000;
 }
-.casesContentDiensten.hoverEffectFullList:hover div {
+.casesContentDiensten a.hoverEffectFullList:hover div {
   display: block;
 }
-.casesContentDiensten.hoverEffectFullList img:hover {
+.casesContentDiensten a.hoverEffectFullList img:hover {
   transform: none;
   border-radius: 0;
   opacity: 0.3;
