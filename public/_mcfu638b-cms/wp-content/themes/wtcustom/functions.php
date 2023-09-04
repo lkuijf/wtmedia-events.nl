@@ -790,6 +790,7 @@ function crbRegisterFields($args) {
             // Field::make( 'textarea', 'hero_text', __( 'Hero text (can use html-tags)' ))->set_visible_in_rest_api($visible = true),
             // Field::make( 'separator', 'separator2', __( 'Review text' ) ),
             Field::make( 'text', 'function', __( 'Function' ))->set_visible_in_rest_api($visible = true),
+            Field::make( 'text', 'order', __( 'Order number (lower is sooner in carrousel)' ))->set_visible_in_rest_api($visible = true),
             Field::make( 'rich_text', 'text', __( 'Text' ))->set_visible_in_rest_api($visible = true),
             // Field::make( 'text', 'by', __( 'Review by' ))->set_visible_in_rest_api($visible = true),
             // Field::make( 'textarea', 'card_text', __( 'Card text (can use html-tags)' ))->set_visible_in_rest_api($visible = true),
