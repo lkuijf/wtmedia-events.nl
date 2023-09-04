@@ -123,6 +123,9 @@ l[i].q=l[i].q||[];o=e.createElement(a);f=e.getElementsByTagName(a)[0];o.async=1;
     /* ]]> */
     </script>
     <script type='text/javascript' src='https://wtmedia-events.nl/_mcfu638b-cms/wp-content/plugins/instagram-feed/js/sbi-scripts.min.js?ver=6.1.5' id='sbi_scripts-js'></script>
+    <script>
+        setReviewsShowMoreToggleButtons();
+    </script>
     @yield('before_closing_body_tag')
 </body>
 </html>

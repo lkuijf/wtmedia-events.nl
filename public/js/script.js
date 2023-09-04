@@ -1,5 +1,5 @@
 // const statNumbers = document.querySelectorAll('.statNumber');
-const articles = document.querySelectorAll('article');
+const articles = document.querySelectorAll('article:not(.notClickable)');
 const toTopBtn = document.querySelector('#toTop');
 const headerWrap = document.querySelector('.headerInnerWrap');
 const mainLogo = document.querySelector('.mainLogoWrap img');
@@ -269,4 +269,30 @@ function setArticlesClickable() {
 //         });
 //     }
 // }
+
+function setReviewsShowMoreToggleButtons() {
+    const reviewArts = document.querySelectorAll('.reviewsContent article');
+    if(reviewArts.length) {
+        reviewArts.forEach(revArt => {
+            let outerDiv = revArt.querySelector('div');
+            let innerDiv = revArt.querySelector('div > div');
+            let showMoreBtn = revArt.querySelector('.reviewShowMoreToggle');
+            if(innerDiv.offsetHeight > outerDiv.offsetHeight) {
+                showMoreBtn.style.display = 'block';
+
+                let p = document.createElement("p");
+                p.innerText = '(...)';
+                showMoreBtn.prepend(p);
+
+                showMoreBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    outerDiv.style.height = innerDiv.offsetHeight + 'px';
+                    showMoreBtn.style.display = 'none';
+                });
+            } else {
+                showMoreBtn.style.display = 'none';
+            }
+        });
+    }
+}
 

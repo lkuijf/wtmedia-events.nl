@@ -1125,6 +1125,14 @@ nav ul {
 .reviewsContent article h3 {
   font-size: 1.3em;
 }
+.reviewsContent article > div {
+  height: 200px;
+  overflow: hidden;
+}
+.reviewsContent article > div :first-child {
+  margin-top: 0;
+  margin-bottom: 0;
+}
 
 .subscribeContent {
   max-width: 800px;

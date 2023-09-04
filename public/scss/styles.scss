@@ -726,6 +726,17 @@ nav ul {
         h3 {
             font-size: 1.3em;
         }
+        > div {
+            height: 200px;
+            overflow: hidden;
+            // > div {
+                // outline: 1px solid blue;
+            // }
+            :first-child {
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+        }
     }
 }
 
