@@ -664,6 +664,9 @@ class PagesController extends Controller
             $member->image = $this->getMediaGallery($member->image);
         }
 // dd($homepageCases);
+        usort($teamMembers, function($a, $b) {
+            return $a->order - $b->order;
+        });
 // dd($teamMembers);
 
 
