@@ -665,7 +665,7 @@ class PagesController extends Controller
         }
 // dd($homepageCases);
         usort($teamMembers, function($a, $b) {
-            return $a->order - $b->order;
+            return (int)$a->order - (int)$b->order;
         });
 // dd($teamMembers);
 
