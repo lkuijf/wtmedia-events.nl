@@ -306,7 +306,8 @@ if(subsribeForm) {
         xhr.open('POST', '/submit-subscription-form');
 
         xhr.setRequestHeader('X-CSRF-TOKEN', csrfToken);
-        xhr.setRequestHeader('Content-Type', 'application/json');
+        // xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.setRequestHeader('Content-Type', 'multipart/form-data');
 
 console.log(csrfToken);
 
