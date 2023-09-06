@@ -304,7 +304,6 @@ function setReviewsShowMoreToggleButtons() {
 }
 
 if(subsribeForm) {
-    // console.log('form!');
     subsribeForm.addEventListener('submit', (e) => {
         e.preventDefault();
         xhrErrorAlert.classList.add('xhrError');
@@ -317,10 +316,7 @@ if(subsribeForm) {
         xhr.onload = function() {
             if (xhr.status === 200) {
                 const response = JSON.parse(xhr.responseText);
-// console.log(response);
-                if(response.errors.length) {
-// console.log(response.errors)
-                    // errors!
+                if(response.errors.length) { // errors!
                     let errList = xhrErrorAlert.querySelector('div');
                     errList.innerHTML = '';
                     response.errors.forEach(err => {
@@ -331,8 +327,7 @@ if(subsribeForm) {
                     });
                     xhrErrorAlert.classList.remove('xhrError');
                     setTimeout(function() {xhrErrorAlert.classList.add('xhrError')}, 6000);
-                } else {
-                    //no errors!
+                } else { //no errors!
                     sfInputEmail.value = '';
                     xhrSuccessAlert.classList.remove('xhrSuccess');
                     setTimeout(function() {xhrSuccessAlert.classList.add('xhrSuccess')}, 9000);
