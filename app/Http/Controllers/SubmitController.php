@@ -74,7 +74,7 @@ class SubmitController extends Controller
     public function submitSubscriptionForm(Request $request) {
 
         $res = new \stdClass();
-        $res->result = 'returned';
+        $res->result = 'returned * ' + $request->get('email');
         echo json_encode($res);
         die();
 

@@ -311,7 +311,7 @@ if(subsribeForm) {
         // xhr.setRequestHeader('Content-Type', 'multipart/form-data');
         // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
-console.log(csrfToken);
+// console.log(csrfToken);
 
         xhr.onload = function() {
             if (xhr.status === 200) {
@@ -324,7 +324,7 @@ console.log(csrfToken);
         xhr.onerror = function() {
             console.error('Error:', xhr.statusText);
         };
-        xhr.send(JSON.stringify({}));
+        xhr.send(JSON.stringify({email:'test@tttt.nl'}));
 
         // let data = {
         //     '_token': csrfToken,
