@@ -144,20 +144,22 @@ class SubmitController extends Controller
             }
         }
 
-        $to_email = 'leon@wtmedia-events.nl';
-        $subjectCompany = 'Ingevuld aanmeld-formulier vanaf wtmedia-events.nl';
-        $subjectVisitor = 'Kopie van uw bericht aan wtmedia-events.nl';
-        $messages = $this->getHtmlEmails($request->all(), url('statics/email/logo.png'), 'De volgende gegevens zijn achtergelaten door de bezoeker.', 'Bedankt voor uw bericht. De volgende informatie hebben we ontvangen:');
-        $headers = array(
-            "MIME-Version: 1.0",
-            "Content-Type: text/html; charset=ISO-8859-1",
-            "From: WT Media & Events <aanmeld-formulier@wtmedia-events.nl>",
-            "Reply-To: support@wtmedia-events.nl",
-            // "X-Priority: 1",
-        );
-        $headers = implode("\r\n", $headers);
-        mail($to_email, $subjectCompany, $messages[0], $headers);
-        mail($request->get('Email'), $subjectVisitor, $messages[1], $headers);
+        if(!count($res->errors)) {
+            $to_email = 'leon@wtmedia-events.nl';
+            $subjectCompany = 'Ingevuld aanmeld-formulier vanaf wtmedia-events.nl';
+            $subjectVisitor = 'Kopie van uw bericht aan wtmedia-events.nl';
+            $messages = $this->getHtmlEmails($request->all(), url('statics/email/logo.png'), 'De volgende gegevens zijn achtergelaten door de bezoeker.', 'Bedankt voor uw bericht. De volgende informatie hebben we ontvangen:');
+            $headers = array(
+                "MIME-Version: 1.0",
+                "Content-Type: text/html; charset=ISO-8859-1",
+                "From: WT Media & Events <aanmeld-formulier@wtmedia-events.nl>",
+                "Reply-To: support@wtmedia-events.nl",
+                // "X-Priority: 1",
+            );
+            $headers = implode("\r\n", $headers);
+            mail($to_email, $subjectCompany, $messages[0], $headers);
+            mail($request->get('Email'), $subjectVisitor, $messages[1], $headers);
+        }
 
         echo json_encode($res);
     }
