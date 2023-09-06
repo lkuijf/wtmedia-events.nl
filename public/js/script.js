@@ -304,12 +304,28 @@ if(subsribeForm) {
         e.preventDefault();
         let xhr = new XMLHttpRequest();
         xhr.open('POST', '/submit-subscription-form');
+
+        xhr.setRequestHeader('X-CSRF-TOKEN', csrfToken);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+
 console.log(csrfToken);
+
         let data = {
-            'X-CSRF-TOKEN': csrfToken,
-            // 'id': 78912,
-            // 'customer': 'Jason Sweet',
+            // 'X-CSRF-TOKEN': csrfToken,
+            'id': 78912,
+            'customer': 'Jason Sweet',
         };
+
+        // xhr.onload = function() {
+        //     if (xhr.status === 200) {
+        //         const response = JSON.parse(xhr.responseText);
+        //         console.log(response.message);
+        //     } else {
+        //         console.error('Error:', xhr.statusText);
+        //     }
+        // };
+
+
         xhr.onload = () => console.log(xhr.status);
         xhr.send(data);
     });
