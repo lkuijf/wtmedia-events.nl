@@ -7,6 +7,8 @@ const mainLogoInitialHeight = mainLogo.style.height;
 const anchors = document.querySelectorAll('.anchorPoint');
 const buttons = document.querySelectorAll('.mainNav ul li a');
 const burgerMenuLabel = document.querySelector('.burger-label');
+const subsribeForm = document.querySelector('.subscriptionForm');
+const csrfToken = document.querySelector('meta[name="_token"]').content;
 
 let anchorsInViewport = [];
 
@@ -296,3 +298,19 @@ function setReviewsShowMoreToggleButtons() {
     }
 }
 
+if(subsribeForm) {
+    // console.log('form!');
+    subsribeForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        let xhr = new XMLHttpRequest();
+        xhr.open('POST', '/submit-subscription-form');
+console.log(csrfToken);
+        let data = {
+            '_token': csrfToken,
+            // 'id': 78912,
+            // 'customer': 'Jason Sweet',
+        };
+        xhr.onload = () => console.log(xhr.status);
+        xhr.send(data);
+    });
+}

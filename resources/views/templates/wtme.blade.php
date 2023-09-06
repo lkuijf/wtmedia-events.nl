@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="{{ asset('css/swiper-bundle.min.css') }}">
     <link rel='stylesheet' href='{{ asset('_mcfu638b-cms/wp-content/plugins/instagram-feed/css/sbi-styles.min.css?ver=6.1.5') }}' type='text/css' media='all' />
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    <meta name="_token" content="{{ csrf_token() }}">
     @yield('extra_head')
     
 <!-- Leadinfo tracking code -->
