@@ -73,7 +73,9 @@ class SubmitController extends Controller
     }
     public function submitSubscriptionForm(Request $request) {
 
-        echo 'hoi';
+        $res = new \stdClass();
+        $res->result = 'returned';
+        echo json_encode($res);
         die();
 
         // 'prohibited' validation rule does not work!!!'
