@@ -316,7 +316,7 @@ console.log(csrfToken);
         xhr.onload = function() {
             if (xhr.status === 200) {
                 const response = JSON.parse(xhr.responseText);
-                console.log(response.message);
+                console.log(response.result);
             } else {
                 console.error('Error:', xhr.statusText);
             }
