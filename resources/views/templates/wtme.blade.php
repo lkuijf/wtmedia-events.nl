@@ -52,6 +52,12 @@ l[i].q=l[i].q||[];o=e.createElement(a);f=e.getElementsByTagName(a)[0];o.async=1;
         </div>
     @endif
 
+    <div class="alert alert-danger xhrError">
+        <div></div>
+    </div>
+    <div class="alert alert-success xhrSuccess">
+        <div><p>{{ $data['website_options']->form_subscription_success }}</p></div>
+    </div>
 
 
     <header class="headerOuter">

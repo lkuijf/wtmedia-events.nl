@@ -84,7 +84,7 @@ form {
 .alert {
     // top: $headerHeight - 40;
     bottom: 0;
-    min-height: 80px;
+    min-height: 120px;
     width: 100%;
     position: fixed;
     z-index: 101;
@@ -100,10 +100,17 @@ form {
     &.alert-danger {
         background-color: #ff2929
     }
+    &.xhrError, &.xhrSuccess {
+        display: none;
+    }
     > div {
         display: flex;
+        flex-direction: column;
         gap: 20px;
         align-items: center;
+        p {
+            margin: 0;
+        }
     }
     .thumbsUpIcon {
         // &:before {
@@ -120,3 +127,41 @@ form {
         // }
     }
 }
+// .alertXhr {
+//     display: none; //flex
+//     bottom: 0;
+//     min-height: 80px;
+//     width: 100%;
+//     position: fixed;
+//     z-index: 101;
+//     padding: 40px 20px 40px 20px;
+//     align-items: center;
+//     gap: 20px;
+//     justify-content: center;
+//     font-size: 1.2em;
+//     &.alert-success {
+//         background-color: rgb(111, 219, 111);
+//     }
+//     &.alert-danger {
+//         background-color: #ff2929
+//     }
+//     > div {
+//         display: flex;
+//         gap: 20px;
+//         align-items: center;
+//     }
+//     .thumbsUpIcon {
+//         // &:before {
+//         //     font-family: "glomaroffshore";
+//         //     font-size: 60px;
+//         //     content: '\e809';
+//         // }
+//     }
+//     .exclamationTriangleIcon {
+//         // &:before {
+//         //     font-family: "glomaroffshore";
+//         //     font-size: 60px;
+//         //     content: '\e80e';
+//         // }
+//     }
+// }

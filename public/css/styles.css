@@ -77,7 +77,7 @@ form .error span {
 
 .alert {
   bottom: 0;
-  min-height: 80px;
+  min-height: 120px;
   width: 100%;
   position: fixed;
   z-index: 101;
@@ -94,10 +94,17 @@ form .error span {
 .alert.alert-danger {
   background-color: #ff2929;
 }
+.alert.xhrError, .alert.xhrSuccess {
+  display: none;
+}
 .alert > div {
   display: flex;
+  flex-direction: column;
   gap: 20px;
   align-items: center;
+}
+.alert > div p {
+  margin: 0;
 }
 #toTop {
   display: flex;

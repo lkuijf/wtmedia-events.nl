@@ -34,7 +34,7 @@ Route::get('/clear-response-cache-wt', function () {
 })->middleware('doNotCacheResponse');
 
 
-Route::post('/submit-subscription-form', [SubmitController::class, 'submitSubscriptionForm']);
+Route::post('/submit-subscription-form', [SubmitController::class, 'submitSubscriptionFormXHR']);
 Route::post('/submit-schedule-call-form', [SubmitController::class, 'submitScheduleCallForm'])->name('submitScheduleCall');
 
 Route::get('/homepage', [PagesController::class, 'showOnePager'])->name('home');

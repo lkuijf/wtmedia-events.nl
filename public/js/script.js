@@ -8,7 +8,12 @@ const anchors = document.querySelectorAll('.anchorPoint');
 const buttons = document.querySelectorAll('.mainNav ul li a');
 const burgerMenuLabel = document.querySelector('.burger-label');
 const subsribeForm = document.querySelector('.subscriptionForm');
+const sfInputEmail = document.querySelector('input[name=Email]');
+const sfInputValkuil = document.querySelector('input[name=valkuil]');
+const sfInputValstrik = document.querySelector('input[name=valstrik]');
 const csrfToken = document.querySelector('meta[name="_token"]').content;
+const xhrErrorAlert = document.querySelector('.xhrError');
+const xhrSuccessAlert = document.querySelector('.xhrSuccess');
 
 let anchorsInViewport = [];
 
@@ -302,21 +307,35 @@ if(subsribeForm) {
     // console.log('form!');
     subsribeForm.addEventListener('submit', (e) => {
         e.preventDefault();
+        xhrErrorAlert.classList.add('xhrError');
+        xhrSuccessAlert.classList.add('xhrSuccess');
         let xhr = new XMLHttpRequest();
-        xhr.open('POST', 'https://wtmedia-events.nl/submit-subscription-form');
-
+        xhr.open('POST', '/submit-subscription-form');
         xhr.setRequestHeader('X-CSRF-TOKEN', csrfToken);
         xhr.setRequestHeader('Content-Type', 'application/json');
-        // xhr.setRequestHeader('Content-Type', 'application/json');
-        // xhr.setRequestHeader('Content-Type', 'multipart/form-data');
-        // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-// console.log(csrfToken);
 
         xhr.onload = function() {
             if (xhr.status === 200) {
                 const response = JSON.parse(xhr.responseText);
-                console.log(response.result);
+// console.log(response);
+                if(response.errors.length) {
+// console.log(response.errors)
+                    // errors!
+                    let errList = xhrErrorAlert.querySelector('div');
+                    errList.innerHTML = '';
+                    response.errors.forEach(err => {
+                        let para = document.createElement('p');
+                        let textN = document.createTextNode(err);
+                        para.appendChild(textN);
+                        errList.appendChild(para);
+                    });
+                    xhrErrorAlert.classList.remove('xhrError');
+                    setTimeout(function() {xhrErrorAlert.classList.add('xhrError')}, 6000);
+                } else {
+                    //no errors!
+                    xhrSuccessAlert.classList.remove('xhrSuccess');
+                    setTimeout(function() {xhrSuccessAlert.classList.add('xhrSuccess')}, 9000);
+                }
             } else {
                 console.error('Error:', xhr.statusText);
             }
@@ -324,25 +343,12 @@ if(subsribeForm) {
         xhr.onerror = function() {
             console.error('Error:', xhr.statusText);
         };
-        xhr.send(JSON.stringify({email:'test@tttt.nl'}));
+        let formData = {
+            Email: sfInputEmail.value,
+            valkuil: sfInputValkuil.value,
+            valstrik: sfInputValstrik.value,
+        };
+        xhr.send(JSON.stringify(formData));
 
-        // let data = {
-        //     '_token': csrfToken,
-        //     'id': 78912,
-        //     'customer': 'Jason Sweet',
-        // };
-
-        // xhr.onload = function() {
-        //     if (xhr.status === 200) {
-        //         const response = JSON.parse(xhr.responseText);
-        //         console.log(response.message);
-        //     } else {
-        //         console.error('Error:', xhr.statusText);
-        //     }
-        // };
-
-
-        // xhr.onload = () => console.log(xhr.status);
-        // xhr.send();
     });
 }

@@ -73,11 +73,6 @@ class SubmitController extends Controller
     }
     public function submitSubscriptionForm(Request $request) {
 
-        $res = new \stdClass();
-        $res->result = 'returned * ' . $request->get('email');
-        echo json_encode($res);
-        die();
-
         // 'prohibited' validation rule does not work!!!'
         if($request->get('valkuil') || $request->get('valstrik')) return abort(404);
 
@@ -126,6 +121,47 @@ class SubmitController extends Controller
         // return back()->with('success', 'Bedankt dat u contact met ons heeft opgenomen, we zullen uw bericht zo snel mogelijk in behandeling nemen!');
         return redirect(route('home'))->with('success', 'subscription');
     }
+
+    public function submitSubscriptionFormXHR(Request $request) {
+        $res = new \stdClass();
+        $res->errors = [];
+
+        if($request->get('valkuil') || $request->get('valstrik')) {
+            $res->errors[] = 'Spam gedetecteerd';
+        }
+        $toValidate = array(
+            'Email' => 'required|email',
+        );
+        $validationMessages = array(
+            'Email.required'=> 'Vul een e-mail adres in',
+            'Email.email'=> 'Het e-mail adres is niet juist geformuleerd',
+        );
+        $validator = Validator::make($request->all(), $toValidate, $validationMessages);
+        if($validator->fails()) {
+            $errors = $validator->errors();
+            foreach($errors->all() as $message) {
+                $res->errors[] = $message;
+            }
+        }
+
+        $to_email = 'leon@wtmedia-events.nl';
+        $subjectCompany = 'Ingevuld aanmeld-formulier vanaf wtmedia-events.nl';
+        $subjectVisitor = 'Kopie van uw bericht aan wtmedia-events.nl';
+        $messages = $this->getHtmlEmails($request->all(), url('statics/email/logo.png'), 'De volgende gegevens zijn achtergelaten door de bezoeker.', 'Bedankt voor uw bericht. De volgende informatie hebben we ontvangen:');
+        $headers = array(
+            "MIME-Version: 1.0",
+            "Content-Type: text/html; charset=ISO-8859-1",
+            "From: WT Media & Events <aanmeld-formulier@wtmedia-events.nl>",
+            "Reply-To: support@wtmedia-events.nl",
+            // "X-Priority: 1",
+        );
+        $headers = implode("\r\n", $headers);
+        mail($to_email, $subjectCompany, $messages[0], $headers);
+        mail($request->get('Email'), $subjectVisitor, $messages[1], $headers);
+
+        echo json_encode($res);
+    }
+
     public function submitScheduleCallForm(Request $request) {
 
         // 'prohibited' validation rule does not work!!!'
