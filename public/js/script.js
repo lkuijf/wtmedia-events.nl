@@ -303,9 +303,9 @@ if(subsribeForm) {
     subsribeForm.addEventListener('submit', (e) => {
         e.preventDefault();
         let xhr = new XMLHttpRequest();
-        xhr.open('POST', '/submit-subscription-form?_token='+csrfToken);
+        xhr.open('POST', 'https://wtmedia-events.nl/submit-subscription-form');
 
-        // xhr.setRequestHeader('X-CSRF-TOKEN', csrfToken);
+        xhr.setRequestHeader('X-CSRF-TOKEN', csrfToken);
         // xhr.setRequestHeader('Content-Type', 'application/json');
         // xhr.setRequestHeader('Content-Type', 'multipart/form-data');
         // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
@@ -313,7 +313,7 @@ if(subsribeForm) {
 console.log(csrfToken);
 
         let data = {
-            // 'X-CSRF-TOKEN': csrfToken,
+            '_token': csrfToken,
             'id': 78912,
             'customer': 'Jason Sweet',
         };
