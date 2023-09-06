@@ -303,12 +303,12 @@ if(subsribeForm) {
     subsribeForm.addEventListener('submit', (e) => {
         e.preventDefault();
         let xhr = new XMLHttpRequest();
-        xhr.open('POST', '/submit-subscription-form');
+        xhr.open('POST', '/submit-subscription-form?_token='+csrfToken);
 
-        xhr.setRequestHeader('X-CSRF-TOKEN', csrfToken);
+        // xhr.setRequestHeader('X-CSRF-TOKEN', csrfToken);
         // xhr.setRequestHeader('Content-Type', 'application/json');
         // xhr.setRequestHeader('Content-Type', 'multipart/form-data');
-        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
 console.log(csrfToken);
 
