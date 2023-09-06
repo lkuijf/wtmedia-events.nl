@@ -306,11 +306,25 @@ if(subsribeForm) {
         xhr.open('POST', 'https://wtmedia-events.nl/submit-subscription-form');
 
         xhr.setRequestHeader('X-CSRF-TOKEN', csrfToken);
+        xhr.setRequestHeader('Content-Type', 'application/json');
         // xhr.setRequestHeader('Content-Type', 'application/json');
         // xhr.setRequestHeader('Content-Type', 'multipart/form-data');
         // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
 console.log(csrfToken);
+
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                const response = JSON.parse(xhr.responseText);
+                console.log(response.message);
+            } else {
+                console.error('Error:', xhr.statusText);
+            }
+        };
+        xhr.onerror = function() {
+            console.error('Error:', xhr.statusText);
+        };
+        xhr.send(JSON.stringify({}));
 
         // let data = {
         //     '_token': csrfToken,
@@ -328,7 +342,7 @@ console.log(csrfToken);
         // };
 
 
-        xhr.onload = () => console.log(xhr.status);
-        xhr.send();
+        // xhr.onload = () => console.log(xhr.status);
+        // xhr.send();
     });
 }
