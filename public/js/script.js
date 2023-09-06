@@ -312,11 +312,11 @@ if(subsribeForm) {
 
 console.log(csrfToken);
 
-        let data = {
-            '_token': csrfToken,
-            'id': 78912,
-            'customer': 'Jason Sweet',
-        };
+        // let data = {
+        //     '_token': csrfToken,
+        //     'id': 78912,
+        //     'customer': 'Jason Sweet',
+        // };
 
         // xhr.onload = function() {
         //     if (xhr.status === 200) {
@@ -329,6 +329,6 @@ console.log(csrfToken);
 
 
         xhr.onload = () => console.log(xhr.status);
-        xhr.send(data);
+        xhr.send();
     });
 }
