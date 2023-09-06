@@ -306,7 +306,7 @@ if(subsribeForm) {
         xhr.open('POST', '/submit-subscription-form');
 console.log(csrfToken);
         let data = {
-            '_token': csrfToken,
+            'X-CSRF-TOKEN': csrfToken,
             // 'id': 78912,
             // 'customer': 'Jason Sweet',
         };
