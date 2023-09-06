@@ -333,6 +333,7 @@ if(subsribeForm) {
                     setTimeout(function() {xhrErrorAlert.classList.add('xhrError')}, 6000);
                 } else {
                     //no errors!
+                    sfInputEmail.value = '';
                     xhrSuccessAlert.classList.remove('xhrSuccess');
                     setTimeout(function() {xhrSuccessAlert.classList.add('xhrSuccess')}, 9000);
                 }
