@@ -12,8 +12,8 @@ const sfInputEmail = document.querySelector('input[name=Email]');
 const sfInputValkuil = document.querySelector('input[name=valkuil]');
 const sfInputValstrik = document.querySelector('input[name=valstrik]');
 const csrfToken = document.querySelector('meta[name="_token"]').content;
-const xhrErrorAlert = document.querySelector('.xhrError');
-const xhrSuccessAlert = document.querySelector('.xhrSuccess');
+const xhrErrorAlert = document.querySelector('.hideXhrError');
+const xhrSuccessAlert = document.querySelector('.hideXhrSuccess');
 
 let anchorsInViewport = [];
 
