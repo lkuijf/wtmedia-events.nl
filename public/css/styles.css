@@ -157,6 +157,9 @@ form .error span {
   z-index: 1;
 }
 .hero .heroOverlay > div {
+  width: 1920px;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -1962,7 +1965,7 @@ nav ul {
   font-display: swap;
 }
 .inner {
-  max-width: 100%;
+  max-width: 1920px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 100px;

@@ -20,6 +20,9 @@
     @include heroHeight;
     .heroOverlay {
         > div {
+            width: $contentWidth;
+            margin-left: auto;
+            margin-right: auto;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
