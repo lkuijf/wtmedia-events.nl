@@ -100,7 +100,7 @@ form {
     &.alert-danger {
         background-color: #ff2929
     }
-    &.xhrError, &.xhrSuccess {
+    &.hideXhrError, &.hideXhrSuccess {
         display: none;
     }
     > div {

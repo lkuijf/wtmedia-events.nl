@@ -306,8 +306,8 @@ function setReviewsShowMoreToggleButtons() {
 if(subsribeForm) {
     subsribeForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        xhrErrorAlert.classList.add('xhrError');
-        xhrSuccessAlert.classList.add('xhrSuccess');
+        xhrErrorAlert.classList.add('hideXhrError');
+        xhrSuccessAlert.classList.add('hideXhrSuccess');
         let xhr = new XMLHttpRequest();
         xhr.open('POST', '/submit-subscription-form');
         xhr.setRequestHeader('X-CSRF-TOKEN', csrfToken);
@@ -325,12 +325,12 @@ if(subsribeForm) {
                         para.appendChild(textN);
                         errList.appendChild(para);
                     });
-                    xhrErrorAlert.classList.remove('xhrError');
-                    setTimeout(function() {xhrErrorAlert.classList.add('xhrError')}, 6000);
+                    xhrErrorAlert.classList.remove('hideXhrError');
+                    setTimeout(function() {xhrErrorAlert.classList.add('hideXhrError')}, 6000);
                 } else { //no errors!
                     sfInputEmail.value = '';
                     xhrSuccessAlert.classList.remove('xhrSuccess');
-                    setTimeout(function() {xhrSuccessAlert.classList.add('xhrSuccess')}, 9000);
+                    setTimeout(function() {xhrSuccessAlert.classList.add('hideXhrSuccess')}, 9000);
                 }
             } else {
                 console.error('Error:', xhr.statusText);

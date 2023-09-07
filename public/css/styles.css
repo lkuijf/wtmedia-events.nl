@@ -94,7 +94,7 @@ form .error span {
 .alert.alert-danger {
   background-color: #ff2929;
 }
-.alert.xhrError, .alert.xhrSuccess {
+.alert.hideXhrError, .alert.hideXhrSuccess {
   display: none;
 }
 .alert > div {
