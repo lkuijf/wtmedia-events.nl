@@ -69,13 +69,13 @@
     {
       "uid": "c76b7947c957c9b78b11741173c8349b",
       "css": "attention",
-      "code": 59397,
+      "code": 59395,
       "src": "fontawesome"
     },
     {
       "uid": "acf41aa4018e58d49525665469e35665",
       "css": "thumbs-up",
-      "code": 59398,
+      "code": 59393,
       "src": "fontawesome"
     }
   ]

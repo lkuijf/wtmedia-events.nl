@@ -318,7 +318,7 @@ if(subsribeForm) {
             if (xhr.status === 200) {
                 const response = JSON.parse(xhr.responseText);
                 if(response.errors.length) { // errors!
-                    let errList = xhrErrorAlert.querySelector('div');
+                    let errList = xhrErrorAlert.querySelector('div:last-child');
                     errList.innerHTML = '';
                     response.errors.forEach(err => {
                         let para = document.createElement('p');

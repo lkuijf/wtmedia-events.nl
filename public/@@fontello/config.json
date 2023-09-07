@@ -56,7 +56,7 @@
     },
     {
       "uid": "f6d72aa5ef8e8f0e553012af9a29a87e",
-      "css": "left-1",
+      "css": "left",
       "code": 61815,
       "src": "fontawesome"
     },
@@ -64,18 +64,6 @@
       "uid": "fb94e23ae1e7660aa63cc5f351ec7560",
       "css": "right",
       "code": 61816,
-      "src": "fontawesome"
-    },
-    {
-      "uid": "c76b7947c957c9b78b11741173c8349b",
-      "css": "attention",
-      "code": 59397,
-      "src": "fontawesome"
-    },
-    {
-      "uid": "acf41aa4018e58d49525665469e35665",
-      "css": "thumbs-up",
-      "code": 59398,
       "src": "fontawesome"
     }
   ]

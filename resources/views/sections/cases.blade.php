@@ -7,7 +7,7 @@
                 {{-- <p>- {{ $case->categories[0]->name }} -</p> --}}
             </div>
             @endif
-            @if ($type == 'web-development')
+            @if ($type == 'webdevelopment')
                 <img src="{{ $case->gallery[0]['sizes']['medium_large'] }}" alt="{{ $case->gallery[0]['alt'] }}" data-title="{{ $case->title }}">
             @else
                 <img src="{{ $case->gallery[0]['sizes']['medium_large'] }}" alt="{{ $case->gallery[0]['alt'] }}">

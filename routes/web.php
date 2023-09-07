@@ -51,7 +51,7 @@ Route::get('/diensten/events', [PagesController::class, 'showPage'])->defaults('
 Route::get('/diensten/online-marketing/{slug}', [PagesController::class, 'showCase'])->where([
     'slug' => '[a-z0-9_-]+',
 ]);
-Route::get('/diensten/web-development/{slug}', [PagesController::class, 'showCase'])->where([
+Route::get('/diensten/webdevelopment/{slug}', [PagesController::class, 'showCase'])->where([
     'slug' => '[a-z0-9_-]+',
 ]);
 Route::get('/diensten/events/{slug}', [PagesController::class, 'showCase'])->where([

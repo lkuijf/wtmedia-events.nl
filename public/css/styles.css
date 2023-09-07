@@ -106,6 +106,17 @@ form .error span {
 .alert > div p {
   margin: 0;
 }
+.alert .thumbsUpIcon:before {
+  font-family: "wt_media_events";
+  font-size: 60px;
+  content: "\e806";
+}
+.alert .exclamationTriangleIcon:before {
+  font-family: "wt_media_events";
+  font-size: 60px;
+  content: "\e805";
+}
+
 #toTop {
   display: flex;
   align-items: center;
