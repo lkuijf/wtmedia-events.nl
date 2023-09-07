@@ -329,7 +329,7 @@ if(subsribeForm) {
                     setTimeout(function() {xhrErrorAlert.classList.add('hideXhrError')}, 6000);
                 } else { //no errors!
                     sfInputEmail.value = '';
-                    xhrSuccessAlert.classList.remove('xhrSuccess');
+                    xhrSuccessAlert.classList.remove('hideXhrSuccess');
                     setTimeout(function() {xhrSuccessAlert.classList.add('hideXhrSuccess')}, 9000);
                 }
             } else {
