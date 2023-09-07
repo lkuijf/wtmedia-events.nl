@@ -18,9 +18,9 @@
             @php
                 $firstCase = array_shift($cases);
             @endphp
-            @include('sections.cases', ['cases' => array($firstCase), 'type' => 'web-development'])
+            @include('sections.cases', ['cases' => array($firstCase), 'type' => 'webdevelopment'])
             <div class="hiddenWebDevCases">
-                @include('sections.cases', ['cases' => $cases, 'type' => 'web-development'])
+                @include('sections.cases', ['cases' => $cases, 'type' => 'webdevelopment'])
             </div>
             <div class="webDevNavigate">
                 <div class="wdnTitle">{{ $firstCase->title }}</div>
