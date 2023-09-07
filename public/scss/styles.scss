@@ -138,11 +138,6 @@ nav ul {
             margin-bottom: 40px;
         }
     }
-    // min-height: 5000px;
-    // > * {
-    //     margin: 20px 0;
-    //     padding: 20px 0;
-    // }
     h1,h3 {
         font-weight: normal;
         font-size: 2.5em;
@@ -167,9 +162,7 @@ nav ul {
         text-align: center;
         border-bottom: 3px solid #000;
         position: relative;
-        // &:first-of-type {
-            margin-top: 80px;
-        // }
+        margin-top: 80px;
         margin-bottom: 80px;
         span {
             background-color: #CCC;
@@ -193,18 +186,7 @@ nav ul {
             img {
                 width: 100%;
                 position: relative;
-                // @media (min-width: ($sbp3_tablet + 1)) {
-                //     width: auto;
-                //     height: auto;
-                //     max-width: 100%;
-                //     max-height: 100%;
-                //     top: 50%;
-                //     left: 50%;
-                //     transform: translate(-50%, -50%);
-                //     max-height: 700px;
-                // }
                 object-fit: cover;
-                // object-position: top;
                 @include borderRadius;
                 aspect-ratio: 4/3;
             }
@@ -264,7 +246,6 @@ nav ul {
         }
         &:before {
             font-family: 'wt_media_events';
-            // font-size: 1.3em;
             content: '\e804\00a0';
         }
     }
@@ -325,12 +306,9 @@ nav ul {
                         }
                         ul {
                             padding-top: 10px;
-                            // text-align: left;
                             li {
                                 padding: 10px 0;
                                 a {
-                                    // position: relative;
-                                    // left: 40%;
                                     font-size: 1em;
                                 }
                             }
@@ -505,59 +483,6 @@ nav ul {
                 }
             }
         }
-
-
-        // cursor: pointer;
-        // transition: transform 0.2s ease;
-        // width: 350px;
-        // @media (max-width: $sbp4_mobile) {width:100%}
-        // border: 1px solid transparent;
-        // padding: 10px;
-        // > div {
-        //     border-bottom: 10px solid transparent;
-        //     background-color: $colorWTM;
-        //     color: $colorWhite;
-        //     padding: 10px;
-        //     height: 100%;
-        //     display: flex;
-        //     flex-direction: column;
-        //     h3 {
-        //         font-size: 2em;
-        //         margin: 0;
-        //     }
-        //     > div {
-        //         margin-top: auto;
-        //         display: flex;
-        //         justify-content: space-between;
-        //         text-align: right;
-        //         p {
-        //             margin: 0;
-        //             font-size: 1.5em;
-        //             &:first-of-type {
-        //                 border: 1px solid $colorWhite;
-        //                 display: inline-block;
-        //                 width: 50px;
-        //                 &:before {
-        //                     font-family: "wt_media_events";
-        //                     display: block;
-        //                     width: 50px;
-        //                     font-size: 30px;
-        //                     content: '\e802';
-        //                     text-align: center;
-        //                     padding-top: 9px;
-        //                 }
-        //             }
-        //         }
-        //     }
-        // }
-        // &:hover {
-        //     transform: scale(1.03);
-        //     border: 1px solid $colorWTMdark;
-        //     > div {
-        //         background-color: $colorWTMdark;
-        //         border-bottom: 10px solid #1BFCFF;
-        //     }
-        // }
     }
 }
 
@@ -583,7 +508,6 @@ nav ul {
     .outerSwiperBox {
         position: relative;
         .teamMembersSwiper {
-            // padding: 20px;
             img {
                 height: 300px;
                 width: 300px;
@@ -597,11 +521,7 @@ nav ul {
                 }
             }
         }
-        // .swiper-pagination-team {
-            // bottom: -10px !important;
-        // }
         .swiper-scrollbar-team {
-            // outline: 1px solid red;
             height: 5px;
             margin-top: 10px;
             > div {
@@ -649,34 +569,10 @@ nav ul {
     @media (max-width: $sbp2_laptop) {grid-template-columns: repeat(4, 1fr);}
     @media (max-width: $sbp3_tablet) {grid-template-columns: repeat(3, 1fr);padding-left:40px;padding-right:40px;}
     @media (max-width: $sbp4_mobile) {grid-template-columns: repeat(2, 1fr);}
-    // grid-gap: 5px;
     a {
         position: relative;
         div {
-
-            // display: flex;
-            // flex-direction: column;
-            // justify-content: space-around;
-            // position: absolute;
-            // bottom: 20px;
-            // width: 100%;
-            // text-align: center;
-            // // background-color: $colorWTMdark;
-            // padding: 15px;
-            // min-height: 105px;
-            // p {
-            //     color: #FFF;
-            // }
-
             @include caseOverlayText;
-
-            // position: absolute;
-            // color: #FFF;
-            // font-size: 2em;
-            // @media (max-width: $sbp1_desktop) {font-size: 1.5em;}
-            // @media (max-width: $sbp3_tablet) {font-size: 1em;}
-            // font-weight: normal;
-            // padding: 20px;
         }
 
         transition: transform 0.2s ease;
@@ -697,24 +593,6 @@ nav ul {
             aspect-ratio: 1/1;
             object-fit: cover;
         }
-
-        // img {
-        //     cursor: pointer;
-        //     width: 100%;
-        //     aspect-ratio: 1/1;
-        //     object-fit: cover;
-        //     transition: transform 0.2s ease;
-        //     &:hover {
-        //         @include borderRadius;
-        //         transform: scale(1.2);
-        //         -webkit-box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.3);
-        //         -moz-box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.3);
-        //         box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.3);
-        //     }
-        // }
-
-
-
         &.hoverEffectFullList {
             background-color: #000;
             &:hover {
@@ -724,18 +602,9 @@ nav ul {
             }
             img {
                 &:hover {
-                    // outline: 2px solid red;
                     transform: none;
                     border-radius: 0;
-                    
                     opacity: 0.3;
-
-                    // cursor: pointer;
-                    // @include borderRadius;
-                    // transform: scale(1.2);
-                    // -webkit-box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.3);
-                    // -moz-box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.3);
-                    // box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.3);
                 }
             }
         }
@@ -766,9 +635,6 @@ nav ul {
         > div {
             height: 200px;
             overflow: hidden;
-            // > div {
-                // outline: 1px solid blue;
-            // }
             :first-child {
                 margin-top: 0;
                 margin-bottom: 0;
@@ -900,7 +766,6 @@ footer {
             width: 100%;
             aspect-ratio: 2/1;
             object-fit: cover;
-            // @include borderRadius;
             border-radius: 11px;
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
@@ -922,7 +787,6 @@ footer {
                 color: $colorWTMdark;
             }
             .date {
-                // font-size: 1.5em;
                 &:before {
                     font-family: 'wt_media_events';
                     content: '\e804\00a0';
@@ -984,19 +848,12 @@ footer {
 }
 .scheduleCallContent {
     @include textPaddingOnMobile;
-    // .twoColumns {
-    //     .inner {
-    //         @include textPaddingOnMobile;
-    //     }
-    // }
     form {
         width: 100%;
         background-color: $colorWTM;
         @include borderRadius;
-        // @include textPaddingOnMobile;
         padding: 40px;
         input, textarea {
-            // outline: 1px solid red;
             font-family: $fontFamily;
             font-size: 1.1em;
             background-color: $colorWTM;
@@ -1043,7 +900,6 @@ footer {
         @media (max-width: $sbp3_tablet) {gap: 30px;flex-direction: column;}
         @media (max-width: $sbp4_mobile) {gap: 20px;}
         > div {
-            // flex: 1 1 50%;
             flex-grow: 1;
             flex-shrink: 1;
             
@@ -1154,7 +1010,6 @@ footer {
                     &:last-child {
                         div {
                             width: 330px;
-                            // outline: 1px solid red;
                             @media (max-width: $sbp_marketingTerms1) {width: 250px;}
                             @media (max-width: $sbp_marketingTerms2) {width: 160px;}
                         }
@@ -1189,7 +1044,6 @@ footer {
                 .mTermBox {
                     @media (max-width: $sbp2_laptop) {
                         flex-direction: column;
-                        // padding-top: 40px;
                     }
                     &:hover {
                         @media (max-width: $sbp2_laptop) {
@@ -1212,9 +1066,6 @@ footer {
             &:nth-child(4) {
                 .mTermBox {
                     flex-direction: column;
-                    // padding-top: 30px;
-                    // @media (max-width: $sbp_marketingTerms1) {padding-top: 27px;}
-                    // @media (max-width: $sbp_marketingTerms2) {padding-top: 25px;}
                     &:hover {
                         width: 250px;
                         height: 650px;
@@ -1234,7 +1085,6 @@ footer {
                         &:last-child {
                             div {
                                 width: 210px;
-                                // outline: 1px solid red;
                                 @media (max-width: $sbp_marketingTerms1) {width: 170px;}
                                 @media (max-width: $sbp_marketingTerms2) {width: 130px;}
                             }
@@ -1246,7 +1096,6 @@ footer {
                 .mTermBox {
                     @media (max-width: $sbp2_laptop) {
                         flex-direction: column;
-                        // padding-top: 40px;
                     }
                     &:hover {
                         @media (max-width: $sbp2_laptop) {
@@ -1272,7 +1121,6 @@ footer {
             &:nth-child(8) {
                 .mTermBox {
                     flex-direction: column;
-                    // padding-top: 30px;
                     &:hover {
                         width: 250px;
                         height: 650px;
@@ -1297,7 +1145,6 @@ footer {
                         &:last-child {
                             div {
                                 width: 210px;
-                                // outline: 1px solid red;
                                 @media (max-width: $sbp_marketingTerms1) {width: 170px;}
                                 @media (max-width: $sbp_marketingTerms2) {width: 130px;}
                             }
@@ -1342,7 +1189,6 @@ footer {
                 text-align: center;
                 font-size: 4em;
                 @media (max-width: $sbp1_desktop) {font-size: 3em;}
-                // @media (max-width: $sbp2_laptop) {font-size: 2.5em;}
                 @media (max-width: $sbp3_tablet) {font-size: 2em;}
                 @media (max-width: $sbp4_mobile) {font-size: 3em;}
                 color: #FFF;
@@ -1350,7 +1196,6 @@ footer {
                 &:last-child {
                     font-size: 2em;
                     @media (max-width: $sbp1_desktop) {font-size: 1.5em;}
-                    // @media (max-width: $sbp2_laptop) {font-size: 2.5em;}
                     @media (max-width: $sbp3_tablet) {font-size: 1em;}
                     @media (max-width: $sbp4_mobile) {font-size: 1.5em;}
                 }
@@ -1392,7 +1237,6 @@ footer {
                 font-size: 1.5em;
             }
             .wdnBtns {
-                // outline: 1px solid red;
                 width: 100px;
                 display: flex;
                 justify-content: space-between;
@@ -1414,13 +1258,3 @@ footer {
         }
     }
 }
-// .webDevCasesContent {
-//     @include textPaddingOnMobile;
-//     display: grid;
-//     gap: 60px;
-//     grid-template-columns: repeat(2, 1fr);
-//     grid-auto-flow: column;
-//     > div {
-//         outline: 1px solid red;
-//     }
-// }
