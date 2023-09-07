@@ -303,6 +303,7 @@ function setReviewsShowMoreToggleButtons() {
     }
 }
 
+var errTimeout;
 if(subsribeForm) {
     subsribeForm.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -326,7 +327,8 @@ if(subsribeForm) {
                         errList.appendChild(para);
                     });
                     xhrErrorAlert.classList.remove('hideXhrError');
-                    setTimeout(function() {xhrErrorAlert.classList.add('hideXhrError')}, 6000);
+                    if(typeof errTimeout !== 'undefined') clearTimeout(errTimeout);
+                    errTimeout = setTimeout(function() {xhrErrorAlert.classList.add('hideXhrError')}, 6000);
                 } else { //no errors!
                     sfInputEmail.value = '';
                     xhrSuccessAlert.classList.remove('hideXhrSuccess');
