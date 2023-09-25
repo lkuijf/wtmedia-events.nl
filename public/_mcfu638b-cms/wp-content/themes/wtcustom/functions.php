@@ -396,8 +396,19 @@ add_action('save_post_teammember', 'deleteSimpleCustomPostsRestCacheTeammember')
 // add_action('save_post_page', 'deleteAllPostRestCache');
 // add_action('save_post_blog', 'deleteAllPostRestCache');
 // add_action('save_post', 'deleteAllPostRestCache');
+add_action('save_post', 'clearLaravelResponseCache');
 
 // add_action( 'pre_post_update', 'deleteAllPostRestCache', 10, 3 );
+
+function clearLaravelResponseCache() {
+    $bSecure = false;
+    if($_SERVER['SERVER_PORT_SECURE']) $bSecure = true; // not 100% tested
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, ($bSecure?'https':'http') . '://' . $_SERVER['HTTP_HOST'] . '/clear-response-cache-wt');
+    curl_setopt($ch, CURLOPT_HEADER, 0);
+    curl_exec($ch);
+    curl_close($ch);
+}
 
 // function deleteAllPostRestCache() {
 //     \WP_Rest_Cache_Plugin\Includes\Caching\Caching::get_instance()->delete_cache_by_endpoint( '/_mcfu638b-cms/index.php/wp-json/wtcustom/simple-pages' );
