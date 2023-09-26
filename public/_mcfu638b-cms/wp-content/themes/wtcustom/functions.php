@@ -397,12 +397,13 @@ add_action('save_post_teammember', 'deleteSimpleCustomPostsRestCacheTeammember')
 // add_action('save_post_blog', 'deleteAllPostRestCache');
 // add_action('save_post', 'deleteAllPostRestCache');
 add_action('save_post', 'clearLaravelResponseCache');
+add_action('carbon_fields_theme_options_container_saved', 'clearLaravelResponseCache');
 
 // add_action( 'pre_post_update', 'deleteAllPostRestCache', 10, 3 );
 
 function clearLaravelResponseCache() {
-    $bSecure = false;
-    if($_SERVER['SERVER_PORT_SECURE']) $bSecure = true; // not 100% tested
+    $bSecure = true;
+    if(isset($_SERVER['SERVER_PORT_SECURE']) && $_SERVER['SERVER_PORT_SECURE'] == 0) $bSecure = false; // not 100% tested, probably only IIS
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, ($bSecure?'https':'http') . '://' . $_SERVER['HTTP_HOST'] . '/clear-response-cache-wt');
     curl_setopt($ch, CURLOPT_HEADER, 0);
