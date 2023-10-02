@@ -399,7 +399,7 @@ form .error span {
 .headerOuter .headerInnerWrap .mainLogoWrap img {
   height: 180px;
   width: 180px;
-  transition: height 0.3s ease;
+  transition: height 0.3s ease, width 0.3s ease;
 }
 .headerOuter .headerInnerWrap .mainLogoWrap img.afterScroll {
   height: 100px;
