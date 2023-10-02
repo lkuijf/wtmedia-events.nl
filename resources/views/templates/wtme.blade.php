@@ -64,7 +64,7 @@ l[i].q=l[i].q||[];o=e.createElement(a);f=e.getElementsByTagName(a)[0];o.async=1;
 
     <header class="headerOuter">
         <div class="headerInnerWrap">
-            <div class="mainLogoWrap"><a href="{{ url()->route('home') }}"><img src="{{ asset('statics/wt-media-events-logo.png') }}" alt="WT Media & Events"></a></div>
+            <div class="mainLogoWrap"><a href="{{ url()->route('home') }}"><img src="{{ asset('statics/wt-media-events-logo.png') }}" alt="WT Media & Events" width="180" height="180"></a></div>
             <nav class="mainNav">
                 <input type="checkbox" id="burger-check">
                 <label for="burger-check" class="burger-label">
@@ -86,7 +86,7 @@ l[i].q=l[i].q||[];o=e.createElement(a);f=e.getElementsByTagName(a)[0];o.async=1;
         <div class="inner">
             <div class="ftr">
                 <div class="footerContact">
-                    <img src="{{ asset('statics/wt-media-events-logo.png') }}" alt="WT Media & Events">
+                    <img src="{{ asset('statics/wt-media-events-logo.png') }}" alt="WT Media & Events" width="100" height="100">
                     <a href="mailto:support@wtmedia-events.nl">CONTACT</a>
                 </div>
                 <nav>
@@ -96,9 +96,9 @@ l[i].q=l[i].q||[];o=e.createElement(a);f=e.getElementsByTagName(a)[0];o.async=1;
             <div class="btm">
                 <p>&copy; W.T. Media &amp; Events | <a href="{{ url('privacy-policy') }}">Privacy Policy</a> | {{ date('Y') }} All Rights Reserved</p>
                 <p class="socials">
-                    <a href="https://www.instagram.com/wtmedia_events/" target="_blank" class="ig"><img src="{{ asset('statics/instagram.png') }}" alt="Instagram"></a>
-                    <a href="https://www.facebook.com/profile.php?id=100083027634220" target="_blank" class="fb"><img src="{{ asset('statics/facebook.png') }}" alt="Facebook"></a>
-                    <a href="https://www.linkedin.com/company/w-t-media-events/" target="_blank" class="li"><img src="{{ asset('statics/linkedin.png') }}" alt="LinkedIn"></a>
+                    <a href="https://www.instagram.com/wtmedia_events/" target="_blank" class="ig"><img src="{{ asset('statics/instagram.png') }}" alt="Instagram" width="40" height="40"></a>
+                    <a href="https://www.facebook.com/profile.php?id=100083027634220" target="_blank" class="fb"><img src="{{ asset('statics/facebook.png') }}" alt="Facebook" width="40" height="40"></a>
+                    <a href="https://www.linkedin.com/company/w-t-media-events/" target="_blank" class="li"><img src="{{ asset('statics/linkedin.png') }}" alt="LinkedIn" width="40" height="40"></a>
                 </p>
                 {{-- <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script><div class="elfsight-app-a6161f0f-1cc2-420f-9dc7-d19848614a67"></div> --}}
                 {{-- <div class="embedsocial-hashtag" data-ref="cb4f26c68a893f54158863a0aecf5a38c087439e"> <a class="feed-powered-by-es feed-powered-by-es-feed-new" href="https://embedsocial.com/social-media-aggregator/" target="_blank" title="Widget by EmbedSocial"> Widget by EmbedSocial<span>→</span> </a> </div> <script> (function(d, s, id) { var js; if (d.getElementById(id)) {return;} js = d.createElement(s); js.id = id; js.src = "https://embedsocial.com/cdn/ht.js"; d.getElementsByTagName("head")[0].appendChild(js); }(document, "script", "EmbedSocialHashtagScript")); </script> --}}
