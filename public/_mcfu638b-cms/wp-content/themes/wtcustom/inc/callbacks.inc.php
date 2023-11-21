@@ -306,6 +306,10 @@ function getCustomPostsCollectionAttrs($coll, $pType) {
                 }
             }
     
+            if($pType == 'blog' || $pType == 'case') {
+                $oP->card_image = carbon_get_post_meta( $item->ID, 'card_image' );
+            }
+            
             $oP->id = $item->ID;
             $oP->title = $item->post_title;
             $oP->slug = $item->post_name;
