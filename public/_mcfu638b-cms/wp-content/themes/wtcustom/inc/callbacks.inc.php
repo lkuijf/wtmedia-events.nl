@@ -287,6 +287,7 @@ function getCustomPostsCollectionAttrs($coll, $pType) {
             $oP->title = $item->post_title;
             $oP->slug = $item->post_name;
             $oP->function = carbon_get_post_meta( $item->ID, 'function' );
+            $oP->card_text = carbon_get_post_meta( $item->ID, 'card_text' );
             $oP->order = carbon_get_post_meta( $item->ID, 'order' );
             $oP->status = $item->post_status;
             $oP->date = $item->post_date;
