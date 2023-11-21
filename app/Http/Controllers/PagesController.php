@@ -167,6 +167,7 @@ class PagesController extends Controller
 // dd($items);
         foreach($items as &$blog) {
             $blog->gallery = $this->getMediaGallery($blog->gallery);
+            $blog->card_image = $this->getMediaGallery($blog->card_image);
         }
 // dd($items);
 
@@ -696,6 +697,7 @@ class PagesController extends Controller
 
 // dd($allCrbSections);
 // dd($options);
+// dd($homepageCases);
         $data= [
             'head_title' => 'title test',
             'meta_description' => 'meta test',
