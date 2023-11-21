@@ -1,5 +1,32 @@
 <div class="servicesBtns">
-    <p class="serviceBtnWrap"><a href="{{ url('diensten/online-marketing') }}" class="serOM">Online Marketing</a></p>
-    <p class="serviceBtnWrap"><a href="{{ url('diensten/webdevelopment') }}" class="serWD">Webdevelopment</a></p>
-    <p class="serviceBtnWrap"><a href="{{ url('diensten/events') }}" class="serEV">Events</a></p>
+    <article class="serviceBtnWrap serOnMar">
+        <div>
+            <h3>Online marketing</h3>
+            <p class="serIcon"></p>
+        </div>
+        <div>
+            <p>{{ $data['website_options']->service_om_text }}</p>
+            <a href="{{ url('diensten/online-marketing') }}">Lees meer</a>
+        </div>
+    </article>
+    <article class="serviceBtnWrap serWebDev">
+        <div>
+            <h3>Webdevelopment</h3>
+            <p class="serIcon"></p>
+        </div>
+        <div>
+            <p>{{ $data['website_options']->service_wd_text }}</p>
+            <a href="{{ url('diensten/webdevelopment') }}">Lees meer</a>
+        </div>
+    </article>
+    <article class="serviceBtnWrap serEv">
+        <div>
+            <h3>Events</h3>
+            <p class="serIcon"></p>
+        </div>
+        <div>
+            <p>{{ $data['website_options']->service_e_text }}</p>
+            <a href="{{ url('diensten/events') }}">Lees meer</a>
+        </div>
+    </article>
 </div>

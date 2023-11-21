@@ -1,5 +1,21 @@
+@php
+    $anchorCount = 0;
+    $anchorToBeClosed = false;
+@endphp
 @foreach ($data['content_sections'] as $section)
     @if ($section->_type == '_anchor')
+        @php
+            $anchorCount++;
+        @endphp
+        @if ($anchorCount == 1)
+            <div class="anchorSection">
+        @else
+            </div>
+            <div class="anchorSection">
+            @php
+                $anchorToBeClosed = true;
+            @endphp
+        @endif
         <a id="{{ $section->value }}" class="anchorPoint"></a>
     @endif
     @if($section->_type == 'hero')
@@ -246,3 +262,6 @@
         @include('sections.people_blocks', ['person_blocks' => $section['people']])
     @endif --}}
 @endforeach
+@if ($anchorToBeClosed)
+    </div>
+@endif

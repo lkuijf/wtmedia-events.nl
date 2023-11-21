@@ -680,6 +680,7 @@ class PagesController extends Controller
         foreach($spages[0] as $sPage) {
             if($sPage->title == 'Blog') continue;
             if($sPage->title == 'Privacy policy') continue;
+            if($sPage->title == 'Instagram feed') continue;
             $pageA = new \stdClass;
             $pageA->_type = '_anchor';
             $pageA->value = $sPage->slug;

@@ -35,6 +35,7 @@
                 margin-bottom: 0;
             }
             h2 {
+                font-family: 'myriad_pro_bold';
                 color: $colorWTMdark;
             }
             .date {
@@ -50,13 +51,17 @@
             text-decoration: none;
             &:hover {
                 text-decoration: underline;
+                color: $colorWhite;
             }
         }
         &:hover {
-            background-color: $colorWTMdark;
+            background-color: $colorWTM;
             color: $colorWhite;
             cursor: pointer;
             h2 {
+                color: $colorWhite;
+            }
+            a {
                 color: $colorWhite;
             }
         }

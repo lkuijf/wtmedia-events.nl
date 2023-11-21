@@ -18,10 +18,13 @@
             @include borderRadius;
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
-            background-color: $colorWTM;
+            // background-color: $colorWTM;
+            background: -webkit-linear-gradient(135deg,$colorWTM,$colorWTMlight50p,$colorWTM);
+            background: linear-gradient(-45deg,$colorWTM,$colorWTMlight50p,$colorWTM);
             padding: 10px;
             color: #FFF;
             h3 {
+                font-family: 'myriad_pro_bold';
                 font-size: 1.8em;
             }
         }
@@ -44,7 +47,9 @@
                 a {
                     font-size: 1em;
                     padding: 10px 20px;
-                    background-color: $colorWTM;
+                    // background-color: $colorWTM;
+                    background: -webkit-linear-gradient(135deg,$colorWTM,$colorWTMlight50p 80%,$colorWTM);
+                    background: linear-gradient(-45deg,$colorWTM,$colorWTMlight50p 80%,$colorWTM);
                     color: #FFF;
                     text-decoration: none;
                     @include borderRadius;
@@ -68,14 +73,18 @@
         &:hover {
             cursor: pointer;
             .packHeader {
-                background-color: $colorGrey;
+                // background-color: $colorGrey;
+                background: -webkit-linear-gradient(135deg,$colorWTM,$colorWTM,$colorWTM);
+                background: linear-gradient(-45deg,$colorWTM,$colorWTM,$colorWTM);
             }
             .packInfo {
                 color: $colorBlackLight;
             }
             div:last-child {
                 a {
-                    background-color: $colorGrey;
+                    // background-color: $colorGrey;
+                    background: -webkit-linear-gradient(135deg,$colorWTM,$colorWTM,$colorWTM);
+                    background: linear-gradient(-45deg,$colorWTM,$colorWTM,$colorWTM);
                 }
             }
         }

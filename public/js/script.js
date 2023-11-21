@@ -124,7 +124,7 @@ if(heroSlideshowImages && heroSlideshowImages.length > 1) setTimeout(slideShow, 
 /***** Fade in elements when in viewport *****/
 // Beware of user has disabled JS; do not hide elements using CSS
 const ctaBtnElms = document.querySelectorAll('.ctaBtnWrap');
-const serviceBtns = document.querySelectorAll('.serviceBtnWrap');
+// const serviceBtns = document.querySelectorAll('.serviceBtnWrap');
 const headers = document.querySelectorAll('.contentWrapper h1');
 const sectionImages = document.querySelectorAll('.fullw img, .twoColumns img');
 const observerOptions = {
@@ -151,10 +151,10 @@ ctaBtnElms.forEach(el => {
     el.style.opacity = 0; // Beware of user has disabled JS; do not hide elements using CSS
     el.style.transform = "translate(0px, 50px)";
 });
-serviceBtns.forEach(el => {
-    el.style.opacity = 0; // Beware of user has disabled JS; do not hide elements using CSS
-    el.style.transform = "translate(0px, 50px)";
-});
+// serviceBtns.forEach(el => {
+//     el.style.opacity = 0; // Beware of user has disabled JS; do not hide elements using CSS
+//     el.style.transform = "translate(0px, 50px)";
+// });
 headers.forEach(el => {
     el.style.opacity = 0; // Beware of user has disabled JS; do not hide elements using CSS
     el.style.transform = "translate(-50px, 0px)";
@@ -172,10 +172,10 @@ setTimeout(() => { // using setTimeout for elements that are directly in viewpor
         el.style.transition = "opacity 0.7s ease-in, transform 0.7s ease-out";
         observer.observe(el);
     });
-    serviceBtns.forEach(el => {
-        el.style.transition = "opacity 0.7s ease-in, transform 0.7s ease-out";
-        observer.observe(el);
-    });
+    // serviceBtns.forEach(el => {
+    //     el.style.transition = "opacity 0.7s ease-in, transform 0.7s ease-out";
+    //     observer.observe(el);
+    // });
     headers.forEach(el => {
         el.style.transition = "opacity 0.7s ease-in, transform 0.7s ease-out";
         observer.observe(el);
@@ -243,9 +243,9 @@ var swiperTeam = new Swiper(".teamMembersSwiper", {
             1460: {
             slidesPerView: 4,
           },
-          1760: {
-            slidesPerView: 5,
-          },
+        //   1760: {
+        //     slidesPerView: 5,
+        //   },
         }
 });
 

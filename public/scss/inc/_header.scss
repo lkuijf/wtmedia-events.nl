@@ -20,12 +20,12 @@
             flex-direction: column;
             justify-content: space-around;
             img {
-                height: 180px;
-                width: 180px;
+                height: 80px;
+                width: 80px;
                 transition: height 0.3s ease, width 0.3s ease;
                 &.afterScroll {
-                    height: 100px;
-                    width: 100px;
+                    height: 70px;
+                    width: 70px;
                 }
             }
         }
@@ -86,16 +86,18 @@
                         }
                         ul {
                             display: none;
-                            left: 10px;
+                            left: -36px;
                             white-space: nowrap;
                             position: absolute;
-                            background-color: $colorWTMdark;
+                            top: 30px;
+                            // outline: 1px solid red;
+                            background-color: $colorWhite;
                             @include borderRadius;
                             padding: 20px;
                             li {
                                 padding: 5px 0;
                                 a {
-                                    color: #FFF;
+                                    color: $colorBlack;
                                     padding: 7px 16px 8px 16px;
                                 }
                             }

@@ -168,7 +168,7 @@ form .error span {
   z-index: 1;
 }
 .hero .heroOverlay > div {
-  max-width: 1920px;
+  max-width: 1600px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -207,6 +207,9 @@ form .error span {
   .hero .heroOverlay > div .heroText {
     max-width: 100%;
   }
+}
+.hero .heroOverlay > div .heroText h1 {
+  font-family: "myriad_pro_bold";
 }
 @media (max-width: 768px) {
   .hero .heroOverlay {
@@ -380,7 +383,7 @@ form .error span {
   z-index: 99;
 }
 .headerOuter .headerInnerWrap {
-  height: 200px;
+  height: 100px;
   transition: height 0.3s ease;
   padding: 0 40px;
   background-color: #FFF;
@@ -389,7 +392,7 @@ form .error span {
   gap: 40px;
 }
 .headerOuter .headerInnerWrap.afterScroll {
-  height: 120px;
+  height: 90px;
 }
 .headerOuter .headerInnerWrap .mainLogoWrap {
   display: flex;
@@ -397,13 +400,13 @@ form .error span {
   justify-content: space-around;
 }
 .headerOuter .headerInnerWrap .mainLogoWrap img {
-  height: 180px;
-  width: 180px;
+  height: 80px;
+  width: 80px;
   transition: height 0.3s ease, width 0.3s ease;
 }
 .headerOuter .headerInnerWrap .mainLogoWrap img.afterScroll {
-  height: 100px;
-  width: 100px;
+  height: 70px;
+  width: 70px;
 }
 .headerOuter .headerInnerWrap .mainNav #burger-check, .headerOuter .headerInnerWrap .mainNav .burger-label {
   display: none;
@@ -469,9 +472,8 @@ form .error span {
     top: 0;
   }
   .headerOuter .headerInnerWrap .mainNav #burger-check ~ ul li a {
-    font-family: "Karla", sans-serif;
+    font-family: "myriad_pro_bold";
     color: #222;
-    text-transform: uppercase;
     font-size: 1.5em;
     text-decoration: none;
   }
@@ -527,9 +529,8 @@ form .error span {
     position: relative;
   }
   .headerOuter .headerInnerWrap .mainNav ul li a {
-    font-family: "Karla", sans-serif;
+    font-family: "myriad_pro_bold";
     color: #222;
-    text-transform: uppercase;
     font-size: 1.5em;
     text-decoration: none;
   }
@@ -554,10 +555,11 @@ form .error span {
 @media (min-width: 769px) {
   .headerOuter .headerInnerWrap .mainNav ul li ul {
     display: none;
-    left: 10px;
+    left: -36px;
     white-space: nowrap;
     position: absolute;
-    background-color: #0c5a5b;
+    top: 30px;
+    background-color: #FFF;
     border-radius: 15px;
     padding: 20px;
   }
@@ -565,7 +567,7 @@ form .error span {
     padding: 5px 0;
   }
   .headerOuter .headerInnerWrap .mainNav ul li ul li a {
-    color: #FFF;
+    color: #222;
     padding: 7px 16px 8px 16px;
   }
   .headerOuter .headerInnerWrap .mainNav ul li:hover ul {
@@ -624,11 +626,12 @@ form .error span {
   border-radius: 15px;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
-  background-color: #19b4b6;
+  background: linear-gradient(-45deg, #19b4b6, #7aebed, #19b4b6);
   padding: 10px;
   color: #FFF;
 }
 .pricing3Column article .packHeader h3 {
+  font-family: "myriad_pro_bold";
   font-size: 1.8em;
 }
 .pricing3Column article .packInfo {
@@ -647,7 +650,7 @@ form .error span {
 .pricing3Column article .packInfo div:last-child a {
   font-size: 1em;
   padding: 10px 20px;
-  background-color: #19b4b6;
+  background: linear-gradient(-45deg, #19b4b6, #7aebed 80%, #19b4b6);
   color: #FFF;
   text-decoration: none;
   border-radius: 15px;
@@ -670,13 +673,13 @@ form .error span {
   cursor: pointer;
 }
 .pricing3Column article:hover .packHeader {
-  background-color: #555;
+  background: linear-gradient(-45deg, #19b4b6, #19b4b6, #19b4b6);
 }
 .pricing3Column article:hover .packInfo {
   color: #555;
 }
 .pricing3Column article:hover div:last-child a {
-  background-color: #555;
+  background: linear-gradient(-45deg, #19b4b6, #19b4b6, #19b4b6);
 }
 
 .workingWithContent {
@@ -763,7 +766,7 @@ form .error span {
   bottom: 20px;
   width: 100%;
   text-align: center;
-  background-color: #0c5a5b;
+  background-color: #e4fbfb;
   padding: 15px;
   min-height: 105px;
 }
@@ -782,7 +785,7 @@ form .error span {
 .casesContent > div a div p {
   font-size: 1.4em;
   margin: 0;
-  color: #FFF;
+  color: #222;
 }
 @media (max-width: 1200px) {
   .casesContent > div a div p {
@@ -798,6 +801,9 @@ form .error span {
   .casesContent > div a div p {
     font-size: 0.8em;
   }
+}
+.casesContent > div a div p:first-child {
+  font-family: "myriad_pro_bold";
 }
 .casesContent > div a div p:last-child {
   font-style: italic;
@@ -815,10 +821,9 @@ form .error span {
   -o-object-fit: cover;
      object-fit: cover;
 }
-.casesContent > div:hover {
-  z-index: 1;
-  transform: scale(1.2);
-  box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.3);
+.casesContent > div:hover a div {
+  background-color: #19b4b6;
+  color: #FFF;
 }
 
 .casesContentDiensten {
@@ -854,7 +859,7 @@ form .error span {
   bottom: 20px;
   width: 100%;
   text-align: center;
-  background-color: #0c5a5b;
+  background-color: #e4fbfb;
   padding: 15px;
   min-height: 105px;
 }
@@ -873,7 +878,7 @@ form .error span {
 .casesContentDiensten a div p {
   font-size: 1.4em;
   margin: 0;
-  color: #FFF;
+  color: #222;
 }
 @media (max-width: 1200px) {
   .casesContentDiensten a div p {
@@ -889,6 +894,9 @@ form .error span {
   .casesContentDiensten a div p {
     font-size: 0.8em;
   }
+}
+.casesContentDiensten a div p:first-child {
+  font-family: "myriad_pro_bold";
 }
 .casesContentDiensten a div p:last-child {
   font-style: italic;
@@ -1117,7 +1125,12 @@ form .error span {
     grid-template-columns: repeat(1, 1fr);
   }
 }
-.reviewsContent article img {
+.reviewsContent div article {
+  border: 1px solid #222;
+  border-radius: 15px;
+  padding: 20px;
+}
+.reviewsContent div article img {
   border-radius: 15px;
   width: 100%;
   max-width: 200px;
@@ -1125,14 +1138,14 @@ form .error span {
   -o-object-fit: contain;
      object-fit: contain;
 }
-.reviewsContent article h3 {
+.reviewsContent div article h3 {
   font-size: 1.3em;
 }
-.reviewsContent article > div {
-  height: 200px;
+.reviewsContent div article > div {
+  height: 220px;
   overflow: hidden;
 }
-.reviewsContent article > div :first-child {
+.reviewsContent div article > div :first-child {
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -1176,9 +1189,9 @@ form .error span {
 .subscriptionForm input {
   font-family: "Inter", sans-serif;
   font-size: 1.5em;
-  background-color: #222;
-  color: #FFF;
-  border: 0;
+  background-color: #FFF;
+  color: #222;
+  border: 1px solid #222;
   border-radius: 15px;
   height: 50px;
   padding: 0 20px;
@@ -1199,11 +1212,9 @@ form .error span {
   border-radius: 15px;
   padding: 10px 50px;
   display: inline-block;
-  box-shadow: #ccc 10px 10px 0px -2px, #006878 10px 10px;
 }
 .subscriptionForm button:active {
   transform: translate(5px, 5px);
-  box-shadow: #ccc 5px 5px 0px -2px, #006878 5px 5px;
 }
 
 footer {
@@ -1355,6 +1366,7 @@ footer .btm .socials a img {
   margin-bottom: 0;
 }
 .blogWrap article > div h2 {
+  font-family: "myriad_pro_bold";
   color: #0c5a5b;
 }
 .blogWrap article > div .date:before {
@@ -1368,53 +1380,79 @@ footer .btm .socials a img {
 }
 .blogWrap article a:hover {
   text-decoration: underline;
+  color: #FFF;
 }
 .blogWrap article:hover {
-  background-color: #0c5a5b;
+  background-color: #19b4b6;
   color: #FFF;
   cursor: pointer;
 }
 .blogWrap article:hover h2 {
   color: #FFF;
 }
+.blogWrap article:hover a {
+  color: #FFF;
+}
 
 .servicesBtns {
+  padding: 40px 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
-}
-@media (max-width: 768px) {
-  .servicesBtns {
-    flex-direction: column;
-    gap: 40px;
-  }
+  gap: 40px;
+  justify-content: center;
 }
 .servicesBtns .serviceBtnWrap {
-  margin: 0;
+  border-radius: 15px;
+  cursor: pointer;
+  width: 330px;
+  height: 330px;
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px;
+  background-color: #FFF;
+  transition: background-color 0.3s ease;
 }
-@media (max-width: 768px) {
-  .servicesBtns .serviceBtnWrap {
-    text-align: center;
-    margin: 0 auto;
-  }
+.servicesBtns .serviceBtnWrap h3 {
+  margin: 0;
+  font-family: "myriad_pro_bold";
 }
 .servicesBtns .serviceBtnWrap a {
-  border-radius: 15px;
-  background-color: #006878;
-  color: #FFF;
+  color: #222;
   text-decoration: none;
-  padding: 18px 35px;
-  display: inline-block;
-  box-shadow: #ccc 10px 10px 0px -2px, #006878 10px 10px;
 }
-@media (max-width: 768px) {
-  .servicesBtns .serviceBtnWrap a {
-    width: 300px;
-  }
+.servicesBtns .serviceBtnWrap .serIcon {
+  border-radius: 15px;
+  width: 100px;
+  height: 100px;
+  padding-top: 18px;
+  background-color: #e4fbfb;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  color: #19b4b6;
 }
-.servicesBtns .serviceBtnWrap a:active {
-  transform: translate(5px, 5px);
-  box-shadow: #ccc 5px 5px 0px -2px, #006878 5px 5px;
+.servicesBtns .serviceBtnWrap .serIcon:before {
+  font-family: "wt_media_events";
+  font-size: 3.5em;
+}
+.servicesBtns .serviceBtnWrap:hover {
+  background-color: #19b4b6;
+  color: #FFF;
+}
+.servicesBtns .serviceBtnWrap:hover a {
+  color: #FFF;
+}
+.servicesBtns .serviceBtnWrap.serOnMar .serIcon:before {
+  content: "\f527";
+}
+.servicesBtns .serviceBtnWrap.serWebDev .serIcon:before {
+  content: "\f018";
+}
+.servicesBtns .serviceBtnWrap.serEv .serIcon:before {
+  content: "\f074";
 }
 
 @media (max-width: 768px) {
@@ -1470,7 +1508,6 @@ footer .btm .socials a img {
   border-radius: 15px;
   padding: 10px 50px;
   display: inline-block;
-  box-shadow: #ccc 10px 10px 0px -2px, #006878 10px 10px;
   color: #19b4b6;
   background-color: #FFF;
   box-shadow: #19b4b6 10px 10px 0px -2px, #FFF 10px 10px;
@@ -1480,7 +1517,6 @@ footer .btm .socials a img {
 }
 .scheduleCallContent form button:active {
   transform: translate(5px, 5px);
-  box-shadow: #ccc 5px 5px 0px -2px, #006878 5px 5px;
 }
 .scheduleCallContent form button:active {
   box-shadow: #19b4b6 5px 5px 0px -2px, #FFF 5px 5px;
@@ -1863,28 +1899,33 @@ footer .btm .socials a img {
 }
 
 .contentWrapper .standardPage {
-  padding-top: 200px;
+  padding-top: 100px;
 }
 .contentWrapper .standardPage > div {
   margin-bottom: 40px;
 }
-.contentWrapper h1, .contentWrapper h3 {
+.contentWrapper .anchorSection {
+  padding: 40px 0;
+}
+.contentWrapper .anchorSection:nth-child(odd) {
+  background-color: #e4fbfb;
+}
+.contentWrapper .anchorSection:first-of-type {
+  padding: 0;
+  background-color: #FFF;
+}
+.contentWrapper h1, .contentWrapper h2, .contentWrapper h3 {
+  font-family: "myriad_pro";
   font-weight: normal;
+}
+.contentWrapper h1 {
   font-size: 2.5em;
 }
-.contentWrapper h1 hr, .contentWrapper h3 hr {
-  display: inline-block;
-  width: 70px;
-  transform: translateY(5px);
-}
-.contentWrapper h1 em, .contentWrapper h3 em {
-  color: #19b4b6;
-  font-style: normal;
-  font-weight: bold;
-  text-shadow: -1px 0 #555, 0 1px #555, 1px 0 #555, 0 -1px #555;
+.contentWrapper h2 {
+  font-size: 1.8em;
 }
 .contentWrapper h3 {
-  font-size: 2em;
+  font-size: 1.5em;
 }
 .contentWrapper h1.servicePageHeader {
   font-size: 2em;
@@ -1910,6 +1951,12 @@ footer .btm .socials a img {
 }
 .contentWrapper a:hover {
   text-decoration: underline;
+}
+.contentWrapper ul li {
+  list-style-type: none;
+}
+.contentWrapper ul li:before {
+  content: "✓ ";
 }
 .contentWrapper .fullw picture img, .contentWrapper .twoColumns picture img {
   width: 100%;
@@ -1950,9 +1997,6 @@ html {
   color: #222;
   background-color: #FFF;
   scroll-behavior: smooth;
-  background-image: url("../statics/bg_v4.webp");
-  background-repeat: repeat;
-  background-size: 100%;
 }
 
 *, *:before, *:after {
@@ -1977,8 +2021,29 @@ nav ul {
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: "myriad_pro";
+  src: url("../fonts/myriad_pro_regular-webfont.woff2") format("woff2"), url("../fonts/myriad_pro_regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "myriad_pro_bold";
+  src: url("../fonts/myriad_pro_bold-webfont.woff2") format("woff2"), url("../fonts/myriad_pro_bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "myriad_pro_black";
+  src: url("../fonts/myriad_pro_black-webfont.woff2") format("woff2"), url("../fonts/myriad_pro_black-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 .inner {
-  max-width: 1920px;
+  max-width: 1600px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 100px;
@@ -2070,10 +2135,10 @@ nav ul {
 
 .anchorPoint {
   display: block;
-  padding-top: 120px;
+  padding-top: 90px;
 }
 .anchorPoint:first-of-type {
-  padding-top: 200px;
+  padding-top: 100px;
 }
 
 .toggleEvents {

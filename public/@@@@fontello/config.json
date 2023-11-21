@@ -77,24 +77,6 @@
       "css": "thumbs-up",
       "code": 59398,
       "src": "fontawesome"
-    },
-    {
-      "uid": "117d7f4e196f826847929c6550734615",
-      "css": "globe",
-      "code": 61464,
-      "src": "mfglabs"
-    },
-    {
-      "uid": "500cde26773d15aaac1bfaa2a33cc5a9",
-      "css": "spread",
-      "code": 62759,
-      "src": "mfglabs"
-    },
-    {
-      "uid": "288c5a1dd34328f851587538998e4b3e",
-      "css": "trophy",
-      "code": 61556,
-      "src": "mfglabs"
     }
   ]
 }

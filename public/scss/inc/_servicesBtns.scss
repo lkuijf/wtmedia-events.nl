@@ -1,34 +1,77 @@
 .servicesBtns {
+    padding: 40px 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
-    @media (max-width: $sbp3_tablet) {
-        flex-direction: column;
-        gap: 40px;
-    }
+    gap: 40px;
+    justify-content: center;
+    // @media (max-width: $sbp3_tablet) {
+        // flex-direction: column;
+        // gap: 40px;
+    // }
     .serviceBtnWrap {
-        margin: 0;
-        @media (max-width: $sbp3_tablet) {
-            text-align: center;
-            margin: 0 auto;
+        @include borderRadius;
+        cursor: pointer;
+        width: 330px;
+        height: 330px;
+        -webkit-box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.2); 
+        box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.2);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 30px;
+        background-color: $colorWhite;
+        transition: background-color 0.3s ease;
+        h3 {
+            margin: 0;
+            font-family: 'myriad_pro_bold';
         }
         a {
-            @media (max-width: $sbp3_tablet) {
-                width: 300px;
-            }
-            @include borderRadius;
-            background-color: $colorCtaBtn;
-            color: $colorWhite;
+            color: $colorBlack;
             text-decoration: none;
-            padding: 18px 35px;
-            display: inline-block;
-            box-shadow: #ccc 10px 10px 0px -2px, $colorCtaBtn 10px 10px;
-            &:active {
-                transform: translate(5px, 5px);
-                box-shadow: #ccc 5px 5px 0px -2px, $colorCtaBtn 5px 5px;
+        }
+        .serIcon {
+            @include borderRadius;
+            width: 100px;
+            height: 100px;
+            padding-top: 18px;
+            background-color: $colorWTMlight;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            color: $colorWTM;
+            &:before {
+                font-family: 'wt_media_events';
+                font-size: 3.5em;
             }
-    
-    
+        }
+        &:hover {
+            background-color: $colorWTM;
+            color: $colorWhite;
+            a {
+                color: $colorWhite;
+            }
+        }
+        &.serOnMar {
+            .serIcon {
+                &:before {
+                    content: '\f527';
+                }
+            }
+        }
+        &.serWebDev {
+            .serIcon {
+                &:before {
+                    content: '\f018';
+                }
+            }
+        }
+        &.serEv {
+            .serIcon {
+                &:before {
+                    content: '\f074';
+                }
+            }
         }
     }
 }

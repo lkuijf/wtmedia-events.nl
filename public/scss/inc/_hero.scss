@@ -37,6 +37,9 @@
                 // max-width: 60%;
                 @media (max-width: $sbp1_desktop) {max-width: 80%;}
                 @media (max-width: $sbp2_laptop) {max-width: 100%;}
+                h1 {
+                    font-family: 'myriad_pro_bold';
+                }
             }
         }
         position: absolute;
