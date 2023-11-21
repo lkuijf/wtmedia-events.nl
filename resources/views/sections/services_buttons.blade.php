@@ -26,7 +26,7 @@
         </div>
         <div>
             <p>{{ $data['website_options']->service_e_text }}</p>
-            <a href="{{ url('diensten/events') }}">Lees meertest</a>
+            <a href="{{ url('diensten/events') }}">Lees meer</a>
         </div>
     </article>
 </div>
