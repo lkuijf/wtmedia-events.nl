@@ -1411,7 +1411,7 @@ footer .btm .socials a img {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 30px;
+  padding: 20px;
   background-color: #FFF;
   transition: background-color 0.3s ease;
 }
