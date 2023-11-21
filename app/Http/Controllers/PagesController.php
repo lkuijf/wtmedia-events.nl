@@ -650,6 +650,7 @@ class PagesController extends Controller
         $homepageCases = $casesHighlighted->getItems();
         foreach($homepageCases as &$case) {
             $case->gallery = $this->getMediaGallery($case->gallery);
+            $case->card_image = $this->getMediaGallery($case->card_image);
         }
         $reviewPosts = new SimpleCustomPostsApi('review');
         $reviewPosts->get();
