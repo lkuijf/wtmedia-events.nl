@@ -310,6 +310,8 @@ form .error span {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: center top;
+     object-position: center top;
   transition: opacity 0.7s ease;
   opacity: 0;
 }
@@ -1978,11 +1980,9 @@ footer .btm .socials a img {
   text-decoration: none;
   padding: 25px 100px;
   display: inline-block;
-  box-shadow: #ccc 10px 10px 0px -2px, #006878 10px 10px;
 }
 .contentWrapper .ctaBtnWrap .ctaBtn:active {
   transform: translate(5px, 5px);
-  box-shadow: #ccc 5px 5px 0px -2px, #006878 5px 5px;
 }
 
 html, body {
