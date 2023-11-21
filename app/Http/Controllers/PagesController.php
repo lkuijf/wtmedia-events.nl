@@ -681,6 +681,7 @@ class PagesController extends Controller
             if($sPage->title == 'Blog') continue;
             if($sPage->title == 'Privacy policy') continue;
             if($sPage->title == 'Instagram feed') continue;
+            if($sPage->title == 'Over WT Media Events') continue;
             $pageA = new \stdClass;
             $pageA->_type = '_anchor';
             $pageA->value = $sPage->slug;
