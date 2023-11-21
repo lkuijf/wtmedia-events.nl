@@ -1536,12 +1536,22 @@ footer .btm .socials a img {
 }
 .teamSpecialistsContent article > div h3 {
   font-family: "myriad_pro";
+  margin-bottom: 0;
+}
+.teamSpecialistsContent article > div .tmFunc {
+  font-size: 0.8em;
+  margin-top: 0;
+  font-family: "myriad_pro";
+  font-style: italic;
 }
 .teamSpecialistsContent article > div:last-child {
   padding: 20px;
 }
 .teamSpecialistsContent article img {
   width: 200px;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 15px;
 }
 

@@ -9,7 +9,13 @@
         > div {
             h3 {
                 font-family: 'myriad_pro';
-                // font-weight: normal;
+                margin-bottom: 0;
+            }
+            .tmFunc {
+                font-size: .8em;
+                margin-top: 0;
+                font-family: 'myriad_pro';
+                font-style: italic;
             }
             &:last-child {
                 padding: 20px;
@@ -17,6 +23,8 @@
         }
         img {
             width: 200px;
+            height: 300px;
+            object-fit: cover;
             @include borderRadius;
         }
     }
