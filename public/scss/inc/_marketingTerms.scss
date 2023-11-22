@@ -3,17 +3,19 @@
     flex-direction: column;
     align-items: center;
     .marketingTermsGrid {
-        height: 800px;
+        // height: 800px;
+        height: 600px;
         @include textPaddingOnMobile;
         margin-left: auto;
         margin-right: auto;
         display: grid;
         justify-items: center;
-        grid-template-columns: repeat(4, 400px);
-        @media (max-width: $sbp_marketingTerms1) {
+        // grid-template-columns: repeat(4, 400px);
+        grid-template-columns: repeat(4, 300px);
+        // @media (max-width: $sbp_marketingTerms1) {
             height: 600px;
             grid-template-columns: repeat(4, 300px);
-        }
+        // }
         @media (max-width: $sbp_marketingTerms2) {
             height: 400px;
             grid-template-columns: repeat(4, 200px);
@@ -42,12 +44,12 @@
                 position: absolute;
                 left: -125px;
                 top: 0;
-                @media (max-width: $sbp_marketingTerms1) {
+                // @media (max-width: $sbp_marketingTerms1) {
                     width: 200px;
                     height: 200px;
                     gap: 30px;
                     left: -100px;
-                }
+                // }
                 @media (max-width: $sbp_marketingTerms2) {
                     width: 150px;
                     height: 150px;
@@ -56,12 +58,16 @@
                 }
                 h3 {
                     font-size: 1.5em;
-                    @media (max-width: $sbp_marketingTerms1) {font-size: 1.2em;}
+                    // @media (max-width: $sbp_marketingTerms1) {
+                        font-size: 1.2em;
+                    // }
                     @media (max-width: $sbp_marketingTerms2) {font-size: 1.0em;}
                 }
                 p {
                     font-size: .8em;
-                    @media (max-width: $sbp_marketingTerms1) {font-size: .7em;}
+                    // @media (max-width: $sbp_marketingTerms1) {
+                        font-size: .7em;
+                    // }
                     @media (max-width: $sbp_marketingTerms2) {font-size: .6em;}
                 }
                 > div {
@@ -70,11 +76,11 @@
                         height: 120px;
                         object-fit: contain;
                         margin: 70px;
-                        @media (max-width: $sbp_marketingTerms1) {
+                        // @media (max-width: $sbp_marketingTerms1) {
                             width: 100px;
                             height: 100px;
                             margin: 50px;
-                        }
+                        // }
                         @media (max-width: $sbp_marketingTerms2) {
                             width: 80px;
                             height: 80px;
@@ -84,7 +90,9 @@
                     &:last-child {
                         div {
                             width: 330px;
-                            @media (max-width: $sbp_marketingTerms1) {width: 250px;}
+                            // @media (max-width: $sbp_marketingTerms1) {
+                                width: 250px;
+                            // }
                             @media (max-width: $sbp_marketingTerms2) {width: 160px;}
                         }
                     }
@@ -93,10 +101,10 @@
                     width: 650px;
                     left: -125px;
                     position: absolute;
-                    @media (max-width: $sbp_marketingTerms1) {
+                    // @media (max-width: $sbp_marketingTerms1) {
                         width: 500px;
                         left: -100px;
-                    }
+                    // }
                     @media (max-width: $sbp_marketingTerms2) {
                         width: 350px;
                         left: -75px;
@@ -143,10 +151,10 @@
                     &:hover {
                         width: 250px;
                         height: 650px;
-                        @media (max-width: $sbp_marketingTerms1) {
+                        // @media (max-width: $sbp_marketingTerms1) {
                             width: 200px;
                             height: 500px;
-                        }
+                        // }
                         @media (max-width: $sbp_marketingTerms2) {
                             width: 150px;
                             height: 350px;
@@ -159,7 +167,9 @@
                         &:last-child {
                             div {
                                 width: 210px;
-                                @media (max-width: $sbp_marketingTerms1) {width: 170px;}
+                                // @media (max-width: $sbp_marketingTerms1) {
+                                    width: 170px;
+                                // }
                                 @media (max-width: $sbp_marketingTerms2) {width: 130px;}
                             }
                         }
@@ -200,11 +210,11 @@
                         height: 650px;
                         top: -400px;
                         z-index: 5;
-                        @media (max-width: $sbp_marketingTerms1) {
+                        // @media (max-width: $sbp_marketingTerms1) {
                             width: 200px;
                             height: 500px;
                             top: -300px;
-                        }
+                        // }
                         @media (max-width: $sbp_marketingTerms2) {
                             width: 150px;
                             height: 350px;
@@ -219,7 +229,9 @@
                         &:last-child {
                             div {
                                 width: 210px;
-                                @media (max-width: $sbp_marketingTerms1) {width: 170px;}
+                                // @media (max-width: $sbp_marketingTerms1) {
+                                    width: 170px;
+                                // }
                                 @media (max-width: $sbp_marketingTerms2) {width: 130px;}
                             }
                         }

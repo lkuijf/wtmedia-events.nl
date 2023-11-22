@@ -1650,12 +1650,14 @@ footer .btm .socials a img {
   align-items: center;
 }
 .marketingTermsContent .marketingTermsGrid {
-  height: 800px;
+  height: 600px;
   margin-left: auto;
   margin-right: auto;
   display: grid;
   justify-items: center;
-  grid-template-columns: repeat(4, 400px);
+  grid-template-columns: repeat(4, 300px);
+  height: 600px;
+  grid-template-columns: repeat(4, 300px);
 }
 @media (max-width: 768px) {
   .marketingTermsContent .marketingTermsGrid {
@@ -1667,12 +1669,6 @@ footer .btm .socials a img {
   .marketingTermsContent .marketingTermsGrid {
     padding-left: 20px;
     padding-right: 20px;
-  }
-}
-@media (max-width: 1820px) {
-  .marketingTermsContent .marketingTermsGrid {
-    height: 600px;
-    grid-template-columns: repeat(4, 300px);
   }
 }
 @media (max-width: 1420px) {
@@ -1710,14 +1706,10 @@ footer .btm .socials a img {
   position: absolute;
   left: -125px;
   top: 0;
-}
-@media (max-width: 1820px) {
-  .marketingTermsContent .marketingTermsGrid .mTermCell .mTermBox {
-    width: 200px;
-    height: 200px;
-    gap: 30px;
-    left: -100px;
-  }
+  width: 200px;
+  height: 200px;
+  gap: 30px;
+  left: -100px;
 }
 @media (max-width: 1420px) {
   .marketingTermsContent .marketingTermsGrid .mTermCell .mTermBox {
@@ -1729,11 +1721,7 @@ footer .btm .socials a img {
 }
 .marketingTermsContent .marketingTermsGrid .mTermCell .mTermBox h3 {
   font-size: 1.5em;
-}
-@media (max-width: 1820px) {
-  .marketingTermsContent .marketingTermsGrid .mTermCell .mTermBox h3 {
-    font-size: 1.2em;
-  }
+  font-size: 1.2em;
 }
 @media (max-width: 1420px) {
   .marketingTermsContent .marketingTermsGrid .mTermCell .mTermBox h3 {
@@ -1742,11 +1730,7 @@ footer .btm .socials a img {
 }
 .marketingTermsContent .marketingTermsGrid .mTermCell .mTermBox p {
   font-size: 0.8em;
-}
-@media (max-width: 1820px) {
-  .marketingTermsContent .marketingTermsGrid .mTermCell .mTermBox p {
-    font-size: 0.7em;
-  }
+  font-size: 0.7em;
 }
 @media (max-width: 1420px) {
   .marketingTermsContent .marketingTermsGrid .mTermCell .mTermBox p {
@@ -1759,13 +1743,9 @@ footer .btm .socials a img {
   -o-object-fit: contain;
      object-fit: contain;
   margin: 70px;
-}
-@media (max-width: 1820px) {
-  .marketingTermsContent .marketingTermsGrid .mTermCell .mTermBox > div img {
-    width: 100px;
-    height: 100px;
-    margin: 50px;
-  }
+  width: 100px;
+  height: 100px;
+  margin: 50px;
 }
 @media (max-width: 1420px) {
   .marketingTermsContent .marketingTermsGrid .mTermCell .mTermBox > div img {
@@ -1776,11 +1756,7 @@ footer .btm .socials a img {
 }
 .marketingTermsContent .marketingTermsGrid .mTermCell .mTermBox > div:last-child div {
   width: 330px;
-}
-@media (max-width: 1820px) {
-  .marketingTermsContent .marketingTermsGrid .mTermCell .mTermBox > div:last-child div {
-    width: 250px;
-  }
+  width: 250px;
 }
 @media (max-width: 1420px) {
   .marketingTermsContent .marketingTermsGrid .mTermCell .mTermBox > div:last-child div {
@@ -1791,12 +1767,8 @@ footer .btm .socials a img {
   width: 650px;
   left: -125px;
   position: absolute;
-}
-@media (max-width: 1820px) {
-  .marketingTermsContent .marketingTermsGrid .mTermCell .mTermBox:hover {
-    width: 500px;
-    left: -100px;
-  }
+  width: 500px;
+  left: -100px;
 }
 @media (max-width: 1420px) {
   .marketingTermsContent .marketingTermsGrid .mTermCell .mTermBox:hover {
@@ -1861,12 +1833,8 @@ footer .btm .socials a img {
 .marketingTermsContent .marketingTermsGrid .mTermCell:nth-child(4) .mTermBox:hover {
   width: 250px;
   height: 650px;
-}
-@media (max-width: 1820px) {
-  .marketingTermsContent .marketingTermsGrid .mTermCell:nth-child(4) .mTermBox:hover {
-    width: 200px;
-    height: 500px;
-  }
+  width: 200px;
+  height: 500px;
 }
 @media (max-width: 1420px) {
   .marketingTermsContent .marketingTermsGrid .mTermCell:nth-child(4) .mTermBox:hover {
@@ -1881,11 +1849,7 @@ footer .btm .socials a img {
 }
 .marketingTermsContent .marketingTermsGrid .mTermCell:nth-child(4) .mTermBox > div:last-child div {
   width: 210px;
-}
-@media (max-width: 1820px) {
-  .marketingTermsContent .marketingTermsGrid .mTermCell:nth-child(4) .mTermBox > div:last-child div {
-    width: 170px;
-  }
+  width: 170px;
 }
 @media (max-width: 1420px) {
   .marketingTermsContent .marketingTermsGrid .mTermCell:nth-child(4) .mTermBox > div:last-child div {
@@ -1925,13 +1889,9 @@ footer .btm .socials a img {
   height: 650px;
   top: -400px;
   z-index: 5;
-}
-@media (max-width: 1820px) {
-  .marketingTermsContent .marketingTermsGrid .mTermCell:nth-child(8) .mTermBox:hover {
-    width: 200px;
-    height: 500px;
-    top: -300px;
-  }
+  width: 200px;
+  height: 500px;
+  top: -300px;
 }
 @media (max-width: 1420px) {
   .marketingTermsContent .marketingTermsGrid .mTermCell:nth-child(8) .mTermBox:hover {
@@ -1948,11 +1908,7 @@ footer .btm .socials a img {
 }
 .marketingTermsContent .marketingTermsGrid .mTermCell:nth-child(8) .mTermBox > div:last-child div {
   width: 210px;
-}
-@media (max-width: 1820px) {
-  .marketingTermsContent .marketingTermsGrid .mTermCell:nth-child(8) .mTermBox > div:last-child div {
-    width: 170px;
-  }
+  width: 170px;
 }
 @media (max-width: 1420px) {
   .marketingTermsContent .marketingTermsGrid .mTermCell:nth-child(8) .mTermBox > div:last-child div {
