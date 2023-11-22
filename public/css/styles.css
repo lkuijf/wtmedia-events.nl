@@ -1233,7 +1233,7 @@ form .error span {
   font-size: 1.3em;
 }
 .reviewsContent div article > div {
-  height: 220px;
+  height: 240px;
   overflow: hidden;
 }
 .reviewsContent div article > div :first-child {
