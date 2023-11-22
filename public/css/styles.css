@@ -506,9 +506,6 @@ form .error span {
   .headerOuter .headerInnerWrap .mainNav .burger-label {
     z-index: 2;
   }
-  .headerOuter .headerInnerWrap .mainNav .burger-label.afterScroll {
-    top: 41px;
-  }
 }
 @media (min-width: 769px) {
   .headerOuter .headerInnerWrap .mainNav {
@@ -1103,6 +1100,47 @@ form .error span {
   font-family: "wt_media_events";
   font-size: 2em;
   content: "\f178";
+}
+
+.caseHeader {
+  background-color: #19b4b6;
+  padding: 40px 0;
+}
+.caseHeader > div {
+  display: flex;
+  color: #FFF;
+}
+.caseHeader > div h1 {
+  font-family: "myriad_pro_bold";
+}
+.caseHeader > div div {
+  flex-basis: 50%;
+}
+.caseHeader > div div:first-child p {
+  font-weight: bold;
+}
+.caseHeader > div div:first-child :first-child {
+  margin-top: 0;
+}
+.caseHeader > div div:last-child {
+  padding: 0 40px;
+}
+.caseHeader > div div:last-child p {
+  line-height: 2em;
+}
+.caseHeader > div div:last-child :first-child {
+  margin-top: 0;
+}
+
+.caseDetailImgGallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.caseDetailImgGallery img {
+  aspect-ratio: 1/1;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .reviewsContent {

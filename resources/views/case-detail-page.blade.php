@@ -10,11 +10,22 @@
             // 'email' => $section->btn_email,
             // 'phone' => $section->btn_phone,
             ])
+
+        <div class="caseHeader">
+            <div class="inner">
+                <div>
+                    <h1>Berenschot 85-jarig jubileumfeest</h1>
+                    <p>Een legendair feest</p>
+                </div>
+                <div><p>Berenschot, de pioniers van vooruitgang, wilden hun 85-jarige bestaan niet zomaar voorbij laten gaan. Ze waren op zoek naar iets grootser, iets dat de kern van hun succes en toewijding zou vastleggen. Ze hadden een evenement nodig waar iedereen, zelfs jaren later, nog over zou praten. En daar kwam Eventbureau.nl in beeld.</p></div>
+            </div>
+        </div>
+
         <div class="inner">
             <article class="detailArticle">
                 {{-- <p class="date"><span>{{ $data['blog_date'] }}</span></p> --}}
                 {!! $data['text'] !!}
-                <div class="casesContentDiensten">
+                <div class="caseDetailImgGallery">
                     @foreach ($data['gallery'] as $image)
                         @if (isset($image['sizes']))
                             {{-- <a data-fslightbox="first-lightbox" href="{{ str_replace('https://wtmedia-events.nl', '', $image['sizes']['large']) }}"><img src="{{ $image['sizes']['medium_large'] }}" alt="{{ $image['alt'] }}"></a> --}}

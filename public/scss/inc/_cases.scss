@@ -184,3 +184,43 @@
         }
     }
 }
+.caseHeader {
+    background-color: $colorWTM;
+    padding: 40px 0;
+    > div {
+        display: flex;
+        color: $colorWhite;
+        h1 {
+            font-family: 'myriad_pro_bold';
+        }
+        div {
+            flex-basis: 50%;
+            &:first-child {
+                p {
+                    font-weight: bold;
+                }
+                :first-child {
+                    margin-top: 0;
+                }
+            }
+            &:last-child {
+                padding: 0 40px;
+                p {
+                    line-height: 2em;
+                }
+                :first-child {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+}
+.caseDetailImgGallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    img {
+        aspect-ratio: 1/1;
+        object-fit: cover;
+    }
+}

@@ -65,9 +65,9 @@
                 }
                 .burger-label {
                     z-index: 2;
-                    &.afterScroll {
-                        top: 41px;
-                    }
+                    // &.afterScroll {
+                    //     top: 41px;
+                    // }
                 }
             }
             @media (min-width: ($sbp3_tablet + 1)) {

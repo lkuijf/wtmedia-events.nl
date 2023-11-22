@@ -752,12 +752,13 @@ function crbRegisterFields($args) {
         ->where( 'post_type', '=', 'case' )
         ->add_fields(array(
             // Field::make( 'separator', 'separator1', __( 'Images' ) ),
+            Field::make( 'text', 'sub_title', __( 'Sub title' ))->set_visible_in_rest_api($visible = true),
+            Field::make( 'textarea', 'intro_text', __( 'Introduction text' ))->set_visible_in_rest_api($visible = true),
             Field::make( 'media_gallery', 'gallery', __( 'Images' ) )->set_visible_in_rest_api($visible = true),
             // Field::make( 'text', 'hero_title', __( 'Hero title (can use html-tags)' ))->set_visible_in_rest_api($visible = true),
             // Field::make( 'textarea', 'hero_text', __( 'Hero text (can use html-tags)' ))->set_visible_in_rest_api($visible = true),
             Field::make( 'separator', 'separator2', __( 'Case text' ) ),
             Field::make( 'rich_text', 'text', __( 'Text' ))->set_visible_in_rest_api($visible = true),
-            Field::make( 'textarea', 'card_text', __( 'Card text (can use html-tags)' ))->set_visible_in_rest_api($visible = true),
             Field::make( 'separator', 'separator3', __( 'SEO information' ) ),
             Field::make( 'text', 'page_title', __( 'Blog title (shown in browser tab)' ))->set_visible_in_rest_api($visible = true),
             Field::make( 'image', 'card_image', __( 'Card image' ) )->set_visible_in_rest_api($visible = true),

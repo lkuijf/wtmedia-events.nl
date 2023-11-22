@@ -310,6 +310,13 @@ function getCustomPostsCollectionAttrs($coll, $pType) {
             if($pType == 'blog' || $pType == 'case') {
                 $oP->card_image = carbon_get_post_meta( $item->ID, 'card_image' );
             }
+            if($pType == 'blog') {
+                $oP->card_text = carbon_get_post_meta( $item->ID, 'card_text' );
+            }
+            if($pType == 'case') {
+                $oP->sub_title = carbon_get_post_meta( $item->ID, 'sub_title' );
+                $oP->intro_text = carbon_get_post_meta( $item->ID, 'intro_text' );
+            }
             
             $oP->id = $item->ID;
             $oP->title = $item->post_title;
@@ -318,7 +325,6 @@ function getCustomPostsCollectionAttrs($coll, $pType) {
             // $oP->order = $item->menu_order;
             $oP->status = $item->post_status;
             $oP->date = $item->post_date;
-            $oP->card_text = carbon_get_post_meta( $item->ID, 'card_text' );
             $oP->page_title = carbon_get_post_meta( $item->ID, 'page_title' );
             $oP->page_meta_description = carbon_get_post_meta( $item->ID, 'page_meta_description' );
             $oP->gallery = carbon_get_post_meta( $item->ID, 'gallery' );
