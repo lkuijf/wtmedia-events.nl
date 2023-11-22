@@ -186,18 +186,30 @@
 }
 .caseHeader {
     background-color: $colorWTM;
-    padding: 40px 0;
+    padding: 80px 0;
+    margin-bottom: 0 !important;
+    min-height: 350px;
     > div {
         display: flex;
+        @media (max-width: $sbp3_tablet) {
+            flex-direction: column;
+            @include textPaddingOnMobile;
+        }
         color: $colorWhite;
         h1 {
             font-family: 'myriad_pro_bold';
+            margin-bottom: 0;
+            font-size: 3em;
+            @media (max-width: $sbp1_desktop) {font-size: 2.5em;}
+            @media (max-width: $sbp4_mobile) {font-size: 2em;}
         }
         div {
             flex-basis: 50%;
             &:first-child {
                 p {
+                    margin-top: 0;
                     font-weight: bold;
+                    font-size: 1.2em;
                 }
                 :first-child {
                     margin-top: 0;
@@ -205,8 +217,11 @@
             }
             &:last-child {
                 padding: 0 40px;
+                @media (max-width: $sbp3_tablet) {
+                    padding: 40px 0 0 0;
+                }
                 p {
-                    line-height: 2em;
+                    line-height: 1.7em;
                 }
                 :first-child {
                     margin-top: 0;
@@ -215,9 +230,22 @@
         }
     }
 }
+.caseLargeBackImg {
+    height: 900px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .caseDetailImgGallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    @media (max-width: $sbp3_tablet) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    // @media (max-width: $sbp4_mobile) {
+    //     grid-template-columns: repeat(1, 1fr);
+    // }
     gap: 20px;
     img {
         aspect-ratio: 1/1;

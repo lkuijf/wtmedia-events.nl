@@ -3,23 +3,25 @@
 @section('meta_description', $data['meta_description'])
 @section('content')
     <div class="standardPage">
-        @include('sections.hero', [
+        {{-- @include('sections.hero', [
             'images' => array($data['gallery'][0]),
             'title' => $data['hero_title'],
             // 'text' => $data['hero_text'],
             // 'email' => $section->btn_email,
             // 'phone' => $section->btn_phone,
-            ])
+            ]) --}}
 
         <div class="caseHeader">
             <div class="inner">
                 <div>
-                    <h1>Berenschot 85-jarig jubileumfeest</h1>
-                    <p>Een legendair feest</p>
+                    <h1>{{ $data['hero_title'] }}</h1>
+                    <p>{{ $data['sub_title'] }}</p>
                 </div>
-                <div><p>Berenschot, de pioniers van vooruitgang, wilden hun 85-jarige bestaan niet zomaar voorbij laten gaan. Ze waren op zoek naar iets grootser, iets dat de kern van hun succes en toewijding zou vastleggen. Ze hadden een evenement nodig waar iedereen, zelfs jaren later, nog over zou praten. En daar kwam Eventbureau.nl in beeld.</p></div>
+                <div><p>{{ $data['intro_text'] }}</p></div>
             </div>
         </div>
+
+        <div class="caseLargeBackImg" style="background-image: url({{ $data['gallery'][0]['sizes']['2048x2048'] }})"></div>
 
         <div class="inner">
             <article class="detailArticle">

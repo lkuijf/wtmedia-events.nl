@@ -20,7 +20,7 @@
     @include heroHeight;
     .heroOverlay {
         > div {
-            max-width: $contentWidth;
+            max-width: $contentWidth+200; // hero text mag wel wat breeder
             margin-left: auto;
             margin-right: auto;
             display: flex;

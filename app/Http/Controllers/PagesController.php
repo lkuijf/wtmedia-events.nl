@@ -266,6 +266,8 @@ class PagesController extends Controller
             'website_options' => $options,
             'text' => $post[0]->text,
             'hero_title' => $post[0]->title->rendered,
+            'sub_title' => $post[0]->sub_title,
+            'intro_text' => $post[0]->intro_text,
             // 'hero_text' => $post[0]->hero_text,
             'gallery' => $post[0]->gallery,
             // 'blog_date' => date('d-m-Y', strtotime($post[0]->date)),

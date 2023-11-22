@@ -168,7 +168,7 @@ form .error span {
   z-index: 1;
 }
 .hero .heroOverlay > div {
-  max-width: 1600px;
+  max-width: 1700px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -1104,20 +1104,53 @@ form .error span {
 
 .caseHeader {
   background-color: #19b4b6;
-  padding: 40px 0;
+  padding: 80px 0;
+  margin-bottom: 0 !important;
+  min-height: 350px;
 }
 .caseHeader > div {
   display: flex;
   color: #FFF;
 }
+@media (max-width: 768px) {
+  .caseHeader > div {
+    flex-direction: column;
+  }
+}
+@media (max-width: 768px) and (max-width: 768px) {
+  .caseHeader > div {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+@media (max-width: 768px) and (max-width: 480px) {
+  .caseHeader > div {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
 .caseHeader > div h1 {
   font-family: "myriad_pro_bold";
+  margin-bottom: 0;
+  font-size: 3em;
+}
+@media (max-width: 1200px) {
+  .caseHeader > div h1 {
+    font-size: 2.5em;
+  }
+}
+@media (max-width: 480px) {
+  .caseHeader > div h1 {
+    font-size: 2em;
+  }
 }
 .caseHeader > div div {
   flex-basis: 50%;
 }
 .caseHeader > div div:first-child p {
+  margin-top: 0;
   font-weight: bold;
+  font-size: 1.2em;
 }
 .caseHeader > div div:first-child :first-child {
   margin-top: 0;
@@ -1125,17 +1158,35 @@ form .error span {
 .caseHeader > div div:last-child {
   padding: 0 40px;
 }
+@media (max-width: 768px) {
+  .caseHeader > div div:last-child {
+    padding: 40px 0 0 0;
+  }
+}
 .caseHeader > div div:last-child p {
-  line-height: 2em;
+  line-height: 1.7em;
 }
 .caseHeader > div div:last-child :first-child {
   margin-top: 0;
+}
+
+.caseLargeBackImg {
+  height: 900px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .caseDetailImgGallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+}
+@media (max-width: 768px) {
+  .caseDetailImgGallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 .caseDetailImgGallery img {
   aspect-ratio: 1/1;
@@ -2052,7 +2103,7 @@ nav ul {
   font-display: swap;
 }
 .inner {
-  max-width: 1600px;
+  max-width: 1500px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 100px;
