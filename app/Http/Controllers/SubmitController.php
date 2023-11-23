@@ -202,7 +202,7 @@ class SubmitController extends Controller
             $headers = array(
                 "MIME-Version: 1.0",
                 "Content-Type: text/html; charset=ISO-8859-1",
-                "From: WT Training <aanmeld-formulier@wtmedia-events.nl>",
+                "From: WT Media & Events <aanmeld-formulier@wtmedia-events.nl>",
                 "Reply-To: support@wtmedia-events.nl",
                 // "X-Priority: 1",
             );
