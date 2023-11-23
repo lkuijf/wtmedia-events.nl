@@ -35,7 +35,8 @@ Route::get('/clear-response-cache-wt', function () {
 
 
 Route::post('/submit-subscription-form', [SubmitController::class, 'submitSubscriptionFormXHR']);
-Route::post('/submit-schedule-call-form', [SubmitController::class, 'submitScheduleCallForm'])->name('submitScheduleCall');
+// Route::post('/submit-schedule-call-form', [SubmitController::class, 'submitScheduleCallForm'])->name('submitScheduleCall');
+Route::post('/submit-schedule-call-form', [SubmitController::class, 'submitScheduleCallFormXHR'])->name('submitScheduleCall');
 
 Route::get('/homepage', [PagesController::class, 'showOnePager'])->name('home');
 
@@ -44,9 +45,9 @@ Route::get('/blog/{slug}', [PagesController::class, 'showPost'])->where([
     'slug' => '[a-z0-9_-]+',
 ]);
 
-Route::get('/diensten/online-marketing', [PagesController::class, 'showPage'])->defaults('section', 'diensten')->defaults('page', 'online-marketing')->defaults('subpage', false)->middleware('doNotCacheResponse');
-Route::get('/diensten/webdevelopment', [PagesController::class, 'showPage'])->defaults('section', 'diensten')->defaults('page', 'webdevelopment')->defaults('subpage', false)->middleware('doNotCacheResponse');
-Route::get('/diensten/events', [PagesController::class, 'showPage'])->defaults('section', 'diensten')->defaults('page', 'events')->defaults('subpage', false)->middleware('doNotCacheResponse');
+// Route::get('/diensten/online-marketing', [PagesController::class, 'showPage'])->defaults('section', 'diensten')->defaults('page', 'online-marketing')->defaults('subpage', false)->middleware('doNotCacheResponse');
+// Route::get('/diensten/webdevelopment', [PagesController::class, 'showPage'])->defaults('section', 'diensten')->defaults('page', 'webdevelopment')->defaults('subpage', false)->middleware('doNotCacheResponse');
+// Route::get('/diensten/events', [PagesController::class, 'showPage'])->defaults('section', 'diensten')->defaults('page', 'events')->defaults('subpage', false)->middleware('doNotCacheResponse');
 
 Route::get('/diensten/online-marketing/{slug}', [PagesController::class, 'showCase'])->where([
     'slug' => '[a-z0-9_-]+',
