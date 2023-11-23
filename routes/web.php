@@ -31,7 +31,7 @@ Route::get('/', function () {
 Route::get('/clear-response-cache-wt', function () {
     ResponseCache::clear();
     echo 'Response Cache Cleared!';
-    file_get_contents(route('home'));
+    // file_get_contents(route('home'));
 })->middleware('doNotCacheResponse');
 
 
