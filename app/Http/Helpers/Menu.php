@@ -29,25 +29,19 @@ class Menu {
             $active = false;
             $aRequestPath = explode('/', request()->path());
             if('/' . request()->path() == $pageUrl) $active = true;
-            // if(substr_count($pageUrl, '/') == 2) {
-            //     // $this->html .= '<a href="#">'; // only for Miron Marine Service
-            //     $this->html .= '<a itemprop="url" href="' . $href . '"' . ($active?' class="active"':'') . '>';
-            // } else {
-
-                if($page->title == 'Home') $href = route('home');
-                $this->html .= '<a itemprop="url" href="' . $href . '">';
-
-                // if($page->title == 'Blog' && $aRequestPath[0] == 'blog') {
-                //     $href = '/blog';
-                //     $this->html .= '<a itemprop="url" href="' . $href . '"' . ' class="active"' . '>';
-                // } elseif($page->title == 'Diensten' && $aRequestPath[0] == 'diensten') {
-                //     $this->html .= '<a itemprop="url" href="' . route('home') . '#' . substr($href, 1) . '"' . ' class="active"' . '>';
-                // } else {
-                //     $this->html .= '<a itemprop="url" href="' . route('home') . '#' . substr($href, 1) . '"' . ($active?' class="active"':'') . '>'; // rotterdamsehorecawandeling.nl (onepager)
-                // }
-
-            // }
-//test2
+            if(substr_count($pageUrl, '/') == 2) {
+                // $this->html .= '<a href="#">'; // only for Miron Marine Service
+                $this->html .= '<a itemprop="url" href="' . $href . '"' . ($active?' class="active"':'') . '>';
+            } else {
+                // if($page->title == 'Home') $href = '/';
+                // $this->html .= '<a itemprop="url" href="' . $href . '">';
+                if($page->title == 'Blog') {
+                    $href = '/blog';
+                    $this->html .= '<a itemprop="url" href="' . $href . '"' . ($active?' class="active"':'') . '>'; // rotterdamsehorecawandeling.nl (onepager)
+                } else {
+                    $this->html .= '<a itemprop="url" href="' . route('home') . '#' . substr($href, 1) . '"' . ($active?' class="active"':'') . '>'; // rotterdamsehorecawandeling.nl (onepager)
+                }
+            }
             $this->html .= $page->title;
             $this->html .= '</a>';
             if(isset($this->allPagesFlattenedPerParent[$page->id])) $this->generateUlMenu($page->id, $pageUrl);
