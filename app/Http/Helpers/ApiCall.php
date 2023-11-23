@@ -21,7 +21,7 @@ class ApiCall {
 
 // echo "\n" . '[' . config('app_wt.cmsPath') . $this->endpoint . $params.']' . "<br />\n";
 
-        curl_setopt($curl, CURLOPT_URL, config('app_wt.cmsPath') . $this->endpoint . $params);
+        curl_setopt($curl, CURLOPT_URL, config('app_wt.host') . $this->endpoint . $params);
         if($this->method == 'POST') {
             curl_setopt($curl, CURLOPT_POST, true);
             curl_setopt($curl, CURLOPT_POSTFIELDS, $this->payload);
