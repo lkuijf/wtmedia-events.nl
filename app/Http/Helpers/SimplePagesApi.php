@@ -4,7 +4,8 @@ namespace App\Http\Helpers;
 class SimplePagesApi extends ApiCall {
     public $pagesPerParent = array();
     public function __construct() {
-        $this->endpoint = '/index.php/wp-json/wtcustom/simple-pages';
+        // $this->endpoint = '/index.php/wp-json/wtcustom/simple-pages';
+        $this->endpoint = '/wtcustom/simple-pages';
     }
     public function postProcess() {
         /* Group children */
