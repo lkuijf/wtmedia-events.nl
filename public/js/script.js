@@ -385,6 +385,7 @@ if(callForm) {
                     callForm.querySelector('input[name=name]').value = '';
                     callForm.querySelector('input[name=phone]').value = '';
                     callForm.querySelector('input[name=company]').value = '';
+                    callForm.querySelector('textarea[name=message]').value = '';
                     let succList = xhrSuccessAlert.querySelector('div:last-child');
                     succList.innerHTML = '';
                     let para = document.createElement('p');
