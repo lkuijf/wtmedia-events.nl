@@ -46,6 +46,7 @@ $websiteOptions[] = array('text', 'service_e_text', 'Events tekst');
 // $websiteOptions[] = array('text', 'form_success', 'Contact formulier succes melding');
 $websiteOptions[] = array('separator', 'separator5', 'Form messages');
 $websiteOptions[] = array('text', 'form_subscription_success', 'Nieuwsbrief aanmeld formulier succes melding');
+$websiteOptions[] = array('text', 'form_schedulecall_success', 'Maak een afspraak formulier succes melding');
 $websiteOptions[] = array('text', 'form_error', 'Formulier error melding');
 // $websiteOptions[] = array('text', 'apply_success', 'Sollicitatie succes melding');
 // $websiteOptions[] = array('text', 'apply_error', 'Sollicitatie error melding');
